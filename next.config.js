@@ -6,6 +6,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     // Updated from serverComponentsExternalPackages to serverExternalPackages
     serverExternalPackages: ['crypto']

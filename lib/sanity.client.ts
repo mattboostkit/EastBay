@@ -9,8 +9,26 @@ export const client = createClient({
   token: process.env.SANITY_API_TOKEN,
 });
 
+// Helper function for generating image URLs
 const builder = imageUrlBuilder(client);
 
-export function urlFor(source: any) {
-  return builder.image(source);
+export function urlForImage(source: any) {
+  return source ? builder.image(source) : null;
+}
+
+// Helper function for videos
+export function getVideoUrl(video: any) {
+  if (!video) return null;
+  
+  // For directly uploaded videos
+  if (video.videoFile && video.videoFile.asset) {
+    return `https://cdn.sanity.io/files/ce9tlzu0/production/${video.videoFile.asset._ref.replace('file-', '').replace('-mp4', '.mp4')}`;
+  }
+  
+  // For external videos (YouTube, Vimeo, etc.)
+  if (video.externalVideo) {
+    return video.externalVideo;
+  }
+  
+  return null;
 }

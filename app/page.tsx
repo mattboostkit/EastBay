@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1578164614429-3b3ffa22f800?fit=crop&w=1200&h=630',
+        url: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/East%20Wear%20Bay.jpg?updatedAt=1742332630042',
         width: 1200,
         height: 630,
         alt: 'Archaeological excavation at East Wear Bay',
@@ -45,7 +45,7 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden" aria-labelledby="hero-heading">
         <Image
-          src="https://images.unsplash.com/photo-1578164614429-3b3ffa22f800?fit=crop&w=2000&h=1000"
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/East%20Wear%20Bay.jpg?updatedAt=1742332630042"
           fill
           priority
           alt="Archaeological excavation at East Wear Bay with the Folkestone cliffs and English Channel in the background"

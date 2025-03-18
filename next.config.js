@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: ['cdn.sanity.io', 'images.unsplash.com', 'sketchfab.com', 'app'],
+    domains: ['cdn.sanity.io', 'images.unsplash.com', 'sketchfab.com', 'app', 'ik.imagekit.io'],
   },
   typescript: {
     ignoreBuildErrors: true,

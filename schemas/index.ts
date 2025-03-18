@@ -8,6 +8,7 @@ import researchPublication from './researchPublication';
 import testimonial from './testimonial';
 import timelineEntry from './timelineEntry';
 import sponsor from './sponsor';
+import video from './video';
 
 // Import your schema types here
 export const schemaTypes = [
@@ -21,5 +22,6 @@ export const schemaTypes = [
   testimonial,
   timelineEntry,
   sponsor,
+  video,  // Add the new video schema
   // Add your schemas here
 ];

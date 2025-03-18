@@ -31,6 +31,9 @@ export default {
       of: [
         {
           type: 'image',
+          options: {
+            hotspot: true, // Enables better cropping control
+          },
           fields: [
             {
               name: 'alt',
@@ -42,6 +45,13 @@ export default {
               name: 'caption',
               type: 'string',
               title: 'Caption',
+            },
+            {
+              name: 'isMainImage',
+              title: 'Main Image',
+              type: 'boolean',
+              description: 'Set as the main image for this artifact',
+              initialValue: false,
             },
           ],
         },

@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
-    domains: ['cdn.sanity.io', 'images.unsplash.com', 'sketchfab.com'],
+    domains: ['cdn.sanity.io', 'images.unsplash.com', 'sketchfab.com', 'app'],
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -10,8 +11,15 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    // Updated from serverComponentsExternalPackages to serverExternalPackages
-    serverExternalPackages: ['crypto']
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals.push('crypto');
+    }
+    return config;
   },
 };
 

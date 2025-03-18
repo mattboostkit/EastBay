@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 
-export function GoogleAnalytics() {
+// Create a separate component for the part that uses useSearchParams
+function AnalyticsTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -25,6 +26,17 @@ export function GoogleAnalytics() {
       });
     }
   }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+  
+  return null;
+}
+
+export function GoogleAnalytics() {
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  
+  // Skip if no GA ID or in development
+  if (!GA_MEASUREMENT_ID || process.env.NODE_ENV === 'development') {
+    return null;
+  }
 
   return (
     <>
@@ -48,6 +60,9 @@ export function GoogleAnalytics() {
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <AnalyticsTracker />
+      </Suspense>
     </>
   );
 }

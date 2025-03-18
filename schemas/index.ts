@@ -9,6 +9,7 @@ import testimonial from './testimonial';
 import timelineEntry from './timelineEntry';
 import sponsor from './sponsor';
 
+// Import your schema types here
 export const schemaTypes = [
   page,
   artifact,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   testimonial,
   timelineEntry,
   sponsor,
+  // Add your schemas here
 ];

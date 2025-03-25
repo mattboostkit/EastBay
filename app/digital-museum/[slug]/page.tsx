@@ -1,24 +1,39 @@
-import { client } from '@/lib/sanity.client';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { fetchAllArtifacts, fetchArtifactBySlug } from '@/lib/sanity.unified';
 import ArtifactDetail from '@/components/ArtifactDetail';
 
+// Generate metadata for SEO
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const artifact = await fetchArtifactBySlug(params.slug);
+  
+  if (!artifact) {
+    return {
+      title: 'Artifact Not Found',
+    };
+  }
+  
+  return {
+    title: `${artifact.title} | Digital Museum`,
+    description: artifact.description || `View details and 3D model of ${artifact.title} from the Folkestone Roman Villa archaeological site.`,
+  };
+}
+
+// Generate static paths for all artifacts
 export async function generateStaticParams() {
-  const query = `*[_type == "artifact"] { slug }`;
-  const artifacts = await client.fetch(query);
+  const artifacts = await fetchAllArtifacts();
   
   return artifacts.map((artifact: any) => ({
     slug: artifact.slug.current,
   }));
 }
 
-async function getArtifact(slug: string) {
-  const query = `*[_type == "artifact" && slug.current == $slug][0]`;
-  const artifact = await client.fetch(query, { slug });
-  
-  return artifact;
-}
-
 export default async function ArtifactPage({ params }: { params: { slug: string } }) {
-  const artifact = await getArtifact(params.slug);
+  const artifact = await fetchArtifactBySlug(params.slug);
+  
+  if (!artifact) {
+    notFound();
+  }
   
   return (
     <div className="container mx-auto py-8 px-4">

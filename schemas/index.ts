@@ -9,6 +9,7 @@ import testimonial from './testimonial';
 import timelineEntry from './timelineEntry';
 import sponsor from './sponsor';
 import video from './video';
+import homepageSection from './homepageSection';
 
 // Import your schema types here
 export const schemaTypes = [
@@ -22,6 +23,7 @@ export const schemaTypes = [
   testimonial,
   timelineEntry,
   sponsor,
-  video,  // Add the new video schema
+  video,
+  homepageSection,  // Add the homepage section schema
   // Add your schemas here
 ];

@@ -153,6 +153,29 @@ export default {
       type: 'array',
       of: [{ type: 'text' }],
     },
+    {
+      name: 'featured',
+      title: 'Featured Artifact',
+      type: 'boolean',
+      description: 'Display this artifact on the Digital Museum homepage',
+      initialValue: false,
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Pottery', value: 'pottery' },
+          { title: 'Tools', value: 'tools' },
+          { title: 'Jewelry', value: 'jewelry' },
+          { title: 'Coins', value: 'coins' },
+          { title: 'Architectural', value: 'architectural' },
+          // Add more categories as needed
+        ],
+      },
+    },
   ],
   preview: {
     select: {

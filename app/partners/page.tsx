@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import { client } from '@/lib/sanity.client'
-import { urlForImage } from '@/lib/sanity'
+import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
   title: 'Partners & Funders | East Wear Bay Archaeological Project',
@@ -80,7 +80,7 @@ export default async function PartnersPage() {
                             {partner.logo ? (
                               <div className="relative h-24 w-full mb-4">
                                 <Image
-                                  src={urlForImage(partner.logo).width(400).height(200).url()}
+                                  src={urlFor(partner.logo).width(400).height(200).url()}
                                   alt={`${partner.name} logo`}
                                   fill
                                   className="object-contain"

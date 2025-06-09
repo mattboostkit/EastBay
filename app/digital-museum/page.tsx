@@ -23,12 +23,13 @@ export const revalidate = 3600;
 export default async function DigitalMuseumPage({
   searchParams,
 }: {
-  searchParams?: { q?: string; period?: string; category?: string; page?: string };
+  searchParams?: Promise<{ q?: string; period?: string; category?: string; page?: string }>;
 }) {
-  const query = searchParams?.q || '';
-  const period = searchParams?.period || '';
-  const category = searchParams?.category || '';
-  const currentPage = Number(searchParams?.page) || 1;
+  const params = await searchParams;
+  const query = params?.q || '';
+  const period = params?.period || '';
+  const category = params?.category || '';
+  const currentPage = Number(params?.page) || 1;
   const pageSize = 8;
   
   // Fetch artifacts based on search/filter parameters

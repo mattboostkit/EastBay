@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import { client } from '@/lib/sanity.client'
-import { urlForImage } from '@/lib/sanity'
+import { urlFor } from '@/lib/sanity'
 
 export const metadata: Metadata = {
   title: 'Our Team | East Wear Bay Archaeological Project',
@@ -50,7 +50,7 @@ export default async function TeamPage() {
                   <div className="relative h-32 w-32 overflow-hidden rounded-full bg-muted">
                     {member.image ? (
                       <Image
-                        src={urlForImage(member.image).width(256).height(256).url()}
+                        src={urlFor(member.image).width(256).height(256).url()}
                         alt={member.name}
                         fill
                         className="object-cover"

@@ -12,7 +12,8 @@
       "Bash(git pull:*)",
       "Bash(grep:*)",
       "Bash(cat:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": []
   }

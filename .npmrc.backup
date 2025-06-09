@@ -1,0 +1,6 @@
+# PNPM configuration
+node-linker=hoisted
+shamefully-hoist=true
+strict-peer-dependencies=false
+legacy-peer-deps=true
+auto-install-peers=true

@@ -1,17 +1,17 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { structure } from './sanity.structure';
 
-export const config = defineConfig({
+const config = defineConfig({
   projectId: 'ce9tlzu0',
   dataset: 'production',
   title: 'EastBay Archaeological Society',
   apiVersion: '2023-12-18',
   basePath: '/admin',
   plugins: [
-    deskTool({
+    structureTool({
       structure
     }), 
     visionTool()
@@ -20,3 +20,6 @@ export const config = defineConfig({
     types: schemaTypes,
   },
 });
+
+export default config;
+export { config };

@@ -215,15 +215,15 @@ export default function FieldSchoolPage() {
               <div className="flex gap-4 rounded-lg border bg-card p-6">
                 <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-muted">
                   <div className="flex h-full w-full items-center justify-center">
-                    <span className="text-2xl font-semibold text-muted-foreground">JW</span>
+                    <span className="text-2xl font-semibold text-muted-foreground">LB</span>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Dr. James Wilson</h3>
-                  <p className="text-sm font-medium text-muted-foreground">Field Director</p>
+                  <h3 className="text-lg font-semibold">Lindsay Banfield</h3>
+                  <p className="text-sm font-medium text-muted-foreground">Engagement Manager</p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    20+ years of experience in coastal archaeology and rescue excavations. 
-                    Specializes in Roman Britain and archaeological field methods.
+                    Experienced in community archaeology and educational outreach. 
+                    Passionate about making archaeology accessible and engaging for all participants.
                   </p>
                 </div>
               </div>
@@ -231,15 +231,15 @@ export default function FieldSchoolPage() {
               <div className="flex gap-4 rounded-lg border bg-card p-6">
                 <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-muted">
                   <div className="flex h-full w-full items-center justify-center">
-                    <span className="text-2xl font-semibold text-muted-foreground">SC</span>
+                    <span className="text-2xl font-semibold text-muted-foreground">MH</span>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Dr. Sophie Chen</h3>
-                  <p className="text-sm font-medium text-muted-foreground">Digital Heritage Lead</p>
+                  <h3 className="text-lg font-semibold">Mark Houliston</h3>
+                  <p className="text-sm font-medium text-muted-foreground">CAT Director</p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Expert in 3D recording, photogrammetry, and digital preservation techniques. 
-                    Pioneering new methods for documenting threatened archaeological sites.
+                    Leading Canterbury Archaeological Trust with extensive experience in rescue archaeology. 
+                    Specializes in heritage management and archaeological field methods.
                   </p>
                 </div>
               </div>

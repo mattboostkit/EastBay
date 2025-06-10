@@ -37,7 +37,7 @@ export default function FolkestonePage() {
                 </p>
                 <p className="text-muted-foreground mb-4">
                   For archaeology students, Folkestone offers the perfect base: rich in history from Roman times 
-                  to the present, with the East Wear Bay site just a short walk from the town center. The town's 
+                  to the present, with the East Wear Bay site just a short walk from the town centre. The town's 
                   transformation into a cultural hub means you'll find plenty to explore during your downtime.
                 </p>
                 <p className="text-muted-foreground">
@@ -64,7 +64,7 @@ export default function FolkestonePage() {
                 <h3 className="font-semibold mb-2">By Train</h3>
                 <p className="text-sm text-muted-foreground">
                   Direct high-speed trains from London St Pancras (55 minutes) and regular services from 
-                  London Charing Cross (1h 30m). The station is a 10-minute walk from the town center.
+                  London Charing Cross (1h 30m). The station is a 10-minute walk from the town centre.
                 </p>
               </div>
               <div className="rounded-lg border bg-card p-6">
@@ -78,7 +78,7 @@ export default function FolkestonePage() {
                 <h3 className="font-semibold mb-2">By Bus</h3>
                 <p className="text-sm text-muted-foreground">
                   National Express coaches from London Victoria. Local buses connect Folkestone with Canterbury, 
-                  Dover, and other Kent towns. The bus station is in the town center.
+                  Dover, and other Kent towns. The bus station is in the town centre.
                 </p>
               </div>
             </div>
@@ -191,7 +191,7 @@ export default function FolkestonePage() {
                 </div>
                 <h3 className="font-semibold mb-2">Quarterhouse</h3>
                 <p className="text-sm text-muted-foreground">
-                  Cultural venue hosting theater, music, comedy, and film. Regular exhibitions and 
+                  Cultural venue hosting theatre, music, comedy, and film. Regular exhibitions and 
                   community events make it the heart of Folkestone's creative scene.
                 </p>
               </div>
@@ -205,20 +205,20 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-muted/50 p-6">
                 <h3 className="font-semibold mb-4">Essential Services</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• <strong>Supermarkets:</strong> Sainsbury's, Tesco, and Aldi in town center</li>
+                  <li>• <strong>Supermarkets:</strong> Sainsbury's, Tesco, and Aldi in town centre</li>
                   <li>• <strong>Banks:</strong> All major banks on Sandgate Road</li>
                   <li>• <strong>Post Office:</strong> Main branch on Bouverie Place</li>
                   <li>• <strong>Pharmacy:</strong> Boots and several independents</li>
-                  <li>• <strong>Medical:</strong> Walk-in center at Royal Victoria Hospital</li>
+                  <li>• <strong>Medical:</strong> Walk-in centre at Royal Victoria Hospital</li>
                   <li>• <strong>Library:</strong> Free WiFi and study space available</li>
                 </ul>
               </div>
               <div className="rounded-lg border bg-muted/50 p-6">
                 <h3 className="font-semibold mb-4">Getting Around</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• <strong>On Foot:</strong> Town center is compact and walkable</li>
+                  <li>• <strong>On Foot:</strong> Town centre is compact and walkable</li>
                   <li>• <strong>Local Buses:</strong> Regular services to all areas</li>
-                  <li>• <strong>Taxis:</strong> Available at station and town center</li>
+                  <li>• <strong>Taxis:</strong> Available at station and town centre</li>
                   <li>• <strong>Bike Hire:</strong> Available from Cycle Shepway</li>
                   <li>• <strong>To Site:</strong> 20-minute walk or short bus ride</li>
                   <li>• <strong>Parking:</strong> Pay & display throughout town</li>

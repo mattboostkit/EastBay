@@ -35,7 +35,7 @@ import Image from 'next/image'
 
 // For remote images from approved domains
 <Image 
-  src="https://images.unsplash.com/photo-1234..." 
+  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
   alt="Archaeological excavation site" 
   width={800} 
   height={600} 
@@ -59,7 +59,7 @@ Remote domains must be configured in `next.config.js`:
 ```javascript
 module.exports = {
   images: {
-    domains: ['images.unsplash.com', 'cdn.sanity.io'],
+    domains: ['cdn.sanity.io', 'sketchfab.com'],
   },
 }
 ```
@@ -159,7 +159,7 @@ import { ModelViewer } from '@/components/ui/ModelViewer'
 1. **Always include descriptive alt text** that explains the image content
 2. **Use empty alt text** for decorative images (`alt=""`)
 3. **Include captions** for complex images with academic significance
-4. **Consider color contrast** between image and surrounding content
+4. **Consider colour contrast** between image and surrounding content
 5. **Don't rely solely on images** to convey critical information
 
 ### 3D Model Accessibility
@@ -172,4 +172,4 @@ import { ModelViewer } from '@/components/ui/ModelViewer'
 
 ---
 
-For technical support or questions about media integration, contact the development team at tech@eastwearbaypt.org.
+For technical support or questions about media integration, contact the development team at info@eastwearbay.org.

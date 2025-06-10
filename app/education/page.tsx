@@ -246,7 +246,7 @@ export default function EducationPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Interactive digital resource using 3D models from our collection. Students analyze objects in detail and complete analytical tasks.
+                  Interactive digital resource using 3D models from our collection. Students analyse objects in detail and complete analytical tasks.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -374,7 +374,7 @@ export default function EducationPage() {
               <div className="rounded-lg border bg-card p-5">
                 <h3 className="text-lg font-semibold">Educational Consultations</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Our education specialists can provide customized advice on developing archaeology and heritage projects tailored to your curriculum needs and student interests.
+                  Our education specialists can provide customised advice on developing archaeology and heritage projects tailored to your curriculum needs and student interests.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -407,7 +407,7 @@ export default function EducationPage() {
             
             <blockquote className="rounded-lg border bg-card p-6">
               <p className="italic text-muted-foreground">
-                "Our site visit was exceptionally well-organized and educational. Students were actively engaged in archaeological processes and thinking skills. The connections made to multiple curriculum areas - history, geography, science - were invaluable."
+                "Our site visit was exceptionally well-organised and educational. Students were actively engaged in archaeological processes and thinking skills. The connections made to multiple curriculum areas - history, geography, science - were invaluable."
               </p>
               <div className="mt-4 flex items-center gap-2">
                 <div className="font-medium">Mr. Patel</div>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['cdn.sanity.io', 'images.unsplash.com', 'sketchfab.com'],
+    domains: ['cdn.sanity.io', 'sketchfab.com'],
   },
   typescript: {
     ignoreBuildErrors: true,

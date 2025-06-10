@@ -53,7 +53,7 @@ pnpm install
 - Images: Use Next.js Image component with Sanity CDN
 - 3D Models: Sketchfab integration via ModelViewer component
 - Video: Custom VideoPlayer component
-- Allowed image domains: cdn.sanity.io, images.unsplash.com, sketchfab.com, ik.imagekit.io
+- Allowed image domains: cdn.sanity.io, sketchfab.com, ik.imagekit.io
 
 ### Environment Variables
 Required for Sanity integration:

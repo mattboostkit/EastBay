@@ -484,7 +484,7 @@ export default function ResearchPage() {
               <div className="rounded-lg border bg-card p-5">
                 <h3 className="text-lg font-semibold">Excavation Database</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Access our excavation database with context records, finds catalogs, and stratigraphic information from 2015-2024.
+                  Access our excavation database with context records, finds catalogues, and stratigraphic information from 2015-2024.
                 </p>
                 <div className="mt-4">
                   <Link

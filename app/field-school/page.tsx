@@ -35,7 +35,7 @@ export default function FieldSchoolPage() {
           <div className="mb-12 rounded-lg border bg-card p-6 shadow-sm md:p-8">
             <h2 className="text-2xl font-bold">2025 Field School Sessions</h2>
             <p className="mt-2 text-muted-foreground">
-              Join our internationally recognized field school for hands-on archaeological experience at the Folkestone Roman Villa site
+              Join our internationally recognised field school for hands-on archaeological experience at the Folkestone Roman Villa site
             </p>
 
             <div className="mt-6 grid gap-6">
@@ -239,7 +239,7 @@ export default function FieldSchoolPage() {
                   <p className="text-sm font-medium text-muted-foreground">CAT Director</p>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Leading Canterbury Archaeological Trust with extensive experience in rescue archaeology. 
-                    Specializes in heritage management and archaeological field methods.
+                    Specialises in heritage management and archaeological field methods.
                   </p>
                 </div>
               </div>
@@ -442,7 +442,7 @@ export default function FieldSchoolPage() {
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">Shared Apartments</h3>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Our preferred accommodation option includes modern 4-person shared apartments in Folkestone town center. 
+                    Our preferred accommodation option includes modern 4-person shared apartments in Folkestone town centre. 
                     Each participant has their own bedroom with shared kitchen and living areas.
                   </p>
                   <ul className="mt-4 text-sm text-muted-foreground space-y-1">
@@ -520,7 +520,7 @@ export default function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="The Leas promenade with Victorian gardens and sea views"
                     fill
                     className="object-cover"

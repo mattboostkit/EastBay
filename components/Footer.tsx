@@ -81,20 +81,14 @@ export default function Footer() {
               <div className="mb-3 flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <div>
-                  <p className="text-muted-foreground">East Wear Bay</p>
-                  <p className="text-muted-foreground">Folkestone, Kent</p>
+                  <p className="text-muted-foreground">92a Broad Street</p>
+                  <p className="text-muted-foreground">Canterbury, Kent, CT1 2LU</p>
                 </div>
               </div>
               <div className="mb-3 flex items-center gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                <a href="mailto:contact@eastwearbaypt.org" className="text-muted-foreground hover:text-foreground">
-                  contact@eastwearbaypt.org
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                <a href="tel:+441303123456" className="text-muted-foreground hover:text-foreground">
-                  +44 (1303) 123-456
+                <a href="mailto:info@eastwearbay.org" className="text-muted-foreground hover:text-foreground">
+                  info@eastwearbay.org
                 </a>
               </div>
             </address>
@@ -103,9 +97,10 @@ export default function Footer() {
         
         <div className="mt-10 border-t pt-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} East Wear Bay Project. All rights reserved.
-            </p>
+            <div className="text-sm text-muted-foreground">
+              <p>© Canterbury Archaeological Trust Ltd, 92a Broad Street, Canterbury, Kent, CT1 2LU</p>
+              <p>Registered Charity no. 278861 | Company Registered no. 1441517 (England)</p>
+            </div>
             <div className="flex items-center gap-4">
               <span className="text-sm text-muted-foreground">Supported by:</span>
               <a href="https://www.heritagefund.org.uk/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-foreground" aria-label="National Lottery Heritage Fund">

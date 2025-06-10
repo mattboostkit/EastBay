@@ -251,7 +251,7 @@ export function generateOrganizationStructuredData() {
       '@type': 'ContactPoint',
       telephone: '+44-1234-567890',
       contactType: 'customer service',
-      email: 'info@eastwearbaypt.org',
+      email: 'info@eastwearbay.org',
     },
   };
 }

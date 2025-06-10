@@ -48,11 +48,11 @@ export default function ContactPage() {
                   <Mail className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">contact@eastwearbaypt.org</p>
+                    <p className="text-muted-foreground">info@eastwearbay.org</p>
                     <p className="text-sm text-muted-foreground">(General inquiries)</p>
-                    <p className="mt-1 text-muted-foreground">fieldschool@eastwearbaypt.org</p>
+                    <p className="mt-1 text-muted-foreground">info@eastwearbay.org</p>
                     <p className="text-sm text-muted-foreground">(Field school applications)</p>
-                    <p className="mt-1 text-muted-foreground">education@eastwearbaypt.org</p>
+                    <p className="mt-1 text-muted-foreground">info@eastwearbay.org</p>
                     <p className="text-sm text-muted-foreground">(School visits & education)</p>
                   </div>
                 </li>
@@ -89,7 +89,7 @@ export default function ContactPage() {
             <div>
               <h3 className="mb-4 text-xl font-semibold">Sponsors & Partners</h3>
               <p className="text-muted-foreground">
-                If you're interested in sponsoring our work or developing a partnership, please contact our director, Dr. Emma Richards, at director@eastwearbaypt.org.
+                If you're interested in sponsoring our work or developing a partnership, please contact our director, Dr. Emma Richards, at info@eastwearbay.org.
               </p>
               <p className="mt-2 text-muted-foreground">
                 We offer various sponsorship opportunities for businesses and organizations interested in supporting community archaeology and heritage preservation.
@@ -113,7 +113,7 @@ export default function ContactPage() {
             <div className="rounded-lg border bg-card p-5">
               <h3 className="text-lg font-medium">By Car</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                The East Wear Bay site is located at the eastern end of The Leas in Folkestone. Limited parking is available at the Wear Bay Road car park. The project office is located at Folkestone Museum in the town center.
+                The East Wear Bay site is located at the eastern end of The Leas in Folkestone. Limited parking is available at the Wear Bay Road car park. The project office is located at Folkestone Museum in the town centre.
               </p>
             </div>
             

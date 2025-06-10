@@ -59,7 +59,7 @@ export const trackEvent = ({
   });
 };
 
-// Specialized event tracking functions
+// Specialised event tracking functions
 export const trackArtifactView = (artifactId: string, artifactName: string): void => {
   trackEvent({
     action: 'view_item',

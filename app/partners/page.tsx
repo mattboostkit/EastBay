@@ -52,7 +52,7 @@ export default async function PartnersPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Partners & Funders</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              The East Wear Bay Archaeological Project is made possible through the generous support of our partners and funders who share our commitment to preserving and studying our archaeological heritage.
+              Using money raised by National Lottery players, The National Lottery Heritage Fund supports projects that connect people and communities with the UK's heritage. East Wear Bay is made possible with The National Lottery Heritage Fund. Thanks to National Lottery players, we have been able to excavate and record new areas of archaeology at the site and engage the local community in the project. This includes running school workshops, delivering dementia friendly finds handling sessions, hosting public talks and art workshops, and holding an art and archaeology exhibition.
             </p>
           </div>
         </div>

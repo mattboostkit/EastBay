@@ -22,7 +22,7 @@ export function OrganizationStructuredData() {
       '@type': 'ContactPoint',
       telephone: '+441303123456',
       contactType: 'customer service',
-      email: 'contact@eastwearbaypt.org',
+      email: 'info@eastwearbay.org',
       availableLanguage: 'English',
     },
     address: {

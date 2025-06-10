@@ -224,3 +224,84 @@ export default function Navbar() {
     </>
   )
 }
+      {/* Search overlay */}
+      {isSearchOpen && (
+        <div
+          id="search-panel"
+          className="absolute inset-x-0 top-16 z-50 bg-card p-4 md:p-6"
+          role="search"
+          aria-label="Site search"
+        >
+          <form onSubmit={handleSearchSubmit} className="container">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <input
+                ref={searchInputRef}
+                type="search"
+                placeholder="Search the project..."
+                className="w-full rounded-md bg-card py-2 pl-10 pr-4 text-lg"
+              />
+            </div>
+          </form>
+        </div>
+      )}
+    </>
+  )
+}
+      {/* Search overlay */}
+      {isSearchOpen && (
+        <div
+          id="search-panel"
+          className="absolute inset-x-0 top-16 z-50 bg-card p-4 md:p-6"
+          role="search"
+          aria-label="Site search"
+        >
+          <form onSubmit={handleSearchSubmit} className="container">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <input
+                ref={searchInputRef}
+                type="search"
+                placeholder="Search the project..."
+                className="w-full rounded-md bg-card py-2 pl-10 pr-4 text-lg"
+              />
+            </div>
+          </form>
+        </div>
+      )}
+    </>
+  )
+}
+      {/* Search overlay */}
+      {isSearchOpen && (
+        <div
+          id="search-panel"
+          className="absolute inset-x-0 top-16 z-50 bg-card p-4 md:p-6"
+          role="search"
+          aria-label="Site search"
+        >
+          <form onSubmit={handleSearchSubmit} className="container">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <input
+                ref={searchInputRef}
+                type="search"
+                placeholder="Search the project..."
+                className="w-full rounded-md bg-card py-2 pl-10 pr-4 text-lg"
+              />
+            </div>
+          </form>
+            </form>
+            <button
+              onClick={toggleSearch}
+              className="absolute right-5 top-5 rounded-full p-2 hover:bg-accent md:right-7 md:top-7"
+              aria-label="Close search"
+            >
+              <X className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  )
+}

@@ -120,10 +120,14 @@ export default function Navbar() {
                 >
                   {group.title}
                 </button>
-                {openDropdown === group.title && (
-                  <div
-                    className="absolute left-0 z-10 w-56 origin-top-left rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                  >
+                <div
+                  className={cn(
+                    'absolute left-0 top-full z-10 w-56 pt-2 transition-opacity duration-150',
+                    openDropdown === group.title ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  )}
+                  aria-hidden={openDropdown !== group.title}
+                >
+                  <div className="overflow-hidden rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5">
                     <div className="py-1">
                       {group.items.map((item) => (
                         <Link
@@ -143,7 +147,7 @@ export default function Navbar() {
                       ))}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </nav>

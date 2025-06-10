@@ -106,10 +106,9 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:gap-6" aria-label="Main navigation">
             {navigationGroups.map((group) => (
-              <div key={group.title} className="relative" onMouseLeave={() => setOpenDropdown(null)}>
+              <div key={group.title} className="relative" onMouseEnter={() => setOpenDropdown(group.title)} onMouseLeave={() => setOpenDropdown(null)}>
                 <button
                   onClick={() => handleDropdownToggle(group.title)}
-                  onMouseEnter={() => setOpenDropdown(group.title)}
                   className={cn(
                     'flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors',
                     openDropdown === group.title

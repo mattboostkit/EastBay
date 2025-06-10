@@ -170,7 +170,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div 
           id="mobile-menu"
-          className="fixed inset-0 top-16 z-50 bg-background md:hidden"
+          className="fixed inset-0 top-16 z-50 bg-white dark:bg-gray-900 md:hidden"
           role="dialog"
           aria-label="Mobile navigation menu"
         >

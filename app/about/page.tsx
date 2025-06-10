@@ -41,7 +41,7 @@ export default function AboutPage() {
               </div>
               <div className="relative rounded-lg overflow-hidden h-[300px]">
                 <Image 
-                  src="https://images.unsplash.com/photo-1584438602958-910d2511413d?fit=crop&w=800&h=600" 
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
                   alt="Eroding cliff face at East Wear Bay showing archaeological features being lost to the sea"
                   fill
                   className="object-cover"
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="relative rounded-lg overflow-hidden h-[300px] md:order-2">
                 <Image 
-                  src="https://images.unsplash.com/photo-1598367571367-72e7e737ccf1?fit=crop&w=800&h=600" 
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
                   alt="Archaeological excavation of the Folkestone Roman Villa showing room foundations and features"
                   fill
                   className="object-cover"
@@ -177,7 +177,7 @@ export default function AboutPage() {
               <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fit=crop&w=400&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Dr. Emma Richards, Project Director"
                     fill
                     className="object-cover"
@@ -197,7 +197,7 @@ export default function AboutPage() {
               <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=400&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Dr. James Wilson, Field Director"
                     fill
                     className="object-cover"
@@ -217,7 +217,7 @@ export default function AboutPage() {
               <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?fit=crop&w=400&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Dr. Sophie Chen, Digital Heritage Lead"
                     fill
                     className="object-cover"

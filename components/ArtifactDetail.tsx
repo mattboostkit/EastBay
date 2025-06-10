@@ -87,7 +87,7 @@ export default function ArtifactDetail({ artifact }: ArtifactProps) {
                   ?.width(1200)
                   ?.height(800)
                   ?.format('webp')
-                  ?.url() || '/placeholder-image.jpg'}
+                  ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                 alt={mainImage.alt || artifact.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -95,7 +95,7 @@ export default function ArtifactDetail({ artifact }: ArtifactProps) {
                 priority
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = '/placeholder-image.jpg';
+                  target.src = 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg';
                 }}
               />
             </div>
@@ -130,7 +130,7 @@ export default function ArtifactDetail({ artifact }: ArtifactProps) {
                       ?.width(400)
                       ?.height(300)
                       ?.format('webp')
-                      ?.url() || '/placeholder-image.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={image.alt || `${artifact.title} - image ${i + 1}`}
                     fill
                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
@@ -138,7 +138,7 @@ export default function ArtifactDetail({ artifact }: ArtifactProps) {
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = '/placeholder-image.jpg';
+                      target.src = 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg';
                     }}
                   />
                 </div>

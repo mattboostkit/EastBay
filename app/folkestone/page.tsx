@@ -47,7 +47,7 @@ export default function FolkestonePage() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?fit=crop&w=800&h=600"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Folkestone harbor and seafront view"
                   fill
                   className="object-cover"
@@ -91,7 +91,7 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Modern hotel room with sea view"
                     fill
                     className="object-cover"
@@ -111,7 +111,7 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Student accommodation common area"
                     fill
                     className="object-cover"

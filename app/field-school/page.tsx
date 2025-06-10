@@ -13,7 +13,7 @@ export default function FieldSchoolPage() {
     <>
       <div className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1598449426314-8b02525e8733?fit=crop&w=2000&h=800"
+          src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
           alt="Students excavating at the East Wear Bay archaeological site with tools and equipment"
           fill
           className="object-cover"
@@ -380,7 +380,7 @@ export default function FieldSchoolPage() {
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-12 overflow-hidden rounded-full">
                     <Image
-                      src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fit=crop&w=400&h=400"
+                      src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                       alt="Sarah, university student"
                       fill
                       className="object-cover"
@@ -402,7 +402,7 @@ export default function FieldSchoolPage() {
                 <div className="flex items-center gap-4">
                   <div className="relative h-12 w-12 overflow-hidden rounded-full">
                     <Image
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=400&h=400"
+                      src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                       alt="David, local volunteer"
                       fill
                       className="object-cover"
@@ -433,7 +433,7 @@ export default function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Shared student accommodation with modern facilities"
                     fill
                     className="object-cover"
@@ -459,7 +459,7 @@ export default function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Independent accommodation options in Folkestone"
                     fill
                     className="object-cover"
@@ -495,7 +495,7 @@ export default function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?fit=crop&w=800&h=400"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Folkestone Creative Quarter with art installations and cafes"
                     fill
                     className="object-cover"

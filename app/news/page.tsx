@@ -58,7 +58,7 @@ export default function NewsPage() {
           <div className="grid grid-cols-1 md:grid-cols-5">
             <div className="relative h-60 md:col-span-2 md:h-auto">
               <Image
-                src="https://images.unsplash.com/photo-1598449426314-8b02525e8733?fit=crop&w=800&h=600"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Archaeologists examining the newly discovered mosaic floor in Room 7 of the Folkestone Roman Villa"
                 fill
                 className="rounded-t-lg object-cover md:rounded-l-lg md:rounded-tr-none"
@@ -106,7 +106,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1503602642458-232111445657?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="3D scanning equipment being used to document artifacts from the East Wear Bay site"
                 fill
                 className="rounded-t-lg object-cover"
@@ -143,7 +143,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Local schoolchildren participating in the East Wear Bay educational program"
                 fill
                 className="rounded-t-lg object-cover"
@@ -180,7 +180,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1599254142659-436c697afb9a?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Conservation work being performed on a Roman pottery artifact in the laboratory"
                 fill
                 className="rounded-t-lg object-cover"
@@ -217,7 +217,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1551818176-60579e574b91?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Conference presentation about the East Wear Bay Project findings"
                 fill
                 className="rounded-t-lg object-cover"
@@ -254,7 +254,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1569683795645-b62e50fbf103?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Public open day with visitors exploring the East Wear Bay excavation site"
                 fill
                 className="rounded-t-lg object-cover"
@@ -291,7 +291,7 @@ export default function NewsPage() {
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="relative h-48">
               <Image
-                src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?fit=crop&w=800&h=400"
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                 alt="Aerial drone survey being conducted at the East Wear Bay site"
                 fill
                 className="rounded-t-lg object-cover"

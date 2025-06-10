@@ -9,7 +9,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
 // Default metadata values
 const defaultTitle = 'East Wear Bay Project | Folkestone Roman Villa Research';
 const defaultDescription = 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education. Join us in preserving this coastal heritage site threatened by erosion.';
-const defaultOgImage = '/images/og-image.jpg';
+const defaultOgImage = 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg';
 const defaultKeywords = [
   'archaeology', 
   'Folkestone Roman Villa', 
@@ -160,7 +160,7 @@ export function generateArticleStructuredData({
       name: 'East Wear Bay Project',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo.png`,
+        url: 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg',
       },
     },
     mainEntityOfPage: {
@@ -241,7 +241,7 @@ export function generateOrganizationStructuredData() {
     '@type': 'Organization',
     name: 'East Wear Bay Project',
     url: siteUrl,
-    logo: `${siteUrl}/images/logo.png`,
+    logo: 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg',
     sameAs: [
       'https://twitter.com/eastwearbaypt',
       'https://facebook.com/eastwearbaypt',

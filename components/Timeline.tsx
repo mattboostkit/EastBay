@@ -144,7 +144,7 @@ export default function Timeline({ entries }: TimelineProps) {
                       {entry.image && (
                         <div className="mb-3 overflow-hidden rounded-md">
                           <Image
-                            src={entry.image?.url || "https://images.unsplash.com/photo-1626695435298-cfa53686c81f"}
+                            src={entry.image?.url || "https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"}
                             alt={entry.title}
                             width={400}
                             height={250}

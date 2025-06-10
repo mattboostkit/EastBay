@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'East Wear Bay Project',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg',
         width: 1200,
         height: 630,
         alt: 'East Wear Bay Project',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'East Wear Bay Project | Folkestone Roman Villa Research',
     description: 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'],
   },
   robots: {
     index: true,

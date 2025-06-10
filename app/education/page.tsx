@@ -98,7 +98,7 @@ export default function EducationPage() {
             
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image 
-                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?fit=crop&w=800&h=800" 
+                src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
                 alt="School children participating in an archaeological workshop at East Wear Bay"
                 fill
                 className="object-cover"
@@ -116,7 +116,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of the Roman Villa teaching resource showing lesson plans and activity sheets"
                   fill
                   className="rounded-t-lg object-cover"
@@ -153,7 +153,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1533854775446-95c4609da544?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of the Archaeological Evidence educational resource showing excavation documentation templates"
                   fill
                   className="rounded-t-lg object-cover"
@@ -190,7 +190,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1616531770192-6eaea74c2456?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of the Roman Britain trade routes map and trade good illustrations"
                   fill
                   className="rounded-t-lg object-cover"
@@ -227,7 +227,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1511296265581-c2450046447d?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of digital resource showing 3D model interaction instructions"
                   fill
                   className="rounded-t-lg object-cover"
@@ -264,7 +264,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of climate change and archaeology resource with coastal erosion diagrams"
                   fill
                   className="rounded-t-lg object-cover"
@@ -301,7 +301,7 @@ export default function EducationPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1551029506-0807df4e2031?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Preview of careers in archaeology resource with job role profiles"
                   fill
                   className="rounded-t-lg object-cover"

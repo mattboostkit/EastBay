@@ -79,7 +79,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1599254142659-436c697afb9a?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   fill
                   alt="Hands working with clay to create Iron Age pottery replicas"
                   className="rounded-t-lg object-cover"
@@ -126,7 +126,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1598449426314-8b02525e8733?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Colorful Roman mosaic patterns being assembled"
                   fill
                   className="rounded-t-lg object-cover"
@@ -173,7 +173,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1529390079861-591de354faf5?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Students using 3D technology to create digital archives"
                   fill
                   className="rounded-t-lg object-cover"
@@ -220,7 +220,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1556911073-52527ac43761?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Interactive timeline workshop with historical artifacts"
                   fill
                   className="rounded-t-lg object-cover"
@@ -267,7 +267,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Roman food preparation and cooking demonstration"
                   fill
                   className="rounded-t-lg object-cover"
@@ -314,7 +314,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Career presentation showing various archaeology professions"
                   fill
                   className="rounded-t-lg object-cover"

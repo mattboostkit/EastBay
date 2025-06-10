@@ -37,7 +37,7 @@ export default async function Home() {
       <ArtifactStructuredData 
         name="Roman Pottery from East Wear Bay"
         description="1st Century CE pottery fragment discovered at the Folkestone Roman Villa site"
-        image="/images/artifacts/roman-pottery.jpg"
+        image="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
         dateCreated="1st Century CE"
         url="/digital-museum/roman-pottery"
         material="Terracotta"
@@ -226,7 +226,7 @@ export default async function Home() {
                     src={urlForImage(communitySection.items[0].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/community/digital-time-capsule.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[0].image.alt || "Children participating in the Digital Time Capsule program"}
                     fill
                     className="object-cover"
@@ -253,7 +253,7 @@ export default async function Home() {
                     src={urlForImage(communitySection.items[1].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/community/memory-objects.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[1].image.alt || "Elderly participants handling archaeological objects"}
                     fill
                     className="object-cover"
@@ -280,7 +280,7 @@ export default async function Home() {
                     src={urlForImage(communitySection.items[2].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/community/folkestone-stories.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[2].image.alt || "Community members recording oral histories"}
                     fill
                     className="object-cover"
@@ -313,7 +313,7 @@ export default async function Home() {
                   src={urlForImage(fieldSchoolSection.mainImage)
                     ?.width(800)
                     ?.height(600)
-                    ?.url() || '/images/field-school/meals.jpg'}
+                    ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                   alt={fieldSchoolSection.mainImage.alt || "Field school participants enjoying a meal together"}
                   fill
                   className="object-cover"
@@ -384,7 +384,7 @@ export default async function Home() {
                     src={urlForImage(newsSection.items[0].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/news/mosaic-discovery.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={newsSection.items[0].image.alt || "Mosaic floor discovery"}
                     fill
                     className="rounded-t-lg object-cover"
@@ -421,7 +421,7 @@ export default async function Home() {
                     src={urlForImage(newsSection.items[1].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/news/digital-preservation.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={newsSection.items[1].image.alt || "Digital preservation equipment"}
                     fill
                     className="rounded-t-lg object-cover"
@@ -458,7 +458,7 @@ export default async function Home() {
                     src={urlForImage(newsSection.items[2].image)
                       ?.width(800)
                       ?.height(400)
-                      ?.url() || '/images/news/education-program.jpg'}
+                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={newsSection.items[2].image.alt || "Students participating in education program"}
                     fill
                     className="rounded-t-lg object-cover"

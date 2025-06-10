@@ -17,7 +17,10 @@
       "Bash(pnpm run:*)",
       "Bash(ls:*)",
       "Bash(chmod:*)",
-      "Bash(pnpm list:*)"
+      "Bash(pnpm list:*)",
+      "Bash(claude update)",
+      "Bash(find:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

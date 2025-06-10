@@ -111,7 +111,7 @@ export default function ImageLightbox({ images, initialIndex = 0, onClose, altTe
             ?.height(1200)
             ?.fit('max')
             ?.format('webp')
-            ?.url() || '/placeholder-image.jpg'}
+            ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
           alt={getImageAlt(currentIndex)}
           fill
           className={`object-contain transition-opacity duration-300 ${

@@ -63,7 +63,7 @@ export default function ResearchPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1584438602958-910d2511413d?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Eroding cliff face at East Wear Bay showing archaeological layers"
                   fill
                   className="rounded-t-lg object-cover"
@@ -89,7 +89,7 @@ export default function ResearchPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1554475659-287fb958a10e?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Example of Roman villa architecture with floor plan overlaid"
                   fill
                   className="rounded-t-lg object-cover"
@@ -115,7 +115,7 @@ export default function ResearchPage() {
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="relative h-40">
                 <Image
-                  src="https://images.unsplash.com/photo-1590690737858-c903119e38b1?fit=crop&w=800&h=400"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                   alt="Digital archaeology equipment scanning artifacts"
                   fill
                   className="rounded-t-lg object-cover"
@@ -147,7 +147,7 @@ export default function ResearchPage() {
               <div className="flex flex-col gap-6 md:flex-row">
                 <div className="relative h-[300px] w-full md:w-[200px] lg:w-[250px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?fit=crop&w=800&h=1200"
+                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
                     alt="Cover of publication featuring architectural reconstruction of the Folkestone Villa"
                     fill
                     className="rounded-lg object-cover"
@@ -576,7 +576,7 @@ export default function ResearchPage() {
               
               <div className="relative h-[300px] rounded-lg overflow-hidden">
                 <Image 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=800&h=600" 
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
                   alt="Research team collaborating on analysis of archaeological findings at East Wear Bay"
                   fill
                   className="object-cover"

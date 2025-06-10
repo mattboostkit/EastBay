@@ -18,7 +18,7 @@ interface MetaTagsProps {
 export function MetaTags({
   title,
   description,
-  ogImage = '/images/og-image.jpg',
+  ogImage = 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg',
   ogType = 'website',
   twitterCard = 'summary_large_image',
   canonicalUrl,

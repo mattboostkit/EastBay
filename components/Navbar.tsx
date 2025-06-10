@@ -122,7 +122,7 @@ export default function Navbar() {
                 </button>
                 {openDropdown === group.title && (
                   <div
-                    className="absolute left-0 z-10 mt-1 w-56 origin-top-left rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    className="absolute left-0 z-10 w-56 origin-top-left rounded-md bg-card shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   >
                     <div className="py-1">
                       {group.items.map((item) => (

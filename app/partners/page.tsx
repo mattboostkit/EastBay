@@ -41,7 +41,7 @@ export default async function PartnersPage() {
     'Major Funder',
     'Academic Partner',
     'Heritage Partner',
-    'Supporting Organization',
+    'Supporting Organisation',
     'Community Partner'
   ]
 

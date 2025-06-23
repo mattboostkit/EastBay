@@ -50,9 +50,61 @@ export default function AboutPage() {
             </div>
           </section>
           
-          {/* The Site */}
+          {/* Our Funders */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold">The Folkestone Roman Villa</h2>
+            <h2 className="text-2xl font-bold">Our Funders</h2>
+            <p className="mt-3 text-muted-foreground">
+              The East Wear Bay Archaeological Project is made possible through the generous support of our funding partners.
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+              <div className="rounded-lg border bg-card p-6 text-center">
+                <h3 className="text-lg font-bold">National Lottery Heritage Fund</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Major funding for excavation and digital preservation</p>
+              </div>
+              <div className="rounded-lg border bg-card p-6 text-center">
+                <h3 className="text-lg font-bold">Canterbury Archaeological Trust</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Core operational support and expertise</p>
+              </div>
+              <div className="rounded-lg border bg-card p-6 text-center">
+                <h3 className="text-lg font-bold">Kent County Council</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Community engagement funding</p>
+              </div>
+            </div>
+          </section>
+          
+          {/* Our Beneficiaries */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold">Our Beneficiaries</h2>
+            <p className="mt-3 text-muted-foreground">
+              We are proud to have worked with numerous schools, community groups, and organizations across Kent.
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div>
+                <h3 className="text-lg font-semibold mb-3">Schools</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Folkestone Primary Academy</li>
+                  <li>• St Eanswythe's Church of England Primary School</li>
+                  <li>• The Harvey Grammar School</li>
+                  <li>• Pent Valley Technology College</li>
+                  <li>• Canterbury Academy</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-3">Community Groups</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Folkestone Memory Café</li>
+                  <li>• Age UK Canterbury</li>
+                  <li>• Kent Archaeological Society</li>
+                  <li>• Folkestone Local History Society</li>
+                  <li>• Creative Folkestone</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          
+          {/* The Archaeology */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold">The Archaeology</h2>
             <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="relative rounded-lg overflow-hidden h-[300px] md:order-2">
                 <Image 
@@ -64,13 +116,13 @@ export default function AboutPage() {
               </div>
               <div className="md:order-1">
                 <p className="text-muted-foreground">
-                  The Roman villa at East Wear Bay was once a substantial coastal estate established in the late 1st century CE and occupied through the 4th century. It featured mosaic floors, painted wall plaster, a hypocaust heating system, and evidence of high-status living.
+                  East Wear Bay has been a focus of human activity for millennia. While the Roman villa (late 1st-4th century CE) is the most prominent feature, excavations have revealed evidence spanning from the Bronze Age through to the medieval period.
                 </p>
                 <p className="mt-4 text-muted-foreground">
-                  The site was first identified in the 1920s, but comprehensive investigation has been limited. Since 2010, an accelerating rate of coastal erosion has begun to claim significant portions of the site, with several rooms of the villa already lost to the sea.
+                  The Roman villa was a substantial coastal estate featuring mosaic floors, painted wall plaster, and a hypocaust heating system. However, the site also includes Iron Age settlement remains, Saxon occupation evidence, and medieval field systems.
                 </p>
                 <p className="mt-4 text-muted-foreground">
-                  The villa's position indicates its importance in cross-channel trade networks and likely served both as a residence for a wealthy Romano-British family and as a site for agricultural production and trade goods processing.
+                  First identified in the 1920s by S.E. Winbolt, the site has faced accelerating coastal erosion since 2010. This multi-period archaeological landscape provides unique insights into 3,000 years of human adaptation to this dynamic coastal environment.
                 </p>
               </div>
             </div>
@@ -90,7 +142,7 @@ export default function AboutPage() {
               <div className="mt-4 rounded-lg border p-6">
                 <h3 className="text-xl font-semibold">Digital Preservation</h3>
                 <p className="mt-3 text-muted-foreground">
-                  We employ cutting-edge digital technologies including photogrammetry, 3D scanning, and immersive visualization to create permanent digital records of the site and its artifacts. These digital assets form an archive that will outlast the physical site.
+                  We employ cutting-edge digital technologies including photogrammetry, 3D scanning, and immersive visualization to create permanent digital records of the site and its artefacts. These digital assets form an archive that will outlast the physical site.
                 </p>
               </div>
               

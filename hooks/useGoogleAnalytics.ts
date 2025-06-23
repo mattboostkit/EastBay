@@ -48,16 +48,16 @@ export function useGoogleAnalytics() {
         [GA_MEASUREMENT_ID, isClient]
     );
 
-    const trackArtifactView = useCallback(
-        (artifactId: string, artifactName: string) => {
+    const trackArtefactView = useCallback(
+        (artefactId: string, artefactName: string) => {
             if (!isClient){
                 return;
             }
             trackEvent({
                 action: 'view_item',
-                category: 'artifact',
-                label: artifactName,
-                artifact_id: artifactId,
+                category: 'artefact',
+                label: artefactName,
+                artefact_id: artefactId,
             });
         },
         [trackEvent, isClient]
@@ -129,7 +129,7 @@ export function useGoogleAnalytics() {
     return {
         trackEvent,
         trackPageView,
-        trackArtifactView,
+        trackArtefactView,
         trackResearchView,
         trackFormSubmission,
         track3DModelInteraction,

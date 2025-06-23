@@ -57,7 +57,7 @@ export default {
         {
           type: 'reference',
           to: [
-            { type: 'artifact' },
+            { type: 'artefact' },
             { type: 'post' },
             { type: 'event' },
             { type: 'researchPublication' },

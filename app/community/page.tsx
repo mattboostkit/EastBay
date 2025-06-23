@@ -221,7 +221,7 @@ export default function CommunityPage() {
               <div className="relative h-48">
                 <Image
                   src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                  alt="Interactive timeline workshop with historical artifacts"
+                  alt="Interactive timeline workshop with historical artefacts"
                   fill
                   className="rounded-t-lg object-cover"
                 />
@@ -229,7 +229,7 @@ export default function CommunityPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold">Timeline</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Create interactive timelines exploring 2000 years of history at East Wear Bay. Handle real artifacts and learn how archaeologists piece together the story of a site.
+                  Create interactive timelines exploring 2000 years of history at East Wear Bay. Handle real artefacts and learn how archaeologists piece together the story of a site.
                 </p>
                 
                 <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-muted-foreground">

@@ -2,23 +2,22 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { ArtifactStructuredData, EventStructuredData } from '@/components/SEO/StructuredData';
-import { NewsletterForm } from '@/components/NewsletterForm';
-import ArtifactCard from '@/components/ArtifactCard';
+import { ArtefactStructuredData, EventStructuredData } from '@/components/SEO/StructuredData';
+import ArtefactCard from '@/components/ArtefactCard';
 import { urlForImage } from '@/lib/sanity.unified';
-import { fetchFeaturedArtifacts, fetchAllHomepageSections } from '@/lib/sanity.unified';
+import { fetchFeaturedArtefacts, fetchAllHomepageSections } from '@/lib/sanity.unified';
 
 export const metadata: Metadata = {
-  title: 'East Wear Bay Project | Preserving Folkestone Roman Villa',
-  description: 'Join our community archaeology project protecting the Folkestone Roman Villa from coastal erosion through excavation, digital preservation, and public engagement.',
+  title: 'East Wear Bay Project | Preserving Folkestone\'s Archaeological Heritage',
+  description: 'Join our community archaeology project protecting the East Wear Bay archaeological landscape from coastal erosion through excavation, digital preservation, and public engagement.',
 };
 
 // Revalidate page every hour
 export const revalidate = 3600;
 
 export default async function Home() {
-  // Fetch featured artifacts
-  const featuredArtifacts = await fetchFeaturedArtifacts();
+  // Fetch featured artefacts
+  const featuredArtefacts = await fetchFeaturedArtefacts();
   
   // Fetch homepage sections from Sanity (for images only)
   const sections = await fetchAllHomepageSections();
@@ -26,7 +25,7 @@ export default async function Home() {
   // Find specific sections by their IDs
   const heroSection = sections.find((section: any) => section.sectionId === 'hero');
   const aboutSection = sections.find((section: any) => section.sectionId === 'about');
-  const artifactsSection = sections.find((section: any) => section.sectionId === 'featured-artifacts');
+  const artefactsSection = sections.find((section: any) => section.sectionId === 'featured-artifacts');
   const communitySection = sections.find((section: any) => section.sectionId === 'community');
   const fieldSchoolSection = sections.find((section: any) => section.sectionId === 'field-school');
   const newsSection = sections.find((section: any) => section.sectionId === 'news');
@@ -34,7 +33,7 @@ export default async function Home() {
   return (
     <>
       {/* Schema.org structured data */}
-      <ArtifactStructuredData 
+      <ArtefactStructuredData 
         name="Roman Pottery from East Wear Bay"
         description="1st Century CE pottery fragment discovered at the Folkestone Roman Villa site"
         image="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
@@ -52,7 +51,7 @@ export default async function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] overflow-hidden" aria-labelledby="hero-heading">
+      <section className="relative h-[60vh] overflow-hidden" aria-labelledby="hero-heading">
         {heroSection?.backgroundImage && (
           <Image
             src={urlForImage(heroSection.backgroundImage)
@@ -68,10 +67,10 @@ export default async function Home() {
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="container relative z-10 flex h-full flex-col items-start justify-center text-white">
           <h1 id="hero-heading" className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Preserving Folkestone's Roman Heritage
+            Preserving Folkestone's Heritage
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-200 md:text-xl">
-            A community archaeology project protecting the East Wear Bay Roman Villa from coastal erosion through excavation, digital preservation, and public engagement.
+            A community archaeology project protecting the East Wear Bay Roman Villa and its surrounding archaeological landscape from coastal erosion through excavation, digital preservation, and public engagement.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link 
@@ -131,33 +130,33 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Artifacts Section */}
-      <section className="bg-muted py-16 md:py-24" aria-labelledby="artifacts-heading">
+      {/* Featured Artefacts Section */}
+      <section className="bg-muted py-16 md:py-24" aria-labelledby="artefacts-heading">
         <div className="container">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <h2 id="artifacts-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Featured Artifacts
+              <h2 id="artefacts-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+                Featured Artefacts
               </h2>
               <p className="mt-2 text-lg text-muted-foreground md:text-xl">
-                Explore our collection of digitally preserved artifacts from the Folkestone Roman Villa
+                Explore our collection of digitally preserved artefacts from East Wear Bay.
               </p>
             </div>
             <Link href="/digital-museum" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all artifacts
+              View all artefacts
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {/* Display artifact cards */}
-            {featuredArtifacts && featuredArtifacts.length > 0 ? (
-              // If we have artifacts from Sanity, display them
-              featuredArtifacts.slice(0, 3).map((artifact: any) => (
-                <ArtifactCard key={artifact._id} artifact={artifact} />
+            {/* Display artefact cards */}
+            {featuredArtefacts && featuredArtefacts.length > 0 ? (
+              // If we have artefacts from Sanity, display them
+              featuredArtefacts.slice(0, 3).map((artefact: any) => (
+                <ArtefactCard key={artefact._id} artefact={artefact} />
               ))
             ) : (
-              // If no artifacts are fetched, display placeholder cards
+              // If no artefacts are fetched, display placeholder cards
               Array.from({ length: 3 }).map((_, index) => (
                 <div key={index} className="rounded-lg border bg-card shadow-sm">
                   <div className="p-3">
@@ -349,7 +348,7 @@ export default async function Home() {
                   href="/field-school" 
                   className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
                 >
-                  Volunteer opportunities
+                  Apply Now
                 </Link>
               </div>
             </div>
@@ -357,20 +356,42 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Latest News Section */}
-      <section className="bg-background py-16 md:py-24" aria-labelledby="news-heading">
+      {/* Volunteer Section */}
+      <section className="bg-background py-16 md:py-24" aria-labelledby="volunteer-heading">
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 id="volunteer-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+              Be a Volunteer
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+              Join us in preserving East Wear Bay's archaeological heritage. We welcome volunteers of all backgrounds and experience levels.
+            </p>
+            <div className="mt-8">
+              <Link 
+                href="/volunteer" 
+                className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+              >
+                Volunteer Opportunities
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Onsite Blog Section */}
+      <section className="bg-muted py-16 md:py-24" aria-labelledby="blog-heading">
         <div className="container">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <h2 id="news-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Latest News
+              <h2 id="blog-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+                Onsite Blog
               </h2>
               <p className="mt-2 text-lg text-muted-foreground md:text-xl">
                 Updates from our excavations and community projects
               </p>
             </div>
-            <Link href="/news" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all news
+            <Link href="/blog" className="group inline-flex items-center gap-1 text-sm font-medium">
+              View all posts
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </div>
@@ -486,21 +507,6 @@ export default async function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Newsletter Section */}
-      <section className="bg-primary py-16 text-primary-foreground md:py-24" aria-labelledby="newsletter-heading">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 id="newsletter-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-              Subscribe to Our Newsletter
-            </h2>
-            <p className="mt-4 text-lg md:text-xl">
-              Stay updated with our latest discoveries, field school opportunities, and community events at East Wear Bay.
-            </p>
-            <NewsletterForm />
           </div>
         </div>
       </section>

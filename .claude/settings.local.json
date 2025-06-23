@@ -43,7 +43,11 @@
       "Bash(/usr/local/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"customized\" -g \"*.tsx\" -g \"*.ts\" -g \"*.md\" /mnt/c/Dev/Cascade/eastbay)",
       "Bash(/usr/local/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"recogni\" -g \"*.tsx\" -g \"*.ts\" -g \"*.md\" /mnt/c/Dev/Cascade/eastbay)",
       "Bash(/usr/local/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"optimiz\" -g \"*.tsx\" -g \"*.ts\" -g \"*.md\" /mnt/c/Dev/Cascade/eastbay)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Bash(touch:*)",
+      "Bash(rm:*)",
+      "Bash(diff:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   }

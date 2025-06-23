@@ -24,7 +24,7 @@ export default function FieldSchoolPage() {
           <div className="container text-center text-white">
             <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">East Wear Bay Field School</h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg md:text-xl">
-              Learn archaeological techniques while helping to preserve a Roman villa threatened by coastal erosion
+              Learn fieldwork skills while helping to preserve an internationally significant archaeological site threatened by coastal erosion.
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function FieldSchoolPage() {
           <div className="mb-12 rounded-lg border bg-card p-6 shadow-sm md:p-8">
             <h2 className="text-2xl font-bold">2025 Field School Sessions</h2>
             <p className="mt-2 text-muted-foreground">
-              Join our internationally recognised field school for hands-on archaeological experience at the Folkestone Roman Villa site
+              We are not taking bookings for 2025. Please check back for 2026 field school opportunities.
             </p>
 
             <div className="mt-6 grid gap-6">
@@ -46,12 +46,12 @@ export default function FieldSchoolPage() {
                     <h3 className="text-xl font-medium">Summer Session</h3>
                     <p className="text-sm text-muted-foreground">For university students and adult learners</p>
                   </div>
-                  <Link
-                    href="/field-school/apply"
-                    className="mt-3 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 sm:mt-0"
+                  <button
+                    disabled
+                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
                   >
-                    Apply now
-                  </Link>
+                    Applications Closed
+                  </button>
                 </div>
 
                 <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
@@ -89,12 +89,12 @@ export default function FieldSchoolPage() {
                     <h3 className="text-xl font-medium">Community Weekend Program</h3>
                     <p className="text-sm text-muted-foreground">For local residents and beginners</p>
                   </div>
-                  <Link
-                    href="/field-school/apply"
-                    className="mt-3 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 sm:mt-0"
+                  <button
+                    disabled
+                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
                   >
-                    Apply now
-                  </Link>
+                    Applications Closed
+                  </button>
                 </div>
 
                 <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
@@ -132,12 +132,12 @@ export default function FieldSchoolPage() {
                     <h3 className="text-xl font-medium">Youth Field School</h3>
                     <p className="text-sm text-muted-foreground">For students aged 16-18</p>
                   </div>
-                  <Link
-                    href="/field-school/apply"
-                    className="mt-3 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 sm:mt-0"
+                  <button
+                    disabled
+                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
                   >
-                    Apply now
-                  </Link>
+                    Applications Closed
+                  </button>
                 </div>
 
                 <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
@@ -306,11 +306,11 @@ export default function FieldSchoolPage() {
 
               <div className="rounded-lg border bg-card p-5">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 2v14c0 1.25.75 2 2 2h16c1.25 0 2-.75 2-2v-5c0-1.25-.75-2-2-2h-4"></path><path d="M14 2h4c1.25 0 2 .75 2 2v5c0 1.25-.75 2-2 2h-4"></path></svg>
                 </div>
-                <h3 className="text-lg font-medium">Digital Archaeology</h3>
+                <h3 className="text-lg font-medium">Environmental Processing</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Introduction to digital recording, 3D modeling, and documentation technologies used in modern archaeology.
+                  Learn flotation techniques and environmental sampling methods to recover ancient plant remains and other environmental evidence.
                 </p>
               </div>
             </div>

@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { GeistSans, GeistMono } from 'geist/font';
 import { ThemeProvider } from '@/components/theme-provider';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/NavbarBroken';
 import Footer from '@/components/Footer';
 import { CanonicalLink } from '@/components/SEO/CanonicalLink';
 import { GoogleAnalytics } from '@/components/SEO/GoogleAnalytics';
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   applicationName: 'East Wear Bay Project',
   authors: [{ name: 'East Wear Bay Project Team' }],
-  keywords: ['archaeology', 'Folkestone Roman Villa', '3D artifacts', 'community archaeology', 'digital preservation', 'coastal erosion', 'heritage', 'East Wear Bay'],
+  keywords: ['archaeology', 'Folkestone Roman Villa', '3D artefacts', 'community archaeology', 'digital preservation', 'coastal erosion', 'heritage', 'East Wear Bay'],
   creator: 'East Wear Bay Project',
   publisher: 'East Wear Bay Project',
 };

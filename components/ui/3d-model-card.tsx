@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ModelViewer } from '@/components/ui/ModelViewer'
 import { ArrowRight, Maximize, Minimize } from 'lucide-react'
 
-interface ArtifactCardProps {
+interface ArtefactCardProps {
   id: string
   title: string
   period: string
@@ -19,7 +19,7 @@ interface ArtifactCardProps {
   expanded?: boolean
 }
 
-export function ArtifactCard({
+export function ArtefactCard({
   id,
   title,
   period,
@@ -28,7 +28,7 @@ export function ArtifactCard({
   imageUrl,
   slug,
   expanded = false,
-}: ArtifactCardProps) {
+}: ArtefactCardProps) {
   const [isExpanded, setIsExpanded] = useState(expanded)
 
   return (
@@ -80,7 +80,7 @@ export function ArtifactCard({
       </CardContent>
       
       <CardFooter className="p-4 pt-0">
-        <Link href={`/artifacts/${slug}`}>
+        <Link href={`/artefacts/${slug}`}>
           <Button variant="outline" size="sm" className="gap-1">
             View details <ArrowRight className="h-3.5 w-3.5" />
           </Button>

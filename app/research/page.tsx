@@ -55,91 +55,6 @@ export default function ResearchPage() {
           </div>
         </div>
         
-        {/* Research Themes */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold">Research Themes</h2>
-          
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div className="rounded-lg border bg-card shadow-sm">
-              <div className="relative h-40">
-                <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                  alt="Eroding cliff face at East Wear Bay showing archaeological layers"
-                  fill
-                  className="rounded-t-lg object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold">Coastal Heritage at Risk</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Investigating the impact of coastal erosion on archaeological sites and developing methodologies for recording heritage sites at risk.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/research/coastal-heritage"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View research
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="rounded-lg border bg-card shadow-sm">
-              <div className="relative h-40">
-                <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                  alt="Example of Roman villa architecture with floor plan overlaid"
-                  fill
-                  className="rounded-t-lg object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold">Romano-British Villa Economy</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Exploring the economic foundation, trade connections, and productive activities of Roman villas in southeast Britain.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/research/villa-economy"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View research
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="rounded-lg border bg-card shadow-sm">
-              <div className="relative h-40">
-                <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                  alt="Digital archaeology equipment scanning artifacts"
-                  fill
-                  className="rounded-t-lg object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold">Digital Preservation Methods</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Developing and evaluating digital techniques for archaeological recording, documentation, and virtual presentation.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/research/digital-methods"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View research
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Featured Publication */}
         <section className="mb-16">
           <div className="rounded-lg border bg-card shadow-sm">
@@ -216,7 +131,7 @@ export default function ResearchPage() {
         
         {/* Recent Publications */}
         <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold">Recent Publications</h2>
+          <h2 className="mb-6 text-2xl font-bold">Reports and Publications</h2>
           
           <div className="grid grid-cols-1 gap-6">
             {/* Publication 1 */}
@@ -468,7 +383,7 @@ export default function ResearchPage() {
               <div className="rounded-lg border bg-card p-5">
                 <h3 className="text-lg font-semibold">3D Models Archive</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Download 3D models of artifacts, architectural features, and site recordings from the East Wear Bay excavations.
+                  Download 3D models of artefacts, architectural features, and site recordings from the East Wear Bay excavations.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -527,60 +442,6 @@ export default function ResearchPage() {
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Research Collaboration */}
-        <section>
-          <h2 className="mb-6 text-2xl font-bold">Research Collaboration</h2>
-          
-          <div className="rounded-lg border bg-card p-6 md:p-8">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div>
-                <h3 className="text-xl font-semibold">Join Our Research Community</h3>
-                <p className="mt-3 text-muted-foreground">
-                  The East Wear Bay Project welcomes research collaboration with academic institutions, individual researchers, and heritage organizations.
-                </p>
-                
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="mt-1 h-4 w-4 text-primary" />
-                    <span className="text-muted-foreground">Access to excavation data and finds for research purposes</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="mt-1 h-4 w-4 text-primary" />
-                    <span className="text-muted-foreground">Opportunities for field research and specialist analysis</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="mt-1 h-4 w-4 text-primary" />
-                    <span className="text-muted-foreground">Support for PhD and Master's research projects</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="mt-1 h-4 w-4 text-primary" />
-                    <span className="text-muted-foreground">Collaborative funding applications for research grants</span>
-                  </li>
-                </ul>
-                
-                <div className="mt-6">
-                  <Link
-                    href="/research/collaborate"
-                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                  >
-                    Contact our research team
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-              
-              <div className="relative h-[300px] rounded-lg overflow-hidden">
-                <Image 
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
-                  alt="Research team collaborating on analysis of archaeological findings at East Wear Bay"
-                  fill
-                  className="object-cover"
-                />
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
   const slug = searchParams.get('slug');
-  const type = searchParams.get('type') || 'artifact';
+  const type = searchParams.get('type') || 'artefact';
   
   // Check the secret
   if (secret !== process.env.SANITY_PREVIEW_SECRET) {
@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
   let redirectUrl = '/';
   
   switch (type) {
-    case 'artifact':
+    case 'artefact':
       redirectUrl = `/digital-museum/${slug}`;
       break;
     case 'post':

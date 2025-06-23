@@ -1,5 +1,5 @@
 import page from './page';
-import artifact from './artifact';
+import artefact from './artefact';
 import post from './post';
 import event from './event';
 import teamMember from './teamMember';
@@ -15,7 +15,7 @@ import partner from './partner';
 // Import your schema types here
 export const schemaTypes = [
   page,
-  artifact,
+  artefact,
   post,
   event,
   teamMember,

@@ -2,19 +2,19 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { 
-  fetchAllArtifacts, 
-  fetchFeaturedArtifacts, 
-  searchArtifacts,
-  fetchArtifactsByPeriod,
-  fetchArtifactsByCategory
+  fetchAllArtefacts, 
+  fetchFeaturedArtefacts, 
+  searchArtefacts,
+  fetchArtefactsByPeriod,
+  fetchArtefactsByCategory
 } from '@/lib/sanity.unified';
-import ArtifactSearch from '@/components/ArtifactSearch';
-import ArtifactCard from '@/components/ArtifactCard';
-import FeaturedArtifact from '@/components/FeaturedArtifact';
+import ArtefactSearch from '@/components/ArtefactSearch';
+import ArtefactCard from '@/components/ArtefactCard';
+import FeaturedArtefact from '@/components/FeaturedArtefact';
 
 export const metadata: Metadata = {
-  title: 'Digital Museum | 3D Artifacts from the Folkestone Roman Villa',
-  description: 'Explore 3D digital models of artifacts discovered at the East Wear Bay Roman Villa, preserving these finds through digital technology before coastal erosion claims the site.',
+  title: 'Digital Museum | 3D Artefacts from the Folkestone Roman Villa',
+  description: 'Explore 3D digital models of artefacts discovered at the East Wear Bay Roman Villa, preserving these finds through digital technology before coastal erosion claims the site.',
 };
 
 // Revalidate page every hour
@@ -32,31 +32,31 @@ export default async function DigitalMuseumPage({
   const currentPage = Number(params?.page) || 1;
   const pageSize = 8;
   
-  // Fetch artifacts based on search/filter parameters
-  let artifacts;
+  // Fetch artefacts based on search/filter parameters
+  let artefacts;
   if (query) {
-    artifacts = await searchArtifacts(query);
+    artefacts = await searchArtefacts(query);
   } else if (period) {
-    artifacts = await fetchArtifactsByPeriod(period);
+    artefacts = await fetchArtefactsByPeriod(period);
   } else if (category) {
-    artifacts = await fetchArtifactsByCategory(category);
+    artefacts = await fetchArtefactsByCategory(category);
   } else {
-    artifacts = await fetchAllArtifacts();
+    artefacts = await fetchAllArtefacts();
   }
   
-  // Fetch featured artifacts for the featured section
-  const featuredArtifacts = await fetchFeaturedArtifacts();
-  const featuredArtifact = featuredArtifacts[0] || artifacts[0];
+  // Fetch featured artefacts for the featured section
+  const featuredArtefacts = await fetchFeaturedArtefacts();
+  const featuredArtefact = featuredArtefacts[0] || artefacts[0];
   
   // Pagination
-  const totalArtifacts = artifacts.length;
-  const totalPages = Math.ceil(totalArtifacts / pageSize);
-  const paginatedArtifacts = artifacts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const totalArtefacts = artefacts.length;
+  const totalPages = Math.ceil(totalArtefacts / pageSize);
+  const paginatedArtefacts = artefacts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   
   // Get all periods and categories for filters
-  const allArtifacts = await fetchAllArtifacts();
-  const allPeriods = Array.from(new Set(allArtifacts.map((artifact: any) => artifact.period).filter(Boolean))) as string[];
-  const allCategories = Array.from(new Set(allArtifacts.flatMap((artifact: any) => artifact.categories || []))) as string[];
+  const allArtefacts = await fetchAllArtefacts();
+  const allPeriods = Array.from(new Set(allArtefacts.map((artefact: any) => artefact.period).filter(Boolean))) as string[];
+  const allCategories = Array.from(new Set(allArtefacts.flatMap((artefact: any) => artefact.categories || []))) as string[];
   
   return (
     <>
@@ -65,8 +65,7 @@ export default async function DigitalMuseumPage({
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Digital Museum</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Explore 3D models of artifacts discovered at the Folkestone Roman Villa site,
-              digitally preserved as part of our race against coastal erosion.
+              Explore 3D models and photographs of artefacts discovered at East Wear Bay, digitally preserved as part of our race against coastal erosion.
             </p>
           </div>
         </div>
@@ -74,22 +73,22 @@ export default async function DigitalMuseumPage({
       
       <div className="container py-12">
         {/* Search and Filter */}
-        <ArtifactSearch periods={allPeriods} categories={allCategories} />
+        <ArtefactSearch periods={allPeriods} categories={allCategories} />
         
-        {/* Featured Artifact */}
-        {featuredArtifact && <FeaturedArtifact artifact={featuredArtifact} />}
+        {/* Featured Artefact */}
+        {featuredArtefact && <FeaturedArtefact artefact={featuredArtefact} />}
         
-        {/* Artifact Grid */}
+        {/* Artefact Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {paginatedArtifacts.map((artifact: any) => (
-            <ArtifactCard key={artifact._id} artifact={artifact} />
+          {paginatedArtefacts.map((artefact: any) => (
+            <ArtefactCard key={artefact._id} artefact={artefact} />
           ))}
         </div>
         
         {/* No Results */}
-        {paginatedArtifacts.length === 0 && (
+        {paginatedArtefacts.length === 0 && (
           <div className="my-12 text-center">
-            <h2 className="text-xl font-semibold">No artifacts found</h2>
+            <h2 className="text-xl font-semibold">No artefacts found</h2>
             <p className="mt-2 text-muted-foreground">
               Try adjusting your search or filter criteria.
             </p>

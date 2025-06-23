@@ -51,10 +51,10 @@ export const structure = (S: StructureBuilder) =>
                     .filter('_type == "homepageSection" && sectionId == "about"')
                 ),
               S.listItem()
-                .title('Featured Artifacts Section')
+                .title('Featured Artefacts Section')
                 .child(
                   S.documentTypeList('homepageSection')
-                    .title('Featured Artifacts Sections')
+                    .title('Featured Artefacts Sections')
                     .filter('_type == "homepageSection" && sectionId == "featured-artifacts"')
                 ),
               S.listItem()
@@ -90,19 +90,19 @@ export const structure = (S: StructureBuilder) =>
             .title('Digital Museum')
             .items([
               S.listItem()
-                .title('All Artifacts')
+                .title('All Artefacts')
                 .icon(FiArchive)
                 .child(
-                  S.documentTypeList('artifact')
-                    .title('All Artifacts')
+                  S.documentTypeList('artefact')
+                    .title('All Artefacts')
                 ),
               S.listItem()
-                .title('Featured Artifacts')
+                .title('Featured Artefacts')
                 .icon(FiStar)
                 .child(
-                  S.documentTypeList('artifact')
-                    .title('Featured Artifacts')
-                    .filter('_type == "artifact" && featured == true')
+                  S.documentTypeList('artefact')
+                    .title('Featured Artefacts')
+                    .filter('_type == "artefact" && featured == true')
                 ),
               S.divider(),
               // Group by period
@@ -110,20 +110,20 @@ export const structure = (S: StructureBuilder) =>
                 .title('By Period')
                 .icon(FiLayers)
                 .child(
-                  S.documentTypeList('artifact')
+                  S.documentTypeList('artefact')
                     .title('Select Period')
                     .menuItems([
                       S.menuItem()
                         .title('Group by Period')
                         .icon(FiLayers)
                         .action(() => {
-                          // This will group artifacts by period
-                          return S.documentTypeList('artifact')
-                            .title('Artifacts by Period')
+                          // This will group artefacts by period
+                          return S.documentTypeList('artefact')
+                            .title('Artefacts by Period')
                             .child(id => 
                               S.documentList()
-                                .title('Artifacts')
-                                .filter('_type == "artifact" && period == $period')
+                                .title('Artefacts')
+                                .filter('_type == "artefact" && period == $period')
                                 .params({ period: id })
                             );
                         })
@@ -213,6 +213,6 @@ export const structure = (S: StructureBuilder) =>
       
       // Show the rest of the document types
       ...S.documentTypeListItems().filter(
-        listItem => !['homepageSection', 'artifact', 'post', 'event', 'educationResource', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
+        listItem => !['homepageSection', 'artefact', 'post', 'event', 'educationResource', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
       ),
     ]);

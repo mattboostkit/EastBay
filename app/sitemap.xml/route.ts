@@ -12,7 +12,7 @@ export async function GET() {
     { url: '/', lastModified: new Date().toISOString() },
     { url: '/contact', lastModified: new Date().toISOString() },
     { url: '/team', lastModified: new Date().toISOString() },
-    { url: '/artifacts', lastModified: new Date().toISOString() },
+    { url: '/artefacts', lastModified: new Date().toISOString() },
     { url: '/research', lastModified: new Date().toISOString() },
     { url: '/events', lastModified: new Date().toISOString() },
     { url: '/education', lastModified: new Date().toISOString() },
@@ -26,9 +26,9 @@ export async function GET() {
   try {
     // Check if Sanity client is properly configured
     if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-      // Fetch artifacts
-      const artifacts = await client.fetch(`
-        *[_type == "artifact"] {
+      // Fetch artefacts
+      const artefacts = await client.fetch(`
+        *[_type == "artefact"] {
           "slug": slug.current,
           _updatedAt
         }
@@ -60,8 +60,8 @@ export async function GET() {
       
       // Transform fetched content into sitemap entries
       dynamicPages = [
-        ...artifacts.map((item: any) => ({
-          url: `/artifacts/${item.slug}`,
+        ...artefacts.map((item: any) => ({
+          url: `/artefacts/${item.slug}`,
           lastModified: item._updatedAt,
         })),
         ...posts.map((item: any) => ({

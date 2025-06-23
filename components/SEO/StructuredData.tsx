@@ -99,8 +99,8 @@ export function BreadcrumbStructuredData({ items }: { items: Array<{ name: strin
   );
 }
 
-// Artifact structured data component
-export function ArtifactStructuredData({ 
+// Artefact structured data component
+export function ArtefactStructuredData({ 
   name, 
   description, 
   image, 
@@ -123,7 +123,7 @@ export function ArtifactStructuredData({
 }) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
   
-  const artifactData = {
+  const artefactData = {
     '@context': 'https://schema.org',
     '@type': 'VisualArtwork',
     name,
@@ -155,7 +155,7 @@ export function ArtifactStructuredData({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(artifactData) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(artefactData) }}
     />
   );
 }

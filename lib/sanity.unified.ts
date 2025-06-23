@@ -60,7 +60,7 @@ export async function fetchPaginated(type: string, start: number, end: number) {
 export async function search(query: string) {
   return client.fetch(`
     *[
-      _type in ["artifact", "post", "event", "researchPublication"] &&
+      _type in ["artefact", "post", "event", "researchPublication"] &&
       (title match "${query}*" || 
        description match "${query}*" || 
        body match "${query}*")
@@ -74,31 +74,31 @@ export async function search(query: string) {
   `);
 }
 
-// Artifact-specific utility functions
-export async function fetchAllArtifacts() {
-  return client.fetch(`*[_type == "artifact"] | order(_createdAt desc)`);
+// Artefact-specific utility functions
+export async function fetchAllArtefacts() {
+  return client.fetch(`*[_type == "artefact"] | order(_createdAt desc)`);
 }
 
-export async function fetchFeaturedArtifacts() {
-  return client.fetch(`*[_type == "artifact" && featured == true] | order(_createdAt desc)[0...4]`);
+export async function fetchFeaturedArtefacts() {
+  return client.fetch(`*[_type == "artefact" && featured == true] | order(_createdAt desc)[0...4]`);
 }
 
-export async function fetchArtifactBySlug(slug: string) {
-  return client.fetch(`*[_type == "artifact" && slug.current == $slug][0]`, { slug });
+export async function fetchArtefactBySlug(slug: string) {
+  return client.fetch(`*[_type == "artefact" && slug.current == $slug][0]`, { slug });
 }
 
-export async function fetchArtifactsByPeriod(period: string) {
-  return client.fetch(`*[_type == "artifact" && period == $period] | order(_createdAt desc)`, { period });
+export async function fetchArtefactsByPeriod(period: string) {
+  return client.fetch(`*[_type == "artefact" && period == $period] | order(_createdAt desc)`, { period });
 }
 
-export async function fetchArtifactsByCategory(category: string) {
-  return client.fetch(`*[_type == "artifact" && $category in categories] | order(_createdAt desc)`, { category });
+export async function fetchArtefactsByCategory(category: string) {
+  return client.fetch(`*[_type == "artefact" && $category in categories] | order(_createdAt desc)`, { category });
 }
 
-export async function searchArtifacts(query: string) {
+export async function searchArtefacts(query: string) {
   const searchQuery = `*${query}*`;
   return client.fetch(`
-    *[_type == "artifact" && (
+    *[_type == "artefact" && (
       title match $searchQuery ||
       description match $searchQuery ||
       period match $searchQuery ||
@@ -114,6 +114,29 @@ export async function fetchAllPosts() {
 
 export async function fetchPostBySlug(slug: string) {
   return client.fetch(`*[_type == "post" && slug.current == $slug][0]`, { slug });
+}
+
+export async function searchPosts(query: string) {
+  const searchQuery = `*${query}*`;
+  return client.fetch(`
+    *[_type == "post" && (
+      title match $searchQuery ||
+      excerpt match $searchQuery ||
+      body[].children[].text match $searchQuery
+    )] | order(publishedAt desc)
+  `, { searchQuery });
+}
+
+export async function fetchPostsByCategory(category: string) {
+  return client.fetch(`*[_type == "post" && $category in categories] | order(publishedAt desc)`, { category });
+}
+
+export async function fetchPostsByYear(year: number) {
+  const startDate = `${year}-01-01`;
+  const endDate = `${year}-12-31`;
+  return client.fetch(`
+    *[_type == "post" && publishedAt >= $startDate && publishedAt <= $endDate] | order(publishedAt desc)
+  `, { startDate, endDate });
 }
 
 // Event-specific utility functions

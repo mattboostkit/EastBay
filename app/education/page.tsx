@@ -29,7 +29,7 @@ export default function EducationPage() {
             <div>
               <h2 className="text-2xl font-bold">School Visits</h2>
               <p className="mt-3 text-muted-foreground">
-                We offer a range of engaging educational visits for schools, providing students with hands-on experiences of archaeology and Roman history linked to the National Curriculum.
+                School visits are subject to funding availability. Please contact us to enquire about current opportunities for educational visits.
               </p>
               
               <div className="mt-6 space-y-4">
@@ -46,7 +46,7 @@ export default function EducationPage() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Visit the active excavation site at East Wear Bay and learn about the archaeological process, how artifacts are discovered, and what they tell us about Roman Britain. Available May-September.
+                    Visit the active excavation site at East Wear Bay and learn about the archaeological process, how artefacts are discovered, and what they tell us about Roman Britain. Available May-September.
                   </p>
                 </div>
                 
@@ -63,7 +63,7 @@ export default function EducationPage() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Combined site visit and museum workshop exploring daily life in Roman Britain. Includes handling real artifacts, trying on Roman clothing, and investigating the villa's layout and functions.
+                    Combined site visit and museum workshop exploring daily life in Roman Britain. Includes handling real artefacts, trying on Roman clothing, and investigating the villa's layout and functions.
                   </p>
                 </div>
                 
@@ -80,19 +80,16 @@ export default function EducationPage() {
                     </span>
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Learn how modern technology is used in archaeology. Students use tablets to document finds, explore 3D models of artifacts, and participate in a simulated digital excavation record.
+                    Learn how modern technology is used in archaeology. Students use tablets to document finds, explore 3D models of artefacts, and participate in a simulated digital excavation record.
                   </p>
                 </div>
               </div>
               
-              <div className="mt-6">
-                <Link 
-                  href="/education/school-visits"
-                  className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                >
-                  Book a school visit
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <div className="mt-6 p-4 rounded-lg bg-muted">
+                <p className="text-sm font-medium">Interested in school visits?</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Please email <a href="mailto:get_involved@canterburytrust.ac.uk" className="text-primary hover:underline">get_involved@canterburytrust.ac.uk</a> to enquire about availability.
+                </p>
               </div>
             </div>
             
@@ -172,7 +169,7 @@ export default function EducationPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Students learn how archaeologists use different types of evidence to understand the past. Includes artifact identification exercises and interpretation activities.
+                  Students learn how archaeologists use different types of evidence to understand the past. Includes artefact identification exercises and interpretation activities.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -209,7 +206,7 @@ export default function EducationPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Explore Roman trade networks and East Wear Bay's role in cross-channel commerce. Includes maps, artifact cards, and a trade simulation game.
+                  Explore Roman trade networks and East Wear Bay's role in cross-channel commerce. Includes maps, artefact cards, and a trade simulation game.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -234,7 +231,7 @@ export default function EducationPage() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-lg font-bold">Digital Artifact Lab</h3>
+                <h3 className="text-lg font-bold">Digital Artefact Lab</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                     <Users className="mr-1 h-3 w-3" />
@@ -250,7 +247,7 @@ export default function EducationPage() {
                 </p>
                 <div className="mt-4">
                   <Link
-                    href="/education/digital-artifact-lab"
+                    href="/education/digital-artefact-lab"
                     className="inline-flex items-center text-sm font-medium text-primary"
                   >
                     Access online resource
@@ -346,46 +343,24 @@ export default function EducationPage() {
           </div>
         </section>
         
-        {/* For Educators */}
+        {/* CAT Box Loans */}
         <section className="mb-16">
           <div className="rounded-lg bg-muted p-8">
-            <h2 className="text-2xl font-bold">For Educators</h2>
+            <h2 className="text-2xl font-bold">CAT Box Loans Collection</h2>
             <p className="mt-3 text-muted-foreground">
-              We offer continuing professional development (CPD) opportunities for teachers interested in incorporating archaeology and local heritage into their teaching.
+              Canterbury Archaeological Trust offers a loan service of archaeological handling boxes for schools. These educational resources bring real and replica artefacts directly to your classroom.
             </p>
             
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="rounded-lg border bg-card p-5">
-                <h3 className="text-lg font-semibold">Teacher Training Workshops</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Practical sessions on teaching archaeology in the classroom, using archaeological evidence to support curriculum learning, and incorporating digital heritage resources.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/education/teacher-training"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View upcoming sessions
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-              
-              <div className="rounded-lg border bg-card p-5">
-                <h3 className="text-lg font-semibold">Educational Consultations</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Our education specialists can provide customised advice on developing archaeology and heritage projects tailored to your curriculum needs and student interests.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/education/consultations"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Request a consultation
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
+            <div className="mt-6">
+              <a
+                href="https://www.canterburytrust.co.uk/copy-of-cat-box-loans-collection-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+              >
+                Explore the CAT Box Loans Collection
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>

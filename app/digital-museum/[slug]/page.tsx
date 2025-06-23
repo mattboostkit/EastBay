@@ -1,43 +1,43 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { fetchAllArtifacts, fetchArtifactBySlug } from '@/lib/sanity.unified';
-import ArtifactDetail from '@/components/ArtifactDetail';
+import { fetchAllArtefacts, fetchArtefactBySlug } from '@/lib/sanity.unified';
+import ArtefactDetail from '@/components/ArtefactDetail';
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const artifact = await fetchArtifactBySlug(params.slug);
+  const artefact = await fetchArtefactBySlug(params.slug);
   
-  if (!artifact) {
+  if (!artefact) {
     return {
-      title: 'Artifact Not Found',
+      title: 'Artefact Not Found',
     };
   }
   
   return {
-    title: `${artifact.title} | Digital Museum`,
-    description: artifact.description || `View details and 3D model of ${artifact.title} from the Folkestone Roman Villa archaeological site.`,
+    title: `${artefact.title} | Digital Museum`,
+    description: artefact.description || `View details and 3D model of ${artefact.title} from the Folkestone Roman Villa archaeological site.`,
   };
 }
 
-// Generate static paths for all artifacts
+// Generate static paths for all artefacts
 export async function generateStaticParams() {
-  const artifacts = await fetchAllArtifacts();
+  const artefacts = await fetchAllArtefacts();
   
-  return artifacts.map((artifact: any) => ({
-    slug: artifact.slug.current,
+  return artefacts.map((artefact: any) => ({
+    slug: artefact.slug.current,
   }));
 }
 
-export default async function ArtifactPage({ params }: { params: { slug: string } }) {
-  const artifact = await fetchArtifactBySlug(params.slug);
+export default async function ArtefactPage({ params }: { params: { slug: string } }) {
+  const artefact = await fetchArtefactBySlug(params.slug);
   
-  if (!artifact) {
+  if (!artefact) {
     notFound();
   }
   
   return (
     <div className="container mx-auto py-8 px-4">
-      <ArtifactDetail artifact={artifact} />
+      <ArtefactDetail artefact={artefact} />
     </div>
   );
 }

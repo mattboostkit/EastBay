@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { GeistSans, GeistMono } from 'geist/font';
 import { ThemeProvider } from '@/components/theme-provider';
-import Navbar from '@/components/NavbarBroken';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CanonicalLink } from '@/components/SEO/CanonicalLink';
 import { GoogleAnalytics } from '@/components/SEO/GoogleAnalytics';

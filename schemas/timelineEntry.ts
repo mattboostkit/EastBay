@@ -24,6 +24,7 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: 'Timeline image - Recommended dimensions: 800×600px (4:3 aspect ratio)',
       options: {
         hotspot: true,
       },

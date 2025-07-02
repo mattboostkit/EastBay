@@ -17,13 +17,14 @@ const navigationGroups = [
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
       { title: 'News & Updates', href: '/blog' },
+      { title: 'Project Timeline', href: '/timeline' },
     ]
   },
   {
     title: "Learn",
     items: [
       { title: 'Education Resources', href: '/education' },
-      { title: 'Research & Publications', href: '/research' },
+      { title: 'Research & Publications', href: '/research/publications' },
     ]
   },
   {

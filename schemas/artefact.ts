@@ -31,6 +31,7 @@ export default {
       of: [
         {
           type: 'image',
+          description: 'Main images: 1200×800px (3:2 aspect ratio), Gallery thumbnails: 400×300px (4:3 aspect ratio)',
           options: {
             hotspot: true, // Enables better cropping control
           },

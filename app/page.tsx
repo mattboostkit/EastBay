@@ -5,7 +5,8 @@ import { ArrowRight } from 'lucide-react';
 import { ArtefactStructuredData, EventStructuredData } from '@/components/SEO/StructuredData';
 import ArtefactCard from '@/components/ArtefactCard';
 import { urlForImage } from '@/lib/sanity.unified';
-import { fetchFeaturedArtefacts, fetchAllHomepageSections } from '@/lib/sanity.unified';
+import { fetchFeaturedArtefacts, fetchAllHomepageSections, fetchAllVideos } from '@/lib/sanity.unified';
+import { urlFor } from '@/lib/sanity.client';
 
 export const metadata: Metadata = {
   title: 'East Wear Bay Project | Preserving Folkestone\'s Archaeological Heritage',
@@ -21,6 +22,9 @@ export default async function Home() {
   
   // Fetch homepage sections from Sanity (for images only)
   const sections = await fetchAllHomepageSections();
+  
+  // Fetch videos
+  const videos = await fetchAllVideos();
   
   // Find specific sections by their IDs
   const heroSection = sections.find((section: any) => section.sectionId === 'hero');
@@ -377,6 +381,65 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Videos Section */}
+      {videos && videos.length > 0 && (
+        <section className="py-16 md:py-24" aria-labelledby="videos-heading">
+          <div className="container">
+            <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end mb-8">
+              <div>
+                <h2 id="videos-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+                  Watch Our Work
+                </h2>
+                <p className="mt-2 text-lg text-muted-foreground md:text-xl">
+                  Videos from our excavations and educational content
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {videos.slice(0, 2).map((video: any) => (
+                <div key={video._id} className="rounded-lg border bg-card overflow-hidden">
+                  {video.thumbnail && (
+                    <div className="relative h-48 w-full">
+                      <Image
+                        src={urlFor(video.thumbnail).width(800).height(450).url()}
+                        alt={video.thumbnail.alt || video.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                        <div className="rounded-full bg-white p-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="font-semibold mb-2">{video.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{video.description}</p>
+                    {video.duration && (
+                      <p className="text-sm text-muted-foreground">
+                        Duration: {video.duration}
+                      </p>
+                    )}
+                    {video.externalVideo && (
+                      <a 
+                        href={video.externalVideo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-primary hover:underline mt-4"
+                      >
+                        Watch on {video.externalVideo.includes('youtube') ? 'YouTube' : 'Vimeo'}
+                        <ArrowRight className="ml-1 h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Onsite Blog Section */}
       <section className="bg-muted py-16 md:py-24" aria-labelledby="blog-heading">

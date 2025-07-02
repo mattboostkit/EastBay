@@ -28,6 +28,7 @@ export default {
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
+      description: 'Recommended dimensions: 800×600px (4:3 aspect ratio)',
       options: {
         hotspot: true,
       },
@@ -83,6 +84,7 @@ export default {
               name: 'image',
               title: 'Image',
               type: 'image',
+              description: 'Speaker photo - Recommended dimensions: 256×256px (1:1 aspect ratio, square)',
               options: {
                 hotspot: true,
               },
@@ -99,6 +101,7 @@ export default {
         { type: 'block' },
         {
           type: 'image',
+          description: 'Inline images - Recommended dimensions: 800×600px (4:3 aspect ratio)',
           fields: [
             {
               name: 'alt',

@@ -46,7 +46,7 @@ export async function fetchPaginated(type: string, start: number, end: number) {
 export async function search(query: string) {
   return client.fetch(`
     *[
-      _type in ["artifact", "post", "event", "researchPublication"] &&
+      _type in ["artefact", "post", "event", "researchPublication"] &&
       (title match "${query}*" || 
        description match "${query}*" || 
        body match "${query}*")

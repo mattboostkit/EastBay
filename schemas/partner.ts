@@ -24,7 +24,7 @@ export default {
       options: {
         hotspot: true,
       },
-      description: 'Partner logo (preferably PNG with transparent background)',
+      description: 'Partner logo - Recommended dimensions: 400×200px (2:1 aspect ratio, PNG with transparent background)',
     },
     {
       name: 'website',

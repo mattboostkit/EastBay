@@ -171,3 +171,34 @@ export async function fetchHomepageSectionById(sectionId: string) {
 export async function fetchHomepageSectionsByIds(sectionIds: string[]) {
   return client.fetch(`*[_type == "homepageSection" && sectionId in $sectionIds] | order(order asc)`, { sectionIds });
 }
+
+// Timeline entry utility functions
+export async function fetchAllTimelineEntries() {
+  return client.fetch(`*[_type == "timelineEntry"] | order(date asc)`);
+}
+
+export async function fetchTimelineEntriesByCategory(category: string) {
+  return client.fetch(`*[_type == "timelineEntry" && category == $category] | order(date asc)`, { category });
+}
+
+export async function fetchMajorTimelineEntries() {
+  return client.fetch(`*[_type == "timelineEntry" && isMajor == true] | order(date asc)`);
+}
+
+// Testimonial utility functions
+export async function fetchAllTestimonials() {
+  return client.fetch(`*[_type == "testimonial"] | order(order asc, _createdAt desc)`);
+}
+
+export async function fetchFeaturedTestimonials() {
+  return client.fetch(`*[_type == "testimonial" && featured == true] | order(order asc, _createdAt desc)`);
+}
+
+// Video utility functions
+export async function fetchAllVideos() {
+  return client.fetch(`*[_type == "video"] | order(_createdAt desc)`);
+}
+
+export async function fetchVideosByCategory(category: string) {
+  return client.fetch(`*[_type == "video" && $category in categories] | order(_createdAt desc)`, { category });
+}

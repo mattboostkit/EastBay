@@ -29,6 +29,7 @@ export default {
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
+      description: 'Featured image - Recommended dimensions: 800×600px (4:3 aspect ratio)',
       options: {
         hotspot: true,
       },
@@ -68,6 +69,7 @@ export default {
         { type: 'block' },
         {
           type: 'image',
+          description: 'Inline images - Recommended dimensions: 800×600px (4:3 aspect ratio)',
           fields: [
             {
               name: 'alt',

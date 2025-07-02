@@ -43,6 +43,7 @@ export default {
         name: 'thumbnail',
         title: 'Thumbnail',
         type: 'image',
+        description: 'Video thumbnail - Recommended dimensions: 1920×1080px (16:9 aspect ratio)',
         options: {
           hotspot: true,
         },

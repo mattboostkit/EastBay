@@ -47,7 +47,12 @@
       "Bash(touch:*)",
       "Bash(rm:*)",
       "Bash(diff:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(npx:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(pnpm seed:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm install:*)"
     ],
     "deny": []
   }

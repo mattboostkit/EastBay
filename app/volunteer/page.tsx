@@ -1,14 +1,21 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Users, Calendar, Clock, Heart, MapPin, Award } from 'lucide-react'
+import { ArrowRight, Users, Calendar, Clock, Heart, MapPin, Award, Star } from 'lucide-react'
+import { fetchAllTestimonials } from '@/lib/sanity.unified'
+import { urlFor } from '@/lib/sanity.client'
 
 export const metadata: Metadata = {
   title: 'Volunteer | East Wear Bay Archaeological Project',
   description: 'Join our volunteer team and help preserve East Wear Bay\'s archaeological heritage. No experience necessary - full training provided.',
 }
 
-export default function VolunteerPage() {
+export default async function VolunteerPage() {
+  const testimonials = await fetchAllTestimonials()
+  const volunteerTestimonials = testimonials?.filter((t: any) => 
+    t.position?.toLowerCase().includes('volunteer') || 
+    t.organization?.toLowerCase().includes('volunteer')
+  )
   return (
     <>
       <div className="relative h-[50vh] overflow-hidden">
@@ -264,31 +271,76 @@ export default function VolunteerPage() {
           <section>
             <h2 className="mb-8 text-2xl font-bold">Volunteer Stories</h2>
             
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <blockquote className="rounded-lg border bg-card p-6">
-                <p className="italic text-muted-foreground">
-                  "Volunteering at East Wear Bay has been life-changing. I've learned so much about archaeology, 
-                  made wonderful friends, and feel proud to be helping save this important site. The team is so 
-                  welcoming - I felt part of the family from day one."
-                </p>
-                <footer className="mt-4">
-                  <p className="font-medium">Sarah Mitchell</p>
-                  <p className="text-sm text-muted-foreground">Volunteer since 2021</p>
-                </footer>
-              </blockquote>
-              
-              <blockquote className="rounded-lg border bg-card p-6">
-                <p className="italic text-muted-foreground">
-                  "As a retiree, I wanted to stay active and contribute to my community. Working on the excavations 
-                  has given me a new lease of life. Every day brings new discoveries, and I'm constantly learning. 
-                  It's never too late to try archaeology!"
-                </p>
-                <footer className="mt-4">
-                  <p className="font-medium">David Thompson</p>
-                  <p className="text-sm text-muted-foreground">Volunteer since 2019</p>
-                </footer>
-              </blockquote>
-            </div>
+            {volunteerTestimonials && volunteerTestimonials.length > 0 ? (
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {volunteerTestimonials.slice(0, 2).map((testimonial: any) => (
+                  <blockquote key={testimonial._id} className="rounded-lg border bg-card p-6">
+                    {testimonial.rating && (
+                      <div className="flex gap-1 mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < testimonial.rating
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                    <p className="italic text-muted-foreground">
+                      "{testimonial.quote}"
+                    </p>
+                    <footer className="mt-4 flex items-center gap-3">
+                      {testimonial.image && (
+                        <div className="relative h-10 w-10 rounded-full overflow-hidden">
+                          <Image
+                            src={urlFor(testimonial.image).width(80).height(80).url()}
+                            alt={testimonial.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
+                      <div>
+                        <p className="font-medium">{testimonial.name}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.position}
+                          {testimonial.organization && `, ${testimonial.organization}`}
+                        </p>
+                      </div>
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <blockquote className="rounded-lg border bg-card p-6">
+                  <p className="italic text-muted-foreground">
+                    "Volunteering at East Wear Bay has been life-changing. I've learned so much about archaeology, 
+                    made wonderful friends, and feel proud to be helping save this important site. The team is so 
+                    welcoming - I felt part of the family from day one."
+                  </p>
+                  <footer className="mt-4">
+                    <p className="font-medium">Sarah Mitchell</p>
+                    <p className="text-sm text-muted-foreground">Volunteer since 2021</p>
+                  </footer>
+                </blockquote>
+                
+                <blockquote className="rounded-lg border bg-card p-6">
+                  <p className="italic text-muted-foreground">
+                    "As a retiree, I wanted to stay active and contribute to my community. Working on the excavations 
+                    has given me a new lease of life. Every day brings new discoveries, and I'm constantly learning. 
+                    It's never too late to try archaeology!"
+                  </p>
+                  <footer className="mt-4">
+                    <p className="font-medium">David Thompson</p>
+                    <p className="text-sm text-muted-foreground">Volunteer since 2019</p>
+                  </footer>
+                </blockquote>
+              </div>
+            )}
           </section>
         </div>
       </div>

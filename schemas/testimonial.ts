@@ -23,6 +23,7 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: 'Recommended dimensions: 96×96px (1:1 aspect ratio, square)',
       options: {
         hotspot: true,
       },

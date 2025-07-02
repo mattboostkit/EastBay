@@ -30,6 +30,7 @@ export default {
       name: 'backgroundImage',
       title: 'Background Image',
       type: 'image',
+      description: 'Recommended dimensions: 1920×1080px (16:9 aspect ratio)',
       options: {
         hotspot: true,
       },
@@ -47,6 +48,7 @@ export default {
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
+      description: 'Recommended dimensions: 800×600px (4:3 aspect ratio)',
       options: {
         hotspot: true,
       },
@@ -104,6 +106,7 @@ export default {
               name: 'image',
               title: 'Image',
               type: 'image',
+              description: 'Recommended dimensions: 800×400px (2:1 aspect ratio)',
               options: {
                 hotspot: true,
               },

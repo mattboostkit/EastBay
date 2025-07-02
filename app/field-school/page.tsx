@@ -1,14 +1,17 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, Clock, MapPin, Users, Sparkles, ArrowRight, School, Award } from 'lucide-react'
+import { Calendar, Clock, MapPin, Users, Sparkles, ArrowRight, School, Award, Star } from 'lucide-react'
+import { fetchFeaturedTestimonials } from '@/lib/sanity.unified'
+import { urlFor } from '@/lib/sanity.client'
 
 export const metadata: Metadata = {
   title: 'Field School | East Wear Bay Archaeological Project',
   description: 'Join our archaeological field school at the Folkestone Roman Villa site and gain hands-on excavation experience while helping preserve a heritage site threatened by coastal erosion.',
 }
 
-export default function FieldSchoolPage() {
+export default async function FieldSchoolPage() {
+  const testimonials = await fetchFeaturedTestimonials()
   return (
     <>
       <div className="relative h-[50vh] overflow-hidden">
@@ -553,6 +556,55 @@ export default function FieldSchoolPage() {
               </Link>
             </div>
           </div>
+
+          {/* Testimonials Section */}
+          {testimonials && testimonials.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">What Past Participants Say</h2>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {testimonials.map((testimonial: any) => (
+                  <div key={testimonial._id} className="rounded-lg border bg-card p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      {testimonial.image && (
+                        <div className="relative h-12 w-12 rounded-full overflow-hidden">
+                          <Image
+                            src={urlFor(testimonial.image).width(96).height(96).url()}
+                            alt={testimonial.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
+                      <div>
+                        <p className="font-semibold">{testimonial.name}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.position}
+                          {testimonial.organization && `, ${testimonial.organization}`}
+                        </p>
+                      </div>
+                    </div>
+                    {testimonial.rating && (
+                      <div className="flex gap-1 mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < testimonial.rating
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                    <p className="text-sm text-muted-foreground italic">
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Apply Now CTA */}
           <div className="rounded-lg bg-primary p-8 text-primary-foreground">

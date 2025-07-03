@@ -16,7 +16,7 @@ const navigationGroups = [
       { title: 'Home', href: '/' },
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
-      { title: 'News & Updates', href: '/blog' },
+      { title: 'News & Blog', href: '/blog' },
       { title: 'Project Timeline', href: '/timeline' },
     ]
   },

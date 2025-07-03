@@ -30,7 +30,7 @@ export default async function PublicationsPage() {
       <div className="bg-muted py-12 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research Publications</h1>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research & Publications</h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain.
             </p>
@@ -62,7 +62,7 @@ export default async function PublicationsPage() {
 
         {/* Publications List */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Recent Publications</h2>
+          <h2 className="text-2xl font-bold mb-8">Reports and Publications</h2>
           
           {publications && publications.length > 0 ? (
             <div className="space-y-6">

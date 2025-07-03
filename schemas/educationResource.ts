@@ -54,11 +54,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Elementary (6-10)', value: 'elementary' },
-          { title: 'Middle School (11-13)', value: 'middle-school' },
-          { title: 'High School (14-18)', value: 'high-school' },
+          { title: 'Primary School (5-11)', value: 'elementary' },
+          { title: 'Secondary School (12-16)', value: 'middle-school' },
+          { title: 'Sixth Form (17-18)', value: 'high-school' },
           { title: 'Undergraduate', value: 'undergraduate' },
-          { title: 'Graduate', value: 'graduate' },
+          { title: 'Postgraduate', value: 'graduate' },
           { title: 'Adult/Continuing Education', value: 'adult' },
         ],
       },

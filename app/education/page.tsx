@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
   title: 'Education Resources | East Wear Bay Archaeological Project',
-  description: 'Educational materials, learning resources, and school visit information for teachers and students exploring the Folkestone Roman Villa archaeology site.',
+  description: 'Educational materials, learning resources, and school visit information for teachers and pupils exploring the Folkestone Roman Villa archaeology site.',
 }
 
 const resourceTypeIcons = {
@@ -22,11 +22,11 @@ const resourceTypeIcons = {
 }
 
 const ageGroupLabels = {
-  'elementary': 'Elementary (6-10)',
-  'middle-school': 'Middle School (11-13)',
-  'high-school': 'High School (14-18)',
+  'elementary': 'Primary School (5-11)',
+  'middle-school': 'Secondary School (12-16)',
+  'high-school': 'Sixth Form (17-18)',
   'undergraduate': 'Undergraduate',
-  'graduate': 'Graduate',
+  'graduate': 'Postgraduate',
   'adult': 'Adult/Continuing Education',
 }
 
@@ -61,7 +61,7 @@ export default async function EducationPage() {
                 <div className="mt-3 flex flex-wrap gap-2">
                   <Badge variant="secondary">
                     <Users className="mr-1 h-3 w-3" />
-                    KS2-KS3
+                    KS2-KS4
                   </Badge>
                   <Badge variant="secondary">
                     <Clock className="mr-1 h-3 w-3" />
@@ -69,7 +69,7 @@ export default async function EducationPage() {
                   </Badge>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Visit the active excavation site at East Wear Bay and learn about the archaeological process, how artefacts are discovered, and what they tell us about Roman Britain. Available May-September.
+                  Visit the active excavation site at East Wear Bay and learn about the archaeological process, how artefacts are discovered, and what they tell us about Roman Britain. Suitable for Key Stage 2-4 pupils. Available May-September.
                 </p>
               </div>
               
@@ -78,7 +78,7 @@ export default async function EducationPage() {
                 <div className="mt-3 flex flex-wrap gap-2">
                   <Badge variant="secondary">
                     <Users className="mr-1 h-3 w-3" />
-                    KS2-KS4
+                    KS2-KS5
                   </Badge>
                   <Badge variant="secondary">
                     <Clock className="mr-1 h-3 w-3" />
@@ -86,7 +86,7 @@ export default async function EducationPage() {
                   </Badge>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Hands-on workshops where students can handle real artefacts, try archaeological techniques, and learn about Roman life. Can be delivered at your school or on-site.
+                  Hands-on workshops where pupils can handle real artefacts, try archaeological techniques, and learn about Roman life. Can be delivered at your school or on-site. Tailored for different key stages.
                 </p>
               </div>
             </div>
@@ -177,17 +177,28 @@ export default async function EducationPage() {
         {/* Contact Section */}
         <section className="mt-16">
           <div className="rounded-lg border bg-muted/50 p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Book a School Visit</h2>
+            <h2 className="text-2xl font-bold mb-4">Make an Enquiry</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               To arrange a school visit or educational workshop, please contact our Education Officer who will be happy to discuss your requirements and availability.
             </p>
-            <Link 
-              href="/contact?subject=education"
-              className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-            >
-              Contact Education Team
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Contact Us
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <a 
+                href="https://www.canterburytrust.co.uk/copy-of-cat-box-loans-collection-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Loan a CAT Box
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </div>
           </div>
         </section>
       </div>

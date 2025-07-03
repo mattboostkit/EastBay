@@ -15,7 +15,8 @@ interface PageParams {
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const page = await fetchBySlug('page', params.slug)
+  const { slug } = await params
+  const page = await fetchBySlug('page', slug)
   
   if (!page) {
     return {
@@ -48,12 +49,14 @@ const reservedRoutes = [
 ]
 
 export default async function DynamicPage({ params }: PageParams) {
+  const { slug } = await params
+  
   // Skip if this is a reserved route
-  if (reservedRoutes.includes(params.slug)) {
+  if (reservedRoutes.includes(slug)) {
     notFound()
   }
   
-  const page = await fetchBySlug('page', params.slug)
+  const page = await fetchBySlug('page', slug)
   
   if (!page) {
     notFound()

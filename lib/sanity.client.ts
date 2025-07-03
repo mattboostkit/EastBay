@@ -16,6 +16,9 @@ export function urlForImage(source: any) {
   return source ? builder.image(source) : null;
 }
 
+// Export urlFor as an alias for backward compatibility
+export const urlFor = (source: any) => builder.image(source);
+
 // Helper function for videos
 export function getVideoUrl(video: any) {
   if (!video) return null;

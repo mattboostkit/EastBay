@@ -10,6 +10,7 @@ pnpm dev        # Start Next.js development server (http://localhost:3000)
 pnpm build      # Create production build
 pnpm start      # Start production server
 pnpm lint       # Run ESLint
+pnpm seed       # Seed Sanity database with sample data
 ```
 
 ### Package Management
@@ -96,6 +97,7 @@ Required for Sanity integration:
 - Server actions body size limit: 2MB
 - Standalone output mode for optimized deployments
 - No automated testing framework currently implemented
+- Note: The codebase uses both "artifact" and "artefact" spellings - "artefact" is used in Sanity schemas
 
 ### Important Configuration
 - **next.config.js**: Contains image domains, build settings, and optimization flags

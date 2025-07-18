@@ -13,10 +13,11 @@ const navigationGroups = [
   {
     title: "Explore",
     items: [
-      { title: 'Home', href: '/' },
+      { title: 'Explore', href: '/explore' },
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
-      { title: 'News & Blog', href: '/blog' },
+      { title: 'News', href: '/news' },
+      { title: 'Blog', href: '/blog' },
       { title: 'Project Timeline', href: '/timeline' },
     ]
   },

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Museum, GraduationCap, Newspaper, BookOpen, Clock } from 'lucide-react'
+import { ArrowRight, Building2, GraduationCap, Newspaper, BookOpen, Clock } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata = {
@@ -12,7 +12,7 @@ const exploreItems = [
     title: 'Digital Museum',
     description: 'Browse our collection of artifacts discovered at East Wear Bay. View 3D models, detailed photographs, and learn about each find.',
     href: '/digital-museum',
-    icon: Museum,
+    icon: Building2,
     color: 'text-blue-500',
   },
   {

@@ -12,8 +12,8 @@ import { useGoogleAnalytics } from '@/hooks/useGoogleAnalytics'
 const navigationGroups = [
   {
     title: "Explore",
+    href: "/explore",
     items: [
-      { title: 'Explore', href: '/explore' },
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
       { title: 'News', href: '/news' },
@@ -23,6 +23,7 @@ const navigationGroups = [
   },
   {
     title: "Learn",
+    href: "/learn",
     items: [
       { title: 'Education Resources', href: '/education' },
       { title: 'Research & Publications', href: '/research/publications' },
@@ -30,8 +31,9 @@ const navigationGroups = [
   },
   {
     title: "About",
+    href: "/about",
     items: [
-      { title: 'About the Project', href: '/about' },
+      { title: 'About the Project', href: '/about/project' },
       { title: 'Outreach & Community', href: '/community' },
       { title: 'Volunteer', href: '/volunteer' },
       { title: 'Partners', href: '/partners' },
@@ -110,19 +112,18 @@ export default function Navbar() {
           <nav className="hidden md:flex md:gap-6" aria-label="Main navigation">
             {navigationGroups.map((group) => (
               <div key={group.title} className="relative" onMouseEnter={() => setOpenDropdown(group.title)} onMouseLeave={() => setOpenDropdown(null)}>
-                <button
-                  onClick={() => handleDropdownToggle(group.title)}
+                <Link
+                  href={group.href}
+                  onClick={() => setOpenDropdown(null)}
                   className={cn(
                     'flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                    openDropdown === group.title
+                    pathname === group.href
                       ? 'bg-accent text-foreground'
                       : 'text-muted-foreground hover:bg-accent/50 hover:text-foreground',
                   )}
-                  aria-expanded={openDropdown === group.title}
-                  aria-haspopup="true"
                 >
                   {group.title}
-                </button>
+                </Link>
                 <div
                   className={cn(
                     'absolute left-0 top-full z-10 w-56 pt-2 transition-opacity duration-150',

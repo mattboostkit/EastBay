@@ -128,10 +128,9 @@ export default function PrivacyPage() {
               If you have questions about this Privacy Policy or our data practices, please contact us at:
             </p>
             <div className="mt-4 rounded-lg border bg-muted p-4">
-              <p className="font-semibold">East Wear Bay Archaeological Project</p>
-              <p>Email: privacy@eastwearbay.org</p>
-              <p>Phone: +44 (0) 1234 567890</p>
-              <p>Address: Archaeological Research Centre, Kent, UK</p>
+              <p className="font-semibold">Canterbury Archaeological Trust Ltd</p>
+              <p>Email: get_involved@canterburytrust.ac.uk</p>
+              <p>Address: 92a Broad Street, Canterbury, Kent, CT1 2LU</p>
             </div>
           </section>
         </div>

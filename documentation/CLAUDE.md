@@ -112,3 +112,10 @@ Required for Sanity integration:
 - Images should always use Next.js Image component for optimization
 - 3D models integrate via Sketchfab embed API
 - All user-facing text should consider accessibility
+
+### Contact Information
+When creating pages that require contact details, always use the official Canterbury Archaeological Trust information:
+- **Organization**: Canterbury Archaeological Trust Ltd
+- **Email**: get_involved@canterburytrust.ac.uk
+- **Address**: 92a Broad Street, Canterbury, Kent, CT1 2LU
+- **Note**: Never use placeholder contact information like "privacy@eastwearbay.org" or dummy phone numbers

@@ -125,10 +125,9 @@ export default function AccessibilityPage() {
               encounter accessibility barriers:
             </p>
             <div className="mt-4 rounded-lg border bg-muted p-4">
-              <p className="font-semibold">Accessibility Contact</p>
-              <p>Email: accessibility@eastwearbay.org</p>
-              <p>Phone: +44 (0) 1234 567890</p>
-              <p>Address: Archaeological Research Centre, Kent, UK</p>
+              <p className="font-semibold">Canterbury Archaeological Trust Ltd</p>
+              <p>Email: get_involved@canterburytrust.ac.uk</p>
+              <p>Address: 92a Broad Street, Canterbury, Kent, CT1 2LU</p>
             </div>
             <p className="mt-4">
               We aim to respond to accessibility feedback within 5 working days.

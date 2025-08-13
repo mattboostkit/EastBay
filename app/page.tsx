@@ -84,10 +84,10 @@ export default async function Home() {
               Explore Digital Museum
             </Link>
             <Link 
-              href="/field-school" 
+              href="/volunteer" 
               className="rounded-md bg-transparent px-6 py-3 font-medium text-white ring-1 ring-white hover:bg-white/10"
             >
-              Join Our Field School
+              Volunteer With Us
             </Link>
           </div>
         </div>
@@ -306,7 +306,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Field School Section */}
+      {/* 2025 Field School Results Section */}
       <section className="bg-muted py-16 md:py-24" aria-labelledby="field-school-heading">
         <div className="container">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
@@ -317,7 +317,7 @@ export default async function Home() {
                     ?.width(800)
                     ?.height(600)
                     ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                  alt={fieldSchoolSection.mainImage.alt || "Field school participants enjoying a meal together"}
+                  alt={fieldSchoolSection.mainImage.alt || "Field school participants from July 2025 excavation"}
                   fill
                   className="object-cover"
                 />
@@ -325,34 +325,43 @@ export default async function Home() {
             )}
             <div>
               <h2 id="field-school-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Join Our Field School
+                2025 Field School Success
               </h2>
+              <div className="mt-4 inline-flex rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
+                Completed July 2025
+              </div>
               <p className="mt-6 text-lg">
-                The East Wear Bay International Field School offers hands-on archaeological experience for students and volunteers of all backgrounds and skill levels.
+                Our 2025 Field School (July 7-18) was a remarkable success with 24 participants from 8 countries joining us for two weeks of excavation and discovery.
               </p>
               <p className="mt-4 text-lg">
-                Whether you're a student seeking field experience, a local resident interested in your heritage, or simply an enthusiast wanting to try archaeology, we welcome your participation.
+                Key achievements from this season include the discovery of a new section of the villa's eastern wing and several well-preserved Iron Age features beneath.
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Learn professional excavation techniques</span>
+                  <span>Uncovered 3 new rooms of the Roman villa</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Contribute to saving a site threatened by coastal erosion</span>
+                  <span>Found over 200 pottery fragments and 15 coins</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>No experience necessary - training provided</span>
+                  <span>Trained 24 participants in excavation techniques</span>
                 </li>
               </ul>
-              <div className="mt-8">
+              <div className="mt-8 flex gap-4">
                 <Link 
-                  href="/field-school" 
+                  href="/blog/field-school-2025-results" 
                   className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
                 >
-                  Apply Now
+                  Read Full Report
+                </Link>
+                <Link 
+                  href="/field-school/2026" 
+                  className="rounded-md border border-primary px-6 py-3 font-medium text-primary shadow-sm hover:bg-primary/10"
+                >
+                  2026 Applications
                 </Link>
               </div>
             </div>
@@ -478,12 +487,12 @@ export default async function Home() {
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">
-                    May 15, 2025
+                    August 12, 2025
                   </span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold">Discovery of Intact Mosaic Floor</h3>
+                <h3 className="mt-2 text-xl font-bold">Field School Uncovers Mosaic Floor</h3>
                 <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                  Our team has uncovered a remarkably well-preserved mosaic floor in the eastern wing of the Folkestone Villa, providing new insights into Roman domestic life.
+                  During the 2025 Field School, participants uncovered a remarkably well-preserved mosaic floor in the eastern wing of the Folkestone Villa.
                 </p>
               </div>
               <div className="p-6 pt-0">
@@ -515,7 +524,7 @@ export default async function Home() {
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">
-                    April 22, 2025
+                    July 28, 2025
                   </span>
                 </div>
                 <h3 className="mt-2 text-xl font-bold">Digital Preservation Project Receives Funding</h3>
@@ -552,7 +561,7 @@ export default async function Home() {
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">
-                    March 8, 2025
+                    June 15, 2025
                   </span>
                 </div>
                 <h3 className="mt-2 text-xl font-bold">Education Program Reaches 1,000 Local Students</h3>

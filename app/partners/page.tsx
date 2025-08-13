@@ -44,15 +44,19 @@ export default async function PartnersPage() {
     'Supporting Organisation',
     'Community Partner'
   ]
+  
+  // Separate principal funder for special display
+  const principalFunder = partners.find((p: any) => p.partnershipType === 'Principal Funder')
+  const otherPartners = partners.filter((p: any) => p.partnershipType !== 'Principal Funder')
 
   return (
     <>
       <div className="bg-muted py-12 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Partners & Funders</h1>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Working Together</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Using money raised by National Lottery players, The National Lottery Heritage Fund supports projects that connect people and communities with the UK's heritage. East Wear Bay is made possible with The National Lottery Heritage Fund. Thanks to National Lottery players, we have been able to excavate and record new areas of archaeology at the site and engage the local community in the project. This includes running school workshops, delivering dementia friendly finds handling sessions, hosting public talks and art workshops, and holding an art and archaeology exhibition.
+              The East Wear Bay Archaeological Project is a community project with the aim of researching the historic landscape of East Wear Bay and preserving archaeological remains associated with Folkestone Roman Villa 'by record' before they are lost forever to coastal erosion.
             </p>
           </div>
         </div>
@@ -60,64 +64,72 @@ export default async function PartnersPage() {
       
       <div className="container py-12">
         <div className="mx-auto max-w-6xl">
-          {partners.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No partners found. Please add partners in the Sanity Studio.</p>
-            </div>
-          ) : (
-            <div className="space-y-12">
-              {partnershipOrder.map(partnershipType => {
-                const partnersInCategory = groupedPartners[partnershipType]
-                if (!partnersInCategory || partnersInCategory.length === 0) return null
-
-                return (
-                  <section key={partnershipType}>
-                    <h2 className="text-2xl font-bold mb-6 text-center">{partnershipType}s</h2>
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                      {partnersInCategory.map((partner: any) => (
-                        <div key={partner._id} className="rounded-lg border bg-card p-6">
-                          <div className="flex flex-col items-center text-center">
-                            {partner.logo ? (
-                              <div className="relative h-24 w-full mb-4">
-                                <Image
-                                  src={urlFor(partner.logo).width(400).height(200).url()}
-                                  alt={`${partner.name} logo`}
-                                  fill
-                                  className="object-contain"
-                                />
-                              </div>
-                            ) : (
-                              <div className="h-24 w-full mb-4 bg-muted rounded flex items-center justify-center">
-                                <span className="text-2xl font-bold text-muted-foreground">
-                                  {partner.name}
-                                </span>
-                              </div>
-                            )}
-                            <h3 className="text-lg font-semibold">{partner.name}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{partner.partnershipType}</p>
-                            {partner.description && (
-                              <p className="text-sm text-muted-foreground mt-3">{partner.description}</p>
-                            )}
-                            {partner.website && (
-                              <a
-                                href={partner.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-4"
-                              >
-                                Visit website
-                                <ExternalLink className="h-3 w-3" />
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                )
-              })}
+          {/* Principal Funder Section */}
+          {principalFunder && (
+            <div className="mb-12 rounded-lg bg-primary/5 p-8">
+              <div className="text-center">
+                <div className="mx-auto mb-6 h-32 w-64 bg-white rounded-lg p-4 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-primary">National Lottery Heritage Fund</span>
+                </div>
+                <p className="mx-auto max-w-3xl text-muted-foreground">
+                  Using money raised by National Lottery players, The National Lottery Heritage Fund supports projects that connect people and communities with the UK's heritage. East Wear Bay is made possible with The National Lottery Heritage Fund. Thanks to National Lottery players, we have been able to excavate and record new areas of archaeology at the site and engage the local community in the project.
+                </p>
+              </div>
             </div>
           )}
+          
+          {/* Lead Partners */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Lead partners are Canterbury Archaeological Trust, Folkestone Museum, Folkestone Research and Archaeology Group, Dover Archaeological Group and the University of Kent.
+            </p>
+          </div>
+
+          {/* All Partners Grid */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Our Supporters</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {otherPartners.map((partner: any) => (
+                <div key={partner._id} className="group">
+                  {partner.website ? (
+                    <a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
+                      title={partner.name}
+                    >
+                      <div className="h-20 flex items-center justify-center">
+                        <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
+                          {partner.name}
+                        </span>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="rounded-lg border bg-card p-4" title={partner.name}>
+                      <div className="h-20 flex items-center justify-center">
+                        <span className="text-sm font-medium text-center text-muted-foreground">
+                          {partner.name}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Acknowledgment Text */}
+          <div className="rounded-lg border bg-muted/50 p-8 mb-12">
+            <p className="text-center text-muted-foreground">
+              We are grateful to Folkestone and Hythe District Council for their continuing support of the project. 
+              Thanks also to the Kent Community Foundation, the Society for the Promotion of Roman Studies, 
+              The Association for Roman Archaeology, the Friends of the Canterbury Archaeological Trust, 
+              The Roger De Haan Charitable Trust, The Lawson Trust, the Council for British Archaeology, 
+              the Swire Charitable Trust and the Garfield Weston Foundation.
+            </p>
+          </div>
           
           <div className="mt-16 space-y-8">
             <div className="rounded-lg border bg-muted/50 p-8">

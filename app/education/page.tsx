@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, FileText, Users, Clock, Download, BookOpen, Activity, Video } from 'lucide-react'
+import { ArrowRight, FileText, Users, Clock, Download, BookOpen, Activity, Video, GraduationCap, Microscope, Map, Globe, Sparkles } from 'lucide-react'
 import { fetchAllEducationResources } from '@/lib/sanity.unified'
 import { urlFor } from '@/lib/sanity.client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -30,29 +30,234 @@ const ageGroupLabels = {
   'adult': 'Adult/Continuing Education',
 }
 
+// Featured educational programs
+const featuredPrograms = [
+  {
+    title: 'Virtual Site Tours',
+    icon: Globe,
+    description: 'Explore East Wear Bay through immersive 360° virtual tours with expert archaeological commentary.',
+    link: '/education/virtual-tour',
+    color: 'bg-blue-500',
+    badge: 'New'
+  },
+  {
+    title: 'Archaeological Methods',
+    icon: Microscope,
+    description: 'Learn professional excavation techniques through our comprehensive video workshop series.',
+    link: '/education/methods',
+    color: 'bg-green-500',
+    badge: 'Popular'
+  },
+  {
+    title: 'Interactive Timeline',
+    icon: Map,
+    description: 'Journey through 12,000 years of history with 3D models and primary sources.',
+    link: '/timeline',
+    color: 'bg-purple-500',
+    badge: 'Interactive'
+  },
+  {
+    title: 'Digital Museum',
+    icon: Sparkles,
+    description: 'Access our collection of 3D-scanned artifacts with detailed educational notes.',
+    link: '/digital-museum',
+    color: 'bg-orange-500',
+    badge: 'Featured'
+  }
+]
+
+// Learning pathways for different age groups
+const learningPathways = [
+  {
+    age: 'Primary (KS2)',
+    topics: ['Roman Daily Life', 'Archaeological Discovery', 'Local History'],
+    activities: ['Artifact Handling', 'Virtual Dig', 'Create a Mosaic'],
+    duration: '2-3 hours'
+  },
+  {
+    age: 'Secondary (KS3-4)',
+    topics: ['Roman Britain', 'Archaeological Methods', 'Heritage Conservation'],
+    activities: ['Site Analysis', 'Dating Techniques', 'Digital Recording'],
+    duration: 'Half day'
+  },
+  {
+    age: 'A-Level & University',
+    topics: ['Research Methods', 'Site Management', 'Digital Heritage'],
+    activities: ['Data Analysis', '3D Modelling', 'Report Writing'],
+    duration: 'Full day'
+  }
+]
+
 export default async function EducationPage() {
   const resources = await fetchAllEducationResources()
 
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Education Resources</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Engaging learning materials for teachers and students to explore Roman Britain and archaeology through the East Wear Bay site.
+      {/* Enhanced Hero Section with Gradient Background */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70 py-16 md:py-24 text-white">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container relative z-10">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center rounded-full bg-white/20 px-4 py-1.5 mb-6">
+              <GraduationCap className="mr-2 h-4 w-4" />
+              <span className="text-sm font-medium">Education Hub</span>
+            </div>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+              Discover the Past,<br />Inspire the Future
+            </h1>
+            <p className="mt-6 text-lg md:text-xl opacity-90">
+              Engaging educational resources bringing 2,000 years of history to life through the archaeology of East Wear Bay
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="#programs"
+                className="rounded-md bg-white px-6 py-3 font-medium text-primary shadow-lg hover:bg-gray-100 transition-colors"
+              >
+                Explore Resources
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-md border-2 border-white px-6 py-3 font-medium text-white hover:bg-white/10 transition-colors"
+              >
+                Book a Visit
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+        {/* Decorative wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" className="w-full h-16 fill-background">
+            <path d="M0,64 C480,150 960,-30 1440,64 L1440,120 L0,120 Z" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Quick Stats Bar */}
+      <section className="border-b bg-background py-8">
+        <div className="container">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">5,000+</div>
+              <div className="mt-1 text-sm text-muted-foreground">Students Engaged</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">150+</div>
+              <div className="mt-1 text-sm text-muted-foreground">Free Resources</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">50+</div>
+              <div className="mt-1 text-sm text-muted-foreground">Partner Schools</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary">12</div>
+              <div className="mt-1 text-sm text-muted-foreground">Learning Modules</div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <div className="container py-12">
-        {/* School Visits Section */}
+        {/* Featured Programs Section */}
+        <section id="programs" className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold md:text-4xl">Featured Educational Programs</h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Interactive experiences designed to bring archaeology to life
+            </p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {featuredPrograms.map((program) => {
+              const Icon = program.icon
+              return (
+                <Link
+                  key={program.title}
+                  href={program.link}
+                  className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:shadow-lg"
+                >
+                  <div className={`h-1 ${program.color}`} />
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`inline-flex rounded-lg ${program.color} p-3 text-white`}>
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      {program.badge && (
+                        <Badge variant="secondary" className="text-xs">
+                          {program.badge}
+                        </Badge>
+                      )}
+                    </div>
+                    <h3 className="font-bold mb-2">{program.title}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {program.description}
+                    </p>
+                    <div className="mt-4 flex items-center text-sm font-medium text-primary">
+                      Learn more
+                      <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* Learning Pathways */}
         <section className="mb-16">
-          <div className="rounded-lg border bg-card p-8">
-            <h2 className="text-2xl font-bold mb-4">School Visits</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold md:text-4xl">Learning Pathways</h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Tailored educational experiences for every age group
+            </p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-3">
+            {learningPathways.map((pathway) => (
+              <div key={pathway.age} className="rounded-lg border bg-card p-6">
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold">{pathway.age}</h3>
+                  <Badge variant="outline" className="mt-2">
+                    <Clock className="mr-1 h-3 w-3" />
+                    {pathway.duration}
+                  </Badge>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Topics Covered:</h4>
+                    <ul className="space-y-1">
+                      {pathway.topics.map((topic) => (
+                        <li key={topic} className="flex items-center text-sm text-muted-foreground">
+                          <ArrowRight className="mr-2 h-3 w-3 text-primary" />
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Activities:</h4>
+                    <ul className="space-y-1">
+                      {pathway.activities.map((activity) => (
+                        <li key={activity} className="flex items-center text-sm text-muted-foreground">
+                          <Activity className="mr-2 h-3 w-3 text-primary" />
+                          {activity}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        
+        {/* School Visits Section - Enhanced */}
+        <section className="mb-16">
+          <div className="rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 border p-8">
+            <h2 className="text-2xl font-bold mb-4">School Visits & Workshops</h2>
             <p className="text-muted-foreground mb-6">
-              School visits are subject to funding availability. Please contact us to enquire about current opportunities for educational visits.
+              Bring archaeology to life in your classroom with our expert-led sessions. School visits are subject to funding availability.
             </p>
             
             <div className="grid gap-6 md:grid-cols-2">

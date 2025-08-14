@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 import { CanonicalLink } from '@/components/SEO/CanonicalLink';
 import { GoogleAnalytics } from '@/components/SEO/GoogleAnalytics';
 import { OrganizationStructuredData } from '@/components/SEO/StructuredData';
+import { client } from '@/lib/sanity.client';
+import { siteSettingsQuery } from '@/lib/queries/siteSettings';
 
 // Initialize the Geist fonts
 const geistSans = GeistSans;
@@ -65,11 +67,13 @@ export const metadata: Metadata = {
   publisher: 'East Wear Bay Project',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Fetch site settings
+  const siteSettings = await client.fetch(siteSettingsQuery);
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
@@ -85,9 +89,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
-            <Navbar />
+            <Navbar siteSettings={siteSettings} />
             <main className="flex-1">{children}</main>
-            <Footer />
+            <Footer siteSettings={siteSettings} />
           </div>
         </ThemeProvider>
       </body>

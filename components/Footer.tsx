@@ -1,8 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { urlForImage } from '@/lib/sanity.client'
 
-export default function Footer() {
+interface FooterProps {
+  siteSettings?: any;
+}
+
+export default function Footer({ siteSettings }: FooterProps) {
   return (
     <footer className="border-t bg-background" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
@@ -10,14 +15,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/east-wear-bay-logo.png"
-                alt="East Wear Bay Archaeological Project"
-                width={48}
-                height={48}
-                className="h-12 w-12"
-              />
-              <h3 className="text-xl font-semibold">East Wear Bay Project</h3>
+              {siteSettings?.logo ? (
+                <Image
+                  src={urlForImage(siteSettings.logo)?.url() || ''}
+                  alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project'}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12"
+                />
+              ) : (
+                <div className="h-12 w-12 bg-muted rounded-lg flex items-center justify-center">
+                  <span className="text-muted-foreground text-xs">Logo</span>
+                </div>
+              )}
+              <h3 className="text-xl font-semibold">{siteSettings?.title || 'East Wear Bay Project'}</h3>
             </div>
             <p className="text-muted-foreground">
               Preserving the Folkestone Roman Villa through community archaeology, digital technology, and education.

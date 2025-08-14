@@ -116,9 +116,17 @@ const nextConfig = {
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb'
-    }
+    },
+    // Turbopack configuration
+    turbo: {
+      resolveAlias: {
+        // Add any alias configurations here if needed
+      },
+    },
   },
+  // Only apply webpack config when not using Turbopack
   webpack: (config, { isServer }) => {
+    // This config only applies when using Webpack (not Turbopack)
     if (isServer) {
       config.externals.push('crypto');
     }

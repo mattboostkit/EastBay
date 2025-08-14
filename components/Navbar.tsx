@@ -8,6 +8,7 @@ import { Menu, X, Search, SunMoon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
 import { useGoogleAnalytics } from '@/hooks/useGoogleAnalytics'
+import { urlForImage } from '@/lib/sanity.client'
 
 // Updated navigation structure grouped by category
 const navigationGroups = [
@@ -46,7 +47,11 @@ const navigationGroups = [
 // Flatten the menu items for mobile view
 const flatMenuItems = navigationGroups.flatMap(group => group.items);
 
-export default function Navbar() {
+interface NavbarProps {
+  siteSettings?: any;
+}
+
+export default function Navbar({ siteSettings }: NavbarProps) {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -105,15 +110,23 @@ export default function Navbar() {
 
             {/* Site Logo and Title */}
             <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay Project - Home">
-              <Image
-                src="/east-wear-bay-logo.png"
-                alt="East Wear Bay Archaeological Project Logo"
-                width={48}
-                height={48}
-                className="h-12 w-12"
-                priority
-              />
-              <span className="hidden sm:inline-block text-xl font-semibold text-primary">East Wear Bay Project</span>
+              {siteSettings?.logo ? (
+                <Image
+                  src={urlForImage(siteSettings.logo)?.url() || ''}
+                  alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project Logo'}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12"
+                  priority
+                />
+              ) : (
+                <div className="h-12 w-12 bg-muted rounded-lg flex items-center justify-center">
+                  <span className="text-muted-foreground text-xs">Logo</span>
+                </div>
+              )}
+              <span className="hidden sm:inline-block text-xl font-semibold text-primary">
+                {siteSettings?.title || 'East Wear Bay Project'}
+              </span>
             </Link>
           </div>
 

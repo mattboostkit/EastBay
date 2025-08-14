@@ -11,9 +11,11 @@ import sponsor from './sponsor';
 import video from './video';
 import homepageSection from './homepageSection';
 import partner from './partner';
+import siteSettings from './siteSettings';
 
 // Import your schema types here
 export const schemaTypes = [
+  siteSettings,
   page,
   artefact,
   post,

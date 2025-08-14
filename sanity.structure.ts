@@ -10,13 +10,27 @@ import {
   FiLayers,
   FiHome,
   FiLayout,
-  FiGrid
+  FiGrid,
+  FiSettings
 } from 'react-icons/fi';
 
 export const structure = (S: StructureBuilder) =>
   S.list()
     .title('Content')
     .items([
+      // Site Settings - Singleton
+      S.listItem()
+        .title('Site Settings')
+        .icon(FiSettings)
+        .child(
+          S.document()
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
+            .title('Site Settings')
+        ),
+      
+      S.divider(),
+      
       // Homepage Sections
       S.listItem()
         .title('Homepage')
@@ -185,6 +199,9 @@ export const structure = (S: StructureBuilder) =>
               S.listItem()
                 .title('Sponsors')
                 .child(S.documentTypeList('sponsor').title('Sponsors')),
+              S.listItem()
+                .title('Partners')
+                .child(S.documentTypeList('partner').title('Partners')),
             ])
         ),
       
@@ -213,6 +230,6 @@ export const structure = (S: StructureBuilder) =>
       
       // Show the rest of the document types
       ...S.documentTypeListItems().filter(
-        listItem => !['homepageSection', 'artefact', 'post', 'event', 'educationResource', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
+        listItem => !['siteSettings', 'homepageSection', 'artefact', 'post', 'event', 'educationResource', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'partner', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
       ),
     ]);

@@ -7,6 +7,8 @@ import ArtefactCard from '@/components/ArtefactCard';
 import { urlForImage } from '@/lib/sanity.unified';
 import { fetchFeaturedArtefacts, fetchAllHomepageSections, fetchAllVideos } from '@/lib/sanity.unified';
 import { urlFor } from '@/lib/sanity.client';
+import { client } from '@/lib/sanity.client';
+import { siteSettingsQuery } from '@/lib/queries/siteSettings';
 
 export const metadata: Metadata = {
   title: 'East Wear Bay Project | Preserving Folkestone\'s Archaeological Heritage',
@@ -25,6 +27,9 @@ export default async function Home() {
   
   // Fetch videos
   const videos = await fetchAllVideos();
+  
+  // Fetch site settings
+  const siteSettings = await client.fetch(siteSettingsQuery);
   
   // Find specific sections by their IDs
   const heroSection = sections.find((section: any) => section.sectionId === 'hero');
@@ -71,14 +76,20 @@ export default async function Home() {
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="container relative z-10 flex h-full flex-col items-start justify-center text-white">
           <div className="mb-6 flex items-center gap-4">
-            <Image
-              src="/east-wear-bay-logo.png"
-              alt="East Wear Bay Archaeological Project"
-              width={80}
-              height={80}
-              className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm"
-              priority
-            />
+            {siteSettings?.logo ? (
+              <Image
+                src={urlFor(siteSettings.logo)?.url() || ''}
+                alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project'}
+                width={80}
+                height={80}
+                className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm"
+                priority
+              />
+            ) : (
+              <div className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm flex items-center justify-center">
+                <span className="text-white/60 text-xs">Logo</span>
+              </div>
+            )}
             <h1 id="hero-heading" className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
               Preserving Folkestone's Heritage
             </h1>

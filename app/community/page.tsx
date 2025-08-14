@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
+import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Community & Outreach | East Wear Bay Archaeological Project',
@@ -11,16 +12,12 @@ export const metadata: Metadata = {
 export default function CommunityPage() {
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Community & Outreach</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Engaging the public with archaeology and connecting communities to their local heritage through inclusive programs and activities.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Community & Outreach"
+        description="Engaging the public with archaeology and connecting communities to their local heritage through inclusive programs and activities."
+        icon={Users}
+        variant="gradient"
+      />
       
       <div className="container py-12">
         {/* Community Principles */}

@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Info } from 'lucide-react'
+import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'About the Project | East Wear Bay Archaeological Project',
@@ -11,16 +12,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">About the Project</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              The East Wear Bay Archaeological Project is a community-led initiative to investigate, record, and preserve the Roman villa at Folkestone's East Wear Bay before it is lost to coastal erosion.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="About the Project"
+        description="The East Wear Bay Archaeological Project is a community-led initiative to investigate, record, and preserve the Roman villa at Folkestone's East Wear Bay before it is lost to coastal erosion."
+        icon={Info}
+        variant="gradient"
+      />
       
       <div className="container py-12">
         <div className="mx-auto max-w-4xl">

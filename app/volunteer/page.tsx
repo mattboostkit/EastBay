@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Users, Calendar, Clock, Heart, MapPin, Award, Star } from 'lucide-react'
 import { fetchAllTestimonials } from '@/lib/sanity.unified'
 import { urlFor } from '@/lib/sanity.client'
+import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Volunteer | East Wear Bay Archaeological Project',
@@ -18,24 +19,12 @@ export default async function VolunteerPage() {
   )
   return (
     <>
-      <div className="relative h-[50vh] overflow-hidden">
-        <Image
-          src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-          alt="Volunteers working together on an archaeological excavation at East Wear Bay"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="container text-center text-white">
-            <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">Be a Volunteer</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg md:text-xl">
-              Join us in preserving East Wear Bay's archaeological heritage for future generations
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Be a Volunteer"
+        description="Join us in preserving East Wear Bay's archaeological heritage for future generations"
+        icon={Heart}
+        variant="gradient"
+      />
 
       <div className="container py-12">
         <div className="mx-auto max-w-4xl">

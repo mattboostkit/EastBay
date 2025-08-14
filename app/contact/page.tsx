@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { Mail, MapPin, Phone, Calendar } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
+import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Contact Us | East Wear Bay Archaeological Project',
@@ -10,17 +11,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Contact Us</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Have questions about our research, field school, or community programs? 
-              Get in touch with our team.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Contact Us"
+        description="Have questions about our research, field school, or community programs? Get in touch with our team."
+        icon={Mail}
+        variant="gradient"
+      />
       
       <div className="container py-12 md:py-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">

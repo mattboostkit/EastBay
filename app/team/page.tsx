@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import { client } from '@/lib/sanity.client'
 import { urlFor } from '@/lib/sanity'
+import { PageHero } from '@/components/PageHero'
+import { Users } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Our Team | East Wear Bay Archaeological Project',
@@ -26,16 +28,12 @@ export default async function TeamPage() {
 
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Our Team</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Meet the dedicated professionals, researchers, and specialists working to preserve and study the East Wear Bay archaeological site.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Our Team"
+        description="Meet the dedicated professionals, researchers, and specialists working to preserve and study the East Wear Bay archaeological site."
+        icon={Users}
+        variant="gradient"
+      />
       
       <div className="container py-12">
         <div className="mx-auto max-w-6xl">

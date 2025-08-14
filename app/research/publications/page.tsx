@@ -4,6 +4,7 @@ import { ArrowRight, Download, Lock, LockOpen, FileText, Calendar, Users, BookOp
 import { fetchAllResearchPublications } from '@/lib/sanity.unified'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Research Publications | East Wear Bay Archaeological Project',
@@ -27,16 +28,12 @@ export default async function PublicationsPage() {
 
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research & Publications</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Research & Publications"
+        description="Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain."
+        icon={BookOpen}
+        variant="gradient"
+      />
 
       <div className="container py-12">
         {/* Research Impact */}

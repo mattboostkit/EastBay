@@ -34,12 +34,12 @@ export default function PartnersPage() {
           {principalFunder && (
             <div className="mb-12 rounded-lg bg-primary/5 p-8">
               <div className="text-center">
-                <div className="mx-auto mb-6 h-32 w-auto bg-white rounded-lg p-4 flex items-center justify-center">
+                <div className="mx-auto mb-6 bg-white rounded-lg p-6 max-w-sm">
                   {principalFunder.logo ? (
                     <img 
                       src={principalFunder.logo} 
                       alt={principalFunder.name}
-                      className="h-24 w-auto object-contain"
+                      className="h-20 w-full object-contain"
                     />
                   ) : (
                     <span className="text-2xl font-bold text-primary">{principalFunder.name}</span>
@@ -69,12 +69,12 @@ export default function PartnersPage() {
                       className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
                       title={partner.name}
                     >
-                      <div className="h-20 flex items-center justify-center">
+                      <div className="h-20 flex items-center justify-center p-2">
                         {partner.logo ? (
                           <img 
                             src={partner.logo} 
                             alt={partner.name}
-                            className="h-16 w-auto object-contain"
+                            className="max-h-16 w-full object-contain"
                           />
                         ) : (
                           <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
@@ -85,12 +85,12 @@ export default function PartnersPage() {
                     </a>
                   ) : (
                     <div className="rounded-lg border bg-card p-4" title={partner.name}>
-                      <div className="h-20 flex items-center justify-center">
+                      <div className="h-20 flex items-center justify-center p-2">
                         {partner.logo ? (
                           <img 
                             src={partner.logo} 
                             alt={partner.name}
-                            className="h-16 w-auto object-contain"
+                            className="max-h-16 w-full object-contain"
                           />
                         ) : (
                           <span className="text-sm font-medium text-center text-muted-foreground">
@@ -119,12 +119,12 @@ export default function PartnersPage() {
                       className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
                       title={partner.name}
                     >
-                      <div className="h-20 flex items-center justify-center">
+                      <div className="h-20 flex items-center justify-center p-2">
                         {partner.logo ? (
                           <img 
                             src={partner.logo} 
                             alt={partner.name}
-                            className="h-16 w-auto object-contain"
+                            className="max-h-16 w-full object-contain"
                           />
                         ) : (
                           <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
@@ -135,12 +135,12 @@ export default function PartnersPage() {
                     </a>
                   ) : (
                     <div className="rounded-lg border bg-card p-4" title={partner.name}>
-                      <div className="h-20 flex items-center justify-center">
+                      <div className="h-20 flex items-center justify-center p-2">
                         {partner.logo ? (
                           <img 
                             src={partner.logo} 
                             alt={partner.name}
-                            className="h-16 w-auto object-contain"
+                            className="max-h-16 w-full object-contain"
                           />
                         ) : (
                           <span className="text-sm font-medium text-center text-muted-foreground">

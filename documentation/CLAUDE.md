@@ -2,10 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## IMPORTANT: Version Control Requirements
-**ALWAYS commit and push changes to git after making modifications to the codebase.**
-- After making changes, run: `git add -A && git commit -m "Your descriptive commit message" && git push`
-- This ensures all changes are properly tracked and deployed
+## CRITICAL: Version Control Requirements
+**MANDATORY: You MUST commit and push to Git EVERY SINGLE TIME you make ANY change to the codebase.**
+- After EVERY file modification, creation, or deletion, IMMEDIATELY run: 
+  `git add -A && git commit -m "Your descriptive commit message" && git push`
+- This is NON-NEGOTIABLE - commit and push after EVERY SINGLE CHANGE
+- Do not batch changes - commit each change immediately
+- This ensures all changes are properly tracked and deployed in real-time
 
 ## Commands
 

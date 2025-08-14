@@ -27,31 +27,31 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
     
-    /* CAT teal/turquoise primary color */
-    --primary: 168 42% 40%;
+    /* East Wear Bay primary cyan color #00AABC */
+    --primary: 186 100% 37%;
     --primary-foreground: 0 0% 100%;
     
-    /* Complementary blue-green */
-    --secondary: 188 50% 35%;
+    /* East Wear Bay secondary orange color #F47529 */
+    --secondary: 24 91% 55%;
     --secondary-foreground: 0 0% 100%;
     
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
     
-    --accent: 168 20% 95%;
-    --accent-foreground: 168 42% 30%;
+    --accent: 186 40% 95%;
+    --accent-foreground: 186 100% 30%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 168 42% 40%;
+    --ring: 186 100% 37%;
     
-    --chart-1: 168 42% 40%;
-    --chart-2: 188 50% 35%;
-    --chart-3: 43 74% 55%;
-    --chart-4: 25 70% 50%;
+    --chart-1: 186 100% 37%;
+    --chart-2: 24 91% 55%;
+    --chart-3: 186 60% 50%;
+    --chart-4: 24 70% 45%;
     --chart-5: 0 0% 45%;
     
     --radius: 0.375rem;
@@ -67,31 +67,31 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
     
-    /* CAT teal/turquoise primary color - slightly brighter for dark mode */
-    --primary: 168 42% 45%;
+    /* East Wear Bay primary cyan color #00AABC - slightly brighter for dark mode */
+    --primary: 186 100% 42%;
     --primary-foreground: 0 0% 100%;
     
-    /* Complementary blue-green */
-    --secondary: 188 50% 40%;
+    /* East Wear Bay secondary orange color #F47529 - adjusted for dark mode */
+    --secondary: 24 91% 60%;
     --secondary-foreground: 0 0% 100%;
     
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 60%;
     
-    --accent: 168 20% 20%;
-    --accent-foreground: 168 42% 60%;
+    --accent: 186 30% 20%;
+    --accent-foreground: 186 100% 60%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 168 42% 45%;
+    --ring: 186 100% 42%;
     
-    --chart-1: 168 42% 45%;
-    --chart-2: 188 50% 40%;
-    --chart-3: 43 74% 60%;
-    --chart-4: 25 70% 55%;
+    --chart-1: 186 100% 42%;
+    --chart-2: 24 91% 60%;
+    --chart-3: 186 60% 55%;
+    --chart-4: 24 70% 50%;
     --chart-5: 0 0% 60%;
   }
 }

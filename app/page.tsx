@@ -70,9 +70,19 @@ export default async function Home() {
         )}
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="container relative z-10 flex h-full flex-col items-start justify-center text-white">
-          <h1 id="hero-heading" className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Preserving Folkestone's Heritage
-          </h1>
+          <div className="mb-6 flex items-center gap-4">
+            <Image
+              src="/east-wear-bay-logo.png"
+              alt="East Wear Bay Archaeological Project"
+              width={80}
+              height={80}
+              className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm"
+              priority
+            />
+            <h1 id="hero-heading" className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+              Preserving Folkestone's Heritage
+            </h1>
+          </div>
           <p className="mt-4 max-w-2xl text-lg text-gray-200 md:text-xl">
             A community archaeology project protecting the East Wear Bay Roman Villa and its surrounding archaeological landscape from coastal erosion through excavation, digital preservation, and public engagement.
           </p>

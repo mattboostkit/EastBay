@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
@@ -8,8 +9,17 @@ export default function Footer() {
       <div className="container py-10 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h3 className="text-xl font-semibold">East Wear Bay Project</h3>
-            <p className="mt-4 text-muted-foreground">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/east-wear-bay-logo.png"
+                alt="East Wear Bay Archaeological Project"
+                width={48}
+                height={48}
+                className="h-12 w-12"
+              />
+              <h3 className="text-xl font-semibold">East Wear Bay Project</h3>
+            </div>
+            <p className="text-muted-foreground">
               Preserving the Folkestone Roman Villa through community archaeology, digital technology, and education.
             </p>
             <div className="mt-6 flex space-x-4">

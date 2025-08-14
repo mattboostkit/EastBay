@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Search, SunMoon } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -102,9 +103,17 @@ export default function Navbar() {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
 
-            {/* Site Title */}
-            <Link href="/" className="flex items-center gap-2" aria-label="East Wear Bay Project - Home">
-              <span className="text-xl font-semibold text-primary">East Wear Bay Project</span>
+            {/* Site Logo and Title */}
+            <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay Project - Home">
+              <Image
+                src="/east-wear-bay-logo.png"
+                alt="East Wear Bay Archaeological Project Logo"
+                width={48}
+                height={48}
+                className="h-12 w-12"
+                priority
+              />
+              <span className="hidden sm:inline-block text-xl font-semibold text-primary">East Wear Bay Project</span>
             </Link>
           </div>
 

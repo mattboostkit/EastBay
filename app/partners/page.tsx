@@ -2,52 +2,18 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
-import { client } from '@/lib/sanity.client'
-import { urlFor } from '@/lib/sanity'
+import { partnersData } from '@/lib/partners-data'
 
 export const metadata: Metadata = {
   title: 'Partners & Funders | East Wear Bay Archaeological Project',
   description: 'Our partners and funders who make the East Wear Bay Archaeological Project possible through their generous support and collaboration.',
 }
 
-async function getPartners() {
-  const query = `*[_type == "partner"] | order(order asc, name asc) {
-    _id,
-    name,
-    partnershipType,
-    logo,
-    website,
-    description
-  }`
-  
-  return client.fetch(query)
-}
-
-export default async function PartnersPage() {
-  const partners = await getPartners()
-
-  // Group partners by partnership type
-  const groupedPartners = partners.reduce((acc: any, partner: any) => {
-    if (!acc[partner.partnershipType]) {
-      acc[partner.partnershipType] = []
-    }
-    acc[partner.partnershipType].push(partner)
-    return acc
-  }, {})
-
-  // Define the order of partnership types
-  const partnershipOrder = [
-    'Principal Funder',
-    'Major Funder',
-    'Academic Partner',
-    'Heritage Partner',
-    'Supporting Organisation',
-    'Community Partner'
-  ]
-  
-  // Separate principal funder for special display
-  const principalFunder = partners.find((p: any) => p.partnershipType === 'Principal Funder')
-  const otherPartners = partners.filter((p: any) => p.partnershipType !== 'Principal Funder')
+export default function PartnersPage() {
+  // Separate partners by type
+  const principalFunder = partnersData.find(p => p.type === 'principal')
+  const leadPartners = partnersData.filter(p => p.type === 'lead')
+  const supporters = partnersData.filter(p => p.type === 'supporter')
 
   return (
     <>
@@ -68,11 +34,19 @@ export default async function PartnersPage() {
           {principalFunder && (
             <div className="mb-12 rounded-lg bg-primary/5 p-8">
               <div className="text-center">
-                <div className="mx-auto mb-6 h-32 w-64 bg-white rounded-lg p-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">National Lottery Heritage Fund</span>
+                <div className="mx-auto mb-6 h-32 w-auto bg-white rounded-lg p-4 flex items-center justify-center">
+                  {principalFunder.logo ? (
+                    <img 
+                      src={principalFunder.logo} 
+                      alt={principalFunder.name}
+                      className="h-24 w-auto object-contain"
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold text-primary">{principalFunder.name}</span>
+                  )}
                 </div>
                 <p className="mx-auto max-w-3xl text-muted-foreground">
-                  Using money raised by National Lottery players, The National Lottery Heritage Fund supports projects that connect people and communities with the UK's heritage. East Wear Bay is made possible with The National Lottery Heritage Fund. Thanks to National Lottery players, we have been able to excavate and record new areas of archaeology at the site and engage the local community in the project.
+                  {principalFunder.description || 'Using money raised by National Lottery players, The National Lottery Heritage Fund supports projects that connect people and communities with the UK\'s heritage. East Wear Bay is made possible with The National Lottery Heritage Fund. Thanks to National Lottery players, we have been able to excavate and record new areas of archaeology at the site and engage the local community in the project.'}
                 </p>
               </div>
             </div>
@@ -84,14 +58,9 @@ export default async function PartnersPage() {
             <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
               Lead partners are Canterbury Archaeological Trust, Folkestone Museum, Folkestone Research and Archaeology Group, Dover Archaeological Group and the University of Kent.
             </p>
-          </div>
-
-          {/* All Partners Grid */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-center">Our Supporters</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {otherPartners.map((partner: any) => (
-                <div key={partner._id} className="group">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+              {leadPartners.map((partner, index) => (
+                <div key={index} className="group">
                   {partner.website ? (
                     <a
                       href={partner.website}
@@ -101,17 +70,83 @@ export default async function PartnersPage() {
                       title={partner.name}
                     >
                       <div className="h-20 flex items-center justify-center">
-                        <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                          {partner.name}
-                        </span>
+                        {partner.logo ? (
+                          <img 
+                            src={partner.logo} 
+                            alt={partner.name}
+                            className="h-16 w-auto object-contain"
+                          />
+                        ) : (
+                          <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
+                            {partner.name}
+                          </span>
+                        )}
                       </div>
                     </a>
                   ) : (
                     <div className="rounded-lg border bg-card p-4" title={partner.name}>
                       <div className="h-20 flex items-center justify-center">
-                        <span className="text-sm font-medium text-center text-muted-foreground">
-                          {partner.name}
-                        </span>
+                        {partner.logo ? (
+                          <img 
+                            src={partner.logo} 
+                            alt={partner.name}
+                            className="h-16 w-auto object-contain"
+                          />
+                        ) : (
+                          <span className="text-sm font-medium text-center text-muted-foreground">
+                            {partner.name}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* All Partners Grid */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Our Supporters</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {supporters.map((partner, index) => (
+                <div key={index} className="group">
+                  {partner.website ? (
+                    <a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
+                      title={partner.name}
+                    >
+                      <div className="h-20 flex items-center justify-center">
+                        {partner.logo ? (
+                          <img 
+                            src={partner.logo} 
+                            alt={partner.name}
+                            className="h-16 w-auto object-contain"
+                          />
+                        ) : (
+                          <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
+                            {partner.name}
+                          </span>
+                        )}
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="rounded-lg border bg-card p-4" title={partner.name}>
+                      <div className="h-20 flex items-center justify-center">
+                        {partner.logo ? (
+                          <img 
+                            src={partner.logo} 
+                            alt={partner.name}
+                            className="h-16 w-auto object-contain"
+                          />
+                        ) : (
+                          <span className="text-sm font-medium text-center text-muted-foreground">
+                            {partner.name}
+                          </span>
+                        )}
                       </div>
                     </div>
                   )}

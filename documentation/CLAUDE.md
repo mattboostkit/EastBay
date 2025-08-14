@@ -2,6 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## IMPORTANT: Version Control Requirements
+**ALWAYS commit and push changes to git after making modifications to the codebase.**
+- After making changes, run: `git add -A && git commit -m "Your descriptive commit message" && git push`
+- This ensures all changes are properly tracked and deployed
+
 ## Commands
 
 ### Development

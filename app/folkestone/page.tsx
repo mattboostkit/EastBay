@@ -42,13 +42,13 @@ export default function FolkestonePage() {
                 </p>
                 <p className="text-muted-foreground">
                   Whether you're interested in the town's maritime heritage, contemporary art scene, or simply 
-                  enjoying fish and chips by the harbor, Folkestone has something for everyone.
+                  enjoying fish and chips by the harbour, Folkestone has something for everyone.
                 </p>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                  alt="Folkestone harbor and seafront view"
+                  alt="Folkestone harbour and seafront view"
                   fill
                   className="object-cover"
                 />
@@ -169,7 +169,7 @@ export default function FolkestonePage() {
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Coffee className="h-5 w-5" />
                 </div>
-                <h3 className="font-semibold mb-2">Harbor Arm</h3>
+                <h3 className="font-semibold mb-2">Harbour Arm</h3>
                 <p className="text-sm text-muted-foreground">
                   Renovated pier with food stalls, bars, and live music. Perfect for sunset drinks 
                   after a day on site. Home to the Lighthouse Champagne Bar and seasonal events.

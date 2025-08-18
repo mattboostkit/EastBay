@@ -505,15 +505,15 @@ export default async function FieldSchoolPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold">Creative Quarter & Harbor</h3>
+                  <h3 className="text-lg font-semibold">Creative Quarter & Harbour</h3>
                   <p className="text-sm text-muted-foreground mt-2">
                     Explore Folkestone's transformation from traditional port to cultural hub. The Creative Quarter 
-                    features artist studios, independent shops, and the famous Harbor Arm with its lighthouse bar.
+                    features artist studios, independent shops, and the famous Harbour Arm with its lighthouse bar.
                   </p>
                   <ul className="mt-4 text-sm text-muted-foreground space-y-1">
                     <li>• Folkestone Artworks outdoor exhibition</li>
                     <li>• Independent galleries and studios</li>
-                    <li>• Harbor Arm sunset drinks</li>
+                    <li>• Harbour Arm sunset drinks</li>
                     <li>• Local food markets</li>
                     <li>• Live music and events</li>
                   </ul>

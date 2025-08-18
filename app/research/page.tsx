@@ -218,9 +218,240 @@ export default function ResearchPage() {
         {/* Publications */}
         <section className="mb-16">
           <h2 className="mb-6 text-2xl font-bold">Publications</h2>
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Academic publications are currently being prepared and will be added here soon.</p>
-            <p className="mt-2 text-sm text-muted-foreground">Please check back for peer-reviewed articles and book chapters.</p>
+          
+          <div className="grid grid-cols-1 gap-6">
+            {/* Book */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Book
+                    </span>
+                    <span className="text-xs text-muted-foreground">2013</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">Folkestone to 1500: A Town Unearthed</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Editor:</strong> Ian Coulson
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>ISBN:</strong> 9781870545273
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Published by:</strong> Canterbury Archaeological Trust
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    A comprehensive account of Folkestone's archaeology and history from prehistoric times to 1500 AD. 
+                    This book brings together the results of numerous excavations and research projects to tell the story of the town's development.
+                  </p>
+                  
+                  <p className="mt-3 text-sm italic text-muted-foreground">
+                    Available for purchase directly from Canterbury Archaeological Trust for £14.99. 
+                    Please <Link href="/contact" className="text-primary hover:underline">contact us</Link> to request a copy.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <a
+                    href="https://www.canterburytrust.co.uk/other-publications"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="View on CAT website"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View on CAT
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Thesis 2024 */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Thesis
+                    </span>
+                    <span className="text-xs text-muted-foreground">2024</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">Investigating economic models and cultural exchange through a zooarchaeological perspective: analysis of the faunal assemblage from the Iron Age port settlement and Roman villa at East Wear Bay, Kent, England</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Author:</strong> Katharine Steinke
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Published in:</strong> Edinburgh Research Archive: Archaeology thesis and dissertation collection
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    A detailed zooarchaeological analysis examining economic models and cultural exchange patterns through the study of animal remains from the East Wear Bay site.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <a
+                    href="http://dx.doi.org/10.7488/era/4434"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="View publication"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Article 2017 */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Journal Article
+                    </span>
+                    <span className="text-xs text-muted-foreground">2017</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">More Classis Britannica Tiles from East Wear Bay, Folkestone</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Author:</strong> Adrian Weston
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Published in:</strong> Archaeologia Cantiana, 2017: 301-08
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Analysis of stamped tiles from the Roman naval fleet (Classis Britannica) discovered at the East Wear Bay site, providing evidence for military connections.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <a
+                    href="https://www.kentarchaeology.org.uk/s/archaeologia-cantiana_138-15_more_classis_britannica_tiles_from_east_wear_bay_folkestone.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="Download PDF"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Article 1989 */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Journal Article
+                    </span>
+                    <span className="text-xs text-muted-foreground">1989</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">Quern Production at Folkestone, South-East Kent: An Interim Note</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Author:</strong> P. T. Keller
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Published in:</strong> Britannia, Volume 20, November 1989, pp. 193-200
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Evidence for the production of rotary querns at Folkestone during the Iron Age and Roman periods, highlighting the site's industrial importance.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <a
+                    href="https://doi.org/10.2307/526162"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="View DOI"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View DOI
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Book 1925 */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Book
+                    </span>
+                    <span className="text-xs text-muted-foreground">1925</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">Roman Folkestone. A Record of Excavation of Roman Villas at East Wear Bay</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Author:</strong> S. E. Winbolt
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Published by:</strong> Methuen & Co., Ltd., London
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    The original excavation report from the 1920s documenting the discovery and initial investigation of the Roman villa at East Wear Bay.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <span className="text-sm text-muted-foreground italic">
+                    Historical publication
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Article Undated */}
+            <div className="rounded-lg border bg-card p-6">
+              <div className="flex flex-col gap-4 md:flex-row">
+                <div className="md:w-3/4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
+                      Research Paper
+                    </span>
+                    <span className="text-xs text-muted-foreground">Undated</span>
+                  </div>
+                  
+                  <h3 className="mt-2 text-xl font-bold">Republican Dressel 1 Amphorae from East Wear Bay, Folkestone</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <strong>Author:</strong> Adrian Weston
+                  </p>
+                  
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Analysis of Roman Republican period wine amphorae from the site, providing evidence for early trading connections with the Mediterranean.
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-end gap-2 md:w-1/4">
+                  <a
+                    href="https://www.kentarchaeology.org.uk/s/03-Republican-Dressel-1-Amphorae-From-East-Wear-Bay-Folkestone.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="Download PDF"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         

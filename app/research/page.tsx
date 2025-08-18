@@ -212,8 +212,6 @@ export default function ResearchPage() {
                 </div>
               </div>
             </div>
-            
-          </div>
           </div>
         </section>
 

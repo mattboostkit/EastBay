@@ -374,15 +374,6 @@ export default async function DigitalMuseumPage({
           </>
         )}
         
-        {/* No Results */}
-        {paginatedArtefacts.length === 0 && (
-          <div className="my-12 text-center">
-            <h2 className="text-xl font-semibold">No artefacts found</h2>
-            <p className="mt-2 text-muted-foreground">
-              Try adjusting your search or filter criteria.
-            </p>
-          </div>
-        )}
         
         {/* Pagination */}
         {totalPages > 1 && (

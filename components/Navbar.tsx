@@ -28,7 +28,7 @@ const navigationGroups = [
     href: "/learn",
     items: [
       { title: 'Education Resources', href: '/education' },
-      { title: 'Research & Publications', href: '/research/publications' },
+      { title: 'Research, Reports and Publications', href: '/research/publications' },
     ]
   },
   {

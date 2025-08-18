@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Research Publications | East Wear Bay Archaeological Project',
+  title: 'Research, Reports and Publications | East Wear Bay Archaeological Project',
   description: 'Academic publications, research papers, and scholarly articles about the Folkestone Roman Villa and East Wear Bay archaeological excavations.',
 }
 
@@ -29,7 +29,7 @@ export default async function PublicationsPage() {
   return (
     <>
       <PageHero
-        title="Research & Publications"
+        title="Research, Reports and Publications"
         description="Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain."
         icon={BookOpen}
         variant="gradient"
@@ -59,7 +59,7 @@ export default async function PublicationsPage() {
 
         {/* Publications List */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Reports and Publications</h2>
+          <h2 className="text-2xl font-bold mb-8">Grey Literature Reports</h2>
           
           {publications && publications.length > 0 ? (
             <div className="space-y-6">

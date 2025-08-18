@@ -80,7 +80,7 @@ export default function Footer({ siteSettings }: FooterProps) {
               </li>
               <li>
                 <Link href="/research" className="text-muted-foreground hover:text-foreground">
-                  Research & Publications
+                  Research, Reports and Publications
                 </Link>
               </li>
               <li>

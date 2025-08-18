@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, FileText, Download, ExternalLink, Search } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Research & Publications | East Wear Bay Archaeological Project',
+  title: 'Research, Reports and Publications | East Wear Bay Archaeological Project',
   description: 'Academic research, scientific studies, and publications documenting the Folkestone Roman Villa excavation and its significance to Romano-British archaeology.',
 }
 
@@ -14,7 +14,7 @@ export default function ResearchPage() {
       <div className="bg-muted py-12 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research & Publications</h1>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research, Reports and Publications</h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Academic studies, scientific analysis, and publications documenting the Roman villa at East Wear Bay and its significance.
             </p>
@@ -131,243 +131,98 @@ export default function ResearchPage() {
         
         {/* Recent Publications */}
         <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold">Reports and Publications</h2>
+          <h2 className="mb-6 text-2xl font-bold">Grey Literature Reports</h2>
           
           <div className="grid grid-cols-1 gap-6">
-            {/* Publication 1 */}
+            {/* Report 1 */}
             <div className="rounded-lg border bg-card p-6">
               <div className="flex flex-col gap-4 md:flex-row">
                 <div className="md:w-3/4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
-                      Journal Article
+                      Interim Report
                     </span>
-                    <span className="text-xs text-muted-foreground">Published Dec 2024</span>
+                    <span className="text-xs text-muted-foreground">January 2012</span>
                   </div>
                   
-                  <h3 className="mt-2 text-xl font-bold">Coastal Erosion and Archaeological Loss: Quantifying Heritage Risk at East Wear Bay</h3>
+                  <h3 className="mt-2 text-xl font-bold">Folkestone, East Wear Bay Roman villa: Interim report on excavations 2011</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Authors:</strong> Wilson, J., Chen, S., & Ahmed, K.
+                    <strong>Author:</strong> Keith Parfitt
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Journal:</strong> Journal of Archaeological Science, Vol. 152, pp. 105789
+                    <strong>Published by:</strong> Canterbury Archaeological Trust Ltd
                   </p>
                   
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-                    This paper presents the results of a five-year monitoring program at East Wear Bay, combining archaeological survey, 
-                    LiDAR data, and climate modelling to quantify the rate of archaeological loss due to coastal erosion.
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    This interim report presents the findings from the 2011 excavation season at the East Wear Bay Roman villa site, 
+                    including initial discoveries of the villa's structural remains and preliminary dating evidence.
                   </p>
                 </div>
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <Link
-                    href="/research/coastal-erosion-quantification"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Read summary
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  
                   <a
-                    href="/downloads/wilson_et_al_2024_coastal_erosion.pdf"
-                    className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-input hover:bg-accent"
+                    href="/downloads/Parfitt_2012_EWB_Interim_Report.pdf"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"
                   >
-                    <Download className="h-4 w-4" />
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
                   </a>
                 </div>
               </div>
             </div>
             
-            {/* Publication 2 */}
+            {/* Report 2 */}
             <div className="rounded-lg border bg-card p-6">
               <div className="flex flex-col gap-4 md:flex-row">
                 <div className="md:w-3/4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
-                      Book Chapter
+                      Management Plan
                     </span>
-                    <span className="text-xs text-muted-foreground">Published Nov 2024</span>
+                    <span className="text-xs text-muted-foreground">January 2021</span>
                   </div>
                   
-                  <h3 className="mt-2 text-xl font-bold">Romano-British Villas in Kent: Patterns of Distribution and Economic Integration</h3>
+                  <h3 className="mt-2 text-xl font-bold">EAST WEAR BAY FOLKESTONE ARCHAEOLOGICAL CONSERVATION MANAGEMENT PLAN</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Authors:</strong> Richards, E. & Davis, M.
+                    <strong>Authors:</strong> Keith Parfitt and Andrew Richardson
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>In:</strong> Taylor, S. (ed.) Rural Settlement in Roman Britain. Oxford University Press, pp. 187-214
+                    <strong>Published by:</strong> Canterbury Archaeological Trust Ltd
                   </p>
                   
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-                    This chapter examines the distribution of Roman villas in Kent, analyzing their relationship to transport networks, 
-                    natural resources, and urban centers, with the Folkestone Villa serving as a detailed case study.
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    A comprehensive conservation management plan for the East Wear Bay archaeological site, outlining strategies for 
+                    preservation, research priorities, and management of the site in the face of ongoing coastal erosion.
+                  </p>
+                  <p className="mt-2 text-xs text-muted-foreground italic">
+                    Note: PDFs can be viewed directly in your browser or downloaded for offline reading.
                   </p>
                 </div>
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <Link
-                    href="/research/kent-villas-distribution"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Read summary
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  
                   <a
-                    href="/downloads/richards_davis_2024_kent_villas.pdf"
-                    className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-input hover:bg-accent"
+                    href="/downloads/Parfitt_Richardson_2021_EWB_Management_Plan.pdf"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"
                   >
-                    <Download className="h-4 w-4" />
+                    <Download className="mr-2 h-4 w-4" />
+                    Download PDF
                   </a>
                 </div>
               </div>
             </div>
             
-            {/* Publication 3 */}
-            <div className="rounded-lg border bg-card p-6">
-              <div className="flex flex-col gap-4 md:flex-row">
-                <div className="md:w-3/4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
-                      Journal Article
-                    </span>
-                    <span className="text-xs text-muted-foreground">Published Aug 2024</span>
-                  </div>
-                  
-                  <h3 className="mt-2 text-xl font-bold">Digital Preservation of Archaeological Sites at Risk: A Methodological Framework</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Authors:</strong> Chen, S., Richards, E., & Smith, J.
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Journal:</strong> Internet Archaeology, Vol. 59
-                  </p>
-                  
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-                    This paper presents a comprehensive framework for the digital preservation of archaeological sites at risk, 
-                    using the East Wear Bay Project as a case study in implementing multi-method digital documentation strategies.
-                  </p>
-                </div>
-                
-                <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <Link
-                    href="/research/digital-preservation-framework"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Read summary
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  
-                  <a
-                    href="/downloads/chen_et_al_2024_digital_preservation.pdf"
-                    className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-input hover:bg-accent"
-                    aria-label="Download PDF"
-                  >
-                    <Download className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Publication 4 */}
-            <div className="rounded-lg border bg-card p-6">
-              <div className="flex flex-col gap-4 md:flex-row">
-                <div className="md:w-3/4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
-                      Technical Report
-                    </span>
-                    <span className="text-xs text-muted-foreground">Published May 2024</span>
-                  </div>
-                  
-                  <h3 className="mt-2 text-xl font-bold">East Wear Bay Excavation Report 2023: Eastern Wing of the Roman Villa</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Authors:</strong> East Wear Bay Project Team
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Published by:</strong> East Wear Bay Archaeological Project
-                  </p>
-                  
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-                    Detailed technical report of the 2023 excavation season, documenting the newly uncovered eastern wing of the villa 
-                    complex, including room layouts, architectural features, and significant finds.
-                  </p>
-                </div>
-                
-                <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <Link
-                    href="/research/2023-excavation-report"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Read summary
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  
-                  <a
-                    href="/downloads/ewb_excavation_report_2023.pdf"
-                    className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-input hover:bg-accent"
-                    aria-label="Download PDF"
-                  >
-                    <Download className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Publication 5 */}
-            <div className="rounded-lg border bg-card p-6">
-              <div className="flex flex-col gap-4 md:flex-row">
-                <div className="md:w-3/4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-medium text-secondary">
-                      Conference Paper
-                    </span>
-                    <span className="text-xs text-muted-foreground">Published March 2024</span>
-                  </div>
-                  
-                  <h3 className="mt-2 text-xl font-bold">Community Archaeology in Practice: Experiences from the East Wear Bay Project</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Authors:</strong> Richards, E., Wilson, J., & Parker, L.
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    <strong>Conference:</strong> Public Archaeology Conference 2024, York, UK
-                  </p>
-                  
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-                    This paper evaluates the community archaeology approaches implemented at East Wear Bay, assessing their impact on 
-                    public engagement, volunteer retention, and the quality of archaeological data recovery.
-                  </p>
-                </div>
-                
-                <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <Link
-                    href="/research/community-archaeology-practice"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    Read summary
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  
-                  <a
-                    href="/downloads/richards_et_al_2024_community_archaeology.pdf"
-                    className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-input hover:bg-accent"
-                    aria-label="Download PDF"
-                  >
-                    <Download className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
-          
-          <div className="mt-8 text-center">
-            <Link
-              href="/research/publications"
-              className="inline-flex items-center text-primary"
-            >
-              View all publications
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
+          </div>
+        </section>
+
+        {/* Publications */}
+        <section className="mb-16">
+          <h2 className="mb-6 text-2xl font-bold">Publications</h2>
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">Academic publications are currently being prepared and will be added here soon.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Please check back for peer-reviewed articles and book chapters.</p>
           </div>
         </section>
         

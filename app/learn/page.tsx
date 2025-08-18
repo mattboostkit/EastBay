@@ -22,7 +22,7 @@ const learnItems = [
     ]
   },
   {
-    title: 'Research & Publications',
+    title: 'Research, Reports and Publications',
     description: 'Explore our academic research, published papers, and detailed archaeological reports from the East Wear Bay excavations.',
     href: '/research/publications',
     icon: FileText,

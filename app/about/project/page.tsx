@@ -16,7 +16,8 @@ export default function AboutPage() {
         title="About the Project"
         description="The East Wear Bay Archaeological project is a community-led initiative to investigate, record, preserve and share the archaeological landscape at East Wear Bay before it is lost to coastal erosion."
         icon={Info}
-        variant="gradient"
+        variant="image"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Folkestone_seaview.jpg?updatedAt=1755543848521"
       />
       
       <div className="container py-12">
@@ -38,7 +39,7 @@ export default function AboutPage() {
               </div>
               <div className="relative rounded-lg overflow-hidden h-[300px]">
                 <Image 
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Our-Mission.jpg?updatedAt=1755543727360" 
                   alt="Eroding cliff face at East Wear Bay showing archaeological features being lost to the sea"
                   fill
                   className="object-cover"
@@ -185,7 +186,7 @@ export default function AboutPage() {
             <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="relative rounded-lg overflow-hidden h-[300px] md:order-2">
                 <Image 
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg" 
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/The-Archaeology.jpg?updatedAt=1755543727496" 
                   alt="Archaeological excavation of the Folkestone Roman Villa showing room foundations and features"
                   fill
                   className="object-cover"

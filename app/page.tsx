@@ -181,36 +181,45 @@ export default async function Home() {
                 <ArtefactCard key={artefact._id} artefact={artefact} />
               ))
             ) : (
-              // If no artefacts are fetched, display placeholder cards
-              Array.from({ length: 3 }).map((_, index) => (
-                <div key={index} className="rounded-lg border bg-card shadow-sm">
+              // If no artefacts are fetched, display Sketchfab embeds
+              <>
+                {/* Dog Skull - Best model #1 */}
+                <div className="rounded-lg border bg-card shadow-sm">
                   <div className="p-3">
-                    <div className="relative pb-[100%] bg-muted flex items-center justify-center">
-                      <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                        <span>3D Model Placeholder</span>
-                      </div>
+                    <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                      <iframe 
+                        title="Dog Skull" 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                        src="https://sketchfab.com/models/377115ce55264f6ebe7e605ed1e27014/embed"
+                        className="absolute inset-0 w-full h-full rounded-md"
+                      />
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold">
-                      {index === 0 ? "Roman Pottery Fragment" : 
-                       index === 1 ? "Bronze Fibula Brooch" : 
-                       "Roman Wall Painting Fragment"}
-                    </h3>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      {index === 0 ? "1st-2nd Century CE" : 
-                       index === 1 ? "3rd Century CE" : 
-                       "2nd Century CE"}
-                    </p>
+                    <h3 className="text-lg font-bold">Dog Skull</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">Archaeological Specimen</p>
                     <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      {index === 0 ? "Decorated pottery fragment found in the eastern wing of the villa." : 
-                       index === 1 ? "Well-preserved bronze brooch with decorative elements." : 
-                       "Painted plaster fragment showing geometric patterns in red and blue."}
+                      Well-preserved canine skull specimen discovered during excavations at East Wear Bay.
                     </p>
+                    <div className="mt-3 text-xs">
+                      <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Dog Skull
+                      </a>
+                      {" by "}
+                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        CATrust25
+                      </a>
+                      {" on "}
+                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Sketchfab
+                      </a>
+                    </div>
                     <Link 
-                      href={index === 0 ? "/digital-museum/roman-pottery" : 
-                            index === 1 ? "/digital-museum/bronze-fibula" : 
-                            "/digital-museum/wall-painting"} 
+                      href="/digital-museum/dog-skull" 
                       className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                     >
                       View details
@@ -218,7 +227,97 @@ export default async function Home() {
                     </Link>
                   </div>
                 </div>
-              ))
+
+                {/* Tusk Pendant - Best model #2 */}
+                <div className="rounded-lg border bg-card shadow-sm">
+                  <div className="p-3">
+                    <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                      <iframe 
+                        title="Iron Age or Roman Period Tusk Pendant" 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                        src="https://sketchfab.com/models/07bc66e33bbe4c3ab97beca7b2206ee1/embed"
+                        className="absolute inset-0 w-full h-full rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold">Tusk Pendant</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">Iron Age / Roman Period</p>
+                    <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                      Personal ornament crafted from animal tusk, likely worn as a pendant or amulet.
+                    </p>
+                    <div className="mt-3 text-xs">
+                      <a href="https://sketchfab.com/3d-models/iron-age-or-roman-period-tusk-pendant-07bc66e33bbe4c3ab97beca7b2206ee1?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Iron Age or Roman Period Tusk Pendant
+                      </a>
+                      {" by "}
+                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        CATrust25
+                      </a>
+                      {" on "}
+                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Sketchfab
+                      </a>
+                    </div>
+                    <Link 
+                      href="/digital-museum/tusk-pendant" 
+                      className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                    >
+                      View details
+                      <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Flint Arrowhead */}
+                <div className="rounded-lg border bg-card shadow-sm">
+                  <div className="p-3">
+                    <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                      <iframe 
+                        title="Flint Arrowhead" 
+                        frameBorder="0" 
+                        allowFullScreen 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                        src="https://sketchfab.com/models/47f3d49d46f541dcb8778aee7e3e7627/embed"
+                        className="absolute inset-0 w-full h-full rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold">Flint Arrowhead</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">Prehistoric</p>
+                    <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                      Well-preserved flint arrowhead from the prehistoric occupation of the site.
+                    </p>
+                    <div className="mt-3 text-xs">
+                      <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Flint Arrowhead
+                      </a>
+                      {" by "}
+                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        CATrust25
+                      </a>
+                      {" on "}
+                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Sketchfab
+                      </a>
+                    </div>
+                    <Link 
+                      href="/digital-museum/flint-arrowhead" 
+                      className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                    >
+                      View details
+                      <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </div>

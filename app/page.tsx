@@ -61,18 +61,13 @@ export default async function Home() {
 
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden" aria-labelledby="hero-heading">
-        {heroSection?.backgroundImage && (
-          <Image
-            src={urlForImage(heroSection.backgroundImage)
-              ?.width(1920)
-              ?.height(1080)
-              ?.url() || ''}
-            fill
-            priority
-            alt={heroSection.backgroundImage.alt || "East Wear Bay coastal view"}
-            className="object-cover object-center"
-          />
-        )}
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Hero.jpg?updatedAt=1755600476498"
+          fill
+          priority
+          alt="East Wear Bay coastal view"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="container relative z-10 flex h-full flex-col items-start justify-center text-white">
           <div className="mb-6 flex items-center gap-4">
@@ -138,19 +133,14 @@ export default async function Home() {
                 </Link>
               </div>
             </div>
-            {aboutSection?.mainImage && (
-              <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-                <Image 
-                  src={urlForImage(aboutSection.mainImage)
-                    ?.width(800)
-                    ?.height(600)
-                    ?.url() || ''}
-                  alt={aboutSection.mainImage.alt || "Coastal view of East Wear Bay showing the archaeological site"}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+            <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
+              <Image 
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-About.jpg?updatedAt=1755600476501"
+                alt="Coastal view of East Wear Bay showing the archaeological site"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -430,19 +420,14 @@ export default async function Home() {
       <section className="bg-muted py-16 md:py-24" aria-labelledby="field-school-heading">
         <div className="container">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {fieldSchoolSection?.mainImage && (
-              <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-                <Image 
-                  src={urlForImage(fieldSchoolSection.mainImage)
-                    ?.width(800)
-                    ?.height(600)
-                    ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                  alt={fieldSchoolSection.mainImage.alt || "Field school participants from July 2025 excavation"}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+            <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
+              <Image 
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Success.jpg?updatedAt=1755600476499"
+                alt="Field school participants from July 2025 excavation"
+                fill
+                className="object-cover"
+              />
+            </div>
             <div>
               <h2 id="field-school-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
                 2025 Field School Success

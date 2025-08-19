@@ -6,7 +6,7 @@ import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Community & Outreach | East Wear Bay Archaeological Project',
-  description: 'Discover our community archaeology programs, educational outreach, and public engagement initiatives at the Folkestone Roman Villa site.',
+  description: 'Discover our community archaeology programmes, educational outreach, and public engagement initiatives at the Folkestone Roman Villa site.',
 }
 
 export default function CommunityPage() {
@@ -14,7 +14,7 @@ export default function CommunityPage() {
     <>
       <PageHero
         title="Community & Outreach"
-        description="Engaging the public with archaeology and connecting communities to their local heritage through inclusive programs and activities."
+        description="Engaging the public with archaeology and connecting communities to their local heritage through inclusive programmes and activities."
         icon={Users}
         variant="gradient"
       />
@@ -25,7 +25,7 @@ export default function CommunityPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-2xl font-bold">Our Community Principles</h2>
             <p className="mt-3 text-muted-foreground">
-              At the East Wear Bay Project, we believe that archaeology belongs to everyone. Our community programs are designed around three core principles:
+              At the East Wear Bay Project, we believe that archaeology belongs to everyone. Our community programmes are designed around three core principles:
             </p>
             
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -62,7 +62,7 @@ export default function CommunityPage() {
           </div>
         </section>
         
-        {/* Current Programs */}
+        {/* Current Programmes */}
         <section className="mb-16">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold">Workshops</h2>
@@ -364,7 +364,7 @@ export default function CommunityPage() {
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
               <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
                 <div className="text-4xl font-bold text-primary">5,000+</div>
-                <p className="mt-2 text-muted-foreground">Participants in community programs annually</p>
+                <p className="mt-2 text-muted-foreground">Participants in community programmes annually</p>
               </div>
               
               <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
@@ -384,7 +384,7 @@ export default function CommunityPage() {
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
                 <blockquote className="rounded-lg border bg-card p-5">
                   <p className="italic text-muted-foreground">
-                    "The Digital Time Capsule program transformed my students' understanding of history. They went from seeing archaeology as dusty and distant to something vibrant and connected to their own lives."
+                    "The Digital Time Capsule programme transformed my students' understanding of history. They went from seeing archaeology as dusty and distant to something vibrant and connected to their own lives."
                   </p>
                   <div className="mt-4 flex items-center gap-2">
                     <div className="font-medium">Ms. Williams</div>
@@ -412,7 +412,7 @@ export default function CommunityPage() {
             <div className="text-center">
               <h2 className="text-2xl font-bold">Get Involved</h2>
               <p className="mt-2">
-                There are many ways to participate in the East Wear Bay Project, from hands-on archaeology to supporting our community programs.
+                There are many ways to participate in the East Wear Bay Project, from hands-on archaeology to supporting our community programmes.
               </p>
               
               <div className="mt-6 flex flex-wrap justify-center gap-4">

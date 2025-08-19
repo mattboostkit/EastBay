@@ -336,7 +336,7 @@ export default async function Home() {
               </p>
             </div>
             <Link href="/community" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all outreach programs
+              View all outreach programmes
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </div>
@@ -350,7 +350,7 @@ export default async function Home() {
                       ?.width(800)
                       ?.height(400)
                       ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                    alt={communitySection.items[0].image.alt || "Children participating in the Digital Time Capsule program"}
+                    alt={communitySection.items[0].image.alt || "Children participating in the Digital Time Capsule programme"}
                     fill
                     className="object-cover"
                   />
@@ -358,7 +358,7 @@ export default async function Home() {
               )}
               <h3 className="mt-4 text-xl font-bold">Digital Time Capsule</h3>
               <p className="mt-2 flex-grow text-muted-foreground">
-                A youth engagement program that allows local schoolchildren to create digital records of artifacts, learning about both archaeology and technology.
+                A youth engagement programme that allows local school children to consider the importance of objects and identity and to create digital records of objects they think are important to the modern world for future preservation.
               </p>
               <Link 
                 href="/community/digital-time-capsule" 
@@ -385,7 +385,7 @@ export default async function Home() {
               )}
               <h3 className="mt-4 text-xl font-bold">Memory Through Objects</h3>
               <p className="mt-2 flex-grow text-muted-foreground">
-                Our dementia-friendly sessions use archaeology to stimulate memory and conversation among elderly participants through object handling and storytelling.
+                Our dementia-friendly sessions explore archaeology through sensory engagement with artefacts and by undertaking craft activities to help stimulate conversation and the exchange of stories.
               </p>
               <Link 
                 href="/community/memory-through-objects" 
@@ -451,39 +451,25 @@ export default async function Home() {
                 Completed July 2025
               </div>
               <p className="mt-6 text-lg">
-                Our 2025 Field School (July 7-18) was a remarkable success with 24 participants from 8 countries joining us for two weeks of excavation and discovery.
+                Our 2025 Field School (July 7-18) was a remarkable success with 22 participants from 5 countries joining us for two weeks of training, excavation and discovery.
               </p>
               <p className="mt-4 text-lg">
-                Key achievements from this season include the discovery of a new section of the villa's eastern wing and several well-preserved Iron Age features beneath.
+                Key achievements from this season include better definition of a significant boundary ditch that runs across the site and the discovery of a possible four-post granary structure.
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Uncovered 3 new rooms of the Roman villa</span>
+                  <span>Trained 22 students in excavation techniques</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Found over 200 pottery fragments and 15 coins</span>
+                  <span>Geophysical survey results show a series of possible features at Copt Point</span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Trained 24 participants in excavation techniques</span>
+                  <span>Excavation results provide a greater understanding of the Iron Age to Roman period transition</span>
                 </li>
               </ul>
-              <div className="mt-8 flex gap-4">
-                <Link 
-                  href="/blog/field-school-2025-results" 
-                  className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                >
-                  Read Full Report
-                </Link>
-                <Link 
-                  href="/field-school/2026" 
-                  className="rounded-md border border-primary px-6 py-3 font-medium text-primary shadow-sm hover:bg-primary/10"
-                >
-                  2026 Applications
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -526,45 +512,61 @@ export default async function Home() {
               </div>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
-              {videos.slice(0, 2).map((video: any) => (
-                <div key={video._id} className="rounded-lg border bg-card overflow-hidden">
-                  {video.thumbnail && (
-                    <div className="relative h-48 w-full">
-                      <Image
-                        src={urlFor(video.thumbnail).width(800).height(450).url()}
-                        alt={video.thumbnail.alt || video.title}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                        <div className="rounded-full bg-white p-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <h3 className="font-semibold mb-2">{video.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{video.description}</p>
-                    {video.duration && (
-                      <p className="text-sm text-muted-foreground">
-                        Duration: {video.duration}
-                      </p>
-                    )}
-                    {video.externalVideo && (
-                      <a 
-                        href={video.externalVideo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-sm text-primary hover:underline mt-4"
-                      >
-                        Watch on {video.externalVideo.includes('youtube') ? 'YouTube' : 'Vimeo'}
-                        <ArrowRight className="ml-1 h-3 w-3" />
-                      </a>
-                    )}
-                  </div>
+              {/* Video 1 */}
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/oTalhuo-5Pg"
+                    title="East Wear Bay Archaeological Project Video"
+                    className="absolute inset-0 h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-              ))}
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">East Wear Bay Archaeological Project</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Explore our ongoing archaeological work at the East Wear Bay Roman villa site.
+                  </p>
+                  <a 
+                    href="https://www.youtube.com/watch?v=oTalhuo-5Pg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                  >
+                    Watch on YouTube
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+              
+              {/* Video 2 */}
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/aoQk4uq6Ol4"
+                    title="Community Archaeology at East Wear Bay"
+                    className="absolute inset-0 h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Community Archaeology at East Wear Bay</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Learn about our community engagement and educational programmes at the site.
+                  </p>
+                  <a 
+                    href="https://www.youtube.com/watch?v=aoQk4uq6Ol4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                  >
+                    Watch on YouTube
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -672,7 +674,7 @@ export default async function Home() {
                       ?.width(800)
                       ?.height(400)
                       ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                    alt={newsSection.items[2].image.alt || "Students participating in education program"}
+                    alt={newsSection.items[2].image.alt || "Students participating in education programme"}
                     fill
                     className="rounded-t-lg object-cover"
                   />
@@ -684,7 +686,7 @@ export default async function Home() {
                     June 15, 2025
                   </span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold">Education Program Reaches 1,000 Local Students</h3>
+                <h3 className="mt-2 text-xl font-bold">Education Programme Reaches 1,000 Local Students</h3>
                 <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
                   Our outreach team has successfully engaged over 1,000 Folkestone students through innovative archaeology workshops and site visits this school year.
                 </p>

@@ -89,7 +89,7 @@ export default async function FieldSchoolPage() {
               <div className="rounded-lg border p-5">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h3 className="text-xl font-medium">Community Weekend Program</h3>
+                    <h3 className="text-xl font-medium">Community Weekend Programme</h3>
                     <p className="text-sm text-muted-foreground">For local residents and beginners</p>
                   </div>
                   <button
@@ -121,7 +121,7 @@ export default async function FieldSchoolPage() {
 
                 <div className="mt-4">
                   <p className="text-sm">
-                    Our weekend program allows local residents and beginners to participate in ongoing excavations
+                    Our weekend programme allows local residents and beginners to participate in ongoing excavations
                     with flexible scheduling. Each weekend includes training, excavation experience, and finds processing.
                     No previous experience required.
                   </p>
@@ -164,7 +164,7 @@ export default async function FieldSchoolPage() {
 
                 <div className="mt-4">
                   <p className="text-sm">
-                    Designed specifically for young people considering archaeology or heritage careers. This two-week program
+                    Designed specifically for young people considering archaeology or heritage careers. This two-week programme
                     provides age-appropriate training, excavation experience, and insight into archaeological
                     practices and potential career paths.
                   </p>
@@ -418,7 +418,7 @@ export default async function FieldSchoolPage() {
                 </div>
                 <blockquote className="mt-4 border-l-2 border-primary pl-4 italic text-muted-foreground">
                   "As a Folkestone resident, I'd walked past this site for years without understanding its significance.
-                  The weekend program gave me practical archaeology skills and a deeper connection to my local heritage.
+                  The weekend programme gave me practical archaeology skills and a deeper connection to my local heritage.
                   I've returned for three seasons now!"
                 </blockquote>
               </div>

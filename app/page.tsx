@@ -123,7 +123,7 @@ export default async function Home() {
                 About the East Wear Bay Project
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                The East Wear Bay Archaeological Project is dedicated to excavating, recording, and preserving the Folkestone Roman Villa and its surrounding archaeological landscape before it is lost to coastal erosion.
+                The East Wear Bay Archaeological Project is dedicated to excavating, recording, and preserving Folkestone Roman Villa and its surrounding archaeological landscape before it is lost to coastal erosion.
               </p>
               <p className="mt-6 text-lg text-muted-foreground">
                 Through a combination of professional archaeology, community involvement, and innovative digital technology, we're racing against time to document this important heritage site for future generations.

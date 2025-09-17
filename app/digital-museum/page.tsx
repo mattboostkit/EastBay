@@ -119,35 +119,35 @@ export default async function DigitalMuseumPage({
               </div>
             </div>
 
-            {/* Iron Age or Roman Period Tusk Pendant - #2 */}
+            {/* Copper Alloy Hod Hill Type Brooch - #2 */}
             <div className="rounded-lg border bg-card shadow-sm">
               <div className="p-3">
                 <div className="sketchfab-embed-wrapper relative pb-[100%]">
-                  <iframe 
-                    title="Iron Age or Roman Period Tusk Pendant" 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    mozallowfullscreen="true" 
-                    webkitallowfullscreen="true" 
-                    allow="autoplay; fullscreen; xr-spatial-tracking" 
-                    src="https://sketchfab.com/models/07bc66e33bbe4c3ab97beca7b2206ee1/embed"
+                  <iframe
+                    title="Copper Alloy Hod Hill Type Brooch"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/52304a6789cd47d597e08ea929472563/embed"
                     className="absolute inset-0 w-full h-full rounded-md"
                   />
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-bold">Tusk Pendant</h3>
-                <p className="mt-1 text-xs text-muted-foreground">Iron Age / Roman Period</p>
+                <h3 className="text-lg font-bold">Hod Hill Type Brooch</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
                 <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                  Personal ornament crafted from animal tusk, likely worn as a pendant or amulet.
+                  Copper alloy brooch of the Hod Hill type, a distinctive style of Roman military brooch from the 1st century AD.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/iron-age-or-roman-period-tusk-pendant-07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/copper-alloy-hod-hill-type-brooch-52304a6789cd47d597e08ea929472563" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
-                <Link 
-                  href="/digital-museum/tusk-pendant" 
+                <Link
+                  href="/digital-museum/hod-hill-brooch"
                   className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                 >
                   View details
@@ -341,22 +341,336 @@ export default async function DigitalMuseumPage({
               </div>
             </div>
 
-            {/* Placeholder 5 - Add your Sketchfab embed here */}
-            <div className="rounded-lg border bg-card shadow-sm border-dashed border-2 border-muted-foreground/25">
+            {/* Ceramic Spindle Whorl - #8 */}
+            <div className="rounded-lg border bg-card shadow-sm">
               <div className="p-3">
-                <div className="relative pb-[100%] bg-muted flex items-center justify-center rounded-md">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-4 text-center">
-                    <span className="text-sm font-medium">Placeholder for 3D Model #8</span>
-                    <span className="text-xs mt-2">Replace this with your Sketchfab embed</span>
-                  </div>
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Ceramic Spindle Whorl"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/13102c0f8941472ba93e6bd21e4a31de/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-bold text-muted-foreground">Model Title</h3>
-                <p className="mt-1 text-xs text-muted-foreground">Period</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Description of the artefact will go here.
+                <h3 className="text-lg font-bold">Ceramic Spindle Whorl</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Multi-period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Ceramic spindle whorl used for spinning thread from wool or plant fibres, an essential textile production tool.
                 </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-13102c0f8941472ba93e6bd21e4a31de" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/spindle-whorl"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Ceramic Spindle Whorl (Second) - #9 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Ceramic Spindle Whorl"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/f535149ad9d14c7db8798109638abf25/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Ceramic Spindle Whorl II</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Multi-period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Another example of a ceramic spindle whorl, showing variations in size and decoration used for textile production.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-f535149ad9d14c7db8798109638abf25" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/spindle-whorl-2"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Antler - #10 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Antler"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/37ca9dd3650d4b93bb51d5761b880f1a/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Worked Antler</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Multi-period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Worked antler piece, possibly used as a tool or raw material for crafting implements and ornaments.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/antler-37ca9dd3650d4b93bb51d5761b880f1a" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/worked-antler"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Vessel Fragment - #11 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Vessel Fragment"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/526b2e81ca8c4336a2588ca3218c94e4/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Vessel Fragment</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Fragment of a ceramic vessel showing construction techniques and decorative elements from the Roman period.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/vessel-fragment-526b2e81ca8c4336a2588ca3218c94e4" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/vessel-fragment"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Fragment from Cam 112 Type Beaker - #12 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Fragment from Cam 112 Type Beaker"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/a6d9ad9d5629488db29d6d6c8713cf6c/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Cam 112 Type Beaker</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Fragment from a Cam 112 type beaker, a distinctive form of Roman pottery dating to the 1st-2nd century AD.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-a6d9ad9d5629488db29d6d6c8713cf6c" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/cam-112-beaker"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Fragment from Cam 112 Type Beaker (Second) - #13 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Fragment from Cam 112 Type Beaker"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/6bf48cc97d3c4cfd8c0d5acfdfe45123/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Cam 112 Type Beaker II</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Another fragment from a Cam 112 type beaker, showing different decorative elements and construction details.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-6bf48cc97d3c4cfd8c0d5acfdfe45123" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/cam-112-beaker-2"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Copper Alloy Brooch - #14 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Copper Alloy Brooch"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/f57ead2f553a4d01831a6674b70a8a60/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Copper Alloy Brooch</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Copper alloy brooch used for fastening clothing, demonstrating Roman metalworking and fashion.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/copper-alloy-brooch-f57ead2f553a4d01831a6674b70a8a60" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/copper-brooch"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Bone Gaming Counter - #15 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Bone Gaming Counter"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/d18670bb704d4db5b9845ead98f6e2f1/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Bone Gaming Counter</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Roman Period</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Bone gaming counter used in Roman board games, evidence of leisure activities in Roman Britain.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/bone-gaming-counter-d18670bb704d4db5b9845ead98f6e2f1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/gaming-counter"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Worked Flint - #16 */}
+            <div className="rounded-lg border bg-card shadow-sm">
+              <div className="p-3">
+                <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                  <iframe
+                    title="Worked Flint"
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    src="https://sketchfab.com/models/8df9ab499a674dc1be334fdb169ec1d6/embed"
+                    className="absolute inset-0 w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">Worked Flint</h3>
+                <p className="mt-1 text-xs text-muted-foreground">Prehistoric</p>
+                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                  Worked flint tool showing evidence of knapping techniques used in prehistoric tool production.
+                </p>
+                <div className="mt-3 text-xs">
+                  <a href="https://sketchfab.com/3d-models/worked-flint-8df9ab499a674dc1be334fdb169ec1d6" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                    View on Sketchfab
+                  </a>
+                </div>
+                <Link
+                  href="/digital-museum/worked-flint"
+                  className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View details
+                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </div>

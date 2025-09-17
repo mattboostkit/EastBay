@@ -218,50 +218,6 @@ export default async function Home() {
                   </div>
                 </div>
 
-                {/* Tusk Pendant - Best model #2 */}
-                <div className="rounded-lg border bg-card shadow-sm">
-                  <div className="p-3">
-                    <div className="sketchfab-embed-wrapper relative pb-[100%]">
-                      <iframe 
-                        title="Iron Age or Roman Period Tusk Pendant" 
-                        frameBorder="0" 
-                        allowFullScreen 
-                        mozallowfullscreen="true" 
-                        webkitallowfullscreen="true" 
-                        allow="autoplay; fullscreen; xr-spatial-tracking" 
-                        src="https://sketchfab.com/models/07bc66e33bbe4c3ab97beca7b2206ee1/embed"
-                        className="absolute inset-0 w-full h-full rounded-md"
-                      />
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold">Tusk Pendant</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">Iron Age / Roman Period</p>
-                    <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      Personal ornament crafted from animal tusk, likely worn as a pendant or amulet.
-                    </p>
-                    <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/iron-age-or-roman-period-tusk-pendant-07bc66e33bbe4c3ab97beca7b2206ee1?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
-                        Iron Age or Roman Period Tusk Pendant
-                      </a>
-                      {" by "}
-                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
-                        CATrust25
-                      </a>
-                      {" on "}
-                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=07bc66e33bbe4c3ab97beca7b2206ee1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
-                        Sketchfab
-                      </a>
-                    </div>
-                    <Link 
-                      href="/digital-museum/tusk-pendant" 
-                      className="mt-3 inline-flex items-center text-sm font-medium text-primary"
-                    >
-                      View details
-                      <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
-                    </Link>
-                  </div>
-                </div>
 
                 {/* Flint Arrowhead */}
                 <div className="rounded-lg border bg-card shadow-sm">

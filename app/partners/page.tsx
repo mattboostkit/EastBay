@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Handshake } from 'lucide-react'
+import { PageHero } from '@/components/PageHero'
 import { client, urlForImage } from '@/lib/sanity.client'
 import { partnersQuery } from '@/lib/queries/partners'
 
@@ -36,16 +38,13 @@ export default async function PartnersPage() {
 
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Working Together</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              The East Wear Bay Archaeological Project is a community project with the aim of researching the historic landscape of East Wear Bay and preserving archaeological remains associated with Folkestone Roman Villa 'by record' before they are lost forever to coastal erosion.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Working Together"
+        description="The East Wear Bay Archaeological Project is a community project with the aim of researching the historic landscape of East Wear Bay and preserving archaeological remains associated with Folkestone Roman Villa 'by record' before they are lost forever to coastal erosion."
+        icon={Handshake}
+        variant="image"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Partners/Partners_Hero_EWB.webp?updatedAt=1758121883166"
+      />
 
       <div className="container py-12">
         <div className="mx-auto max-w-6xl">

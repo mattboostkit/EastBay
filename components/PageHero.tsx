@@ -11,9 +11,9 @@ interface PageHeroProps {
   backgroundImage?: string
 }
 
-export function PageHero({ 
-  title, 
-  description, 
+export function PageHero({
+  title,
+  description,
   icon: Icon,
   variant = 'gradient',
   className,
@@ -21,7 +21,8 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className={cn(
-      "relative py-12 md:py-20",
+      "relative",
+      backgroundImage ? "h-[60vh] min-h-[500px]" : "py-12 md:py-20",
       variant === 'gradient' && !backgroundImage && "bg-gradient-to-br from-primary/10 via-primary/5 to-background",
       variant === 'muted' && !backgroundImage && "bg-muted",
       variant === 'image' && "overflow-hidden",
@@ -41,7 +42,10 @@ export function PageHero({
           </div>
         </>
       )}
-      <div className="container relative z-10">
+      <div className={cn(
+        "container relative z-10",
+        backgroundImage && "flex h-full items-center justify-center"
+      )}>
         <div className="mx-auto max-w-3xl text-center">
           {Icon && (
             <div className={cn(

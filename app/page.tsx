@@ -68,9 +68,9 @@ export default async function Home() {
           fill
           priority
           alt="East Wear Bay coastal view"
-          className="object-cover object-center opacity-50"
+          className="object-cover object-center opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" aria-hidden="true" />
 
         {/* Decorative pattern overlay */}
         <div className="absolute inset-0 bg-pattern-dots opacity-10" />
@@ -268,15 +268,15 @@ export default async function Home() {
                       Well-preserved canine skull specimen discovered during excavations at East Wear Bay.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Dog Skull
                       </a>
                       {" by "}
-                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         CATrust25
                       </a>
                       {" on "}
-                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Sketchfab
                       </a>
                     </div>
@@ -314,15 +314,15 @@ export default async function Home() {
                       Well-preserved flint arrowhead from the prehistoric occupation of the site.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Flint Arrowhead
                       </a>
                       {" by "}
-                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         CATrust25
                       </a>
                       {" on "}
-                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Sketchfab
                       </a>
                     </div>
@@ -336,26 +336,43 @@ export default async function Home() {
                   </div>
                 </div>
 
-                {/* Roman Pottery - Third artifact */}
+                {/* Ceramic Roman Figurine Fragment - Third artifact */}
                 <div className="card-archaeological hover-lift group">
                   <div className="p-3">
-                    <div className="relative pb-[100%] rounded-lg overflow-hidden bg-gradient-to-br from-sand-100 to-stone-100">
-                      <Image
-                        src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Digital%20Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
-                        alt="Roman Pottery Fragment"
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    <div className="sketchfab-embed-wrapper relative pb-[100%]">
+                      <iframe
+                        title="Ceramic Roman Figurine Fragment"
+                        frameBorder="0"
+                        allowFullScreen
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        src="https://sketchfab.com/models/8f8e7e23c33e4f2ea2a5a4e5d0e3c5f8/embed"
+                        className="absolute inset-0 w-full h-full rounded-md"
                       />
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold">Roman Pottery</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">1st-3rd Century CE</p>
+                    <h3 className="text-lg font-bold">Ceramic Roman Figurine Fragment</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">2nd-3rd Century CE</p>
                     <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      Fragment of Roman pottery showing distinctive decoration, evidence of the villa's occupation during the Roman period.
+                      Fragment of a ceramic figurine, likely depicting a deity or household god, demonstrating the religious practices at the villa.
                     </p>
+                    <div className="mt-3 text-xs">
+                      <a href="https://sketchfab.com/3d-models/ceramic-roman-figurine-fragment-8f8e7e23c33e4f2ea2a5a4e5d0e3c5f8" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Ceramic Roman Figurine Fragment
+                      </a>
+                      {" by "}
+                      <a href="https://sketchfab.com/CATrust25" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        CATrust25
+                      </a>
+                      {" on "}
+                      <a href="https://sketchfab.com" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Sketchfab
+                      </a>
+                    </div>
                     <Link
-                      href="/digital-museum/roman-pottery"
+                      href="/digital-museum/ceramic-figurine"
                       className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                     >
                       View details
@@ -624,7 +641,7 @@ export default async function Home() {
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=oTalhuo-5Pg"
-                    target="-blank"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >
@@ -652,7 +669,7 @@ export default async function Home() {
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=aoQk4uq6Ol4"
-                    target="-blank"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >

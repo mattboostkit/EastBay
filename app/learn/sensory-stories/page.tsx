@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHero } from '@/components/PageHero'
-import { BookOpen, Download, Users, Heart } from 'lucide-react'
+import { BookOpen, Download, Users, Heart, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Sensory Stories | East Wear Bay Archaeological Project',

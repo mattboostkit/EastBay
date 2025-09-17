@@ -569,8 +569,8 @@ export default async function Home() {
                 Updates from our excavations and community projects
               </p>
             </div>
-            <Link href="/blog" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all posts
+            <Link href="/news" className="group inline-flex items-center gap-1 text-sm font-medium">
+              View all news
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Link>
           </div>

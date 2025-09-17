@@ -63,8 +63,8 @@ export default function Footer({ siteSettings }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                  News & Blog
+                <Link href="/news" className="text-muted-foreground hover:text-foreground">
+                  News
                 </Link>
               </li>
             </ul>

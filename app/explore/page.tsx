@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { ArrowRight, Building2, GraduationCap, Newspaper, BookOpen, Clock } from 'lucide-react'
+import { ArrowRight, Building2, GraduationCap, Newspaper, Clock } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata = {
   title: 'Explore | East Wear Bay Project',
-  description: 'Explore the East Wear Bay Archaeological Project through our digital museum, field school, news, blog, and project timeline.',
+  description: 'Explore the East Wear Bay Archaeological Project through our digital museum, field school, news, and project timeline.',
 }
 
 const exploreItems = [
@@ -28,13 +28,6 @@ const exploreItems = [
     href: '/news',
     icon: Newspaper,
     color: 'text-purple-500',
-  },
-  {
-    title: 'Blog',
-    description: 'Read in-depth articles, research insights, and stories from our archaeologists and field school participants.',
-    href: '/blog',
-    icon: BookOpen,
-    color: 'text-orange-500',
   },
   {
     title: 'Project Timeline',

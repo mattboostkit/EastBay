@@ -32,33 +32,27 @@ export default function ContactPage() {
                 <li className="flex items-start gap-4">
                   <MapPin className="mt-1 h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium">Project Office</p>
-                    <p className="text-muted-foreground">East Wear Bay Archaeological Project</p>
-                    <p className="text-muted-foreground">Folkestone Museum</p>
-                    <p className="text-muted-foreground">Town Hall, 1-2 Guildhall Street</p>
-                    <p className="text-muted-foreground">Folkestone, Kent CT20 1DY</p>
+                    <p className="font-medium">Address</p>
+                    <p className="text-muted-foreground">Canterbury Archaeological Trust</p>
+                    <p className="text-muted-foreground">92A Broad Street</p>
+                    <p className="text-muted-foreground">Canterbury, Kent</p>
+                    <p className="text-muted-foreground">CT1 2LU</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <Mail className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">info@eastwearbay.org</p>
-                    <p className="text-sm text-muted-foreground">(General inquiries)</p>
-                    <p className="mt-1 text-muted-foreground">info@eastwearbay.org</p>
-                    <p className="text-sm text-muted-foreground">(Field school applications)</p>
-                    <p className="mt-1 text-muted-foreground">info@eastwearbay.org</p>
-                    <p className="text-sm text-muted-foreground">(School visits & education)</p>
+                    <p className="text-muted-foreground">get_involved@canterburytrust.ac.uk</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <Phone className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+44 (1303) 123-456</p>
-                    <p className="text-sm text-muted-foreground">Mon-Fri, 9:00-17:00</p>
+                    <p className="text-muted-foreground">01227 462062</p>
                   </div>
                 </li>
               </ul>
@@ -70,25 +64,19 @@ export default function ContactPage() {
                 <Calendar className="mt-1 h-5 w-5 text-primary" />
                 <div>
                   <p className="text-muted-foreground">
-                    Our excavation site at East Wear Bay is open to visitors during the field season (May-September).
-                  </p>
-                  <p className="mt-2 text-muted-foreground">
-                    Guided tours run every Saturday at 11:00 and 14:00 during the summer season.
-                  </p>
-                  <p className="mt-2 text-muted-foreground">
-                    School and group visits can be arranged by contacting our education team.
+                    Site visits are possible during the excavation season by appointment only.
                   </p>
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h3 className="mb-4 text-xl font-semibold">Sponsors & Partners</h3>
               <p className="text-muted-foreground">
-                If you're interested in sponsoring our work or developing a partnership, please contact our director, Dr. Emma Richards, at info@eastwearbay.org.
+                If you're interested in sponsoring our work or developing a partnership, please contact us at get_involved@canterburytrust.ac.uk.
               </p>
               <p className="mt-2 text-muted-foreground">
-                We offer various sponsorship opportunities for businesses and organizations interested in supporting community archaeology and heritage preservation.
+                We offer various sponsorship opportunities for businesses and organisations interested in supporting community archaeology and heritage preservation.
               </p>
             </div>
           </div>
@@ -96,34 +84,43 @@ export default function ContactPage() {
         
         <div className="mt-16">
           <h2 className="mb-6 text-2xl font-semibold">How to Find Us</h2>
-          <div className="rounded-lg border overflow-hidden h-96">
-            {/* We would normally embed a Google Map here, but we'll use a placeholder image instead */}
-            <div className="relative h-full w-full bg-muted">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-lg text-muted-foreground">Interactive map would be embedded here</p>
-              </div>
-            </div>
+          <div className="rounded-lg border overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.171947405481!2d1.1978353275316445!3d51.08683414133876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47debeb449083847%3A0x39cb8c44fc6223df!2sWear%20Bay%20Rd%2C%20Folkestone%20CT19%206PY!5e0!3m2!1sen!2suk!4v1758098938105!5m2!1sen!2suk"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="East Wear Bay Location Map"
+            />
           </div>
           
           <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
             <div className="rounded-lg border bg-card p-5">
               <h3 className="text-lg font-medium">By Car</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                The East Wear Bay site is located at the eastern end of The Leas in Folkestone. Limited parking is available at the Wear Bay Road car park. The project office is located at Folkestone Museum in the town centre.
+                It is possible to access the site by car, but there is limited parking at the site. There is a car park at East Cliff Sports (Wear Bay Rd, Folkestone CT19 6PY), which is a short walk away. For those with access needs or who have a group visit planned, please contact us for parking arrangements.
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                <strong>Nearest postcode:</strong> CT19 6PY<br />
+                <strong>What3words:</strong> ///having.treatable.distanced
               </p>
             </div>
-            
+
             <div className="rounded-lg border bg-card p-5">
               <h3 className="text-lg font-medium">By Public Transport</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Folkestone Central station is served by regular trains from London. The museum is a 10-minute walk from the station. Local buses (routes 16 and 73) stop near East Wear Bay Road for access to the excavation site.
+                Wherever possible, we encourage our volunteers and visitors to use public transport to access the site. There are regular trains that run to Folkestone Central Station, and from there, it is possible to get the 104 to Morrison Road, or the 105 to Stanbury Crescent Bottom. The site is a short walk from these bus stops.
               </p>
             </div>
-            
+
             <div className="rounded-lg border bg-card p-5">
               <h3 className="text-lg font-medium">Accessibility</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Our project office at Folkestone Museum is fully accessible. The excavation site has partial accessibility with flat routes to viewing areas. Please contact us in advance to discuss any specific requirements.
+                The East Wear Bay project aims to be as inclusive as possible, and we welcome everyone. Please speak to the project about your accessibility requirements and we will do our best to accommodate your needs.
               </p>
             </div>
           </div>

@@ -19,7 +19,6 @@ const navigationGroups = [
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
       { title: 'News', href: '/news' },
-      { title: 'Blog', href: '/blog' },
       { title: 'Project Timeline', href: '/timeline' },
     ]
   },

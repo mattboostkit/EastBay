@@ -72,7 +72,7 @@ export async function generateStaticParams() {
 const components = {
   types: {
     image: ({ value }: any) => {
-      if (!value?.asset?.-ref) {
+      if (!value?.asset?._ref) {
         return null
       }
       return (
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
-  const date = post.publishedAt || post.-createdAt
+  const date = post.publishedAt || post._createdAt
   const formattedDate = date ? new Date(date).toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'long',
@@ -234,7 +234,7 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {post.relatedPosts.map((relatedPost: any) => (
                   <Link
-                    key={relatedPost.-id}
+                    key={relatedPost._id}
                     href={`/news/${relatedPost.slug.current}`}
                     className="group"
                   >

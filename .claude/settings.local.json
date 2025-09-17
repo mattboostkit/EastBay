@@ -69,7 +69,8 @@
       "Bash(dos2unix:*)",
       "mcp__sanity__update_document",
       "mcp__playwright__browser_take_screenshot",
-      "mcp__playwright__browser_network_requests"
+      "mcp__playwright__browser_network_requests",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

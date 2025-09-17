@@ -307,7 +307,7 @@ export default async function EducationPage() {
                 const Icon = resourceTypeIcons[resource.resourceType as keyof typeof resourceTypeIcons] || FileText
                 
                 return (
-                  <Card key={resource.-id} className="flex flex-col">
+                  <Card key={resource._id} className="flex flex-col">
                     {resource.mainImage && (
                       <div className="relative h-48 w-full">
                         <Image
@@ -396,7 +396,7 @@ export default async function EducationPage() {
               </Link>
               <a 
                 href="https://www.canterburytrust.co.uk/copy-of-cat-box-loans-collection-1"
-                target="-blank"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
               >

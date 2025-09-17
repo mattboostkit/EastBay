@@ -110,7 +110,7 @@ export default async function NewsPage() {
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredNews.map((item: any) => (
-              <Card key={item.-id} className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50">
+              <Card key={item._id} className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50">
                 {item.mainImage && (
                   <div className="aspect-video overflow-hidden bg-muted">
                     <Image
@@ -181,7 +181,7 @@ export default async function NewsPage() {
             
             <TabsContent value="all" className="space-y-6">
               {recentNews.map((item: any) => (
-                <Card key={item.-id} className="hover:shadow-md transition-all border-l-4 border-l-primary">
+                <Card key={item._id} className="hover:shadow-md transition-all border-l-4 border-l-primary">
                   <div className="flex gap-6 p-6">
                     {item.mainImage && (
                       <div className="hidden md:block w-48 h-32 rounded-lg overflow-hidden bg-muted flex-shrink-0">

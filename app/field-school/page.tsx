@@ -90,7 +90,7 @@ export default async function FieldSchoolPage() {
 
             <div className="mt-6 grid gap-6">
               {sessions.map((session: any) => (
-                <div key={session.-id || session.title} className="rounded-lg border p-5">
+                <div key={session._id || session.title} className="rounded-lg border p-5">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-xl font-medium">{session.title}</h3>

@@ -240,7 +240,7 @@ export default async function Home() {
             {featuredArtefacts && featuredArtefacts.length > 0 ? (
               // If we have artefacts from Sanity, display them
               featuredArtefacts.slice(0, 3).map((artefact: any) => (
-                <ArtefactCard key={artefact.-id} artefact={artefact} />
+                <ArtefactCard key={artefact._id} artefact={artefact} />
               ))
             ) : (
               // If no artefacts are fetched, display Sketchfab embeds

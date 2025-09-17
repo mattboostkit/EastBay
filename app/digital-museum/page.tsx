@@ -682,7 +682,7 @@ export default async function DigitalMuseumPage({
             <h2 className="text-2xl font-bold tracking-tight mb-6">Collection Archive</h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {paginatedArtefacts.map((artefact: any) => (
-                <ArtefactCard key={artefact.-id} artefact={artefact} />
+                <ArtefactCard key={artefact._id} artefact={artefact} />
               ))}
             </div>
           </>
@@ -715,7 +715,7 @@ export default async function DigitalMuseumPage({
               )}
               
               {/* Page numbers */}
-              {Array.from({ length: Math.min(5, totalPages) }, (-, i) => {
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                 const pageNumber = i + 1;
                 return (
                   <Link

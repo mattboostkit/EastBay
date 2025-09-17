@@ -45,7 +45,7 @@ export default async function PublicationsPage() {
           {publications && publications.length > 0 ? (
             <div className="space-y-6">
               {publications.map((publication: any) => (
-                <Card key={publication.-id}>
+                <Card key={publication._id}>
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -76,7 +76,7 @@ export default async function PublicationsPage() {
                           DOI: <a 
                             href={`https://doi.org/${publication.doi}`} 
                             className="text-primary hover:underline"
-                            target="-blank"
+                            target="_blank"
                             rel="noopener noreferrer"
                           >
                             {publication.doi}

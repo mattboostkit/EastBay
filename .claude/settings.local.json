@@ -55,8 +55,24 @@
       "Bash(pnpm install:*)",
       "Bash(pkill:*)",
       "Bash(ln:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(curl:*)",
+      "Bash(git reset:*)",
+      "mcp__sanity__get_initial_context",
+      "mcp__sanity__get_schema",
+      "mcp__sanity__create_document",
+      "mcp__sanity__publish_document",
+      "Bash(npm run dev:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__sanity__query_documents",
+      "mcp__sanity__patch_document",
+      "Bash(dos2unix:*)"
     ],
-    "deny": []
-  }
+    "deny": [],
+    "defaultMode": "acceptEdits"
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "sanity"
+  ]
 }

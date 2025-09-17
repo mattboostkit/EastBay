@@ -35,7 +35,7 @@ const navigationGroups = [
     href: "/about",
     items: [
       { title: 'About the Project', href: '/about/project' },
-      { title: 'Outreach & Community', href: '/community' },
+      { title: 'Community & Outreach', href: '/community' },
       { title: 'Volunteer', href: '/volunteer' },
       { title: 'Partners', href: '/partners' },
       { title: 'Contact & Sponsors', href: '/contact' },

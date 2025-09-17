@@ -16,31 +16,32 @@ export const metadata: Metadata = {
 }
 
 async function getNews() {
-  const query = `*[_type == "news"] | order(publishedAt desc) {
+  const query = `*[_type == "post"] | order(publishedAt desc, _createdAt desc) {
     _id,
     title,
     slug,
     excerpt,
     publishedAt,
+    _createdAt,
     mainImage,
-    category,
-    tags,
+    categories,
     author-> {
       name,
       image
     }
   }[0...20]`
-  
+
   return client.fetch(query)
 }
 
 async function getCategories() {
-  const query = `*[_type == "news"] {
-    category
-  } | order(category asc)`
-  
+  const query = `*[_type == "post"] {
+    categories
+  } | order(categories asc)`
+
   const results = await client.fetch(query)
-  const categories = new Set(results.map((item: any) => item.category).filter(Boolean))
+  const allCategories = results.flatMap((item: any) => item.categories || []).filter(Boolean)
+  const categories = new Set(allCategories)
   return Array.from(categories)
 }
 
@@ -64,7 +65,7 @@ export default async function NewsPage() {
               News & Discoveries
             </h1>
             <p className="mt-4 text-lg text-white/90 md:text-xl">
-              Stay updated with the latest findings, research breakthroughs, and community events from the East Wear Bay Archaeological Project
+              Updates from our seasonal excavations and year-round community projects.
             </p>
             
             {/* Search Bar */}

@@ -12,6 +12,8 @@ import video from './video';
 import homepageSection from './homepageSection';
 import partner from './partner';
 import siteSettings from './siteSettings';
+import fieldSchoolSession from './fieldSchoolSession';
+import volunteerOpportunity from './volunteerOpportunity';
 
 // Import your schema types here
 export const schemaTypes = [
@@ -29,5 +31,7 @@ export const schemaTypes = [
   video,
   homepageSection,
   partner,
+  fieldSchoolSession,
+  volunteerOpportunity,
   // Add your schemas here
 ];

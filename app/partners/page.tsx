@@ -46,154 +46,147 @@ export default async function PartnersPage() {
           </div>
         </div>
       </div>
-      
+
       <div className="container py-12">
         <div className="mx-auto max-w-6xl">
-          {/* Principal Funders Section */}
-          {principalFunders.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Principal Funders</h2>
-              {principalFunders.map((partner: any) => (
-                <div key={partner._id} className="mb-8 rounded-lg bg-primary/5 p-8">
-                  <div className="text-center">
-                    <div className="mx-auto mb-6 bg-white rounded-lg p-6 max-w-sm">
-                      {partner.logo ? (
-                        <Image 
-                          src={urlForImage(partner.logo)?.url() || ''} 
-                          alt={partner.logo.alt || partner.name}
-                          width={300}
-                          height={100}
-                          className="h-20 w-full object-contain"
+          {/* New introductory section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-center">Working together to discover the past and inspire the future</h2>
+            <div className="space-y-4 text-muted-foreground max-w-4xl mx-auto">
+              <p>
+                The East Wear Bay project, spearheaded by Canterbury Archaeological Trust (CAT), is breathing new life into Folkestone's rich heritage. With their deep archaeological expertise, CAT is safeguarding this remarkable site for generations to come.
+              </p>
+              <p>
+                But it's not just about preservation—it's about participation. CAT's dedicated engagement team has teamed up with the local community to create fresh, interactive ways to explore the fascinating story of the Folkestone Roman Villa and its surrounding landscape.
+              </p>
+              <p>
+                Thanks to the support of our funders and partners, the East Wear Bay project is proudly celebrating our shared history through hands-on learning experiences that connect people with the past while strengthening community ties.
+              </p>
+            </div>
+          </div>
+
+          {/* Funders Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                'National Lottery Heritage Fund',
+                'Roger De Haan Charitable Trust',
+                'Garfield Weston Charitable Trust',
+                'The Lawson Trust',
+                'Friends of Canterbury Archaeological Trust',
+                'Kent Community Foundation',
+                'Folkestone Town Council',
+                'Folkestone and Hythe District Council',
+                'Council for British Archaeology',
+                'Association for Roman Archaeology',
+                'Society of the Promotion of Roman Studies'
+              ].map((funderName) => {
+                // Try to find the funder in the Sanity data
+                const funder = principalFunders.find((p: any) =>
+                  p.name?.toLowerCase().includes(funderName.toLowerCase()) ||
+                  funderName.toLowerCase().includes(p.name?.toLowerCase())
+                );
+
+                return (
+                  <div key={funderName} className="text-center">
+                    <div className="mb-4 bg-muted rounded-lg p-8 h-32 flex items-center justify-center">
+                      {funder?.logo ? (
+                        <Image
+                          src={urlForImage(funder.logo)?.url() || ''}
+                          alt={funder.logo.alt || funderName}
+                          width={200}
+                          height={80}
+                          className="max-h-20 w-full object-contain"
                         />
                       ) : (
-                        <span className="text-2xl font-bold text-primary">{partner.name}</span>
+                        <span className="text-sm text-muted-foreground">[Logo Placeholder]</span>
                       )}
                     </div>
-                    {partner.description && (
-                      <p className="mx-auto max-w-3xl text-muted-foreground">
-                        {partner.description}
-                      </p>
-                    )}
+                    <h3 className="font-semibold text-lg">{funderName}</h3>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-          )}
+          </div>
           
           {/* Lead Partners */}
-          {leadPartners.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
-              <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Our lead partners bring expertise, resources, and community connections that are essential to the project's success.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-                {leadPartners.map((partner: any) => (
-                  <div key={partner._id} className="group">
-                    {partner.website ? (
-                      <a
-                        href={partner.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
-                        title={partner.name}
-                      >
-                        <div className="h-20 flex items-center justify-center p-2">
-                          {partner.logo ? (
-                            <Image 
-                              src={urlForImage(partner.logo)?.url() || ''} 
-                              alt={partner.logo.alt || partner.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                              {partner.name}
-                            </span>
-                          )}
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="rounded-lg border bg-card p-4" title={partner.name}>
-                        <div className="h-20 flex items-center justify-center p-2">
-                          {partner.logo ? (
-                            <Image 
-                              src={urlForImage(partner.logo)?.url() || ''} 
-                              alt={partner.logo.alt || partner.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground">
-                              {partner.name}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Our lead partners bring expertise, resources, and community connections that are essential to the project's success.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {[
+                'Folkestone Museum',
+                'The University of Kent',
+                'Dover Archaeology Group',
+                'Folkestone Research and Archaeology Group',
+                'Canterbury Christ Church University',
+                'Folkestone and Hythe District Council',
+                'Folkestone Town Council',
+                'Historic England',
+                'Kent Archaeological Society',
+                'Kent Downs Landscape',
+                'Creative Folkestone'
+              ].map((partnerName) => {
+                // Try to find the partner in the Sanity data
+                const partner = leadPartners.find((p: any) =>
+                  p.name?.toLowerCase().includes(partnerName.toLowerCase()) ||
+                  partnerName.toLowerCase().includes(p.name?.toLowerCase())
+                );
 
-          {/* Supporters Grid */}
-          {supporters.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Our Supporters</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {supporters.map((partner: any) => (
-                  <div key={partner._id} className="group">
-                    {partner.website ? (
+                return (
+                  <div key={partnerName} className="group">
+                    {partner?.website ? (
                       <a
                         href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
-                        title={partner.name}
+                        title={partnerName}
                       >
                         <div className="h-20 flex items-center justify-center p-2">
                           {partner.logo ? (
-                            <Image 
-                              src={urlForImage(partner.logo)?.url() || ''} 
-                              alt={partner.logo.alt || partner.name}
+                            <Image
+                              src={urlForImage(partner.logo)?.url() || ''}
+                              alt={partner.logo.alt || partnerName}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                              {partner.name}
+                              {partnerName}
                             </span>
                           )}
                         </div>
                       </a>
                     ) : (
-                      <div className="rounded-lg border bg-card p-4" title={partner.name}>
+                      <div className="rounded-lg border bg-card p-4" title={partnerName}>
                         <div className="h-20 flex items-center justify-center p-2">
-                          {partner.logo ? (
-                            <Image 
-                              src={urlForImage(partner.logo)?.url() || ''} 
-                              alt={partner.logo.alt || partner.name}
+                          {partner?.logo ? (
+                            <Image
+                              src={urlForImage(partner.logo)?.url() || ''}
+                              alt={partner.logo.alt || partnerName}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground">
-                              {partner.name}
+                              {partnerName}
                             </span>
                           )}
                         </div>
                       </div>
                     )}
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
-          )}
+          </div>
+
           
           {/* Acknowledgment Text */}
           <div className="rounded-lg border bg-muted/50 p-8 mb-12">

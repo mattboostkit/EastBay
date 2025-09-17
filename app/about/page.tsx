@@ -16,7 +16,7 @@ const aboutItems = [
     color: 'text-blue-500',
   },
   {
-    title: 'Outreach & Community',
+    title: 'Community & Outreach',
     description: 'Learn about our community engagement programs, public events, and how we share our discoveries with the local community.',
     href: '/community',
     icon: Users,

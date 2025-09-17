@@ -36,30 +36,11 @@ export default async function PublicationsPage() {
       />
 
       <div className="container py-12">
-        {/* Research Impact */}
-        <section className="mb-12">
-          <div className="rounded-lg border bg-card p-8">
-            <h2 className="text-2xl font-bold mb-4">Our Research Impact</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              <div>
-                <p className="text-3xl font-bold text-primary">15+</p>
-                <p className="text-muted-foreground">Peer-reviewed publications</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary">50+</p>
-                <p className="text-muted-foreground">Conference presentations</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary">8</p>
-                <p className="text-muted-foreground">Research institutions involved</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Publications List */}
-        <section>
-          <h2 className="text-2xl font-bold mb-8">Grey Literature Reports</h2>
+        {/* Grey Literature Reports */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Grey Literature Reports</h2>
+          <p className="text-muted-foreground mb-8">All grey literature reports are available in PDF format.</p>
           
           {publications && publications.length > 0 ? (
             <div className="space-y-6">
@@ -162,9 +143,138 @@ export default async function PublicationsPage() {
           )}
         </section>
 
-        {/* Research Areas */}
+        {/* Publications */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-8">Publications</h2>
+
+          {/* Books */}
+          <div className="mb-10">
+            <h3 className="text-xl font-semibold mb-6">Books</h3>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Folkestone to 1500: A Town Unearthed</CardTitle>
+                <CardDescription>Edited by Ian Coulson (2013)</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-2">ISBN: 9781870545273</p>
+                <p className="text-sm text-muted-foreground mb-2">Price: £14.99</p>
+                <p className="text-sm text-muted-foreground mb-4">Available directly from Canterbury Archaeological Trust. Please contact us to request a printed copy.</p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center text-sm text-primary hover:underline"
+                >
+                  Contact us to order
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Academic Papers and Reports */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Academic Papers and Reports</h3>
+            <div className="space-y-4">
+              {/* Paper 1 */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Investigating economic models and cultural exchange through a zooarchaeological perspective: analysis of the faunal assemblage from the Iron Age port settlement and Roman villa at East Wear Bay, Kent, England</CardTitle>
+                  <CardDescription>Katharine Steinke (2024)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">Edinburgh Research Archive: Archaeology thesis and dissertation collection</p>
+                  <a
+                    href="http://dx.doi.org/10.7488/era/4434"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    http://dx.doi.org/10.7488/era/4434
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Paper 2 */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Roman Folkestone: A Record of Excavation of Roman Villas at East Wear Bay</CardTitle>
+                  <CardDescription>S. E. Winbolt (1925)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">Methuen & Co., Ltd., London</p>
+                  <a
+                    href="https://www.amazon.co.uk/Folkestone-Excavation-Speculations-Historical-Sketches/dp/B0018Y0MNC"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Buy now on Amazon
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Paper 3 */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Republican Dressel 1 Amphorae from East Wear Bay, Folkestone</CardTitle>
+                  <CardDescription>Adrian Weston</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                  >
+                    <Download className="mr-1 h-4 w-4" />
+                    View PDF
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Paper 4 */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">More Classis Britannica Tiles from East Wear Bay, Folkestone</CardTitle>
+                  <CardDescription>Adrian Weston (2017)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">Archaeologia Cantiana, 2017: 301-08</p>
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                  >
+                    <Download className="mr-1 h-4 w-4" />
+                    View PDF
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Paper 5 */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Quern Production at Folkestone, South-East Kent: An Interim Note</CardTitle>
+                  <CardDescription>P. T. Keller (1989)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">Britannia, Volume 20, November 1989, pp. 193-200</p>
+                  <a
+                    href="https://doi.org/10.2307/526162"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    DOI: https://doi.org/10.2307/526162
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Research Data */}
         <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">Research Areas</h2>
+          <h2 className="text-2xl font-bold mb-8">Research Data</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader>
@@ -176,7 +286,7 @@ export default async function PublicationsPage() {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Material Culture</CardTitle>
@@ -187,7 +297,7 @@ export default async function PublicationsPage() {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Environmental Archaeology</CardTitle>
@@ -198,7 +308,7 @@ export default async function PublicationsPage() {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Digital Archaeology</CardTitle>
@@ -209,7 +319,7 @@ export default async function PublicationsPage() {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Public Archaeology</CardTitle>
@@ -220,7 +330,7 @@ export default async function PublicationsPage() {
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Conservation Science</CardTitle>

@@ -4,14 +4,57 @@ import Link from 'next/link'
 import { Calendar, Clock, MapPin, Users, Sparkles, ArrowRight, School, Award, Star } from 'lucide-react'
 import { fetchFeaturedTestimonials } from '@/lib/sanity.unified'
 import { urlFor } from '@/lib/sanity.client'
+import { client } from '@/lib/sanity.client'
 
 export const metadata: Metadata = {
   title: 'Field School | East Wear Bay Archaeological Project',
   description: 'Join our archaeological field school at the Folkestone Roman Villa site and gain hands-on excavation experience while helping preserve a heritage site threatened by coastal erosion.',
 }
 
+async function getFieldSchoolSessions() {
+  const query = `*[_type == "fieldSchoolSession" && isActive == true] | order(displayOrder asc, year desc) {
+    _id,
+    title,
+    slug,
+    year,
+    tagline,
+    description,
+    dates,
+    startDate,
+    endDate,
+    duration,
+    location,
+    participantLimit,
+    registrationStatus,
+    registrationOpenDate,
+    registrationButtonText,
+    additionalInfo
+  }`
+
+  return client.fetch(query)
+}
+
 export default async function FieldSchoolPage() {
-  const testimonials = await fetchFeaturedTestimonials()
+  const [testimonials, fieldSchoolSessions] = await Promise.all([
+    fetchFeaturedTestimonials(),
+    getFieldSchoolSessions()
+  ])
+
+  // If no sessions exist, create a default one
+  const sessions = fieldSchoolSessions?.length > 0 ? fieldSchoolSessions : [{
+    title: 'Archaeology Field School',
+    year: 2026,
+    tagline: 'For university students and adult learners',
+    description: 'This intensive two-week field school provides comprehensive training in excavation techniques, recording, finds processing, and other field working skills. Students will work towards the completion of a portfolio to show evidence of learning and BAJR skills passport. Suitable for university students and adult learners.',
+    dates: 'Dates TBA',
+    duration: '2 weeks, full time',
+    location: 'East Wear Bay Folkestone',
+    participantLimit: 25,
+    registrationStatus: 'not-open',
+    registrationOpenDate: 'December 2025',
+    registrationButtonText: 'Registration Opens Dec 2025'
+  }]
+
   return (
     <>
       <div className="relative h-[50vh] overflow-hidden">
@@ -36,140 +79,71 @@ export default async function FieldSchoolPage() {
       <div className="container py-12">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 rounded-lg border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="text-2xl font-bold">2025 Field School Sessions</h2>
+            <h2 className="text-2xl font-bold">{sessions[0].year} East Wear Bay Field School</h2>
             <p className="mt-2 text-muted-foreground">
-              We are not taking bookings for 2025. Please check back for 2026 field school opportunities.
+              {sessions[0].registrationStatus === 'not-open' && sessions[0].registrationOpenDate
+                ? `We are not currently taking any bookings for the ${sessions[0].year} field school. We will open early registration for the course in ${sessions[0].registrationOpenDate} so watch this space.`
+                : sessions[0].registrationStatus === 'open'
+                ? 'Applications are now open for our field school sessions.'
+                : 'Please check back for field school opportunities.'}
             </p>
 
             <div className="mt-6 grid gap-6">
-              {/* Session 1 */}
-              <div className="rounded-lg border p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <h3 className="text-xl font-medium">Summer Session</h3>
-                    <p className="text-sm text-muted-foreground">For university students and adult learners</p>
+              {sessions.map((session: any) => (
+                <div key={session._id || session.title} className="rounded-lg border p-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h3 className="text-xl font-medium">{session.title}</h3>
+                      {session.tagline && (
+                        <p className="text-sm text-muted-foreground">{session.tagline}</p>
+                      )}
+                    </div>
+                    <button
+                      disabled={session.registrationStatus !== 'open'}
+                      className={`mt-3 inline-flex items-center rounded-md px-4 py-2 text-sm font-medium sm:mt-0 ${
+                        session.registrationStatus === 'open'
+                          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
+                    >
+                      {session.registrationButtonText ||
+                        (session.registrationStatus === 'not-open' ? 'Registration Not Open' :
+                         session.registrationStatus === 'closed' ? 'Applications Closed' :
+                         session.registrationStatus === 'full' ? 'Session Full' :
+                         'Apply Now')}
+                    </button>
                   </div>
-                  <button
-                    disabled
-                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
-                  >
-                    Applications Closed
-                  </button>
-                </div>
 
-                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">July 5 - August 2, 2025</span>
+                  <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{session.dates || 'Dates TBA'}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{session.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{session.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{session.participantLimit} participants</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">4 weeks, full-time</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">East Wear Bay, Folkestone</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">20 participants</span>
-                  </div>
-                </div>
 
-                <div className="mt-4">
-                  <p className="text-sm">
-                    This intensive four-week session provides comprehensive training in excavation techniques, recording,
-                    finds processing, and site interpretation. Suitable for university students
-                    (with potential academic credit) and adult learners.
-                  </p>
-                </div>
-              </div>
+                  <div className="mt-4">
+                    <p className="text-sm">{session.description}</p>
+                  </div>
 
-              {/* Session 2 */}
-              <div className="rounded-lg border p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <h3 className="text-xl font-medium">Community Weekend Programme</h3>
-                    <p className="text-sm text-muted-foreground">For local residents and beginners</p>
-                  </div>
-                  <button
-                    disabled
-                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
-                  >
-                    Applications Closed
-                  </button>
+                  {session.additionalInfo && session.additionalInfo.length > 0 && (
+                    <div className="mt-4 prose prose-sm max-w-none">
+                      {/* Portable text would go here if needed */}
+                    </div>
+                  )}
                 </div>
-
-                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">June - September 2025</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">Weekends only</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">East Wear Bay, Folkestone</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">10 participants per weekend</span>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-sm">
-                    Our weekend programme allows local residents and beginners to participate in ongoing excavations
-                    with flexible scheduling. Each weekend includes training, excavation experience, and finds processing.
-                    No previous experience required.
-                  </p>
-                </div>
-              </div>
-
-              {/* Session 3 */}
-              <div className="rounded-lg border p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <h3 className="text-xl font-medium">Youth Field School</h3>
-                    <p className="text-sm text-muted-foreground">For students aged 16-18</p>
-                  </div>
-                  <button
-                    disabled
-                    className="mt-3 inline-flex items-center rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed sm:mt-0"
-                  >
-                    Applications Closed
-                  </button>
-                </div>
-
-                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">July 7-18, 2025</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">2 weeks, daytime</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">East Wear Bay, Folkestone</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">15 participants</span>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-sm">
-                    Designed specifically for young people considering archaeology or heritage careers. This two-week programme
-                    provides age-appropriate training, excavation experience, and insight into archaeological
-                    practices and potential career paths.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -187,9 +161,9 @@ export default async function FieldSchoolPage() {
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div className="rounded-lg border p-5">
                 <h3 className="text-xl font-medium">With Accommodation</h3>
-                <div className="mt-2 text-3xl font-bold">£800</div>
+                <div className="mt-2 text-3xl font-bold">£950</div>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  A two-week Field School placement includes all training and necessary equipment, plus accommodation in a 4-person shared apartment in Folkestone.
+                  A two-week Field School placement includes all training and necessary equipment, plus accommodation in Folkestone.
                 </p>
               </div>
 
@@ -203,7 +177,7 @@ export default async function FieldSchoolPage() {
             </div>
 
             <p className="mt-6 text-sm text-muted-foreground">
-              No prior experience is required. CAT provides accredited professional training. Individual progress is logged using the BAJR skills passport, a document recognised by most professional and academic institutions in the UK.
+              No prior experience is required. CAT provides accredited professional training. Individual progress is logged using the BAJR skills passport, a document recognised by professional and academic institutions in the UK.
             </p>
           </div>
 
@@ -213,38 +187,86 @@ export default async function FieldSchoolPage() {
             <p className="mt-2 text-muted-foreground">
               Learn from experienced professionals who are passionate about sharing their knowledge
             </p>
-            
+
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="flex gap-4 rounded-lg border bg-card p-6">
-                <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-muted">
-                  <div className="flex h-full w-full items-center justify-center">
-                    <span className="text-2xl font-semibold text-muted-foreground">LB</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Lindsay Banfield</h3>
-                  <p className="text-sm font-medium text-muted-foreground">Engagement Manager</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Experienced in community archaeology and educational outreach. 
-                    Passionate about making archaeology accessible and engaging for all participants.
-                  </p>
-                </div>
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Dr Lindsay Banfield, PhD AFHEA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Head of Engagement and Marketing</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Lindsay is a specialist in worked stone artefacts and Roman period small finds. She has taught students at field schools for UCL, the Culver Project and for CAT for over 8 years.
+                </p>
               </div>
-              
-              <div className="flex gap-4 rounded-lg border bg-card p-6">
-                <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-muted">
-                  <div className="flex h-full w-full items-center justify-center">
-                    <span className="text-2xl font-semibold text-muted-foreground">MH</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold">Mark Houliston</h3>
-                  <p className="text-sm font-medium text-muted-foreground">CAT Director</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Leading Canterbury Archaeological Trust with extensive experience in rescue archaeology. 
-                    Specialises in heritage management and archaeological field methods.
-                  </p>
-                </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Andy Macintosh ACIfA PGCE</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Education and Project Officer</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Andy is an experienced field archaeologist who has been involved with the East Wear Bay project since 2011. He is also a qualified teacher who has directed fieldwork on commercial and community excavations.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Frances Morgan MA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Engagement Assistant</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Frances is an experienced field archaeologist with a passion for post-medieval archaeology and human osteology.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Heather Hanson BA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Engagement Assistant</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Heather is interested in the late Iron Age and Early Roman periods in Britain. She is passionate about fostering people's interest in the past for all time periods.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Dr Steve Willis PhD MCIfA</h3>
+                <p className="text-sm font-medium text-muted-foreground">University of Kent</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Steve teaches archaeology and fieldwork modules at the University of Kent. He has significant excavation experience from digs and surveys for training and research at Iron Age and Roman sites in Britain and abroad.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Illia Shabalkin</h3>
+                <p className="text-sm font-medium text-muted-foreground">Student Support Staff, University College London</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Illia is an undergraduate student with UCL and has been volunteering at East Wear Bay for two years. He has a passion for archaeology, with a particular interest in worked flint.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Adalina Teoaca MSc MA PCIfA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Finds and Archives Manager</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Adelina is a specialist in bioarchaeology, an advocate for science in archaeology and an experienced post-excavation manager.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Rich Best MA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Registered Finds Specialist</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Rich oversees the assessment and analysis of registered finds and has experience in running and supervising field schools. He is a specialist on Anglo-Saxon brooches.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Martha Carter BA</h3>
+                <p className="text-sm font-medium text-muted-foreground">CAT Trainee Pottery Specialist</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Martha is learning to be a pottery specialist and can assess and analyse the different pottery fabrics and types of vessels that are uncovered during our excavations. She is particularly interested in Roman and Iron Age pottery.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-6">
+                <h3 className="text-lg font-semibold">Enid Allison PhD MCIfA</h3>
+                <p className="text-sm font-medium text-muted-foreground">Environmental Manager and Specialist</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Enid oversees environmental sampling, processing and post-excavation work for CAT and carries out analysis of insect remains from sites throughout Britain and Ireland.
+                </p>
               </div>
             </div>
           </div>
@@ -252,68 +274,88 @@ export default async function FieldSchoolPage() {
           {/* What You'll Learn */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">What You'll Learn</h2>
-            <p className="mt-2 text-muted-foreground">
-              Our field school provides comprehensive training in archaeological methods and techniques
+            <p className="mt-4 text-muted-foreground">
+              The aim of the field school is to provide training and coaching for anyone who has an interest in potentially pursuing a career in archaeology or heritage, or for those who want to formally develop their archaeological field-working skills. The field school forms part of an optional practical skills module for archaeology students at the University of Kent and is offered to those who wish to participate from other Higher Education institutes. Amateur archaeologists with some prior knowledge of fieldwork are also invited to participate.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              The field school will be delivered through formal teaching sessions and informal practical learning. The formal sessions will be timetabled, with the schedule to be confirmed prior to your arrival in Folkestone. All sessions will be delivered by qualified and experienced heritage professionals. Some will be CAT staff members, including those currently working in commercial archaeology in the UK. Other sessions will be delivered by teaching staff from the University of Kent or by external tutors who have more specific specialist knowledge to share with you. The practical learning will be delivered through hands-on experience of excavation and recording while on site at East Wear Bay.
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Sparkles className="h-5 w-5" />
-                </div>
-                <h3 className="text-lg font-medium">Excavation Techniques</h3>
+                <h3 className="text-lg font-medium">Site induction</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Learn proper excavation methods including troweling, context identification, and stratigraphic principles.
+                  Get an overview of the history and archaeology of the site and its importance.
                 </p>
               </div>
 
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M2 12h2"></path><path d="M6 12h2"></path><path d="M10 12h2"></path><path d="M18 12h2"></path><path d="M14 12h2"></path><path d="M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path><path d="M14 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path><path d="M6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path><path d="M14 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path><path d="M6 16V8"></path><path d="M14 16V8"></path><path d="M6 12h8"></path></svg>
-                </div>
-                <h3 className="text-lg font-medium">Site Recording</h3>
+                <h3 className="text-lg font-medium">Health and safety on site</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Master archaeological documentation including context sheets, planning, section drawing, and digital recording.
+                  Learn how to work safely on an archaeological site, what the procedures are in the event of an emergency and how to safely use the excavation equipment.
                 </p>
               </div>
 
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                </div>
-                <h3 className="text-lg font-medium">Finds Processing</h3>
+                <h3 className="text-lg font-medium">The written record</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Develop skills in washing, marking, identification, and preliminary analysis of archaeological materials.
+                  Find out how to complete all the paperwork that we use when recording an archaeological feature.
                 </p>
               </div>
 
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"></path><path d="M8 14v.5"></path><path d="M16 14v.5"></path><path d="M11.5 17h1"></path></svg>
-                </div>
-                <h3 className="text-lg font-medium">Survey Techniques</h3>
+                <h3 className="text-lg font-medium">Section drawing</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Introduction to archaeological survey methods including total station use, GIS applications, and geophysical survey.
+                  Gain experience in producing scale section drawings of archaeological features.
                 </p>
               </div>
 
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="8" x2="16" y1="10" y2="10"></line><line x1="8" x2="16" y1="14" y2="14"></line><line x1="8" x2="16" y1="18" y2="18"></line></svg>
-                </div>
-                <h3 className="text-lg font-medium">Archaeological Theory</h3>
+                <h3 className="text-lg font-medium">Plan drawing</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Engage with archaeological interpretation, contextual analysis, and understanding site formation processes.
+                  Draw a plan while learning the correct conventions used in the archaeological profession.
                 </p>
               </div>
 
               <div className="rounded-lg border bg-card p-5">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 2v14c0 1.25.75 2 2 2h16c1.25 0 2-.75 2-2v-5c0-1.25-.75-2-2-2h-4"></path><path d="M14 2h4c1.25 0 2 .75 2 2v5c0 1.25-.75 2-2 2h-4"></path></svg>
-                </div>
-                <h3 className="text-lg font-medium">Environmental Processing</h3>
+                <h3 className="text-lg font-medium">Surveying</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Learn flotation techniques and environmental sampling methods to recover ancient plant remains and other environmental evidence.
+                  Gain practical skills on how to create site plans using a Total station or GPS.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-5">
+                <h3 className="text-lg font-medium">Geophysical survey</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Carry out a geophysical survey to explore the below ground archaeology near the East Wear Bay site.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-5">
+                <h3 className="text-lg font-medium">Historic Building Recording</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Gain an introduction to Historic Building Recording and discover ways that this is used to conserve monuments and structures.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-5">
+                <h3 className="text-lg font-medium">Finds processing and preparation</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Learn how finds recovered from the site are processed and prepared for assessment.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-5">
+                <h3 className="text-lg font-medium">Environmental processing</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  After taking environmental samples on site, find out how they are processed and what we can learn from them.
+                </p>
+              </div>
+
+              <div className="rounded-lg border bg-card p-5">
+                <h3 className="text-lg font-medium">Site photography</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Get experience of site photography, the use of scales and how to create the best site photos for reports and publication.
                 </p>
               </div>
             </div>
@@ -374,115 +416,37 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
-          {/* Testimonials */}
+          {/* Participant Testimonials */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">Participant Testimonials</h2>
 
-            <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-              <div className="rounded-lg border bg-card p-5">
-                <div className="flex items-center gap-4">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full">
-                    <Image
-                      src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                      alt="Sarah, university student"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Sarah</p>
-                    <p className="text-sm text-muted-foreground">University Student, 2024</p>
-                  </div>
+            <div className="mt-6 space-y-6">
+              <div className="rounded-lg border bg-card p-6">
+                <div className="mb-3">
+                  <p className="font-medium">University of Kent student</p>
                 </div>
-                <blockquote className="mt-4 border-l-2 border-primary pl-4 italic text-muted-foreground">
-                  "The East Wear Bay Field School exceeded all my expectations. The training was thorough, the site
-                  fascinating, and the experience of working on a site that's actively being lost to erosion made
-                  our work feel urgent and meaningful."
+                <blockquote className="border-l-2 border-primary pl-4 italic text-muted-foreground">
+                  "I found the experience very interesting and believed it greatly enhanced my understanding of field archaeology. Additionally, the members of CAT on site were extremely helpful in broadening my understanding of how to correctly excavate and document an archaeological site."
                 </blockquote>
               </div>
 
-              <div className="rounded-lg border bg-card p-5">
-                <div className="flex items-center gap-4">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full">
-                    <Image
-                      src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                      alt="David, local volunteer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">David</p>
-                    <p className="text-sm text-muted-foreground">Local Volunteer, 2024</p>
-                  </div>
+              <div className="rounded-lg border bg-card p-6">
+                <div className="mb-3">
+                  <p className="font-medium">University of Kent student</p>
                 </div>
-                <blockquote className="mt-4 border-l-2 border-primary pl-4 italic text-muted-foreground">
-                  "As a Folkestone resident, I'd walked past this site for years without understanding its significance.
-                  The weekend programme gave me practical archaeology skills and a deeper connection to my local heritage.
-                  I've returned for three seasons now!"
+                <blockquote className="border-l-2 border-primary pl-4 italic text-muted-foreground">
+                  "Not only have I had incredible experiences excavating a Roman Villa, Iron Age Roundhouse, and investigating a possible barrow, but have done so alongside a wonderful and instructive team from CAT."
                 </blockquote>
               </div>
-            </div>
-          </div>
 
-          {/* Accommodation */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold">Accommodation</h2>
-            <p className="mt-2 text-muted-foreground">
-              Choose the option that best suits your needs and budget
-            </p>
-            
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="rounded-lg border bg-card overflow-hidden">
-                <div className="relative h-48">
-                  <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                    alt="Shared student accommodation with modern facilities"
-                    fill
-                    className="object-cover"
-                  />
+              <div className="rounded-lg border bg-card p-6">
+                <div className="mb-3">
+                  <p className="font-medium">Dr Steve Willis</p>
+                  <p className="text-sm text-muted-foreground">University of Kent</p>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold">Shared Apartments</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Our preferred accommodation option includes modern 4-person shared apartments in Folkestone town centre. 
-                    Each participant has their own bedroom with shared kitchen and living areas.
-                  </p>
-                  <ul className="mt-4 text-sm text-muted-foreground space-y-1">
-                    <li>• Private bedroom with study space</li>
-                    <li>• Shared kitchen and common areas</li>
-                    <li>• WiFi and utilities included</li>
-                    <li>• 10-minute walk to site</li>
-                    <li>• Weekly cleaning service</li>
-                  </ul>
-                  <p className="mt-4 text-lg font-semibold">£800 (2 weeks)</p>
-                </div>
-              </div>
-              
-              <div className="rounded-lg border bg-card overflow-hidden">
-                <div className="relative h-48">
-                  <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
-                    alt="Independent accommodation options in Folkestone"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold">Independent Options</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    We can provide recommendations for local B&Bs, hotels, or private rentals if you prefer 
-                    to arrange your own accommodation. Many participants choose this option for family stays.
-                  </p>
-                  <ul className="mt-4 text-sm text-muted-foreground space-y-1">
-                    <li>• Hotels from £60/night</li>
-                    <li>• B&Bs from £45/night</li>
-                    <li>• Private rentals available</li>
-                    <li>• Family-friendly options</li>
-                    <li>• Transport advice provided</li>
-                  </ul>
-                  <p className="mt-4 text-lg font-semibold">£650 (course only)</p>
-                </div>
+                <blockquote className="border-l-2 border-primary pl-4 italic text-muted-foreground">
+                  "Over the past two seasons (2023 and 2024) CAT through the EWB Project have kindly undertaken to offer training and experience places and other opportunities to some of our students (these students coming from various backgrounds, and representing various types of learners). This has been an invaluable learning experience for our undergraduates that enables them to engage with the range of archaeological remains the site offers and develop skills in recording the evidence to a professional level. The students find the training accessible and carefully explained, with hands-on opportunities, with a range of equipment at this exciting site, rich in artefactual remains. These placements provided by the EWB Project staffed by CAT personnel would be very hard to match and so at the University we have been very pleased that CAT and the EWB Project has enabled these experiences. CAT staff have been generous with their time on site and subsequently, with support and further 'post-ex' opportunities provided through our subsequent University teaching term. The quality of the experience in my view is very high and greatly appreciated by our students. Only one or two of our students had any previous archaeological fieldwork experience and we can see from the quality of the academic work in their follow up Portfolios that they learned a great deal. Several are now minded to pursue archaeology as a career."
+                </blockquote>
               </div>
             </div>
           </div>
@@ -557,70 +521,21 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
-          {/* Testimonials Section */}
-          {testimonials && testimonials.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">What Past Participants Say</h2>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {testimonials.map((testimonial: any) => (
-                  <div key={testimonial._id} className="rounded-lg border bg-card p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      {testimonial.image && (
-                        <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                          <Image
-                            src={urlFor(testimonial.image).width(96).height(96).url()}
-                            alt={testimonial.name}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                      <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.position}
-                          {testimonial.organization && `, ${testimonial.organization}`}
-                        </p>
-                      </div>
-                    </div>
-                    {testimonial.rating && (
-                      <div className="flex gap-1 mb-3">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < testimonial.rating
-                                ? 'fill-yellow-400 text-yellow-400'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    )}
-                    <p className="text-sm text-muted-foreground italic">
-                      "{testimonial.quote}"
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Apply Now CTA */}
           <div className="rounded-lg bg-primary p-8 text-primary-foreground">
             <div className="text-center">
               <h2 className="text-2xl font-bold">Ready to Join Us at East Wear Bay?</h2>
               <p className="mt-2">
-                Applications for our 2025 field school sessions are now open. Places fill quickly, so we recommend applying early.
+                Applications for our 2026 field school will open in December 2025. Check back then to secure your place.
               </p>
               <div className="mt-6">
-                <Link
-                  href="/field-school/apply"
-                  className="inline-flex items-center rounded-md bg-white px-6 py-3 font-medium text-primary shadow-sm hover:bg-white/90"
+                <button
+                  disabled
+                  className="inline-flex items-center rounded-md bg-white/50 px-6 py-3 font-medium text-primary/50 cursor-not-allowed"
                 >
-                  Apply to the Field School
+                  Applications Open December 2025
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>

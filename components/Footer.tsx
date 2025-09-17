@@ -90,7 +90,7 @@ export default function Footer({ siteSettings }: FooterProps) {
               </li>
               <li>
                 <Link href="/community" className="text-muted-foreground hover:text-foreground">
-                  Outreach & Community
+                  Community & Outreach
                 </Link>
               </li>
             </ul>

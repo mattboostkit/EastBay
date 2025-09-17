@@ -1,11 +1,17 @@
-"use client";
-
-import { useMemo } from 'react';
 import { Organization, WebSite, BreadcrumbList, WithContext } from 'schema-dts';
+
+// Get base URL consistently
+const getBaseUrl = () => {
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+};
 
 // Organization structured data
 export function OrganizationStructuredData() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+  // Use a fixed URL to prevent hydration mismatches
+  const baseUrl = 'https://eastwearbaypt.org';
   
   const orgData: WithContext<Organization> = {
     '@context': 'https://schema.org',
@@ -41,7 +47,7 @@ export function OrganizationStructuredData() {
     }
   };
 
-  const websiteData = {
+  const websiteData: WithContext<WebSite> = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'East Wear Bay Project',
@@ -54,17 +60,19 @@ export function OrganizationStructuredData() {
       },
       'query-input': 'required name=search_term_string',
     },
-  } as WithContext<WebSite>;
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgData) }}
+        suppressHydrationWarning
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+        suppressHydrationWarning
       />
     </>
   );
@@ -72,29 +80,27 @@ export function OrganizationStructuredData() {
 
 // Breadcrumb structured data component
 export function BreadcrumbStructuredData({ items }: { items: Array<{ name: string; url: string }> }) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+  // Use a fixed URL to prevent hydration mismatches
+  const baseUrl = 'https://eastwearbaypt.org';
 
-  const breadcrumbData = useMemo(() => {
-    const itemListElement = items.map((item, index) => ({
-      '@type': 'ListItem' as const,
-      position: index + 1,
-      name: item.name,
-      item: `${baseUrl}${item.url}`,
-    }));
+  const itemListElement = items.map((item, index) => ({
+    '@type': 'ListItem' as const,
+    position: index + 1,
+    name: item.name,
+    item: `${baseUrl}${item.url}`,
+  }));
 
-    const data: WithContext<BreadcrumbList> = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement,
-    };
-
-    return data;
-  }, [items, baseUrl]);
+  const breadcrumbData: WithContext<BreadcrumbList> = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement,
+  };
 
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      suppressHydrationWarning
     />
   );
 }
@@ -121,7 +127,8 @@ export function ArtefactStructuredData({
   artMedium?: string;
   creator?: string;
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+  // Use a fixed URL to prevent hydration mismatches
+  const baseUrl = 'https://eastwearbaypt.org';
   
   const artefactData = {
     '@context': 'https://schema.org',
@@ -156,6 +163,7 @@ export function ArtefactStructuredData({
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(artefactData) }}
+      suppressHydrationWarning
     />
   );
 }
@@ -180,7 +188,8 @@ export function EventStructuredData({
   url: string;
   organizer?: string;
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+  // Use a fixed URL to prevent hydration mismatches
+  const baseUrl = 'https://eastwearbaypt.org';
 
   const eventData = {
     '@context': 'https://schema.org',
@@ -213,6 +222,7 @@ export function EventStructuredData({
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(eventData) }}
+      suppressHydrationWarning
     />
   );
 }

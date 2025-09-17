@@ -105,7 +105,7 @@ export default async function DigitalMuseumPage({
                   Well-preserved canine skull specimen discovered during excavations at East Wear Bay.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -142,7 +142,7 @@ export default async function DigitalMuseumPage({
                   Copper alloy brooch of the Hod Hill type, a distinctive style of Roman military brooch from the 1st century AD.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/copper-alloy-hod-hill-type-brooch-52304a6789cd47d597e08ea929472563" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/copper-alloy-hod-hill-type-brooch-52304a6789cd47d597e08ea929472563" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -179,7 +179,7 @@ export default async function DigitalMuseumPage({
                   Well-preserved flint arrowhead from the prehistoric occupation of the site.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -216,7 +216,7 @@ export default async function DigitalMuseumPage({
                   Fragment of a ceramic figurine from the Roman period, showing detailed craftsmanship.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-c8d4a0ee9c00405994fe873944fd6e18" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-c8d4a0ee9c00405994fe873944fd6e18" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -253,7 +253,7 @@ export default async function DigitalMuseumPage({
                   Worked stone tool, possibly used as a hone for sharpening blades and tools.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/worked-stone-possible-hone-e4493f2c08ed4e799aab00fcc94d5f2e" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/worked-stone-possible-hone-e4493f2c08ed4e799aab00fcc94d5f2e" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -290,7 +290,7 @@ export default async function DigitalMuseumPage({
                   Another fragment of a Roman period ceramic figurine, showing different decorative details.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-179e944e81d448be8993bf7b444a62e8" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-179e944e81d448be8993bf7b444a62e8" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -327,7 +327,7 @@ export default async function DigitalMuseumPage({
                   Third fragment from Roman period ceramic figurines, possibly from a household shrine.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-121e5ba48d494c5a8305836387337afa" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/fragment-of-ceramic-roman-period-figurine-121e5ba48d494c5a8305836387337afa" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -364,7 +364,7 @@ export default async function DigitalMuseumPage({
                   Ceramic spindle whorl used for spinning thread from wool or plant fibres, an essential textile production tool.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-13102c0f8941472ba93e6bd21e4a31de" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-13102c0f8941472ba93e6bd21e4a31de" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -401,7 +401,7 @@ export default async function DigitalMuseumPage({
                   Another example of a ceramic spindle whorl, showing variations in size and decoration used for textile production.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-f535149ad9d14c7db8798109638abf25" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/ceramic-spindle-whorl-f535149ad9d14c7db8798109638abf25" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -438,7 +438,7 @@ export default async function DigitalMuseumPage({
                   Worked antler piece, possibly used as a tool or raw material for crafting implements and ornaments.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/antler-37ca9dd3650d4b93bb51d5761b880f1a" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/antler-37ca9dd3650d4b93bb51d5761b880f1a" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -475,7 +475,7 @@ export default async function DigitalMuseumPage({
                   Fragment of a ceramic vessel showing construction techniques and decorative elements from the Roman period.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/vessel-fragment-526b2e81ca8c4336a2588ca3218c94e4" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/vessel-fragment-526b2e81ca8c4336a2588ca3218c94e4" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -512,7 +512,7 @@ export default async function DigitalMuseumPage({
                   Fragment from a Cam 112 type beaker, a distinctive form of Roman pottery dating to the 1st-2nd century AD.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-a6d9ad9d5629488db29d6d6c8713cf6c" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-a6d9ad9d5629488db29d6d6c8713cf6c" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -549,7 +549,7 @@ export default async function DigitalMuseumPage({
                   Another fragment from a Cam 112 type beaker, showing different decorative elements and construction details.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-6bf48cc97d3c4cfd8c0d5acfdfe45123" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/fragment-from-cam-112-type-beaker-6bf48cc97d3c4cfd8c0d5acfdfe45123" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -586,7 +586,7 @@ export default async function DigitalMuseumPage({
                   Copper alloy brooch used for fastening clothing, demonstrating Roman metalworking and fashion.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/copper-alloy-brooch-f57ead2f553a4d01831a6674b70a8a60" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/copper-alloy-brooch-f57ead2f553a4d01831a6674b70a8a60" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -623,7 +623,7 @@ export default async function DigitalMuseumPage({
                   Bone gaming counter used in Roman board games, evidence of leisure activities in Roman Britain.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/bone-gaming-counter-d18670bb704d4db5b9845ead98f6e2f1" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/bone-gaming-counter-d18670bb704d4db5b9845ead98f6e2f1" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -660,7 +660,7 @@ export default async function DigitalMuseumPage({
                   Worked flint tool showing evidence of knapping techniques used in prehistoric tool production.
                 </p>
                 <div className="mt-3 text-xs">
-                  <a href="https://sketchfab.com/3d-models/worked-flint-8df9ab499a674dc1be334fdb169ec1d6" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                  <a href="https://sketchfab.com/3d-models/worked-flint-8df9ab499a674dc1be334fdb169ec1d6" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                     View on Sketchfab
                   </a>
                 </div>
@@ -682,7 +682,7 @@ export default async function DigitalMuseumPage({
             <h2 className="text-2xl font-bold tracking-tight mb-6">Collection Archive</h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {paginatedArtefacts.map((artefact: any) => (
-                <ArtefactCard key={artefact._id} artefact={artefact} />
+                <ArtefactCard key={artefact.-id} artefact={artefact} />
               ))}
             </div>
           </>
@@ -715,7 +715,7 @@ export default async function DigitalMuseumPage({
               )}
               
               {/* Page numbers */}
-              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+              {Array.from({ length: Math.min(5, totalPages) }, (-, i) => {
                 const pageNumber = i + 1;
                 return (
                   <Link

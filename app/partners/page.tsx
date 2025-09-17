@@ -70,17 +70,17 @@ export default async function PartnersPage() {
             <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: 'National Lottery Heritage Fund', logo: '/logos/national-lottery-heritage-fund.svg' },
-                { name: 'Roger De Haan Charitable Trust', logo: '/logos/roger-de-haan-charitable-trust.svg' },
-                { name: 'Garfield Weston Charitable Trust', logo: '/logos/garfield-weston-charitable-trust.svg' },
-                { name: 'The Lawson Trust', logo: '/logos/the-lawson-trust.svg' },
-                { name: 'Friends of Canterbury Archaeological Trust', logo: '/logos/canterbury-archaeological-trust.svg' },
-                { name: 'Kent Community Foundation', logo: '/logos/kent-community-foundation.svg' },
-                { name: 'Folkestone Town Council', logo: '/logos/folkestone-town-council.svg' },
-                { name: 'Folkestone and Hythe District Council', logo: '/logos/folkestone-hythe-district-council.svg' },
-                { name: 'Council for British Archaeology', logo: '/logos/council-for-british-archaeology.svg' },
-                { name: 'Association for Roman Archaeology', logo: '/logos/association-for-roman-archaeology.svg' },
-                { name: 'Society of the Promotion of Roman Studies', logo: '/logos/society-promotion-roman-studies.svg' }
+                { name: 'National Lottery Heritage Fund', logo: null },
+                { name: 'Roger De Haan Charitable Trust', logo: null },
+                { name: 'Garfield Weston Charitable Trust', logo: null },
+                { name: 'The Lawson Trust', logo: null },
+                { name: 'Friends of Canterbury Archaeological Trust', logo: null },
+                { name: 'Kent Community Foundation', logo: null },
+                { name: 'Folkestone Town Council', logo: null },
+                { name: 'Folkestone and Hythe District Council', logo: null },
+                { name: 'Council for British Archaeology', logo: null },
+                { name: 'Association for Roman Archaeology', logo: null },
+                { name: 'Society of the Promotion of Roman Studies', logo: null }
               ].map((funderInfo) => {
                 // Try to find the funder in the Sanity data
                 const funder = principalFunders.find((p: any) =>
@@ -126,17 +126,17 @@ export default async function PartnersPage() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {[
-                { name: 'Folkestone Museum', logo: '/logos/folkestone-museum.svg' },
-                { name: 'The University of Kent', logo: '/logos/university-of-kent.svg' },
-                { name: 'Dover Archaeology Group', logo: '/logos/dover-archaeology-group.svg' },
-                { name: 'Folkestone Research and Archaeology Group', logo: '/logos/folkestone-research-archaeology-group.svg' },
-                { name: 'Canterbury Christ Church University', logo: '/logos/canterbury-christ-church-university.svg' },
-                { name: 'Folkestone and Hythe District Council', logo: '/logos/folkestone-hythe-district-council.svg' },
-                { name: 'Folkestone Town Council', logo: '/logos/folkestone-town-council.svg' },
-                { name: 'Historic England', logo: '/logos/historic-england.svg' },
-                { name: 'Kent Archaeological Society', logo: '/logos/kent-archaeological-society.svg' },
-                { name: 'Kent Downs Landscape', logo: '/logos/kent-downs-landscape.svg' },
-                { name: 'Creative Folkestone', logo: '/logos/creative-folkestone.svg' }
+                { name: 'Folkestone Museum', logo: null },
+                { name: 'The University of Kent', logo: null },
+                { name: 'Dover Archaeology Group', logo: null },
+                { name: 'Folkestone Research and Archaeology Group', logo: null },
+                { name: 'Canterbury Christ Church University', logo: null },
+                { name: 'Folkestone and Hythe District Council', logo: null },
+                { name: 'Folkestone Town Council', logo: null },
+                { name: 'Historic England', logo: null },
+                { name: 'Kent Archaeological Society', logo: null },
+                { name: 'Kent Downs Landscape', logo: null },
+                { name: 'Creative Folkestone', logo: null }
               ].map((partnerInfo) => {
                 // Try to find the partner in the Sanity data
                 const partner = leadPartners.find((p: any) =>

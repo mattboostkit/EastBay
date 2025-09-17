@@ -129,7 +129,7 @@ export default function PrivacyPage() {
             </p>
             <div className="mt-4 rounded-lg border bg-muted p-4">
               <p className="font-semibold">Canterbury Archaeological Trust Ltd</p>
-              <p>Email: get_involved@canterburytrust.ac.uk</p>
+              <p>Email: get-involved@canterburytrust.ac.uk</p>
               <p>Address: 92a Broad Street, Canterbury, Kent, CT1 2LU</p>
             </div>
           </section>

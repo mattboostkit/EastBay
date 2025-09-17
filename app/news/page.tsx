@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 }
 
 async function getNews() {
-  const query = `*[_type == "post"] | order(publishedAt desc, _createdAt desc) {
-    _id,
+  const query = `*[-type == "post"] | order(publishedAt desc, -createdAt desc) {
+    -id,
     title,
     slug,
     excerpt,
     publishedAt,
-    _createdAt,
+    -createdAt,
     mainImage,
     categories,
     author-> {
@@ -35,7 +35,7 @@ async function getNews() {
 }
 
 async function getCategories() {
-  const query = `*[_type == "post"] {
+  const query = `*[-type == "post"] {
     categories
   } | order(categories asc)`
 
@@ -58,7 +58,7 @@ export default async function NewsPage() {
       {/* Hero Section with Image */}
       <section className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/News/News_Banner_EWB.webp?updatedAt=1758122787198"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/News/News-Banner-EWB.webp?updatedAt=1758122787198"
           alt="East Wear Bay archaeological news and updates"
           fill
           className="object-cover"
@@ -110,7 +110,7 @@ export default async function NewsPage() {
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredNews.map((item: any) => (
-              <Card key={item._id} className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50">
+              <Card key={item.-id} className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50">
                 {item.mainImage && (
                   <div className="aspect-video overflow-hidden bg-muted">
                     <Image
@@ -181,7 +181,7 @@ export default async function NewsPage() {
             
             <TabsContent value="all" className="space-y-6">
               {recentNews.map((item: any) => (
-                <Card key={item._id} className="hover:shadow-md transition-all border-l-4 border-l-primary">
+                <Card key={item.-id} className="hover:shadow-md transition-all border-l-4 border-l-primary">
                   <div className="flex gap-6 p-6">
                     {item.mainImage && (
                       <div className="hidden md:block w-48 h-32 rounded-lg overflow-hidden bg-muted flex-shrink-0">

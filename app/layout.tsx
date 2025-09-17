@@ -15,7 +15,7 @@ const geistSans = GeistSans;
 const geistMono = GeistMono;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org'),
+  metadataBase: new URL(process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org'),
   title: {
     default: 'East Wear Bay Project | Folkestone Roman Villa Research',
     template: '%s | East Wear Bay Project',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description: 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education. Join us in preserving this coastal heritage site threatened by erosion.',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org',
+    locale: 'en-US',
+    url: process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org',
     title: 'East Wear Bay Project | Folkestone Roman Villa Research',
     description: 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education.',
     siteName: 'East Wear Bay Project',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary-large-image',
     title: 'East Wear Bay Project | Folkestone Roman Villa Research',
     description: 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education.',
     images: ['https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'],
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org'}/rss.xml`,
+      'application/rss+xml': `${process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org'}/rss.xml`,
     },
   },
   applicationName: 'East Wear Bay Project',

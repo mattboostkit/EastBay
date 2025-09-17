@@ -64,7 +64,7 @@ export default async function Home() {
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[85vh] overflow-hidden bg-gradient-to-b from-bronze-900 to-stone-900" aria-labelledby="hero-heading">
         <Image
-          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home-Cover-EWB.webp?updatedAt=1758121883167"
           fill
           priority
           alt="East Wear Bay coastal view"
@@ -201,7 +201,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
+                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home-About-EWB.webp?updatedAt=1758121883165"
                     alt="Coastal view of East Wear Bay showing the archaeological site"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -240,7 +240,7 @@ export default async function Home() {
             {featuredArtefacts && featuredArtefacts.length > 0 ? (
               // If we have artefacts from Sanity, display them
               featuredArtefacts.slice(0, 3).map((artefact: any) => (
-                <ArtefactCard key={artefact._id} artefact={artefact} />
+                <ArtefactCard key={artefact.-id} artefact={artefact} />
               ))
             ) : (
               // If no artefacts are fetched, display Sketchfab embeds
@@ -268,15 +268,15 @@ export default async function Home() {
                       Well-preserved canine skull specimen discovered during excavations at East Wear Bay.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/3d-models/dog-skull-377115ce55264f6ebe7e605ed1e27014?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Dog Skull
                       </a>
                       {" by "}
-                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         CATrust25
                       </a>
                       {" on "}
-                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=377115ce55264f6ebe7e605ed1e27014" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=377115ce55264f6ebe7e605ed1e27014" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Sketchfab
                       </a>
                     </div>
@@ -314,15 +314,15 @@ export default async function Home() {
                       Well-preserved flint arrowhead from the prehistoric occupation of the site.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/3d-models/flint-arrowhead-47f3d49d46f541dcb8778aee7e3e7627?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Flint Arrowhead
                       </a>
                       {" by "}
-                      <a href="https://sketchfab.com/CATrust25?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com/CATrust25?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         CATrust25
                       </a>
                       {" on "}
-                      <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=47f3d49d46f541dcb8778aee7e3e7627" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                      <a href="https://sketchfab.com?utm-medium=embed&utm-campaign=share-popup&utm-content=47f3d49d46f541dcb8778aee7e3e7627" target="-blank" rel="nofollow" className="font-bold text-primary hover:underline">
                         Sketchfab
                       </a>
                     </div>
@@ -341,7 +341,7 @@ export default async function Home() {
                   <div className="p-3">
                     <div className="relative pb-[100%] rounded-lg overflow-hidden bg-gradient-to-br from-sand-100 to-stone-100">
                       <Image
-                        src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Digital-Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
+                        src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Digital-Museum/Roman-Pottery-EWB.webp?updatedAt=1758121883166"
                         alt="Roman Pottery Fragment"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -470,7 +470,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
+                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home-Success-EWB.webp?updatedAt=1758122024645"
                     alt="Field school participants from July 2025 excavation"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -624,7 +624,7 @@ export default async function Home() {
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=oTalhuo-5Pg"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >
@@ -652,7 +652,7 @@ export default async function Home() {
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=aoQk4uq6Ol4"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >

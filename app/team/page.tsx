@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 }
 
 async function getTeamMembers() {
-  const query = `*[_type == "teamMember"] | order(order asc, name asc) {
-    _id,
+  const query = `*[-type == "teamMember"] | order(order asc, name asc) {
+    -id,
     name,
     position,
     "speciality": expertise[0],
@@ -63,7 +63,7 @@ export default async function TeamPage() {
           ) : (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {teamMembers.map((member: any) => (
-                <div key={member._id} className="flex flex-col items-center rounded-lg border bg-card p-6 text-center">
+                <div key={member.-id} className="flex flex-col items-center rounded-lg border bg-card p-6 text-center">
                   <div className="relative h-32 w-32 overflow-hidden rounded-full bg-muted">
                     {member.image ? (
                       <Image

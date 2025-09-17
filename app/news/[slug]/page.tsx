@@ -14,13 +14,13 @@ interface Props {
 }
 
 async function getPost(slug: string) {
-  const query = `*[_type == "post" && slug.current == $slug][0] {
-    _id,
+  const query = `*[-type == "post" && slug.current == $slug][0] {
+    -id,
     title,
     slug,
     excerpt,
     publishedAt,
-    _createdAt,
+    -createdAt,
     mainImage,
     categories,
     author-> {
@@ -30,7 +30,7 @@ async function getPost(slug: string) {
     },
     body,
     relatedPosts[]-> {
-      _id,
+      -id,
       title,
       slug,
       excerpt,
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const query = `*[_type == "post"] {
+  const query = `*[-type == "post"] {
     slug
   }`
 
@@ -72,7 +72,7 @@ export async function generateStaticParams() {
 const components = {
   types: {
     image: ({ value }: any) => {
-      if (!value?.asset?._ref) {
+      if (!value?.asset?.-ref) {
         return null
       }
       return (
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
-  const date = post.publishedAt || post._createdAt
+  const date = post.publishedAt || post.-createdAt
   const formattedDate = date ? new Date(date).toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'long',
@@ -234,7 +234,7 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {post.relatedPosts.map((relatedPost: any) => (
                   <Link
-                    key={relatedPost._id}
+                    key={relatedPost.-id}
                     href={`/news/${relatedPost.slug.current}`}
                     className="group"
                   >

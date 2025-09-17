@@ -19,7 +19,7 @@ export default function CommunityPage() {
         description="Engaging the public with archaeology and connecting communities to their local heritage through inclusive programmes and activities."
         icon={Users}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Banner_Image_1Community_EWB.webp?updatedAt=1758121339875"
+        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Banner-Image-1Community-EWB.webp?updatedAt=1758121339875"
       />
       
       <div className="container py-12">
@@ -79,7 +79,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/School_resource_Community_EWB.webp?updatedAt=1758121560813"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/School-resource-Community-EWB.webp?updatedAt=1758121560813"
                   fill
                   alt="School resources"
                   className="rounded-t-lg object-cover"
@@ -118,7 +118,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Field_School_Community_EWB.webp?updatedAt=1758121457965"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Field-School-Community-EWB.webp?updatedAt=1758121457965"
                   alt="Field School"
                   fill
                   className="rounded-t-lg object-cover"
@@ -153,7 +153,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Volunteering_Community_EWB.webp?updatedAt=1758121653045"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Volunteering-Community-EWB.webp?updatedAt=1758121653045"
                   alt="Volunteering"
                   fill
                   className="rounded-t-lg object-cover"
@@ -188,7 +188,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Sensory_Stories_Community_EWB.webp?updatedAt=1758121559636"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Sensory-Stories-Community-EWB.webp?updatedAt=1758121559636"
                   alt="Sensory Stories"
                   fill
                   className="rounded-t-lg object-cover"
@@ -223,7 +223,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Dementia_Friendly_Community_EWB.webp?updatedAt=1758121387444"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Dementia-Friendly-Community-EWB.webp?updatedAt=1758121387444"
                   alt="Dementia Friendly Sessions"
                   fill
                   className="rounded-t-lg object-cover"
@@ -258,7 +258,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Pop_up_Dig_Pit_Community_EWB.webp?updatedAt=1758121532206"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Pop-up-Dig-Pit-Community-EWB.webp?updatedAt=1758121532206"
                   alt="Pop-Up Dig Pit"
                   fill
                   className="rounded-t-lg object-cover"
@@ -298,7 +298,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Excavation_and_recording_Community_EWB.webp?updatedAt=1758121390636"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Excavation-and-recording-Community-EWB.webp?updatedAt=1758121390636"
                   fill
                   alt="Excavation and Recording"
                   className="rounded-t-lg object-cover"
@@ -326,7 +326,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Work_Placement_Community_EWB.webp?updatedAt=1758121655040"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Work-Placement-Community-EWB.webp?updatedAt=1758121655040"
                   fill
                   alt="Work Placements"
                   className="rounded-t-lg object-cover"
@@ -354,7 +354,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Filmmaking_Community_EWB.webp?updatedAt=1758121448609"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Filmmaking-Community-EWB.webp?updatedAt=1758121448609"
                   fill
                   alt="Filmmaking Project"
                   className="rounded-t-lg object-cover"
@@ -382,7 +382,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Archaeology_&_Identity_Community_EWB.webp?updatedAt=1758121297874"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Archaeology-&-Identity-Community-EWB.webp?updatedAt=1758121297874"
                   fill
                   alt="Archaeology and Identity Workshops"
                   className="rounded-t-lg object-cover"
@@ -410,7 +410,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Open_Days_Community_EWB.webp?updatedAt=1758121505024"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Open-Days-Community-EWB.webp?updatedAt=1758121505024"
                   fill
                   alt="Open Day Events"
                   className="rounded-t-lg object-cover"
@@ -428,7 +428,7 @@ export default function CommunityPage() {
             <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Co_Curated_Exhibition_Community_EWB.webp?updatedAt=1758121355951"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Co-Curated-Exhibition-Community-EWB.webp?updatedAt=1758121355951"
                   fill
                   alt="Co-Curated Exhibition"
                   className="rounded-t-lg object-cover"

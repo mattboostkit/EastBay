@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 }
 
 async function getFieldSchoolSessions() {
-  const query = `*[_type == "fieldSchoolSession" && isActive == true] | order(displayOrder asc, year desc) {
-    _id,
+  const query = `*[-type == "fieldSchoolSession" && isActive == true] | order(displayOrder asc, year desc) {
+    -id,
     title,
     slug,
     year,
@@ -59,7 +59,7 @@ export default async function FieldSchoolPage() {
     <>
       <div className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Field-School/Field_School_Banner_EWB.webp?updatedAt=1758122483742"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Field-School/Field-School-Banner-EWB.webp?updatedAt=1758122483742"
           alt="Students excavating at the East Wear Bay archaeological site with tools and equipment"
           fill
           className="object-cover"
@@ -90,7 +90,7 @@ export default async function FieldSchoolPage() {
 
             <div className="mt-6 grid gap-6">
               {sessions.map((session: any) => (
-                <div key={session._id || session.title} className="rounded-lg border p-5">
+                <div key={session.-id || session.title} className="rounded-lg border p-5">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-xl font-medium">{session.title}</h3>

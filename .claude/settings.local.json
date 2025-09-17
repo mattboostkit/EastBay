@@ -68,7 +68,8 @@
       "mcp__sanity__patch_document",
       "Bash(dos2unix:*)",
       "mcp__sanity__update_document",
-      "mcp__playwright__browser_take_screenshot"
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_network_requests"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

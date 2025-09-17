@@ -45,7 +45,7 @@ export default async function PublicationsPage() {
           {publications && publications.length > 0 ? (
             <div className="space-y-6">
               {publications.map((publication: any) => (
-                <Card key={publication._id}>
+                <Card key={publication.-id}>
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -76,7 +76,7 @@ export default async function PublicationsPage() {
                           DOI: <a 
                             href={`https://doi.org/${publication.doi}`} 
                             className="text-primary hover:underline"
-                            target="_blank"
+                            target="-blank"
                             rel="noopener noreferrer"
                           >
                             {publication.doi}
@@ -111,7 +111,7 @@ export default async function PublicationsPage() {
                         <a 
                           href={publication.pdfUrl}
                           className="inline-flex items-center text-sm text-primary hover:underline"
-                          target="_blank"
+                          target="-blank"
                           rel="noopener noreferrer"
                         >
                           <Download className="mr-1 h-4 w-4" />
@@ -185,7 +185,7 @@ export default async function PublicationsPage() {
                   <a
                     href="http://dx.doi.org/10.7488/era/4434"
                     className="inline-flex items-center text-sm text-primary hover:underline"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                   >
                     http://dx.doi.org/10.7488/era/4434
@@ -205,7 +205,7 @@ export default async function PublicationsPage() {
                   <a
                     href="https://www.amazon.co.uk/Folkestone-Excavation-Speculations-Historical-Sketches/dp/B0018Y0MNC"
                     className="inline-flex items-center text-sm text-primary hover:underline"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                   >
                     Buy now on Amazon
@@ -260,7 +260,7 @@ export default async function PublicationsPage() {
                   <a
                     href="https://doi.org/10.2307/526162"
                     className="inline-flex items-center text-sm text-primary hover:underline"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                   >
                     DOI: https://doi.org/10.2307/526162

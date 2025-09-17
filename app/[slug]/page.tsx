@@ -126,7 +126,7 @@ export default async function DynamicPage({ params }: PageParams) {
         {page.sections && page.sections.length > 0 && (
           <div className="mt-12 space-y-12">
             {page.sections.map((section: any) => (
-              <section key={section._key}>
+              <section key={section.-key}>
                 {section.sectionTitle && (
                   <h2 className="text-2xl font-bold mb-4">{section.sectionTitle}</h2>
                 )}

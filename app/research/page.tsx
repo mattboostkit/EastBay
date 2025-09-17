@@ -107,7 +107,7 @@ export default function ResearchPage() {
                     
                     <a
                       href="https://doi.org/10.1017/example.2025.001"
-                      target="_blank"
+                      target="-blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm hover:bg-accent"
                     >
@@ -116,7 +116,7 @@ export default function ResearchPage() {
                     </a>
                     
                     <a
-                      href="/downloads/richards_et_al_2025_folkestone_villa.pdf"
+                      href="/downloads/richards-et-al-2025-folkestone-villa.pdf"
                       className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm hover:bg-accent"
                     >
                       Download PDF
@@ -161,7 +161,7 @@ export default function ResearchPage() {
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
-                    href="/downloads/Parfitt_2012_EWB_Interim_Report.pdf"
+                    href="/downloads/Parfitt-2012-EWB-Interim-Report.pdf"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"
                   >
@@ -202,7 +202,7 @@ export default function ResearchPage() {
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
-                    href="/downloads/Parfitt_Richardson_2021_EWB_Management_Plan.pdf"
+                    href="/downloads/Parfitt-Richardson-2021-EWB-Management-Plan.pdf"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"
                   >
@@ -256,7 +256,7 @@ export default function ResearchPage() {
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
                     href="https://www.canterburytrust.co.uk/other-publications"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="View on CAT website"
@@ -295,7 +295,7 @@ export default function ResearchPage() {
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
                     href="http://dx.doi.org/10.7488/era/4434"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="View publication"
@@ -333,8 +333,8 @@ export default function ResearchPage() {
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
-                    href="https://www.kentarchaeology.org.uk/s/archaeologia-cantiana_138-15_more_classis_britannica_tiles_from_east_wear_bay_folkestone.pdf"
-                    target="_blank"
+                    href="https://www.kentarchaeology.org.uk/s/archaeologia-cantiana-138-15-more-classis-britannica-tiles-from-east-wear-bay-folkestone.pdf"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"
@@ -373,7 +373,7 @@ export default function ResearchPage() {
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
                     href="https://doi.org/10.2307/526162"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="View DOI"
@@ -441,7 +441,7 @@ export default function ResearchPage() {
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
                   <a
                     href="https://www.kentarchaeology.org.uk/s/03-Republican-Dressel-1-Amphorae-From-East-Wear-Bay-Folkestone.pdf"
-                    target="_blank"
+                    target="-blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                     aria-label="Download PDF"

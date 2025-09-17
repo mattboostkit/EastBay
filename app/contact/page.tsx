@@ -16,7 +16,7 @@ export default function ContactPage() {
         description="Have questions about our research, field school, or community programs? Get in touch with our team."
         icon={Mail}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Contact/Contact_Banner_EWB.webp?updatedAt=1758122320523"
+        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Contact/Contact-Banner-EWB.webp?updatedAt=1758122320523"
       />
       
       <div className="container py-12 md:py-20">
@@ -45,7 +45,7 @@ export default function ContactPage() {
                   <Mail className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">get_involved@canterburytrust.ac.uk</p>
+                    <p className="text-muted-foreground">get-involved@canterburytrust.ac.uk</p>
                   </div>
                 </li>
 
@@ -74,7 +74,7 @@ export default function ContactPage() {
             <div>
               <h3 className="mb-4 text-xl font-semibold">Sponsors & Partners</h3>
               <p className="text-muted-foreground">
-                If you're interested in sponsoring our work or developing a partnership, please contact us at get_involved@canterburytrust.ac.uk.
+                If you're interested in sponsoring our work or developing a partnership, please contact us at get-involved@canterburytrust.ac.uk.
               </p>
               <p className="mt-2 text-muted-foreground">
                 We offer various sponsorship opportunities for businesses and organisations interested in supporting community archaeology and heritage preservation.

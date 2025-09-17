@@ -14,7 +14,7 @@ export default function VolunteerPage() {
       {/* Hero Section with Image */}
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Volunteer/Volunteer_Hero_EWB.webp?updatedAt=1758121883166"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Volunteer/Volunteer-Hero-EWB.webp?updatedAt=1758121883166"
           alt="Volunteers excavating at East Wear Bay"
           fill
           priority
@@ -305,8 +305,8 @@ export default function VolunteerPage() {
                   </button>
                   <p className="text-sm text-muted-foreground">
                     Or email us at{' '}
-                    <a href="mailto:get_involved@canterburytrust.co.uk" className="text-primary hover:underline">
-                      get_involved@canterburytrust.co.uk
+                    <a href="mailto:get-involved@canterburytrust.co.uk" className="text-primary hover:underline">
+                      get-involved@canterburytrust.co.uk
                     </a>
                   </p>
                 </div>

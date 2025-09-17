@@ -22,7 +22,7 @@ export function PageHero({
   return (
     <section className={cn(
       "relative",
-      backgroundImage ? "h-[60vh] min-h-[500px]" : "py-12 md:py-20",
+      backgroundImage ? "h-[75vh] min-h-[600px]" : "py-20 md:py-32",
       variant === 'gradient' && !backgroundImage && "bg-gradient-to-br from-primary/10 via-primary/5 to-background",
       variant === 'muted' && !backgroundImage && "bg-muted",
       variant === 'image' && "overflow-hidden",
@@ -59,12 +59,12 @@ export function PageHero({
             </div>
           )}
           <h1 className={cn(
-            "text-3xl font-bold tracking-tight md:text-4xl",
+            "text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl",
             backgroundImage && "text-white"
           )}>{title}</h1>
           {description && (
             <p className={cn(
-              "mt-4 text-lg",
+              "mt-6 text-lg md:text-xl max-w-4xl mx-auto",
               backgroundImage ? "text-white/90" : "text-muted-foreground"
             )}>
               {description}

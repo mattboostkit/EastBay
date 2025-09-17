@@ -12,7 +12,7 @@ export default function VolunteerPage() {
   return (
     <div>
       {/* Hero Section with Image */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+      <section className="relative h-[75vh] min-h-[600px] overflow-hidden">
         <Image
           src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Success.jpg?updatedAt=1755600476499"
           alt="Volunteers excavating at East Wear Bay"

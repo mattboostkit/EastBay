@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin, Users, ArrowRight, Heart, Sparkles, BookOpen } from 'lucide-react'
 import { PageHero } from '@/components/PageHero'
+import { AnimatedCounter } from '@/components/AnimatedCounter'
+import { SectionDivider } from '@/components/SectionDivider'
 
 export const metadata: Metadata = {
   title: 'Community & Outreach | East Wear Bay Archaeological Project',
@@ -24,37 +26,37 @@ export default function CommunityPage() {
         {/* Community Principles */}
         <section className="mb-16">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold">Our Community Principles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-bronze-700 to-bronze-900 bg-clip-text text-transparent">Our Community Principles</h2>
             <p className="mt-3 text-muted-foreground">
               At the East Wear Bay Project, we believe that archaeology belongs to everyone. Our community programmes are designed around three core principles:
             </p>
             
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="rounded-lg border bg-card p-5">
+              <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 p-6 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3 className="text-lg font-medium">Inclusivity</h3>
+                <h3 className="text-xl font-bold text-bronze-800">Inclusivity</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Creating accessible opportunities for people of all ages, backgrounds, and abilities to engage with archaeology and heritage.
                 </p>
               </div>
               
-              <div className="rounded-lg border bg-card p-5">
+              <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 p-6 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
                 </div>
-                <h3 className="text-lg font-medium">Co-creation</h3>
+                <h3 className="text-xl font-bold text-bronze-800">Co-creation</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Involving local communities in shaping how we interpret, present, and share archaeological discoveries.
                 </p>
               </div>
               
-              <div className="rounded-lg border bg-card p-5">
+              <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 p-6 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>
                 </div>
-                <h3 className="text-lg font-medium">Relevance</h3>
+                <h3 className="text-xl font-bold text-bronze-800">Relevance</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Connecting past and present to make archaeology meaningful to contemporary lives and local identity.
                 </p>
@@ -66,7 +68,7 @@ export default function CommunityPage() {
         {/* Current Programmes */}
         <section className="mb-16">
           <div className="mb-6 text-center">
-            <h2 className="text-2xl font-bold">Current community outreach work and resources</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-bronze-700 to-bronze-900 bg-clip-text text-transparent">Current community outreach work and resources</h2>
             <p className="mt-2 text-muted-foreground">
               Discover the ways you can get involved with the East Wear Bay Project
             </p>
@@ -74,7 +76,7 @@ export default function CommunityPage() {
           
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* School resources */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/School_resource_Community_EWB.webp?updatedAt=1758121560813"
@@ -84,7 +86,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">School resources</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">School resources</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   We have a range of different learning resources that you can use for Key Stage 1 and 2 children to learn about their local archaeology and heritage.
                 </p>
@@ -113,7 +115,7 @@ export default function CommunityPage() {
             </div>
             
             {/* Field School */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Field_School_Community_EWB.webp?updatedAt=1758121457965"
@@ -123,7 +125,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Field School</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Field School</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Book to join our archaeology field school for next summer and learn a range of practical archaeological field methods.
                 </p>
@@ -148,7 +150,7 @@ export default function CommunityPage() {
             </div>
             
             {/* Volunteering */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Volunteering_Community_EWB.webp?updatedAt=1758121653045"
@@ -158,7 +160,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Volunteering</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Volunteering</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Join the project as a volunteer or register your interest. Volunteers may help with excavation, recording, finds processing, public engagement, and data processing.
                 </p>
@@ -183,7 +185,7 @@ export default function CommunityPage() {
             </div>
             
             {/* Sensory Stories */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Sensory_Stories_Community_EWB.webp?updatedAt=1758121559636"
@@ -193,7 +195,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Sensory Stories</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Sensory Stories</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Download our sensory story book, which can be used to recreate the experience of archaeology for people with profound, complex and multiple learning disabilities, young children, people with autism and those with dementia.
                 </p>
@@ -218,7 +220,7 @@ export default function CommunityPage() {
             </div>
             
             {/* Dementia Friendly Sessions */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Dementia_Friendly_Community_EWB.webp?updatedAt=1758121387444"
@@ -228,7 +230,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Dementia Friendly Sessions</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Dementia Friendly Sessions</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   We deliver dementia friendly sessions within our local community. These can involve informal finds handling sessions, sensory exploration of archaeology, craft workshops and more. Get in touch if your local group would like to take part or download some useful resources to help engage with someone you know that has dementia.
                 </p>
@@ -253,7 +255,7 @@ export default function CommunityPage() {
             </div>
             
             {/* Pop-Up Dig Pit */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Pop_up_Dig_Pit_Community_EWB.webp?updatedAt=1758121532206"
@@ -263,7 +265,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Pop-Up Dig Pit</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Pop-Up Dig Pit</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Subject to availability and location, we can bring our pop-up dig pit to an event or youth group near you. We may also be able to loan our dig pit to local community youth groups who want to learn more about archaeology.
                 </p>
@@ -285,7 +287,7 @@ export default function CommunityPage() {
         {/* Previous Outreach Work */}
         <section className="mb-16">
           <div className="mb-6 text-center">
-            <h2 className="text-2xl font-bold">Previous Outreach Work</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-bronze-700 to-bronze-900 bg-clip-text text-transparent">Previous Outreach Work</h2>
             <p className="mt-2 text-muted-foreground max-w-3xl mx-auto">
               Learn about the different ways that we have worked with the community to inspire others, and to educate, communicate, and demonstrate the value of our shared heritage.
             </p>
@@ -293,7 +295,7 @@ export default function CommunityPage() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Excavation and Recording */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Excavation_and_recording_Community_EWB.webp?updatedAt=1758121390636"
@@ -303,7 +305,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Excavation and Recording</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Excavation and Recording</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   We worked with over 120 site volunteers between 2023-2025, who helped to excavate and record the site to preserve it by record. Take a look at our reports and publications section to find out what we have learnt about the archaeology of East Wear Bay with the help of our valued volunteer team.
                 </p>
@@ -321,7 +323,7 @@ export default function CommunityPage() {
             </div>
 
             {/* Work Placements */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Work_Placement_Community_EWB.webp?updatedAt=1758121655040"
@@ -331,7 +333,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Work Placements</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Work Placements</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   We have provided work experience and on-the-job training to university and sixth form students throughout the project. This has included on-site supervisory placements as part of the field school for students from the University of Kent, CCCU and UCL. Sixth form students who are interested in pursuing a career in archaeology have also joined us on site for hands-on work experience placements and this has helped them with their future decision-making. We are always looking for corporate sponsors to help fund work experience placements, so please get in touch if you would like to help.
                 </p>
@@ -349,7 +351,7 @@ export default function CommunityPage() {
             </div>
 
             {/* Filmmaking Project */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Filmmaking_Community_EWB.webp?updatedAt=1758121448609"
@@ -359,7 +361,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Filmmaking Project</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Filmmaking Project</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   With the help of a professional filmmaker, the East Wear Bay project provided filmmaking workshops for young people who are not in education, employment or training (NEET), and to students at the Beacon School who wanted to undertake work experience. The participants learnt skills to be able to make their own short film on the East Wear Bay project. These were then shown to their peers to celebrate the hard work they had put into their creations. We would love to continue with outreach projects such as this one as they provide young people with confidence, skills training and opportunities for collaborative working. If you would like to help fund initiatives like this one, please get in touch.
                 </p>
@@ -377,7 +379,7 @@ export default function CommunityPage() {
             </div>
 
             {/* Archaeology and Identity Workshops */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Archaeology_&_Identity_Community_EWB.webp?updatedAt=1758121297874"
@@ -387,7 +389,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Archaeology and Identity Workshops</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Archaeology and Identity Workshops</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Throughout January and February 2025, CAT ran a series of workshops at Canterbury Cathedral on the theme of archaeology and identity. This was a fantastic opportunity for members of the public to handle real archaeological finds and to learn more about how we interpret them. We hope that with future funding, we will be able to run more workshops like this. If you would like to help fund initiatives like this one, please get in touch.
                 </p>
@@ -405,7 +407,7 @@ export default function CommunityPage() {
             </div>
 
             {/* Open Day Events */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Open_Days_Community_EWB.webp?updatedAt=1758121505024"
@@ -415,7 +417,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Open Day Events</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Open Day Events</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   No excavation season would be complete without a site open day, and we run these regularly throughout excavation seasons. Not only are they fantastic opportunities to communicate the outcomes of the project to the public, but we make opens days interactive and collaborative too. We have hosted the Geologists Association, the Kent Downs Landscape team, mudlarks from London, metal detectorists, and other heritage professionals at these events to give people the chance to engage with their local history and landscape in new and interesting ways. Arts and crafts are always part of open day events, and we foster a family friendly environment whereby everyone can get involved.
                 </p>
@@ -423,7 +425,7 @@ export default function CommunityPage() {
             </div>
 
             {/* Co-Curated Exhibition */}
-            <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
+            <div className="group rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Co_Curated_Exhibition_Community_EWB.webp?updatedAt=1758121355951"
@@ -433,7 +435,7 @@ export default function CommunityPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Co-Curated Exhibition</h3>
+                <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Co-Curated Exhibition</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   During September and October of 2024, we hosted an exhibition in Folkestone called 'A reflection of the self: the art and archaeology of East Wear Bay'. The exhibition aimed to explore how the past is reflected in the present and how we can interpret archaeology in ways that help us to understand the human experience throughout time. Local artists contributed work that was displayed alongside archaeological artefacts to enable storytelling and self-reflection. Recreated photographs of the 1924 excavations were just some of the artworks on display, and these can be explored below.
                 </p>
@@ -455,38 +457,50 @@ export default function CommunityPage() {
         {/* Impact */}
         <section className="mb-16">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold">Our Impact</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-bronze-700 to-bronze-900 bg-clip-text text-transparent">Our Impact</h2>
             
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">5,000+</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-bronze-600">
+                  <AnimatedCounter end={5000} suffix="+" duration={2000} />
+                </div>
                 <p className="mt-2 text-muted-foreground">Participants in community programmes annually</p>
               </div>
 
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">1,057</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-copper-600">
+                  <AnimatedCounter end={1057} duration={2500} />
+                </div>
                 <p className="mt-2 text-muted-foreground">Primary pupils engaged across 36 in-school sessions and one assembly</p>
               </div>
 
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">100+</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-stone-600">
+                  <AnimatedCounter end={100} suffix="+" duration={2000} />
+                </div>
                 <p className="mt-2 text-muted-foreground">New community volunteers since 2023</p>
               </div>
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">250+</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-bronze-600">
+                  <AnimatedCounter end={250} suffix="+" duration={2200} />
+                </div>
                 <p className="mt-2 text-muted-foreground">People from underserved audiences engaged including those with dementia, adults with disabilities and NEET young people</p>
               </div>
 
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">1,400</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-copper-600">
+                  <AnimatedCounter end={1400} duration={2800} />
+                </div>
                 <p className="mt-2 text-muted-foreground">Members of the general public engaged through open days, workshops, community events and visits to the dig site and finds store</p>
               </div>
 
-              <div className="flex flex-col items-center rounded-lg border bg-card p-5 text-center">
-                <div className="text-4xl font-bold text-primary">350</div>
+              <div className="flex flex-col items-center rounded-xl border-2 border-bronze-100 bg-white p-6 text-center shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-5xl font-bold text-stone-600">
+                  <AnimatedCounter end={350} duration={2000} />
+                </div>
                 <p className="mt-2 text-muted-foreground">Primary and secondary school pupils engaged in the Filmmaking Project and Digital Time Capsule</p>
               </div>
             </div>
@@ -608,7 +622,7 @@ export default function CommunityPage() {
         <section>
           <div className="mx-auto max-w-4xl rounded-lg bg-primary p-8 text-primary-foreground">
             <div className="text-center">
-              <h2 className="text-2xl font-bold">Get Involved</h2>
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-bronze-700 to-bronze-900 bg-clip-text text-transparent">Get Involved</h2>
               <p className="mt-2">
                 There are many ways to participate in the East Wear Bay Project, from hands-on archaeology to supporting our community programmes.
               </p>

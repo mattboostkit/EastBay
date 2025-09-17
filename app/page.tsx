@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Compass } from 'lucide-react';
 import { ArtefactStructuredData, EventStructuredData } from '@/components/SEO/StructuredData';
 import ArtefactCard from '@/components/ArtefactCard';
+import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { SectionDivider } from '@/components/SectionDivider';
 import { urlForImage } from '@/lib/sanity.unified';
 import { fetchFeaturedArtefacts, fetchAllHomepageSections, fetchAllVideos } from '@/lib/sanity.unified';
 import { urlFor } from '@/lib/sanity.client';
@@ -38,7 +40,7 @@ export default async function Home() {
   const communitySection = sections.find((section: any) => section.sectionId === 'community');
   const fieldSchoolSection = sections.find((section: any) => section.sectionId === 'field-school');
   const newsSection = sections.find((section: any) => section.sectionId === 'news');
-  
+
   return (
     <>
       {/* Schema.org structured data */}
@@ -59,111 +61,181 @@ export default async function Home() {
         organizer="East Wear Bay Project"
       />
 
-      {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden" aria-labelledby="hero-heading">
+      {/* Hero Section - Enhanced */}
+      <section className="relative min-h-[85vh] overflow-hidden bg-gradient-to-b from-bronze-900 to-stone-900" aria-labelledby="hero-heading">
         <Image
           src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
           fill
           priority
           alt="East Wear Bay coastal view"
-          className="object-cover object-center"
+          className="object-cover object-center opacity-70"
         />
-        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-        <div className="container relative z-10 flex h-full flex-col items-start justify-center text-white">
-          <div className="mb-6 flex items-center gap-4">
-            {siteSettings?.logo ? (
-              <Image
-                src={urlFor(siteSettings.logo)?.url() || ''}
-                alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project'}
-                width={80}
-                height={80}
-                className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm"
-                priority
-              />
-            ) : (
-              <div className="h-20 w-20 rounded-full bg-white/10 p-2 backdrop-blur-sm flex items-center justify-center">
-                <span className="text-white/60 text-xs">Logo</span>
-              </div>
-            )}
-            <h1 id="hero-heading" className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Preserving Folkestone's Heritage
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" aria-hidden="true" />
+
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 bg-pattern-dots opacity-10" />
+
+        <div className="container relative z-10 flex h-full min-h-[85vh] flex-col items-center justify-center text-white">
+          <div className="animate-fade-up text-center">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-bronze-600/20 px-4 py-2 backdrop-blur-sm">
+              <MapPin className="h-4 w-4 text-bronze-300" />
+              <span className="text-sm font-medium text-bronze-100">Folkestone, Kent</span>
+            </div>
+
+            <h1 id="hero-heading" className="text-gradient-bronze mb-6 max-w-4xl text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
+              Preserving Folkestone's
+              <span className="mt-2 block text-white">Archaeological Heritage</span>
             </h1>
+
+            <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
+              Racing against coastal erosion to excavate, record, and preserve the East Wear Bay Roman Villa
+              through community archaeology and cutting-edge digital technology.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/digital-museum"
+                className="group btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg transition-all hover:scale-105 hover:shadow-xl"
+              >
+                <Compass className="h-5 w-5" />
+                Explore Digital Museum
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/volunteer"
+                className="btn-outline inline-flex items-center gap-2 border-2 px-8 py-4 text-lg text-white hover:bg-white/20"
+              >
+                <Users className="h-5 w-5" />
+                Join Our Team
+              </Link>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="mt-16 grid grid-cols-3 gap-8 text-center">
+              <div className="animate-fade-up" style={{animationDelay: '0.2s'}}>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={2000} suffix="+" />
+                </div>
+                <p className="mt-1 text-sm text-gray-300">Years of History</p>
+              </div>
+              <div className="animate-fade-up" style={{animationDelay: '0.4s'}}>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={5000} suffix="+" />
+                </div>
+                <p className="mt-1 text-sm text-gray-300">Artefacts Preserved</p>
+              </div>
+              <div className="animate-fade-up" style={{animationDelay: '0.6s'}}>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={1000} suffix="+" />
+                </div>
+                <p className="mt-1 text-sm text-gray-300">Volunteers</p>
+              </div>
+            </div>
           </div>
-          <p className="mt-4 max-w-2xl text-lg text-gray-200 md:text-xl">
-            A community archaeology project protecting the East Wear Bay Roman Villa and its surrounding archaeological landscape from coastal erosion through excavation, digital preservation, and public engagement.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link 
-              href="/digital-museum" 
-              className="rounded-md bg-white px-6 py-3 font-medium text-gray-900 shadow-sm hover:bg-gray-100"
-            >
-              Explore Digital Museum
-            </Link>
-            <Link 
-              href="/volunteer" 
-              className="rounded-md bg-transparent px-6 py-3 font-medium text-white ring-1 ring-white hover:bg-white/10"
-            >
-              Volunteer With Us
-            </Link>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+          <div className="h-8 w-5 rounded-full border-2 border-white/40">
+            <div className="mx-auto mt-2 h-2 w-1 animate-pulse rounded-full bg-white/60" />
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="bg-background py-16 md:py-24" aria-labelledby="about-heading">
+      <SectionDivider variant="wave" />
+
+      {/* About Section - Enhanced */}
+      <section className="bg-gradient-to-br from-sand-50 to-white py-20 md:py-32" aria-labelledby="about-heading">
         <div className="container">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div>
-              <h2 id="about-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                About the East Wear Bay Project
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
+            <div className="animate-fade-up">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-bronze-100 px-3 py-1">
+                <span className="text-xs font-semibold uppercase tracking-wider text-bronze-700">Our Mission</span>
+              </div>
+              <h2 id="about-heading" className="text-gradient-bronze text-4xl font-bold tracking-tight md:text-5xl">
+                Racing Against Time
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
-                The East Wear Bay Archaeological Project is dedicated to excavating, recording, and preserving Folkestone Roman Villa and its surrounding archaeological landscape before it is lost to coastal erosion.
+              <p className="mt-6 text-lg leading-relaxed text-stone-700">
+                The East Wear Bay Archaeological Project is dedicated to excavating, recording, and preserving
+                <span className="font-semibold text-bronze-600"> Folkestone Roman Villa</span> and its surrounding
+                archaeological landscape before it is lost to coastal erosion.
               </p>
-              <p className="mt-6 text-lg text-muted-foreground">
-                Through a combination of professional archaeology, community involvement, and innovative digital technology, we're racing against time to document this important heritage site for future generations.
+              <p className="mt-4 text-lg leading-relaxed text-stone-700">
+                Through professional archaeology, community involvement, and innovative digital technology,
+                we're documenting this important heritage site for future generations.
               </p>
-              <div className="mt-8">
-                <Link 
-                  href="/about" 
-                  className="inline-flex items-center text-lg font-medium text-primary"
+
+              <div className="mt-8 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-bronze-200">
+                    <span className="text-sm font-bold text-bronze-700">1</span>
+                  </div>
+                  <p className="text-stone-600">Professional archaeological excavation and recording</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-bronze-200">
+                    <span className="text-sm font-bold text-bronze-700">2</span>
+                  </div>
+                  <p className="text-stone-600">Community engagement and educational programmes</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-bronze-200">
+                    <span className="text-sm font-bold text-bronze-700">3</span>
+                  </div>
+                  <p className="text-stone-600">Digital preservation using 3D scanning technology</p>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-bronze-600 px-6 py-3 text-white transition-all hover:bg-bronze-700 hover:shadow-lg"
                 >
-                  Learn more about our project
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                  Discover Our Story
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
-            <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-              <Image
-                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
-                alt="Coastal view of East Wear Bay showing the archaeological site"
-                fill
-                className="object-cover"
-              />
+
+            <div className="relative">
+              <div className="card-archaeological overflow-hidden p-2">
+                <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
+                    alt="Coastal view of East Wear Bay showing the archaeological site"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 -z-10 h-32 w-32 rounded-full bg-bronze-200/40 blur-3xl" />
+              <div className="absolute -top-4 -left-4 -z-10 h-32 w-32 rounded-full bg-copper-200/40 blur-3xl" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Artefacts Section */}
-      <section className="bg-muted py-16 md:py-24" aria-labelledby="artefacts-heading">
+      <SectionDivider variant="archaeological" />
+
+      {/* Featured Artefacts Section - Enhanced */}
+      <section className="bg-gradient-to-b from-stone-50 to-sand-50 py-20 md:py-32" aria-labelledby="artefacts-heading">
         <div className="container">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <h2 id="artefacts-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Featured Artefacts
-              </h2>
-              <p className="mt-2 text-lg text-muted-foreground md:text-xl">
-                Explore our collection of digitally preserved artefacts from East Wear Bay.
-              </p>
+          <div className="text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-copper-100 px-3 py-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-copper-700">Digital Museum</span>
             </div>
-            <Link href="/digital-museum" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all artefacts
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
+            <h2 id="artefacts-heading" className="text-gradient-copper text-4xl font-bold tracking-tight md:text-5xl">
+              Featured Artefacts
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600">
+              Explore our collection of digitally preserved artefacts, each telling a unique story
+              from East Wear Bay's rich archaeological heritage.
+            </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {/* Display artefact cards */}
             {featuredArtefacts && featuredArtefacts.length > 0 ? (
               // If we have artefacts from Sanity, display them
@@ -174,7 +246,7 @@ export default async function Home() {
               // If no artefacts are fetched, display Sketchfab embeds
               <>
                 {/* Dog Skull - Best model #1 */}
-                <div className="rounded-lg border bg-card shadow-sm">
+                <div className="card-archaeological hover-lift group">
                   <div className="p-3">
                     <div className="sketchfab-embed-wrapper relative pb-[100%]">
                       <iframe 
@@ -220,7 +292,7 @@ export default async function Home() {
 
 
                 {/* Flint Arrowhead */}
-                <div className="rounded-lg border bg-card shadow-sm">
+                <div className="card-archaeological hover-lift group">
                   <div className="p-3">
                     <div className="sketchfab-embed-wrapper relative pb-[100%]">
                       <iframe 
@@ -269,26 +341,26 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Community Involvement Section */}
-      <section className="bg-background py-16 md:py-24" aria-labelledby="community-heading">
+      <SectionDivider variant="dots" />
+
+      {/* Community Involvement Section - Enhanced */}
+      <section className="bg-gradient-to-br from-white to-sand-50 py-20 md:py-32" aria-labelledby="community-heading">
         <div className="container">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <h2 id="community-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Community Involvement
-              </h2>
-              <p className="mt-2 text-lg text-muted-foreground md:text-xl">
-                Engaging the local community through inclusive archaeological experiences
-              </p>
+          <div className="text-center mb-12">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-bronze-100 px-3 py-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-bronze-700">Community</span>
             </div>
-            <Link href="/community" className="group inline-flex items-center gap-1 text-sm font-medium">
-              View all outreach programmes
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
+            <h2 id="community-heading" className="text-gradient-bronze text-4xl font-bold tracking-tight md:text-5xl">
+              Community Involvement
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600">
+              Engaging the local community through inclusive archaeological experiences
+              and innovative educational programmes.
+            </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col">
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="card-archaeological hover-lift group flex flex-col p-6">
               {communitySection?.items && communitySection.items[0]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -302,20 +374,20 @@ export default async function Home() {
                   />
                 </div>
               )}
-              <h3 className="mt-4 text-xl font-bold">Digital Time Capsule</h3>
-              <p className="mt-2 flex-grow text-muted-foreground">
+              <h3 className="mt-4 text-2xl font-bold text-bronze-700 group-hover:text-bronze-800 transition-colors">Digital Time Capsule</h3>
+              <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 A youth engagement programme that allows local school children to consider the importance of objects and identity and to create digital records of objects they think are important to the modern world for future preservation.
               </p>
-              <Link 
-                href="/community/digital-time-capsule" 
-                className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+              <Link
+                href="/community/digital-time-capsule"
+                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
               >
                 Learn more
-                <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>
 
-            <div className="flex flex-col">
+            <div className="card-archaeological hover-lift group flex flex-col p-6">
               {communitySection?.items && communitySection.items[1]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -329,20 +401,20 @@ export default async function Home() {
                   />
                 </div>
               )}
-              <h3 className="mt-4 text-xl font-bold">Memory Through Objects</h3>
-              <p className="mt-2 flex-grow text-muted-foreground">
+              <h3 className="mt-4 text-2xl font-bold text-bronze-700 group-hover:text-bronze-800 transition-colors">Memory Through Objects</h3>
+              <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 Our dementia-friendly sessions explore archaeology through sensory engagement with artefacts and by undertaking craft activities to help stimulate conversation and the exchange of stories.
               </p>
-              <Link 
-                href="/community/memory-through-objects" 
-                className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+              <Link
+                href="/community/memory-through-objects"
+                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
               >
                 Learn more
-                <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>
 
-            <div className="flex flex-col">
+            <div className="card-archaeological hover-lift group flex flex-col p-6">
               {communitySection?.items && communitySection.items[2]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -356,105 +428,170 @@ export default async function Home() {
                   />
                 </div>
               )}
-              <h3 className="mt-4 text-xl font-bold">Folkestone Stories</h3>
-              <p className="mt-2 flex-grow text-muted-foreground">
+              <h3 className="mt-4 text-2xl font-bold text-bronze-700 group-hover:text-bronze-800 transition-colors">Folkestone Stories</h3>
+              <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 An oral history project collecting local memories and stories about East Wear Bay, creating a social history archive alongside the archaeological record.
               </p>
-              <Link 
-                href="/community/folkestone-stories" 
-                className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+              <Link
+                href="/community/folkestone-stories"
+                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
               >
                 Learn more
-                <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2025 Field School Results Section */}
-      <section className="bg-muted py-16 md:py-24" aria-labelledby="field-school-heading">
+      <SectionDivider variant="wave" />
+
+      {/* 2025 Field School Results Section - Enhanced */}
+      <section className="bg-gradient-to-br from-copper-50 to-sand-50 py-20 md:py-32" aria-labelledby="field-school-heading">
         <div className="container">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-              <Image
-                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
-                alt="Field school participants from July 2025 excavation"
-                fill
-                className="object-cover"
-              />
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
+            <div className="relative order-2 md:order-1">
+              <div className="card-archaeological overflow-hidden p-2">
+                <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
+                    alt="Field school participants from July 2025 excavation"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 -z-10 h-40 w-40 rounded-full bg-copper-200/40 blur-3xl" />
             </div>
-            <div>
-              <h2 id="field-school-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+            <div className="order-1 md:order-2 animate-fade-up">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-500/10 px-4 py-2">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm font-semibold text-green-700">Completed July 2025</span>
+              </div>
+              <h2 id="field-school-heading" className="text-gradient-copper text-4xl font-bold tracking-tight md:text-5xl">
                 2025 Field School Success
               </h2>
-              <div className="mt-4 inline-flex rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
-                Completed July 2025
-              </div>
-              <p className="mt-6 text-lg">
-                Our 2025 Field School (July 7-18) was a remarkable success with 22 participants from 5 countries joining us for two weeks of training, excavation and discovery.
+              <p className="mt-6 text-lg leading-relaxed text-stone-700">
+                Our 2025 Field School (July 7-18) was a remarkable success with <span className="font-semibold text-copper-600">22 participants from 5 countries</span> joining us for two weeks of training, excavation and discovery.
               </p>
-              <p className="mt-4 text-lg">
+              <p className="mt-4 text-lg leading-relaxed text-stone-700">
                 Key achievements from this season include better definition of a significant boundary ditch that runs across the site and the discovery of a possible four-post granary structure.
               </p>
-              <ul className="mt-6 space-y-3">
-                <li className="flex items-start">
-                  <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Trained 22 students in excavation techniques</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Geophysical survey results show a series of possible features at Copt Point</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight className="mr-2 h-5 w-5 flex-shrink-0 text-primary" />
-                  <span>Excavation results provide a greater understanding of the Iron Age to Roman period transition</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Volunteer Section */}
-      <section className="bg-background py-16 md:py-24" aria-labelledby="volunteer-heading">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 id="volunteer-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-              Be a Volunteer
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              Join us in preserving East Wear Bay's archaeological heritage. We welcome volunteers of all backgrounds and experience levels.
-            </p>
-            <div className="mt-8">
-              <Link 
-                href="/volunteer" 
-                className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-              >
-                Volunteer Opportunities
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Videos Section */}
-      {videos && videos.length > 0 && (
-        <section className="py-16 md:py-24" aria-labelledby="videos-heading">
-          <div className="container">
-            <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end mb-8">
-              <div>
-                <h2 id="videos-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                  Watch Our Work
-                </h2>
-                <p className="mt-2 text-lg text-muted-foreground md:text-xl">
-                  Videos from our excavations and educational content
-                </p>
+              <div className="mt-8 grid grid-cols-1 gap-4">
+                <div className="flex items-start gap-3 rounded-lg bg-white/80 p-4 shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-copper-200">
+                    <Users className="h-5 w-5 text-copper-700" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-stone-800">22 International Students</p>
+                    <p className="text-sm text-stone-600">Trained in professional excavation techniques</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 rounded-lg bg-white/80 p-4 shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-copper-200">
+                    <MapPin className="h-5 w-5 text-copper-700" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-stone-800">Copt Point Discoveries</p>
+                    <p className="text-sm text-stone-600">Geophysical survey reveals new archaeological features</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 rounded-lg bg-white/80 p-4 shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-copper-200">
+                    <Calendar className="h-5 w-5 text-copper-700" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-stone-800">Iron Age to Roman Transition</p>
+                    <p className="text-sm text-stone-600">New understanding of historical period changes</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="archaeological" />
+
+      {/* Volunteer Section - Enhanced */}
+      <section className="relative bg-gradient-to-b from-bronze-900 to-stone-900 py-20 md:py-32 overflow-hidden" aria-labelledby="volunteer-heading">
+        <div className="absolute inset-0 bg-pattern-meander opacity-5" />
+        <div className="container relative z-10">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-bronze-600/20 px-4 py-2 backdrop-blur-sm">
+              <Users className="h-4 w-4 text-bronze-300" />
+              <span className="text-sm font-semibold uppercase tracking-wider text-bronze-200">Join Our Team</span>
+            </div>
+            <h2 id="volunteer-heading" className="text-5xl font-bold text-white md:text-6xl">
+              Be Part of History
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-bronze-100">
+              Join us in preserving East Wear Bay's archaeological heritage. We welcome volunteers of all backgrounds and experience levels.
+            </p>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+              <Link
+                href="/volunteer"
+                className="group inline-flex items-center gap-2 rounded-lg bg-bronze-600 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-bronze-700 hover:shadow-xl"
+              >
+                <Users className="h-5 w-5" />
+                Volunteer Opportunities
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/field-school"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-bronze-400 px-8 py-4 text-lg font-semibold text-bronze-100 transition-all hover:bg-bronze-800/20"
+              >
+                <Calendar className="h-5 w-5" />
+                Field School 2026
+              </Link>
+            </div>
+
+            <div className="mt-16 grid grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={100} suffix="%" />
+                </div>
+                <p className="mt-1 text-sm text-bronze-200">Training Provided</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={0} prefix="£" />
+                </div>
+                <p className="mt-1 text-sm text-bronze-200">Cost to Volunteer</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={18} suffix="+" />
+                </div>
+                <p className="mt-1 text-sm text-bronze-200">All Ages Welcome</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="dots" />
+
+      {/* Videos Section - Enhanced */}
+      {videos && videos.length > 0 && (
+        <section className="bg-gradient-to-br from-sand-50 to-white py-20 md:py-32" aria-labelledby="videos-heading">
+          <div className="container">
+            <div className="text-center mb-12">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-copper-100 px-3 py-1">
+                <span className="text-xs font-semibold uppercase tracking-wider text-copper-700">Media</span>
+              </div>
+              <h2 id="videos-heading" className="text-gradient-copper text-4xl font-bold tracking-tight md:text-5xl">
+                Watch Our Work
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600">
+                Explore our excavations and educational programmes through video
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
               {/* Video 1 */}
-              <div className="rounded-lg border bg-card overflow-hidden">
+              <div className="card-archaeological hover-lift overflow-hidden">
                 <div className="relative aspect-video w-full">
                   <iframe
                     src="https://www.youtube.com/embed/oTalhuo-5Pg"
@@ -465,24 +602,24 @@ export default async function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-semibold mb-2">East Wear Bay Archaeological Project</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <h3 className="text-xl font-bold text-bronze-700 mb-2">East Wear Bay Archaeological Project</h3>
+                  <p className="text-stone-600 mb-4">
                     Explore our ongoing archaeological work at the East Wear Bay Roman villa site.
                   </p>
-                  <a 
+                  <a
                     href="https://www.youtube.com/watch?v=oTalhuo-5Pg"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >
                     Watch on YouTube
-                    <ArrowRight className="ml-1 h-3 w-3" />
+                    <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
                   </a>
                 </div>
               </div>
               
               {/* Video 2 */}
-              <div className="rounded-lg border bg-card overflow-hidden">
+              <div className="card-archaeological hover-lift overflow-hidden">
                 <div className="relative aspect-video w-full">
                   <iframe
                     src="https://www.youtube.com/embed/aoQk4uq6Ol4"
@@ -493,18 +630,18 @@ export default async function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-semibold mb-2">Community Archaeology at East Wear Bay</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <h3 className="text-xl font-bold text-bronze-700 mb-2">Community Archaeology at East Wear Bay</h3>
+                  <p className="text-stone-600 mb-4">
                     Learn about our community engagement and educational programmes at the site.
                   </p>
-                  <a 
+                  <a
                     href="https://www.youtube.com/watch?v=aoQk4uq6Ol4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700 transition-colors"
                   >
                     Watch on YouTube
-                    <ArrowRight className="ml-1 h-3 w-3" />
+                    <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
                   </a>
                 </div>
               </div>
@@ -513,27 +650,33 @@ export default async function Home() {
         </section>
       )}
 
-      {/* Onsite Blog Section */}
-      <section className="bg-muted py-16 md:py-24" aria-labelledby="blog-heading">
+      <SectionDivider variant="wave" />
+
+      {/* Onsite Blog Section - Enhanced */}
+      <section className="bg-gradient-to-b from-stone-50 to-sand-50 py-20 md:py-32" aria-labelledby="blog-heading">
         <div className="container">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <h2 id="blog-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-                Onsite Blog
-              </h2>
-              <p className="mt-2 text-lg text-muted-foreground md:text-xl">
-                Updates from our excavations and community projects
-              </p>
+          <div className="text-center mb-12">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-bronze-100 px-3 py-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-bronze-700">Latest Updates</span>
             </div>
-            <Link href="/news" className="group inline-flex items-center gap-1 text-sm font-medium">
+            <h2 id="blog-heading" className="text-gradient-bronze text-4xl font-bold tracking-tight md:text-5xl">
+              Onsite Blog
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600">
+              Stay updated with our latest discoveries, excavation progress, and community activities
+            </p>
+            <Link
+              href="/news"
+              className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700"
+            >
               View all news
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {/* News Item 1 */}
-            <div className="flex flex-col rounded-lg border bg-card shadow-sm">
+            <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
               {newsSection?.items && newsSection.items[0]?.image && (
                 <div className="relative h-48">
                   <Image
@@ -549,28 +692,29 @@ export default async function Home() {
               )}
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">
+                  <Calendar className="h-3 w-3 text-bronze-500" />
+                  <span className="text-xs font-semibold text-bronze-600">
                     August 12, 2025
                   </span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold">Field School Uncovers Mosaic Floor</h3>
-                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                <h3 className="mt-3 text-xl font-bold text-bronze-700">Field School Uncovers Mosaic Floor</h3>
+                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
                   During the 2025 Field School, participants uncovered a remarkably well-preserved mosaic floor in the eastern wing of the Folkestone Villa.
                 </p>
               </div>
-              <div className="p-6 pt-0">
-                <Link 
-                  href="/news/mosaic-discovery" 
-                  className="inline-flex items-center text-sm font-medium text-primary"
+              <div className="px-6 pb-6">
+                <Link
+                  href="/news/mosaic-discovery"
+                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
                 >
                   Read more
-                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
                 </Link>
               </div>
             </div>
 
             {/* News Item 2 */}
-            <div className="flex flex-col rounded-lg border bg-card shadow-sm">
+            <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
               {newsSection?.items && newsSection.items[1]?.image && (
                 <div className="relative h-48">
                   <Image
@@ -586,28 +730,29 @@ export default async function Home() {
               )}
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">
+                  <Calendar className="h-3 w-3 text-bronze-500" />
+                  <span className="text-xs font-semibold text-bronze-600">
                     July 28, 2025
                   </span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold">Digital Preservation Project Receives Funding</h3>
-                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                <h3 className="mt-3 text-xl font-bold text-bronze-700">Digital Preservation Project Receives Funding</h3>
+                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
                   The East Wear Bay Project has secured additional funding to expand our digital preservation efforts, allowing for comprehensive 3D documentation of artifacts.
                 </p>
               </div>
-              <div className="p-6 pt-0">
-                <Link 
-                  href="/news/digital-funding" 
-                  className="inline-flex items-center text-sm font-medium text-primary"
+              <div className="px-6 pb-6">
+                <Link
+                  href="/news/digital-funding"
+                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
                 >
                   Read more
-                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
                 </Link>
               </div>
             </div>
 
             {/* News Item 3 */}
-            <div className="flex flex-col rounded-lg border bg-card shadow-sm">
+            <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
               {newsSection?.items && newsSection.items[2]?.image && (
                 <div className="relative h-48">
                   <Image
@@ -623,22 +768,23 @@ export default async function Home() {
               )}
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">
+                  <Calendar className="h-3 w-3 text-bronze-500" />
+                  <span className="text-xs font-semibold text-bronze-600">
                     June 15, 2025
                   </span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold">Education Programme Reaches 1,000 Local Students</h3>
-                <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                <h3 className="mt-3 text-xl font-bold text-bronze-700">Education Programme Reaches 1,000 Local Students</h3>
+                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
                   Our outreach team has successfully engaged over 1,000 Folkestone students through innovative archaeology workshops and site visits this school year.
                 </p>
               </div>
-              <div className="p-6 pt-0">
-                <Link 
-                  href="/news/education-milestone" 
-                  className="inline-flex items-center text-sm font-medium text-primary"
+              <div className="px-6 pb-6">
+                <Link
+                  href="/news/education-milestone"
+                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
                 >
                   Read more
-                  <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
                 </Link>
               </div>
             </div>

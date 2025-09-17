@@ -177,6 +177,10 @@
   @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
 }
 
+.card-archaeological {
+  @apply rounded-xl border-2 border-bronze-100 bg-gradient-to-br from-white to-sand-50 shadow-lg transition-all duration-300 hover:border-bronze-300 hover:-translate-y-1 hover:shadow-2xl;
+}
+
 /* Section dividers */
 .section-divider {
   @apply my-16 h-px w-full max-w-md mx-auto bg-border;
@@ -185,4 +189,77 @@
 /* Image overlays */
 .image-overlay-gradient {
   @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent;
+}
+
+/* Archaeological theme utilities */
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .hover-bronze {
+    @apply transition-colors hover:text-bronze-600 hover:border-bronze-600;
+  }
+
+  .bg-pattern-meander {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(212, 128, 77, 0.1) 10px,
+      rgba(212, 128, 77, 0.1) 20px
+    );
+  }
+
+  .bg-pattern-dots {
+    background-image: radial-gradient(
+      circle at 2px 2px,
+      rgba(139, 69, 19, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+
+  .text-gradient-bronze {
+    @apply bg-gradient-to-r from-bronze-600 to-bronze-800 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-copper {
+    @apply bg-gradient-to-r from-copper-600 to-copper-800 bg-clip-text text-transparent;
+  }
+
+  .bg-section-primary {
+    @apply bg-gradient-to-br from-sand-50 to-stone-50;
+  }
+
+  .bg-section-secondary {
+    @apply bg-gradient-to-b from-stone-100 to-sand-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sand-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bronze-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-bronze-500;
 }

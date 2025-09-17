@@ -43,7 +43,7 @@ export default async function PartnersPage() {
         description="The East Wear Bay Archaeological Project is a community project with the aim of researching the historic landscape of East Wear Bay and preserving archaeological remains associated with Folkestone Roman Villa 'by record' before they are lost forever to coastal erosion."
         icon={Handshake}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Partners/Partners_Hero_EWB.webp?updatedAt=1758121883166"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Our-Mission.jpg?updatedAt=1755543727360"
       />
 
       <div className="container py-12">

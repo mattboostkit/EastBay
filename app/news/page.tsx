@@ -58,7 +58,7 @@ export default async function NewsPage() {
       {/* Hero Section with Image */}
       <section className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East Wear Bay/News/News_Banner_EWB.webp?updatedAt=1758122787198"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/News/News_Banner_EWB.webp?updatedAt=1758122787198"
           alt="East Wear Bay archaeological news and updates"
           fill
           className="object-cover"

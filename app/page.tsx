@@ -64,7 +64,7 @@ export default async function Home() {
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[85vh] overflow-hidden bg-gradient-to-b from-bronze-900 to-stone-900" aria-labelledby="hero-heading">
         <Image
-          src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
+          src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
           fill
           priority
           alt="East Wear Bay coastal view"
@@ -201,7 +201,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
+                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
                     alt="Coastal view of East Wear Bay showing the archaeological site"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -341,7 +341,7 @@ export default async function Home() {
                   <div className="p-3">
                     <div className="relative pb-[100%] rounded-lg overflow-hidden bg-gradient-to-br from-sand-100 to-stone-100">
                       <Image
-                        src="https://ik.imagekit.io/boostkit/East Wear Bay/Digital_Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
+                        src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Digital-Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
                         alt="Roman Pottery Fragment"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -470,7 +470,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
+                    src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
                     alt="Field school participants from July 2025 excavation"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"

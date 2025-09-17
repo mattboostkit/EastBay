@@ -16,7 +16,7 @@ export default function ContactPage() {
         description="Have questions about our research, field school, or community programs? Get in touch with our team."
         icon={Mail}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East Wear Bay/Contact/Contact_Banner_EWB.webp?updatedAt=1758122320523"
+        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Contact/Contact_Banner_EWB.webp?updatedAt=1758122320523"
       />
       
       <div className="container py-12 md:py-20">

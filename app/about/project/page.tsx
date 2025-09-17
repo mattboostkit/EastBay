@@ -17,7 +17,7 @@ export default function AboutPage() {
         description="The East Wear Bay Archaeological project is a community-led initiative to investigate, record, preserve and share the archaeological landscape at East Wear Bay before it is lost to coastal erosion."
         icon={Info}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Seaview_EWB.webp?updatedAt=1758121023033"
+        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Seaview_EWB.webp?updatedAt=1758121023033"
       />
       
       <div className="container py-12">
@@ -39,7 +39,7 @@ export default function AboutPage() {
               </div>
               <div className="relative rounded-lg overflow-hidden h-[300px]">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Mission_EWB.webp?updatedAt=1758121022793"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Mission_EWB.webp?updatedAt=1758121022793"
                   alt="Eroding cliff face at East Wear Bay showing archaeological features being lost to the sea"
                   fill
                   className="object-cover"
@@ -186,7 +186,7 @@ export default function AboutPage() {
             <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="relative rounded-lg overflow-hidden h-[300px] md:order-2">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Archaeology_EWB.webp?updatedAt=1758121023605"
+                  src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Archaeology_EWB.webp?updatedAt=1758121023605"
                   alt="Archaeological excavation of the Folkestone Roman Villa showing room foundations and features"
                   fill
                   className="object-cover"
@@ -220,7 +220,7 @@ export default function AboutPage() {
                   </div>
                   <div className="relative rounded-lg overflow-hidden h-[200px]">
                     <Image
-                      src="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Rescue_EWB.webp?updatedAt=1758121023317"
+                      src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Rescue_EWB.webp?updatedAt=1758121023317"
                       alt="Rescue archaeology work at East Wear Bay"
                       fill
                       className="object-cover"
@@ -239,7 +239,7 @@ export default function AboutPage() {
                   </div>
                   <div className="relative rounded-lg overflow-hidden h-[200px] md:order-1">
                     <Image
-                      src="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Digital_EWB.webp?updatedAt=1758121022645"
+                      src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Digital_EWB.webp?updatedAt=1758121022645"
                       alt="Digital preservation technology in use"
                       fill
                       className="object-cover"
@@ -258,7 +258,7 @@ export default function AboutPage() {
                   </div>
                   <div className="relative rounded-lg overflow-hidden h-[200px]">
                     <Image
-                      src="https://ik.imagekit.io/boostkit/East Wear Bay/About/About_Community_EWB.webp?updatedAt=1758121022074"
+                      src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/About_Community_EWB.webp?updatedAt=1758121022074"
                       alt="Community members participating in archaeological activities"
                       fill
                       className="object-cover"
@@ -277,7 +277,7 @@ export default function AboutPage() {
                   </div>
                   <div className="relative rounded-lg overflow-hidden h-[200px] md:order-1">
                     <Image
-                      src="https://ik.imagekit.io/boostkit/East Wear Bay/About/Academic_About_EWB.webp?updatedAt=1758121024363"
+                      src="https://ik.imagekit.io/boostkit/East-Wear-Bay/About/Academic_About_EWB.webp?updatedAt=1758121024363"
                       alt="Academic research and study at East Wear Bay"
                       fill
                       className="object-cover"

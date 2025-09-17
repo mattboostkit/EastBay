@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 }
 
 async function getFieldSchoolSessions() {
-  const query = `*[-type == "fieldSchoolSession" && isActive == true] | order(displayOrder asc, year desc) {
-    -id,
+  const query = `*[_type == "fieldSchoolSession" && isActive == true] | order(displayOrder asc, year desc) {
+    _id,
     title,
     slug,
     year,

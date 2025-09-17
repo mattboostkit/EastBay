@@ -14,13 +14,13 @@ interface Props {
 }
 
 async function getPost(slug: string) {
-  const query = `*[-type == "post" && slug.current == $slug][0] {
-    -id,
+  const query = `*[_type == "post" && slug.current == $slug][0] {
+    _id,
     title,
     slug,
     excerpt,
     publishedAt,
-    -createdAt,
+    _createdAt,
     mainImage,
     categories,
     author-> {
@@ -30,7 +30,7 @@ async function getPost(slug: string) {
     },
     body,
     relatedPosts[]-> {
-      -id,
+      _id,
       title,
       slug,
       excerpt,
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const query = `*[-type == "post"] {
+  const query = `*[_type == "post"] {
     slug
   }`
 

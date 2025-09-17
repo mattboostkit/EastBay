@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 }
 
 async function getTeamMembers() {
-  const query = `*[-type == "teamMember"] | order(order asc, name asc) {
-    -id,
+  const query = `*[_type == "teamMember"] | order(order asc, name asc) {
+    _id,
     name,
     position,
     "speciality": expertise[0],

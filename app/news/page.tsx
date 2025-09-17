@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 }
 
 async function getNews() {
-  const query = `*[-type == "post"] | order(publishedAt desc, -createdAt desc) {
-    -id,
+  const query = `*[_type == "post"] | order(publishedAt desc, _createdAt desc) {
+    _id,
     title,
     slug,
     excerpt,
     publishedAt,
-    -createdAt,
+    _createdAt,
     mainImage,
     categories,
     author-> {
@@ -35,7 +35,7 @@ async function getNews() {
 }
 
 async function getCategories() {
-  const query = `*[-type == "post"] {
+  const query = `*[_type == "post"] {
     categories
   } | order(categories asc)`
 

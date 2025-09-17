@@ -212,7 +212,7 @@ export default function CommunityPage() {
                     href="/learn/sensory-stories"
                     className="inline-flex items-center text-sm font-medium text-primary"
                   >
-                    Learn more
+                    Download
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>

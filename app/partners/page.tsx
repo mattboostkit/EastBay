@@ -70,40 +70,48 @@ export default async function PartnersPage() {
             <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                'National Lottery Heritage Fund',
-                'Roger De Haan Charitable Trust',
-                'Garfield Weston Charitable Trust',
-                'The Lawson Trust',
-                'Friends of Canterbury Archaeological Trust',
-                'Kent Community Foundation',
-                'Folkestone Town Council',
-                'Folkestone and Hythe District Council',
-                'Council for British Archaeology',
-                'Association for Roman Archaeology',
-                'Society of the Promotion of Roman Studies'
-              ].map((funderName) => {
+                { name: 'National Lottery Heritage Fund', logo: '/logos/national-lottery-heritage-fund.svg' },
+                { name: 'Roger De Haan Charitable Trust', logo: '/logos/roger-de-haan-charitable-trust.svg' },
+                { name: 'Garfield Weston Charitable Trust', logo: '/logos/garfield-weston-charitable-trust.svg' },
+                { name: 'The Lawson Trust', logo: '/logos/the-lawson-trust.svg' },
+                { name: 'Friends of Canterbury Archaeological Trust', logo: '/logos/canterbury-archaeological-trust.svg' },
+                { name: 'Kent Community Foundation', logo: '/logos/kent-community-foundation.svg' },
+                { name: 'Folkestone Town Council', logo: '/logos/folkestone-town-council.svg' },
+                { name: 'Folkestone and Hythe District Council', logo: '/logos/folkestone-hythe-district-council.svg' },
+                { name: 'Council for British Archaeology', logo: '/logos/council-for-british-archaeology.svg' },
+                { name: 'Association for Roman Archaeology', logo: '/logos/association-for-roman-archaeology.svg' },
+                { name: 'Society of the Promotion of Roman Studies', logo: '/logos/society-promotion-roman-studies.svg' }
+              ].map((funderInfo) => {
                 // Try to find the funder in the Sanity data
                 const funder = principalFunders.find((p: any) =>
-                  p.name?.toLowerCase().includes(funderName.toLowerCase()) ||
-                  funderName.toLowerCase().includes(p.name?.toLowerCase())
+                  p.name?.toLowerCase().includes(funderInfo.name.toLowerCase()) ||
+                  funderInfo.name.toLowerCase().includes(p.name?.toLowerCase())
                 );
 
                 return (
-                  <div key={funderName} className="text-center">
+                  <div key={funderInfo.name} className="text-center">
                     <div className="mb-4 bg-muted rounded-lg p-8 h-32 flex items-center justify-center">
                       {funder?.logo ? (
                         <Image
                           src={urlForImage(funder.logo)?.url() || ''}
-                          alt={funder.logo.alt || funderName}
+                          alt={funder.logo.alt || funderInfo.name}
+                          width={200}
+                          height={80}
+                          className="max-h-20 w-full object-contain"
+                        />
+                      ) : funderInfo.logo ? (
+                        <Image
+                          src={funderInfo.logo}
+                          alt={funderInfo.name}
                           width={200}
                           height={80}
                           className="max-h-20 w-full object-contain"
                         />
                       ) : (
-                        <span className="text-sm text-muted-foreground">[Logo Placeholder]</span>
+                        <span className="text-sm text-muted-foreground font-medium">{funderInfo.name}</span>
                       )}
                     </div>
-                    <h3 className="font-semibold text-lg">{funderName}</h3>
+                    <h3 className="font-semibold text-lg">{funderInfo.name}</h3>
                   </div>
                 );
               })}
@@ -118,64 +126,80 @@ export default async function PartnersPage() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {[
-                'Folkestone Museum',
-                'The University of Kent',
-                'Dover Archaeology Group',
-                'Folkestone Research and Archaeology Group',
-                'Canterbury Christ Church University',
-                'Folkestone and Hythe District Council',
-                'Folkestone Town Council',
-                'Historic England',
-                'Kent Archaeological Society',
-                'Kent Downs Landscape',
-                'Creative Folkestone'
-              ].map((partnerName) => {
+                { name: 'Folkestone Museum', logo: '/logos/folkestone-museum.svg' },
+                { name: 'The University of Kent', logo: '/logos/university-of-kent.svg' },
+                { name: 'Dover Archaeology Group', logo: '/logos/dover-archaeology-group.svg' },
+                { name: 'Folkestone Research and Archaeology Group', logo: '/logos/folkestone-research-archaeology-group.svg' },
+                { name: 'Canterbury Christ Church University', logo: '/logos/canterbury-christ-church-university.svg' },
+                { name: 'Folkestone and Hythe District Council', logo: '/logos/folkestone-hythe-district-council.svg' },
+                { name: 'Folkestone Town Council', logo: '/logos/folkestone-town-council.svg' },
+                { name: 'Historic England', logo: '/logos/historic-england.svg' },
+                { name: 'Kent Archaeological Society', logo: '/logos/kent-archaeological-society.svg' },
+                { name: 'Kent Downs Landscape', logo: '/logos/kent-downs-landscape.svg' },
+                { name: 'Creative Folkestone', logo: '/logos/creative-folkestone.svg' }
+              ].map((partnerInfo) => {
                 // Try to find the partner in the Sanity data
                 const partner = leadPartners.find((p: any) =>
-                  p.name?.toLowerCase().includes(partnerName.toLowerCase()) ||
-                  partnerName.toLowerCase().includes(p.name?.toLowerCase())
+                  p.name?.toLowerCase().includes(partnerInfo.name.toLowerCase()) ||
+                  partnerInfo.name.toLowerCase().includes(p.name?.toLowerCase())
                 );
 
                 return (
-                  <div key={partnerName} className="group">
+                  <div key={partnerInfo.name} className="group">
                     {partner?.website ? (
                       <a
                         href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
-                        title={partnerName}
+                        title={partnerInfo.name}
                       >
                         <div className="h-20 flex items-center justify-center p-2">
-                          {partner.logo ? (
+                          {partner?.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
-                              alt={partner.logo.alt || partnerName}
+                              alt={partner.logo.alt || partnerInfo.name}
+                              width={150}
+                              height={80}
+                              className="max-h-16 w-full object-contain"
+                            />
+                          ) : partnerInfo.logo ? (
+                            <Image
+                              src={partnerInfo.logo}
+                              alt={partnerInfo.name}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                              {partnerName}
+                              {partnerInfo.name}
                             </span>
                           )}
                         </div>
                       </a>
                     ) : (
-                      <div className="rounded-lg border bg-card p-4" title={partnerName}>
+                      <div className="rounded-lg border bg-card p-4" title={partnerInfo.name}>
                         <div className="h-20 flex items-center justify-center p-2">
                           {partner?.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
-                              alt={partner.logo.alt || partnerName}
+                              alt={partner.logo.alt || partnerInfo.name}
+                              width={150}
+                              height={80}
+                              className="max-h-16 w-full object-contain"
+                            />
+                          ) : partnerInfo.logo ? (
+                            <Image
+                              src={partnerInfo.logo}
+                              alt={partnerInfo.name}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground">
-                              {partnerName}
+                              {partnerInfo.name}
                             </span>
                           )}
                         </div>

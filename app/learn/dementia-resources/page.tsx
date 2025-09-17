@@ -19,7 +19,7 @@ export default function DementiaResourcesPage() {
         description="Creating meaningful connections to local heritage through accessible archaeology sessions designed for people living with dementia."
         icon={Heart}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Dementia-Friendly-Community-EWB.webp?updatedAt=1758121387444"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/DementiaCommunity_EWB.webp?updatedAt=1758123737298"
       />
 
       <div className="container py-12">
@@ -190,7 +190,7 @@ export default function DementiaResourcesPage() {
 
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="https://ik.imagekit.io/boostkit/East-Wear-Bay/Community/Dementia-Session-Activity.webp?updatedAt=1758121387444"
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/DementiaCommunity_EWB.webp?updatedAt=1758123737298"
                 alt="Dementia friendly session in progress"
                 fill
                 className="object-cover"

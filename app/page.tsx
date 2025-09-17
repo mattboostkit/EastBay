@@ -64,13 +64,13 @@ export default async function Home() {
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[85vh] overflow-hidden bg-gradient-to-b from-bronze-900 to-stone-900" aria-labelledby="hero-heading">
         <Image
-          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
+          src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
           fill
           priority
           alt="East Wear Bay coastal view"
-          className="object-cover object-center opacity-70"
+          className="object-cover object-center opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" aria-hidden="true" />
 
         {/* Decorative pattern overlay */}
         <div className="absolute inset-0 bg-pattern-dots opacity-10" />
@@ -82,12 +82,12 @@ export default async function Home() {
               <span className="text-sm font-medium text-bronze-100">Folkestone, Kent</span>
             </div>
 
-            <h1 id="hero-heading" className="text-gradient-bronze mb-6 max-w-4xl text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            <h1 id="hero-heading" className="mb-6 max-w-4xl text-5xl font-bold leading-tight text-white drop-shadow-2xl md:text-6xl lg:text-7xl">
               Preserving Folkestone's
-              <span className="mt-2 block text-white">Archaeological Heritage</span>
+              <span className="mt-2 block text-bronze-200">Archaeological Heritage</span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
+            <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-gray-100 drop-shadow-lg md:text-2xl">
               Racing against coastal erosion to excavate, record, and preserve the East Wear Bay Roman Villa
               through community archaeology and cutting-edge digital technology.
             </p>
@@ -201,7 +201,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
+                    src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
                     alt="Coastal view of East Wear Bay showing the archaeological site"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -341,7 +341,7 @@ export default async function Home() {
                   <div className="p-3">
                     <div className="relative pb-[100%] rounded-lg overflow-hidden bg-gradient-to-br from-sand-100 to-stone-100">
                       <Image
-                        src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Digital_Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
+                        src="https://ik.imagekit.io/boostkit/East Wear Bay/Digital_Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
                         alt="Roman Pottery Fragment"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -406,13 +406,9 @@ export default async function Home() {
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 A youth engagement programme that allows local school children to consider the importance of objects and identity and to create digital records of objects they think are important to the modern world for future preservation.
               </p>
-              <Link
-                href="/community/digital-time-capsule"
-                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
-              >
-                Learn more
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
+              <div className="mt-6 text-bronze-600 font-semibold">
+                Coming Soon
+              </div>
             </div>
 
             <div className="card-archaeological hover-lift group flex flex-col p-6">
@@ -433,13 +429,9 @@ export default async function Home() {
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 Our dementia-friendly sessions explore archaeology through sensory engagement with artefacts and by undertaking craft activities to help stimulate conversation and the exchange of stories.
               </p>
-              <Link
-                href="/community/memory-through-objects"
-                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
-              >
-                Learn more
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
+              <div className="mt-6 text-bronze-600 font-semibold">
+                Coming Soon
+              </div>
             </div>
 
             <div className="card-archaeological hover-lift group flex flex-col p-6">
@@ -460,13 +452,9 @@ export default async function Home() {
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 An oral history project collecting local memories and stories about East Wear Bay, creating a social history archive alongside the archaeological record.
               </p>
-              <Link
-                href="/community/folkestone-stories"
-                className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold hover:text-bronze-700 transition-colors"
-              >
-                Learn more
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
+              <div className="mt-6 text-bronze-600 font-semibold">
+                Coming Soon
+              </div>
             </div>
           </div>
         </div>
@@ -482,7 +470,7 @@ export default async function Home() {
               <div className="card-archaeological overflow-hidden p-2">
                 <div className="relative h-96 overflow-hidden rounded-lg md:h-[500px]">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
+                    src="https://ik.imagekit.io/boostkit/East Wear Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
                     alt="Field school participants from July 2025 excavation"
                     fill
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -703,102 +691,31 @@ export default async function Home() {
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-            {/* News Item 1 */}
+            {/* Placeholder for news items - will be populated from CMS */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Mosaic_EWB.webp?updatedAt=1758121883166"
-                  alt="Mosaic floor discovery"
-                  fill
-                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
               <div className="flex-1 p-6">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-3 w-3 text-bronze-500" />
-                  <span className="text-xs font-semibold text-bronze-600">
-                    August 12, 2025
-                  </span>
-                </div>
-                <h3 className="mt-3 text-xl font-bold text-bronze-700">Field School Uncovers Mosaic Floor</h3>
-                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
-                  During the 2025 Field School, participants uncovered a remarkably well-preserved mosaic floor in the eastern wing of the Folkestone Villa.
+                <h3 className="text-xl font-bold text-bronze-700">Latest News Coming Soon</h3>
+                <p className="mt-3 text-stone-600 leading-relaxed">
+                  Check back soon for updates on our excavations, discoveries, and community events.
                 </p>
-              </div>
-              <div className="px-6 pb-6">
-                <Link
-                  href="/news/mosaic-discovery"
-                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
-                >
-                  Read more
-                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
-                </Link>
               </div>
             </div>
 
-            {/* News Item 2 */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Digital_EWB.webp?updatedAt=1758121883166"
-                  alt="Digital preservation equipment"
-                  fill
-                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
               <div className="flex-1 p-6">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-3 w-3 text-bronze-500" />
-                  <span className="text-xs font-semibold text-bronze-600">
-                    July 28, 2025
-                  </span>
-                </div>
-                <h3 className="mt-3 text-xl font-bold text-bronze-700">Digital Preservation Project Receives Funding</h3>
-                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
-                  The East Wear Bay Project has secured additional funding to expand our digital preservation efforts, allowing for comprehensive 3D documentation of artifacts.
+                <h3 className="text-xl font-bold text-bronze-700">Field School Updates</h3>
+                <p className="mt-3 text-stone-600 leading-relaxed">
+                  Information about our upcoming field school sessions and participant experiences will be shared here.
                 </p>
-              </div>
-              <div className="px-6 pb-6">
-                <Link
-                  href="/news/digital-funding"
-                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
-                >
-                  Read more
-                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
-                </Link>
               </div>
             </div>
 
-            {/* News Item 3 */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Education_EWB.webp?updatedAt=1758121883166"
-                  alt="Students participating in education programme"
-                  fill
-                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
               <div className="flex-1 p-6">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-3 w-3 text-bronze-500" />
-                  <span className="text-xs font-semibold text-bronze-600">
-                    June 15, 2025
-                  </span>
-                </div>
-                <h3 className="mt-3 text-xl font-bold text-bronze-700">Education Programme Reaches 1,000 Local Students</h3>
-                <p className="mt-3 line-clamp-3 text-stone-600 leading-relaxed">
-                  Our outreach team has successfully engaged over 1,000 Folkestone students through innovative archaeology workshops and site visits this school year.
+                <h3 className="text-xl font-bold text-bronze-700">Community Engagement</h3>
+                <p className="mt-3 text-stone-600 leading-relaxed">
+                  Stay informed about our outreach programs and how you can get involved with preserving local heritage.
                 </p>
-              </div>
-              <div className="px-6 pb-6">
-                <Link
-                  href="/news/education-milestone"
-                  className="inline-flex items-center gap-2 text-copper-600 font-semibold hover:text-copper-700"
-                >
-                  Read more
-                  <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
-                </Link>
               </div>
             </div>
           </div>

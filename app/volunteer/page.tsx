@@ -14,7 +14,7 @@ export default function VolunteerPage() {
       {/* Hero Section with Image */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/East%20Wear%20Bay.jpg?updatedAt=1742332630042"
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Success.jpg?updatedAt=1755600476499"
           alt="Volunteers excavating at East Wear Bay"
           fill
           priority

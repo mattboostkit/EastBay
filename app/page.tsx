@@ -295,13 +295,13 @@ export default async function Home() {
                 <div className="card-archaeological hover-lift group">
                   <div className="p-3">
                     <div className="sketchfab-embed-wrapper relative pb-[100%]">
-                      <iframe 
-                        title="Flint Arrowhead" 
-                        frameBorder="0" 
-                        allowFullScreen 
-                        mozallowfullscreen="true" 
-                        webkitallowfullscreen="true" 
-                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                      <iframe
+                        title="Flint Arrowhead"
+                        frameBorder="0"
+                        allowFullScreen
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
                         src="https://sketchfab.com/models/47f3d49d46f541dcb8778aee7e3e7627/embed"
                         className="absolute inset-0 w-full h-full rounded-md"
                       />
@@ -326,8 +326,36 @@ export default async function Home() {
                         Sketchfab
                       </a>
                     </div>
-                    <Link 
-                      href="/digital-museum/flint-arrowhead" 
+                    <Link
+                      href="/digital-museum/flint-arrowhead"
+                      className="mt-3 inline-flex items-center text-sm font-medium text-primary"
+                    >
+                      View details
+                      <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Roman Pottery - Third artifact */}
+                <div className="card-archaeological hover-lift group">
+                  <div className="p-3">
+                    <div className="relative pb-[100%] rounded-lg overflow-hidden bg-gradient-to-br from-sand-100 to-stone-100">
+                      <Image
+                        src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Digital_Museum/Roman_Pottery_EWB.webp?updatedAt=1758121883166"
+                        alt="Roman Pottery Fragment"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold">Roman Pottery</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">1st-3rd Century CE</p>
+                    <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
+                      Fragment of Roman pottery showing distinctive decoration, evidence of the villa's occupation during the Roman period.
+                    </p>
+                    <Link
+                      href="/digital-museum/roman-pottery"
                       className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                     >
                       View details
@@ -677,19 +705,14 @@ export default async function Home() {
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {/* News Item 1 */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              {newsSection?.items && newsSection.items[0]?.image && (
-                <div className="relative h-48">
-                  <Image
-                    src={urlForImage(newsSection.items[0].image)
-                      ?.width(800)
-                      ?.height(400)
-                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                    alt={newsSection.items[0].image.alt || "Mosaic floor discovery"}
-                    fill
-                    className="rounded-t-lg object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative h-48">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Mosaic_EWB.webp?updatedAt=1758121883166"
+                  alt="Mosaic floor discovery"
+                  fill
+                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-3 w-3 text-bronze-500" />
@@ -715,19 +738,14 @@ export default async function Home() {
 
             {/* News Item 2 */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              {newsSection?.items && newsSection.items[1]?.image && (
-                <div className="relative h-48">
-                  <Image
-                    src={urlForImage(newsSection.items[1].image)
-                      ?.width(800)
-                      ?.height(400)
-                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                    alt={newsSection.items[1].image.alt || "Digital preservation equipment"}
-                    fill
-                    className="rounded-t-lg object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative h-48">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Digital_EWB.webp?updatedAt=1758121883166"
+                  alt="Digital preservation equipment"
+                  fill
+                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-3 w-3 text-bronze-500" />
@@ -753,19 +771,14 @@ export default async function Home() {
 
             {/* News Item 3 */}
             <div className="card-archaeological hover-lift flex flex-col overflow-hidden">
-              {newsSection?.items && newsSection.items[2]?.image && (
-                <div className="relative h-48">
-                  <Image
-                    src={urlForImage(newsSection.items[2].image)
-                      ?.width(800)
-                      ?.height(400)
-                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
-                    alt={newsSection.items[2].image.alt || "Students participating in education programme"}
-                    fill
-                    className="rounded-t-lg object-cover"
-                  />
-                </div>
-              )}
+              <div className="relative h-48">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Education_EWB.webp?updatedAt=1758121883166"
+                  alt="Students participating in education programme"
+                  fill
+                  className="rounded-t-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div className="flex-1 p-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-3 w-3 text-bronze-500" />

@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Users, Calendar, Clock, Heart, MapPin, Award, Star, Send, Shield, Handshake, Car, Bus, Accessibility, Backpack, HardHat } from 'lucide-react'
-import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Volunteer | East Wear Bay Archaeological Project',
@@ -12,12 +11,30 @@ export const metadata: Metadata = {
 export default function VolunteerPage() {
   return (
     <div>
-      <PageHero
-        title="Be a Volunteer"
-        description="Join us in preserving East Wear Bay's archaeological heritage for future generations"
-        icon={Heart}
-        variant="gradient"
-      />
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Volunteer_Hero_EWB.webp?updatedAt=1758121883166"
+          alt="Volunteers excavating at East Wear Bay"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+        <div className="container relative z-10 flex h-full flex-col items-center justify-center text-white">
+          <div className="text-center">
+            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-bronze-600/20 backdrop-blur-sm">
+              <Heart className="h-8 w-8 text-bronze-300" />
+            </div>
+            <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl">
+              Be a Volunteer
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-xl leading-relaxed text-gray-200">
+              Join us in preserving East Wear Bay's archaeological heritage for future generations
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className="container py-12">
         <div className="mx-auto max-w-4xl">

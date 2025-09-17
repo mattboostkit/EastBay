@@ -16,7 +16,8 @@ export default function CommunityPage() {
         title="Community & Outreach"
         description="Engaging the public with archaeology and connecting communities to their local heritage through inclusive programmes and activities."
         icon={Users}
-        variant="gradient"
+        variant="image"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Banner_Image_1Community_EWB.webp?updatedAt=1758121339875"
       />
       
       <div className="container py-12">
@@ -76,7 +77,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/School_resource_Community_EWB.webp?updatedAt=1758121560813"
                   fill
                   alt="School resources"
                   className="rounded-t-lg object-cover"
@@ -115,7 +116,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Field_School_Community_EWB.webp?updatedAt=1758121457965"
                   alt="Field School"
                   fill
                   className="rounded-t-lg object-cover"
@@ -150,7 +151,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Volunteering_Community_EWB.webp?updatedAt=1758121653045"
                   alt="Volunteering"
                   fill
                   className="rounded-t-lg object-cover"
@@ -185,7 +186,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Sensory_Stories_Community_EWB.webp?updatedAt=1758121559636"
                   alt="Sensory Stories"
                   fill
                   className="rounded-t-lg object-cover"
@@ -220,7 +221,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Dementia_Friendly_Community_EWB.webp?updatedAt=1758121387444"
                   alt="Dementia Friendly Sessions"
                   fill
                   className="rounded-t-lg object-cover"
@@ -255,7 +256,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Pop_up_Dig_Pit_Community_EWB.webp?updatedAt=1758121532206"
                   alt="Pop-Up Dig Pit"
                   fill
                   className="rounded-t-lg object-cover"
@@ -295,7 +296,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Excavation_and_recording_Community_EWB.webp?updatedAt=1758121390636"
                   fill
                   alt="Excavation and Recording"
                   className="rounded-t-lg object-cover"
@@ -323,7 +324,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Work_Placement_Community_EWB.webp?updatedAt=1758121655040"
                   fill
                   alt="Work Placements"
                   className="rounded-t-lg object-cover"
@@ -351,7 +352,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Filmmaking_Community_EWB.webp?updatedAt=1758121448609"
                   fill
                   alt="Filmmaking Project"
                   className="rounded-t-lg object-cover"
@@ -379,7 +380,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Archaeology_&_Identity_Community_EWB.webp?updatedAt=1758121297874"
                   fill
                   alt="Archaeology and Identity Workshops"
                   className="rounded-t-lg object-cover"
@@ -407,7 +408,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Open_Days_Community_EWB.webp?updatedAt=1758121505024"
                   fill
                   alt="Open Day Events"
                   className="rounded-t-lg object-cover"
@@ -425,7 +426,7 @@ export default function CommunityPage() {
             <div className="group rounded-lg border bg-card shadow-sm transition-all hover:shadow-md">
               <div className="relative h-48">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/Co_Curated_Exhibition_Community_EWB.webp?updatedAt=1758121355951"
                   fill
                   alt="Co-Curated Exhibition"
                   className="rounded-t-lg object-cover"

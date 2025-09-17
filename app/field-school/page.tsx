@@ -59,7 +59,7 @@ export default async function FieldSchoolPage() {
     <>
       <div className="relative h-[50vh] overflow-hidden">
         <Image
-          src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_School_Banner_EWB.webp?updatedAt=1758122483742"
           alt="Students excavating at the East Wear Bay archaeological site with tools and equipment"
           fill
           className="object-cover"

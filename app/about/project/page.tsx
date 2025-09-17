@@ -17,7 +17,7 @@ export default function AboutPage() {
         description="The East Wear Bay Archaeological project is a community-led initiative to investigate, record, preserve and share the archaeological landscape at East Wear Bay before it is lost to coastal erosion."
         icon={Info}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Folkestone_seaview.jpg?updatedAt=1755543848521"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Seaview_EWB.webp?updatedAt=1758121023033"
       />
       
       <div className="container py-12">
@@ -38,8 +38,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="relative rounded-lg overflow-hidden h-[300px]">
-                <Image 
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Our-Mission.jpg?updatedAt=1755543727360" 
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Mission_EWB.webp?updatedAt=1758121022793"
                   alt="Eroding cliff face at East Wear Bay showing archaeological features being lost to the sea"
                   fill
                   className="object-cover"
@@ -185,8 +185,8 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold">The Archaeology</h2>
             <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="relative rounded-lg overflow-hidden h-[300px] md:order-2">
-                <Image 
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/The-Archaeology.jpg?updatedAt=1755543727496" 
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Archaeology_EWB.webp?updatedAt=1758121023605"
                   alt="Archaeological excavation of the Folkestone Roman Villa showing room foundations and features"
                   fill
                   className="object-cover"
@@ -211,31 +211,79 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold">Our Approach</h2>
             <div className="mt-6">
               <div className="rounded-lg border p-6">
-                <h3 className="text-xl font-semibold">Rescue Archaeology</h3>
-                <p className="mt-3 text-muted-foreground">
-                  Our primary focus is conducting methodical excavations in the areas most at risk of imminent erosion. We work with urgency but maintain rigorous archaeological standards to ensure proper documentation of all features and finds.
-                </p>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <h3 className="text-xl font-semibold">Rescue Archaeology</h3>
+                    <p className="mt-3 text-muted-foreground">
+                      Our primary focus is conducting methodical excavations in the areas most at risk of imminent erosion. We work with urgency but maintain rigorous archaeological standards to ensure proper documentation of all features and finds.
+                    </p>
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden h-[200px]">
+                    <Image
+                      src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Rescue_EWB.webp?updatedAt=1758121023317"
+                      alt="Rescue archaeology work at East Wear Bay"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
               
               <div className="mt-4 rounded-lg border p-6">
-                <h3 className="text-xl font-semibold">Digital Preservation</h3>
-                <p className="mt-3 text-muted-foreground">
-                  We employ cutting-edge digital technologies including photogrammetry, 3D scanning, and immersive visualization to create permanent digital records of the site and its artefacts. These digital assets form an archive that will outlast the physical site.
-                </p>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="md:order-2">
+                    <h3 className="text-xl font-semibold">Digital Preservation</h3>
+                    <p className="mt-3 text-muted-foreground">
+                      We employ cutting-edge digital technologies including photogrammetry, 3D scanning, and immersive visualization to create permanent digital records of the site and its artefacts. These digital assets form an archive that will outlast the physical site.
+                    </p>
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden h-[200px] md:order-1">
+                    <Image
+                      src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Digital_EWB.webp?updatedAt=1758121022645"
+                      alt="Digital preservation technology in use"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
               
               <div className="mt-4 rounded-lg border p-6">
-                <h3 className="text-xl font-semibold">Community Archaeology</h3>
-                <p className="mt-3 text-muted-foreground">
-                  We believe that archaeology should be accessible to all. Our field school, volunteer programs, and public engagement initiatives create opportunities for people of all ages and backgrounds to participate in uncovering and preserving their local heritage.
-                </p>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <h3 className="text-xl font-semibold">Community Archaeology</h3>
+                    <p className="mt-3 text-muted-foreground">
+                      We believe that archaeology should be accessible to all. Our field school, volunteer programs, and public engagement initiatives create opportunities for people of all ages and backgrounds to participate in uncovering and preserving their local heritage.
+                    </p>
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden h-[200px]">
+                    <Image
+                      src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/About_Community_EWB.webp?updatedAt=1758121022074"
+                      alt="Community members participating in archaeological activities"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
               
               <div className="mt-4 rounded-lg border p-6">
-                <h3 className="text-xl font-semibold">Academic Research</h3>
-                <p className="mt-3 text-muted-foreground">
-                  The project maintains academic rigour through partnerships with universities and specialists, regular reporting of findings, and contribution to broader research questions. These include themes relating to Romano-British and Iron Age settlement, economy and society, alongside investigations into the Iron Age to Roman period transition in Kent.
-                </p>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="md:order-2">
+                    <h3 className="text-xl font-semibold">Academic Research</h3>
+                    <p className="mt-3 text-muted-foreground">
+                      The project maintains academic rigour through partnerships with universities and specialists, regular reporting of findings, and contribution to broader research questions. These include themes relating to Romano-British and Iron Age settlement, economy and society, alongside investigations into the Iron Age to Roman period transition in Kent.
+                    </p>
+                  </div>
+                  <div className="relative rounded-lg overflow-hidden h-[200px] md:order-1">
+                    <Image
+                      src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/About/Academic_About_EWB.webp?updatedAt=1758121024363"
+                      alt="Academic research and study at East Wear Bay"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>

@@ -55,31 +55,40 @@ export default async function NewsPage() {
   
   return (
     <>
-      {/* Hero Section with Brand Colors */}
-      <section className="relative bg-gradient-to-br from-primary via-primary/90 to-secondary/20 py-20">
-        <div className="absolute inset-0 bg-[url('/patterns/topography.svg')] opacity-10"></div>
-        <div className="container relative">
-          <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-4 bg-secondary text-white">Latest Updates</Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-              News & Discoveries
-            </h1>
-            <p className="mt-4 text-lg text-white/90 md:text-xl">
-              Updates from our seasonal excavations and year-round community projects.
-            </p>
-            
-            {/* Search Bar */}
-            <div className="mt-8 flex max-w-md mx-auto gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search news and articles..."
-                  className="pl-10 bg-white/95"
-                />
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/News/News_Banner_EWB.webp?updatedAt=1758122787198"
+          alt="East Wear Bay archaeological news and updates"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container">
+            <div className="mx-auto max-w-4xl text-center">
+              <Badge className="mb-4 bg-secondary text-white">Latest Updates</Badge>
+              <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+                News & Discoveries
+              </h1>
+              <p className="mt-4 text-lg text-white/90 md:text-xl">
+                Updates from our seasonal excavations and year-round community projects.
+              </p>
+
+              {/* Search Bar */}
+              <div className="mt-8 flex max-w-md mx-auto gap-2">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search news and articles..."
+                    className="pl-10 bg-white/95"
+                  />
+                </div>
+                <Button className="bg-secondary hover:bg-secondary/90">
+                  Search
+                </Button>
               </div>
-              <Button className="bg-secondary hover:bg-secondary/90">
-                Search
-              </Button>
             </div>
           </div>
         </div>

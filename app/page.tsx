@@ -62,7 +62,7 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden" aria-labelledby="hero-heading">
         <Image
-          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Hero.jpg?updatedAt=1755600476498"
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Cover_EWB.webp?updatedAt=1758121883167"
           fill
           priority
           alt="East Wear Bay coastal view"
@@ -134,8 +134,8 @@ export default async function Home() {
               </div>
             </div>
             <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-              <Image 
-                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-About.jpg?updatedAt=1755600476501"
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_About_EWB.webp?updatedAt=1758121883165"
                 alt="Coastal view of East Wear Bay showing the archaeological site"
                 fill
                 className="object-cover"
@@ -377,8 +377,8 @@ export default async function Home() {
         <div className="container">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <div className="relative rounded-lg overflow-hidden h-80 md:h-auto">
-              <Image 
-                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Success.jpg?updatedAt=1755600476499"
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home/Home_Success_EWB.webp?updatedAt=1758122024645"
                 alt="Field school participants from July 2025 excavation"
                 fill
                 className="object-cover"

@@ -15,7 +15,7 @@ const geistSans = GeistSans;
 const geistMono = GeistMono;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org'),
   title: {
     default: 'East Wear Bay Project | Folkestone Roman Villa Research',
     template: '%s | East Wear Bay Project',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en-US',
-    url: process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org',
     title: 'East Wear Bay Project | Folkestone Roman Villa Research',
     description: 'Exploring the Folkestone Roman Villa through community archaeology, digital preservation, and education.',
     siteName: 'East Wear Bay Project',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     types: {
-      'application/rss+xml': `${process.env.NEXT-PUBLIC-SITE-URL || 'https://eastwearbaypt.org'}/rss.xml`,
+      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org'}/rss.xml`,
     },
   },
   applicationName: 'East Wear Bay Project',

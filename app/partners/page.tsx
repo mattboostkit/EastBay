@@ -65,152 +65,150 @@ export default async function PartnersPage() {
           </div>
 
           {/* Funders Section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { name: 'National Lottery Heritage Fund', logo: null },
-                { name: 'Roger De Haan Charitable Trust', logo: null },
-                { name: 'Garfield Weston Charitable Trust', logo: null },
-                { name: 'The Lawson Trust', logo: null },
-                { name: 'Friends of Canterbury Archaeological Trust', logo: null },
-                { name: 'Kent Community Foundation', logo: null },
-                { name: 'Folkestone Town Council', logo: null },
-                { name: 'Folkestone and Hythe District Council', logo: null },
-                { name: 'Council for British Archaeology', logo: null },
-                { name: 'Association for Roman Archaeology', logo: null },
-                { name: 'Society of the Promotion of Roman Studies', logo: null }
-              ].map((funderInfo) => {
-                // Try to find the funder in the Sanity data
-                const funder = principalFunders.find((p: any) =>
-                  p.name?.toLowerCase().includes(funderInfo.name.toLowerCase()) ||
-                  funderInfo.name.toLowerCase().includes(p.name?.toLowerCase())
-                );
-
-                return (
-                  <div key={funderInfo.name} className="text-center">
+          {principalFunders.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {principalFunders.map((funder: any) => (
+                  <div key={funder._id} className="text-center">
                     <div className="mb-4 bg-muted rounded-lg p-8 h-32 flex items-center justify-center">
-                      {funder?.logo ? (
+                      {funder.logo ? (
                         <Image
                           src={urlForImage(funder.logo)?.url() || ''}
-                          alt={funder.logo.alt || funderInfo.name}
-                          width={200}
-                          height={80}
-                          className="max-h-20 w-full object-contain"
-                        />
-                      ) : funderInfo.logo ? (
-                        <Image
-                          src={funderInfo.logo}
-                          alt={funderInfo.name}
+                          alt={funder.logo.alt || funder.name}
                           width={200}
                           height={80}
                           className="max-h-20 w-full object-contain"
                         />
                       ) : (
-                        <span className="text-sm text-muted-foreground font-medium">{funderInfo.name}</span>
+                        <span className="text-sm text-muted-foreground font-medium">{funder.name}</span>
                       )}
                     </div>
-                    <h3 className="font-semibold text-lg">{funderInfo.name}</h3>
+                    <h3 className="font-semibold text-lg">{funder.name}</h3>
+                    {funder.description && (
+                      <p className="text-sm text-muted-foreground mt-2">{funder.description}</p>
+                    )}
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           
           {/* Lead Partners */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
-            <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Our lead partners bring expertise, resources, and community connections that are essential to the project's success.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-              {[
-                { name: 'Folkestone Museum', logo: null },
-                { name: 'The University of Kent', logo: null },
-                { name: 'Dover Archaeology Group', logo: null },
-                { name: 'Folkestone Research and Archaeology Group', logo: null },
-                { name: 'Canterbury Christ Church University', logo: null },
-                { name: 'Folkestone and Hythe District Council', logo: null },
-                { name: 'Folkestone Town Council', logo: null },
-                { name: 'Historic England', logo: null },
-                { name: 'Kent Archaeological Society', logo: null },
-                { name: 'Kent Downs Landscape', logo: null },
-                { name: 'Creative Folkestone', logo: null }
-              ].map((partnerInfo) => {
-                // Try to find the partner in the Sanity data
-                const partner = leadPartners.find((p: any) =>
-                  p.name?.toLowerCase().includes(partnerInfo.name.toLowerCase()) ||
-                  partnerInfo.name.toLowerCase().includes(p.name?.toLowerCase())
-                );
-
-                return (
-                  <div key={partnerInfo.name} className="group">
-                    {partner?.website ? (
+          {leadPartners.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
+              <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Our lead partners bring expertise, resources, and community connections that are essential to the project's success.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                {leadPartners.map((partner: any) => (
+                  <div key={partner._id} className="group">
+                    {partner.website ? (
                       <a
                         href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
-                        title={partnerInfo.name}
+                        title={partner.name}
                       >
                         <div className="h-20 flex items-center justify-center p-2">
-                          {partner?.logo ? (
+                          {partner.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
-                              alt={partner.logo.alt || partnerInfo.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : partnerInfo.logo ? (
-                            <Image
-                              src={partnerInfo.logo}
-                              alt={partnerInfo.name}
+                              alt={partner.logo.alt || partner.name}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                              {partnerInfo.name}
+                              {partner.name}
                             </span>
                           )}
                         </div>
                       </a>
                     ) : (
-                      <div className="rounded-lg border bg-card p-4" title={partnerInfo.name}>
+                      <div className="rounded-lg border bg-card p-4" title={partner.name}>
                         <div className="h-20 flex items-center justify-center p-2">
-                          {partner?.logo ? (
+                          {partner.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
-                              alt={partner.logo.alt || partnerInfo.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : partnerInfo.logo ? (
-                            <Image
-                              src={partnerInfo.logo}
-                              alt={partnerInfo.name}
+                              alt={partner.logo.alt || partner.name}
                               width={150}
                               height={80}
                               className="max-h-16 w-full object-contain"
                             />
                           ) : (
                             <span className="text-sm font-medium text-center text-muted-foreground">
-                              {partnerInfo.name}
+                              {partner.name}
                             </span>
                           )}
                         </div>
                       </div>
                     )}
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          
+          {/* Other Supporters */}
+          {supporters.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-6 text-center">Supporters</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                {supporters.map((supporter: any) => (
+                  <div key={supporter._id} className="group">
+                    {supporter.website ? (
+                      <a
+                        href={supporter.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
+                        title={supporter.name}
+                      >
+                        <div className="h-20 flex items-center justify-center p-2">
+                          {supporter.logo ? (
+                            <Image
+                              src={urlForImage(supporter.logo)?.url() || ''}
+                              alt={supporter.logo.alt || supporter.name}
+                              width={150}
+                              height={80}
+                              className="max-h-16 w-full object-contain"
+                            />
+                          ) : (
+                            <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
+                              {supporter.name}
+                            </span>
+                          )}
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="rounded-lg border bg-card p-4" title={supporter.name}>
+                        <div className="h-20 flex items-center justify-center p-2">
+                          {supporter.logo ? (
+                            <Image
+                              src={urlForImage(supporter.logo)?.url() || ''}
+                              alt={supporter.logo.alt || supporter.name}
+                              width={150}
+                              height={80}
+                              className="max-h-16 w-full object-contain"
+                            />
+                          ) : (
+                            <span className="text-sm font-medium text-center text-muted-foreground">
+                              {supporter.name}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Acknowledgment Text */}
           <div className="rounded-lg border bg-muted/50 p-8 mb-12">
             <p className="text-center text-muted-foreground">

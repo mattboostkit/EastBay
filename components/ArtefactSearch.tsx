@@ -18,17 +18,43 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
   const [selectedModelType, setSelectedModelType] = useState(searchParams.get('modelType') || '');
 
+  // Function to update URL with current filter values
+  const updateFilters = (newPeriod?: string, newCategory?: string, newModelType?: string, newQuery?: string) => {
+    const params = new URLSearchParams();
+
+    const query = newQuery !== undefined ? newQuery : searchQuery;
+    const period = newPeriod !== undefined ? newPeriod : selectedPeriod;
+    const category = newCategory !== undefined ? newCategory : selectedCategory;
+    const modelType = newModelType !== undefined ? newModelType : selectedModelType;
+
+    if (query) params.set('q', query);
+    if (period) params.set('period', period);
+    if (category) params.set('category', category);
+    if (modelType) params.set('modelType', modelType);
+
+    router.push(`/digital-museum${params.toString() ? '?' + params.toString() : ''}`);
+  };
+
   // Handle search submission
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    updateFilters();
+  };
 
-    const params = new URLSearchParams();
-    if (searchQuery) params.set('q', searchQuery);
-    if (selectedPeriod) params.set('period', selectedPeriod);
-    if (selectedCategory) params.set('category', selectedCategory);
-    if (selectedModelType) params.set('modelType', selectedModelType);
+  // Handle filter changes
+  const handlePeriodChange = (value: string) => {
+    setSelectedPeriod(value);
+    updateFilters(value, undefined, undefined, undefined);
+  };
 
-    router.push(`/digital-museum${params.toString() ? '?' + params.toString() : ''}`);
+  const handleCategoryChange = (value: string) => {
+    setSelectedCategory(value);
+    updateFilters(undefined, value, undefined, undefined);
+  };
+
+  const handleModelTypeChange = (value: string) => {
+    setSelectedModelType(value);
+    updateFilters(undefined, undefined, value, undefined);
   };
   
   return (
@@ -50,7 +76,7 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
           <select
             className="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             value={selectedPeriod}
-            onChange={(e) => setSelectedPeriod(e.target.value)}
+            onChange={(e) => handlePeriodChange(e.target.value)}
           >
             <option value="">All Periods</option>
             <option value="Prehistoric">Prehistoric</option>
@@ -70,7 +96,7 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
           <select
             className="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             value={selectedModelType}
-            onChange={(e) => setSelectedModelType(e.target.value)}
+            onChange={(e) => handleModelTypeChange(e.target.value)}
           >
             <option value="">All Types</option>
             <option value="3d">3D Models</option>
@@ -83,7 +109,7 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
           <select
             className="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+            onChange={(e) => handleCategoryChange(e.target.value)}
           >
             <option value="">All Categories</option>
             {categories.map((category) => (
@@ -92,12 +118,21 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
           </select>
         </div>
         
-        <button 
-          type="submit"
-          className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-        >
-          Apply Filters
-        </button>
+        {(searchQuery || selectedPeriod || selectedCategory || selectedModelType) && (
+          <button
+            type="button"
+            onClick={() => {
+              setSearchQuery('');
+              setSelectedPeriod('');
+              setSelectedCategory('');
+              setSelectedModelType('');
+              router.push('/digital-museum');
+            }}
+            className="rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground shadow-sm hover:bg-secondary/90"
+          >
+            Clear Filters
+          </button>
+        )}
       </div>
     </form>
   );

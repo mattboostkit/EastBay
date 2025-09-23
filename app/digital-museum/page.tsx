@@ -33,16 +33,39 @@ export default async function DigitalMuseumPage({
   const currentPage = Number(params?.page) || 1;
   const pageSize = 8;
   
-  // Fetch artefacts based on search/filter parameters
-  let artefacts;
+  // Fetch all artefacts first
+  let artefacts = await fetchAllArtefacts();
+
+  // Apply filters
   if (query) {
-    artefacts = await searchArtefacts(query);
-  } else if (period) {
-    artefacts = await fetchArtefactsByPeriod(period);
-  } else if (category) {
-    artefacts = await fetchArtefactsByCategory(category);
-  } else {
-    artefacts = await fetchAllArtefacts();
+    artefacts = artefacts.filter((artefact: any) =>
+      artefact.title?.toLowerCase().includes(query.toLowerCase()) ||
+      artefact.description?.toLowerCase().includes(query.toLowerCase()) ||
+      artefact.period?.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
+  if (period) {
+    artefacts = artefacts.filter((artefact: any) =>
+      artefact.period === period
+    );
+  }
+
+  if (category) {
+    artefacts = artefacts.filter((artefact: any) =>
+      artefact.categories?.includes(category)
+    );
+  }
+
+  if (modelType) {
+    artefacts = artefacts.filter((artefact: any) => {
+      if (modelType === '3d') {
+        return artefact.sketchfabUrl || artefact.modelUrl;
+      } else if (modelType === 'photo') {
+        return !artefact.sketchfabUrl && !artefact.modelUrl && artefact.image;
+      }
+      return true;
+    });
   }
   
   // Fetch featured artefacts for the featured section

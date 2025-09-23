@@ -19,13 +19,14 @@ export default async function PartnersPage() {
   const partners = await client.fetch(partnersQuery)
   
   // Separate partners by type based on partnershipType field
+  // Principal Funders - exactly matching "Principal Funder"
   const funders = partners.filter((p: any) =>
-    p.partnershipType?.toLowerCase().includes('funder')
+    p.partnershipType === 'Principal Funder'
   )
 
-  // All other partners become Lead Partners (combining lead partners and supporters)
+  // Lead Partners - exactly matching "Lead Partner"
   const leadPartners = partners.filter((p: any) =>
-    !p.partnershipType?.toLowerCase().includes('funder')
+    p.partnershipType === 'Lead Partner'
   )
 
   return (
@@ -56,10 +57,10 @@ export default async function PartnersPage() {
             </div>
           </div>
 
-          {/* Funders Section - with logos and descriptions */}
+          {/* Principal Funders Section - with logos and descriptions */}
           {funders.length > 0 && (
             <div className="mb-16">
-              <h2 className="text-3xl font-bold mb-8 text-center">Our Funders</h2>
+              <h2 className="text-3xl font-bold mb-8 text-center">Principal Funders</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {funders.slice(0, 11).map((funder: any) => (
                   <div key={funder._id} className="flex flex-col">

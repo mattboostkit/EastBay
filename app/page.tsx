@@ -341,26 +341,26 @@ export default async function Home() {
                   <div className="p-3">
                     <div className="sketchfab-embed-wrapper relative pb-[100%]">
                       <iframe
-                        title="Ceramic Roman Figurine Fragment"
+                        title="Bronze Age Pottery Fragment"
                         frameBorder="0"
                         allowFullScreen
                         mozallowfullscreen="true"
                         webkitallowfullscreen="true"
                         allow="autoplay; fullscreen; xr-spatial-tracking"
-                        src="https://sketchfab.com/models/8f8e7e23c33e4f2ea2a5a4e5d0e3c5f8/embed"
+                        src="https://sketchfab.com/models/9bb899df22d14c41a32e7bc6f4b5c7c2/embed"
                         className="absolute inset-0 w-full h-full rounded-md"
                       />
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold">Ceramic Roman Figurine Fragment</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">2nd-3rd Century CE</p>
+                    <h3 className="text-lg font-bold">Bronze Age Pottery Fragment</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">Bronze Age Period</p>
                     <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      Fragment of a ceramic figurine, likely depicting a deity or household god, demonstrating the religious practices at the villa.
+                      Fragment of Bronze Age pottery showing distinctive cord-impressed decoration, evidence of earlier occupation at the site.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/ceramic-roman-figurine-fragment-8f8e7e23c33e4f2ea2a5a4e5d0e3c5f8" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
-                        Ceramic Roman Figurine Fragment
+                      <a href="https://sketchfab.com/3d-models/bronze-age-pottery-9bb899df22d14c41a32e7bc6f4b5c7c2" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Bronze Age Pottery Fragment
                       </a>
                       {" by "}
                       <a href="https://sketchfab.com/CATrust25" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
@@ -372,7 +372,7 @@ export default async function Home() {
                       </a>
                     </div>
                     <Link
-                      href="/digital-museum/ceramic-figurine"
+                      href="/digital-museum/bronze-age-pottery"
                       className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                     >
                       View details

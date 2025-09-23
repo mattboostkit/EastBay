@@ -76,15 +76,33 @@ export async function search(query: string) {
 
 // Artefact-specific utility functions
 export async function fetchAllArtefacts() {
-  return client.fetch(`*[_type == "artefact"] | order(_createdAt desc)`);
+  return client.fetch(`*[_type == "artefact"] | order(_createdAt desc) {
+    ...,
+    "image": images[0]{
+      ...,
+      "url": asset->url
+    }
+  }`);
 }
 
 export async function fetchFeaturedArtefacts() {
-  return client.fetch(`*[_type == "artefact" && featured == true] | order(_createdAt desc)[0...4]`);
+  return client.fetch(`*[_type == "artefact" && featured == true] | order(_createdAt desc)[0...4] {
+    ...,
+    "image": images[0]{
+      ...,
+      "url": asset->url
+    }
+  }`);
 }
 
 export async function fetchArtefactBySlug(slug: string) {
-  return client.fetch(`*[_type == "artefact" && slug.current == $slug][0]`, { slug });
+  return client.fetch(`*[_type == "artefact" && slug.current == $slug][0] {
+    ...,
+    "images": images[]{
+      ...,
+      "url": asset->url
+    }
+  }`, { slug });
 }
 
 export async function fetchArtefactsByPeriod(period: string) {

@@ -19,21 +19,13 @@ export default async function PartnersPage() {
   const partners = await client.fetch(partnersQuery)
   
   // Separate partners by type based on partnershipType field
-  const principalFunders = partners.filter((p: any) => 
-    p.partnershipType?.toLowerCase().includes('principal') || 
+  const funders = partners.filter((p: any) =>
     p.partnershipType?.toLowerCase().includes('funder')
   )
-  
-  const leadPartners = partners.filter((p: any) => 
-    p.partnershipType?.toLowerCase().includes('lead') || 
-    p.partnershipType?.toLowerCase().includes('academic')
-  )
-  
-  const supporters = partners.filter((p: any) => 
-    !p.partnershipType?.toLowerCase().includes('principal') && 
-    !p.partnershipType?.toLowerCase().includes('funder') &&
-    !p.partnershipType?.toLowerCase().includes('lead') &&
-    !p.partnershipType?.toLowerCase().includes('academic')
+
+  // All other partners become Lead Partners (combining lead partners and supporters)
+  const leadPartners = partners.filter((p: any) =>
+    !p.partnershipType?.toLowerCase().includes('funder')
   )
 
   return (
@@ -64,29 +56,46 @@ export default async function PartnersPage() {
             </div>
           </div>
 
-          {/* Funders Section */}
-          {principalFunders.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Funders</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {principalFunders.map((funder: any) => (
-                  <div key={funder._id} className="text-center">
-                    <div className="mb-4 bg-muted rounded-lg p-8 h-32 flex items-center justify-center">
+          {/* Funders Section - with logos and descriptions */}
+          {funders.length > 0 && (
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center">Our Funders</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {funders.slice(0, 11).map((funder: any) => (
+                  <div key={funder._id} className="flex flex-col">
+                    <div className="mb-4 bg-white border rounded-lg p-6 h-32 flex items-center justify-center">
                       {funder.logo ? (
-                        <Image
-                          src={urlForImage(funder.logo)?.url() || ''}
-                          alt={funder.logo.alt || funder.name}
-                          width={200}
-                          height={80}
-                          className="max-h-20 w-full object-contain"
-                        />
+                        funder.website ? (
+                          <a
+                            href={funder.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:opacity-80 transition-opacity"
+                          >
+                            <Image
+                              src={urlForImage(funder.logo)?.url() || ''}
+                              alt={funder.logo.alt || funder.name}
+                              width={200}
+                              height={80}
+                              className="max-h-20 w-auto object-contain"
+                            />
+                          </a>
+                        ) : (
+                          <Image
+                            src={urlForImage(funder.logo)?.url() || ''}
+                            alt={funder.logo.alt || funder.name}
+                            width={200}
+                            height={80}
+                            className="max-h-20 w-auto object-contain"
+                          />
+                        )
                       ) : (
                         <span className="text-sm text-muted-foreground font-medium">{funder.name}</span>
                       )}
                     </div>
-                    <h3 className="font-semibold text-lg">{funder.name}</h3>
+                    <h3 className="font-semibold text-base mb-2">{funder.name}</h3>
                     {funder.description && (
-                      <p className="text-sm text-muted-foreground mt-2">{funder.description}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{funder.description}</p>
                     )}
                   </div>
                 ))}
@@ -94,14 +103,11 @@ export default async function PartnersPage() {
             </div>
           )}
           
-          {/* Lead Partners */}
+          {/* Lead Partners - logos only, linking to websites */}
           {leadPartners.length > 0 && (
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Lead Partners</h2>
-              <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Our lead partners bring expertise, resources, and community connections that are essential to the project's success.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              <h2 className="text-3xl font-bold mb-8 text-center">Lead Partners</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 {leadPartners.map((partner: any) => (
                   <div key={partner._id} className="group">
                     {partner.website ? (
@@ -109,38 +115,41 @@ export default async function PartnersPage() {
                         href={partner.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
+                        className="block rounded-lg border bg-white p-4 h-24 transition-all hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5"
                         title={partner.name}
                       >
-                        <div className="h-20 flex items-center justify-center p-2">
+                        <div className="h-full flex items-center justify-center">
                           {partner.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
                               alt={partner.logo.alt || partner.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
+                              width={140}
+                              height={70}
+                              className="max-h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                             />
                           ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
+                            <span className="text-xs font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
                               {partner.name}
                             </span>
                           )}
                         </div>
                       </a>
                     ) : (
-                      <div className="rounded-lg border bg-card p-4" title={partner.name}>
-                        <div className="h-20 flex items-center justify-center p-2">
+                      <div
+                        className="block rounded-lg border bg-white p-4 h-24"
+                        title={partner.name}
+                      >
+                        <div className="h-full flex items-center justify-center">
                           {partner.logo ? (
                             <Image
                               src={urlForImage(partner.logo)?.url() || ''}
                               alt={partner.logo.alt || partner.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
+                              width={140}
+                              height={70}
+                              className="max-h-14 w-auto object-contain"
                             />
                           ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground">
+                            <span className="text-xs font-medium text-center text-muted-foreground">
                               {partner.name}
                             </span>
                           )}
@@ -153,61 +162,6 @@ export default async function PartnersPage() {
             </div>
           )}
 
-          {/* Other Supporters */}
-          {supporters.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Supporters</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                {supporters.map((supporter: any) => (
-                  <div key={supporter._id} className="group">
-                    {supporter.website ? (
-                      <a
-                        href={supporter.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-lg border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
-                        title={supporter.name}
-                      >
-                        <div className="h-20 flex items-center justify-center p-2">
-                          {supporter.logo ? (
-                            <Image
-                              src={urlForImage(supporter.logo)?.url() || ''}
-                              alt={supporter.logo.alt || supporter.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground group-hover:text-primary transition-colors">
-                              {supporter.name}
-                            </span>
-                          )}
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="rounded-lg border bg-card p-4" title={supporter.name}>
-                        <div className="h-20 flex items-center justify-center p-2">
-                          {supporter.logo ? (
-                            <Image
-                              src={urlForImage(supporter.logo)?.url() || ''}
-                              alt={supporter.logo.alt || supporter.name}
-                              width={150}
-                              height={80}
-                              className="max-h-16 w-full object-contain"
-                            />
-                          ) : (
-                            <span className="text-sm font-medium text-center text-muted-foreground">
-                              {supporter.name}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Acknowledgment Text */}
           <div className="rounded-lg border bg-muted/50 p-8 mb-12">

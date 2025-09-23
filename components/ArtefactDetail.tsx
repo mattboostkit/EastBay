@@ -13,7 +13,8 @@ type ArtefactImage = {
   alt?: string;
   caption?: string;
   isMainImage?: boolean;
-  asset: {
+  url?: string;
+  asset?: {
     _ref: string;
     _type: string;
   };
@@ -83,11 +84,11 @@ export default function ArtefactDetail({ artefact }: ArtefactProps) {
           >
             <div className="aspect-w-16 aspect-h-9 relative">
               <Image
-                src={urlForImage(mainImage)
+                src={mainImage.url || (mainImage.asset ? urlForImage(mainImage)
                   ?.width(1200)
                   ?.height(800)
                   ?.format('webp')
-                  ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
+                  ?.url() : null) || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                 alt={mainImage.alt || artefact.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -126,11 +127,11 @@ export default function ArtefactDetail({ artefact }: ArtefactProps) {
               >
                 <div className="aspect-w-4 aspect-h-3 relative">
                   <Image
-                    src={urlForImage(image)
+                    src={image.url || (image.asset ? urlForImage(image)
                       ?.width(400)
                       ?.height(300)
                       ?.format('webp')
-                      ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
+                      ?.url() : null) || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={image.alt || `${artefact.title} - image ${i + 1}`}
                     fill
                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"

@@ -383,6 +383,17 @@ export default async function Home() {
               </>
             )}
           </div>
+          {/* View All Artefacts Button */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/digital-museum"
+              className="inline-flex items-center gap-3 rounded-lg bg-gradient-to-r from-bronze-600 to-bronze-700 px-8 py-3 text-white shadow-lg hover:from-bronze-700 hover:to-bronze-800 hover:shadow-xl transition-all duration-300 group"
+            >
+              <Compass className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <span className="font-semibold">View All Artefacts</span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 

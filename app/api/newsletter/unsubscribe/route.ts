@@ -55,7 +55,9 @@ export async function POST(request: Request) {
           }
         }
       } catch (error) {
-        console.error('SendGrid unsubscribe error:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('SendGrid unsubscribe error:', error);
+        }
       }
     }
     
@@ -82,21 +84,27 @@ export async function POST(request: Request) {
           }
         );
       } catch (error) {
-        console.error('Mailchimp unsubscribe error:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Mailchimp unsubscribe error:', error);
+        }
       }
     }
     
     // Update database
     // await db.newsletter.updateUnsubscribeStatus(email, true);
     
-    console.log('Newsletter unsubscribe:', email, new Date().toISOString());
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Newsletter unsubscribe:', email, new Date().toISOString());
+    }
     
     return NextResponse.json({ 
       success: true, 
       message: 'You have been successfully unsubscribed from our newsletter.' 
     });
   } catch (error) {
-    console.error('Error processing unsubscribe:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error processing unsubscribe:', error);
+    }
     return NextResponse.json(
       { error: 'An error occurred while processing your request. Please try again.' },
       { status: 500 }

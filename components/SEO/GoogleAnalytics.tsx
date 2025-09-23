@@ -10,8 +10,8 @@ function AnalyticsTracker() {
   const searchParams = useSearchParams();
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   
-  // Skip if no GA ID or in development
-  if (!GA_MEASUREMENT_ID || process.env.NODE_ENV === 'development') {
+  // Skip if no GA ID
+  if (!GA_MEASUREMENT_ID) {
     return null;
   }
 
@@ -33,8 +33,8 @@ function AnalyticsTracker() {
 export function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   
-  // Skip if no GA ID or in development
-  if (!GA_MEASUREMENT_ID || process.env.NODE_ENV === 'development') {
+  // Skip if no GA ID
+  if (!GA_MEASUREMENT_ID) {
     return null;
   }
 

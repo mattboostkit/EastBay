@@ -16,82 +16,52 @@ export async function POST(request: Request) {
       );
     }
     
-    // Integration with email service (example with SendGrid)
-    if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_LIST_ID) {
+    // Send to FormSpark
+    const FORMSPARK_ACTION_URL = process.env.FORMSPARK_NEWSLETTER_FORM_ID
+      ? `https://submit-form.com/${process.env.FORMSPARK_NEWSLETTER_FORM_ID}`
+      : null;
+
+    if (FORMSPARK_ACTION_URL) {
       try {
-        // SendGrid integration
-        const response = await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
-          method: 'PUT',
+        const response = await fetch(FORMSPARK_ACTION_URL, {
+          method: 'POST',
           headers: {
-            'Authorization': `Bearer ${process.env.SENDGRID_API_KEY}`,
             'Content-Type': 'application/json',
+            'Accept': 'application/json',
           },
           body: JSON.stringify({
-            list_ids: [process.env.SENDGRID_LIST_ID],
-            contacts: [{
-              email,
-              custom_fields: {
-                signup_source: 'website',
-                signup_date: new Date().toISOString(),
-              },
-            }],
+            email,
+            signup_date: new Date().toISOString(),
+            signup_source: 'website',
+            _email: {
+              subject: 'New Newsletter Signup',
+              from: email,
+            },
           }),
         });
 
         if (!response.ok) {
-          throw new Error('Failed to add contact to SendGrid');
+          throw new Error('FormSpark submission failed');
         }
       } catch (error) {
-        console.error('SendGrid error:', error);
-        // Continue with local storage as fallback
-      }
-    }
-    
-    // Integration with Mailchimp (alternative)
-    if (process.env.MAILCHIMP_API_KEY && process.env.MAILCHIMP_LIST_ID) {
-      try {
-        const server = process.env.MAILCHIMP_API_KEY.split('-')[1];
-        const response = await fetch(
-          `https://${server}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`,
-          {
-            method: 'POST',
-            headers: {
-              Authorization: `apikey ${process.env.MAILCHIMP_API_KEY}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email_address: email,
-              status: 'subscribed',
-              tags: ['website-signup'],
-            }),
-          }
-        );
-
-        if (!response.ok) {
-          const errorData = await response.json();
-          // Check if already subscribed
-          if (errorData.title !== 'Member Exists') {
-            throw new Error('Failed to add contact to Mailchimp');
-          }
+        // Log error in development only
+        if (process.env.NODE_ENV === 'development') {
+          console.error('FormSpark error:', error);
         }
-      } catch (error) {
-        console.error('Mailchimp error:', error);
-        // Continue with local storage as fallback
       }
+    } else if (process.env.NODE_ENV === 'development') {
+      // Only log in development when no FormSpark ID is configured
+      console.log('Newsletter signup (dev):', email, new Date().toISOString());
     }
-    
-    // Store in database as backup (you would implement this with your DB)
-    // await db.newsletter.create({ email, subscribedAt: new Date() });
-    
-    // Log for monitoring
-    console.log('Newsletter signup:', email, new Date().toISOString());
     
     return NextResponse.json({ 
       success: true, 
       message: 'Thank you for subscribing! Please check your email to confirm your subscription.' 
     });
   } catch (error) {
-    console.error('Error processing newsletter signup:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error processing newsletter signup:', error);
+    }
     return NextResponse.json(
       { error: 'An error occurred while processing your subscription. Please try again.' },
       { status: 500 }

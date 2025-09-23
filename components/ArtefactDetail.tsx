@@ -74,9 +74,26 @@ export default function ArtefactDetail({ artefact }: ArtefactProps) {
   return (
     <div className="artefact-detail">
       <h1 className="text-2xl md:text-3xl font-bold mb-6">{artefact.title}</h1>
-      
+
+      {/* Display 3D model if available */}
+      {artefact.modelUrl && (
+        <div className="mb-8">
+          <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
+            <iframe
+              src={artefact.modelUrl}
+              title={artefact.title}
+              frameBorder="0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              mozallowfullscreen="true"
+              webkitallowfullscreen="true"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Display main image with error handling */}
-      {mainImage ? (
+      {!artefact.modelUrl && mainImage ? (
         <div className="main-image">
           <div 
             className="relative cursor-pointer overflow-hidden rounded-lg" 

@@ -341,26 +341,26 @@ export default async function Home() {
                   <div className="p-3">
                     <div className="sketchfab-embed-wrapper relative pb-[100%]">
                       <iframe
-                        title="Bronze Age Pottery Fragment"
+                        title="Roman Coin"
                         frameBorder="0"
                         allowFullScreen
                         mozallowfullscreen="true"
                         webkitallowfullscreen="true"
                         allow="autoplay; fullscreen; xr-spatial-tracking"
-                        src="https://sketchfab.com/models/9bb899df22d14c41a32e7bc6f4b5c7c2/embed"
+                        src="https://sketchfab.com/models/9cce0352deb448a5854c3e5030f7e575/embed"
                         className="absolute inset-0 w-full h-full rounded-md"
                       />
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold">Bronze Age Pottery Fragment</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">Bronze Age Period</p>
+                    <h3 className="text-lg font-bold">Roman Coin</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">2nd Century CE</p>
                     <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">
-                      Fragment of Bronze Age pottery showing distinctive cord-impressed decoration, evidence of earlier occupation at the site.
+                      Bronze Roman coin discovered at the villa site, providing important dating evidence for the occupation period.
                     </p>
                     <div className="mt-3 text-xs">
-                      <a href="https://sketchfab.com/3d-models/bronze-age-pottery-9bb899df22d14c41a32e7bc6f4b5c7c2" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
-                        Bronze Age Pottery Fragment
+                      <a href="https://sketchfab.com/3d-models/roman-coin-9cce0352deb448a5854c3e5030f7e575" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
+                        Roman Coin
                       </a>
                       {" by "}
                       <a href="https://sketchfab.com/CATrust25" target="_blank" rel="nofollow" className="font-bold text-primary hover:underline">
@@ -372,7 +372,7 @@ export default async function Home() {
                       </a>
                     </div>
                     <Link
-                      href="/digital-museum/bronze-age-pottery"
+                      href="/digital-museum/roman-coin"
                       className="mt-3 inline-flex items-center text-sm font-medium text-primary"
                     >
                       View details

@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description: 'Join our community archaeology project protecting the East Wear Bay archaeological landscape from coastal erosion through excavation, digital preservation, and public engagement.',
 };
 
-// Revalidate page every hour
-export const revalidate = 3600;
+// Revalidate page every 60 seconds for faster updates
+export const revalidate = 60;
 
 export default async function Home() {
   // Fetch featured artefacts

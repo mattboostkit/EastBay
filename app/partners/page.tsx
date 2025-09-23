@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: 'Our partners and funders who make the East Wear Bay Archaeological Project possible through their generous support and collaboration.',
 }
 
-// Revalidate page every hour
-export const revalidate = 3600
+// Revalidate page every 60 seconds for faster updates
+export const revalidate = 60
 
 export default async function PartnersPage() {
   // Fetch partners from Sanity

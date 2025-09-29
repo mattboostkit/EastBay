@@ -108,23 +108,17 @@ export default function Navbar({ siteSettings }: NavbarProps) {
             </button>
 
             {/* Site Logo and Title */}
-            <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay Project - Home">
-              {siteSettings?.logo ? (
-                <Image
-                  src={urlForImage(siteSettings.logo)?.url() || ''}
-                  alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project Logo'}
-                  width={48}
-                  height={48}
-                  className="h-12 w-12"
-                  priority
-                />
-              ) : (
-                <div className="h-12 w-12 bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-muted-foreground text-xs">Logo</span>
-                </div>
-              )}
-              <span className="hidden sm:inline-block text-xl font-semibold text-primary">
-                {siteSettings?.title || 'East Wear Bay Project'}
+            <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay - Home">
+              <Image
+                src="/Hare_Logo.png"
+                alt="East Wear Bay Hare Logo"
+                width={80}
+                height={80}
+                className="h-16 w-auto"
+                priority
+              />
+              <span className="hidden sm:inline-block text-xl font-semibold !text-black dark:!text-white">
+                East Wear Bay
               </span>
             </Link>
           </div>

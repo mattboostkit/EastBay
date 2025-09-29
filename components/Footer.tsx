@@ -15,20 +15,14 @@ export default function Footer({ siteSettings }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              {siteSettings?.logo ? (
-                <Image
-                  src={urlForImage(siteSettings.logo)?.url() || ''}
-                  alt={siteSettings.logo.alt || 'East Wear Bay Archaeological Project'}
-                  width={48}
-                  height={48}
-                  className="h-12 w-12"
-                />
-              ) : (
-                <div className="h-12 w-12 bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-muted-foreground text-xs">Logo</span>
-                </div>
-              )}
-              <h3 className="text-xl font-semibold">{siteSettings?.title || 'East Wear Bay Project'}</h3>
+              <Image
+                src="/Hare_Logo.png"
+                alt="East Wear Bay Hare Logo"
+                width={80}
+                height={80}
+                className="h-16 w-auto"
+              />
+              <h3 className="text-xl font-semibold !text-black dark:!text-white">East Wear Bay</h3>
             </div>
             <p className="text-muted-foreground">
               Preserving the Folkestone Roman Villa through community archaeology, digital technology, and education.

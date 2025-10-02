@@ -151,7 +151,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-[400px_1fr] items-center">
               <div className="flex justify-center md:justify-start">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/6e30b07278abe58330563f8aee944d10bf489df8-400x200.png"
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/6e30b07278abe58330563f8aee944d10bf489df8-400x200.png?w=400&h=200&fit=max"
                   alt="National Lottery Heritage Fund logo"
                   width={400}
                   height={200}

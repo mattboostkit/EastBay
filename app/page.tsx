@@ -111,24 +111,18 @@ export default async function Home() {
             </div>
 
             {/* Quick Stats */}
-            <div className="mt-16 grid grid-cols-3 gap-8 text-center">
+            <div className="mt-16 grid grid-cols-2 gap-8 text-center">
               <div className="animate-fade-up" style={{animationDelay: '0.2s'}}>
                 <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={2000} suffix="+" />
+                  <AnimatedCounter end={12000} suffix="+" />
                 </div>
-                <p className="mt-1 text-sm text-gray-300">Years of History</p>
+                <p className="mt-1 text-sm text-gray-300">years of history</p>
               </div>
               <div className="animate-fade-up" style={{animationDelay: '0.4s'}}>
                 <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={5000} suffix="+" />
+                  <AnimatedCounter end={500} suffix="+" />
                 </div>
-                <p className="mt-1 text-sm text-gray-300">Artefacts Preserved</p>
-              </div>
-              <div className="animate-fade-up" style={{animationDelay: '0.6s'}}>
-                <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={1000} suffix="+" />
-                </div>
-                <p className="mt-1 text-sm text-gray-300">Volunteers</p>
+                <p className="mt-1 text-sm text-gray-300">volunteers</p>
               </div>
             </div>
           </div>
@@ -138,6 +132,35 @@ export default async function Home() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
           <div className="h-8 w-5 rounded-full border-2 border-white/40">
             <div className="mx-auto mt-2 h-2 w-1 animate-pulse rounded-full bg-white/60" />
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="wave" />
+
+      {/* National Lottery Heritage Fund Section */}
+      <section className="bg-white py-16 md:py-24" aria-labelledby="funder-heading">
+        <div className="container">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-[250px_1fr] items-center">
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src="https://cdn.sanity.io/images/ce9tlzu0/production/6e30b07278abe58330563f8aee944d10bf489df8-400x200.png"
+                  alt="National Lottery Heritage Fund logo"
+                  width={400}
+                  height={200}
+                  className="w-full max-w-[250px] h-auto"
+                />
+              </div>
+              <div>
+                <h2 id="funder-heading" className="text-2xl font-bold text-stone-900 mb-4">
+                  Supported by The National Lottery Heritage Fund
+                </h2>
+                <p className="text-stone-700 leading-relaxed">
+                  The National Lottery Heritage Fund is the largest funder for the UK's heritage. Using money raised by National Lottery players we support projects that connect people and communities to heritage. Our vision is for heritage to be valued, cared for and sustained for everyone, now and in the future. From historic buildings, our industrial legacy and the natural environment, to collections, traditions, stories and more. Heritage can be anything from the past that people value and want to pass on to future generations. We believe in the power of heritage to ignite the imagination, offer joy and inspiration, and to build pride in place and connection to the past.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -639,16 +662,16 @@ export default async function Home() {
                 <div className="relative aspect-video w-full">
                   <iframe
                     src="https://www.youtube.com/embed/oTalhuo-5Pg"
-                    title="East Wear Bay Archaeological Project Video"
+                    title="Community Archaeology at East Wear Bay"
                     className="absolute inset-0 h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-bronze-700 mb-2">East Wear Bay Archaeological Project</h3>
+                  <h3 className="text-xl font-bold text-bronze-700 mb-2">Community Archaeology at East Wear Bay</h3>
                   <p className="text-stone-600 mb-4">
-                    Explore our ongoing archaeological work at the East Wear Bay Roman villa site.
+                    Learn about our community engagement and educational programmes at the site.
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=oTalhuo-5Pg"
@@ -661,22 +684,22 @@ export default async function Home() {
                   </a>
                 </div>
               </div>
-              
+
               {/* Video 2 */}
               <div className="card-archaeological hover-lift overflow-hidden">
                 <div className="relative aspect-video w-full">
                   <iframe
                     src="https://www.youtube.com/embed/aoQk4uq6Ol4"
-                    title="Community Archaeology at East Wear Bay"
+                    title="East Wear Bay Archaeological Project Video"
                     className="absolute inset-0 h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-bronze-700 mb-2">Community Archaeology at East Wear Bay</h3>
+                  <h3 className="text-xl font-bold text-bronze-700 mb-2">East Wear Bay Archaeological Project</h3>
                   <p className="text-stone-600 mb-4">
-                    Learn about our community engagement and educational programmes at the site.
+                    Explore our ongoing archaeological work at the East Wear Bay Roman villa site.
                   </p>
                   <a
                     href="https://www.youtube.com/watch?v=aoQk4uq6Ol4"

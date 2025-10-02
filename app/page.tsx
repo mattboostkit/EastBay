@@ -151,7 +151,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-[200px_1fr] items-center">
               <div className="flex justify-center md:justify-start">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/National_Lottery_Circle.webp?updatedAt=1759393562842"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/National_Lottery_Circle.webp?updatedAt=1759393562842&tr=w-400,h-400"
                   alt="National Lottery Heritage Fund logo"
                   width={200}
                   height={200}

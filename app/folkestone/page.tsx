@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Coffee, Utensils, Camera, Users, Music } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Discover Folkestone | East Wear Bay Archaeological Project',
@@ -11,14 +10,23 @@ export const metadata: Metadata = {
 export default function FolkestonePage() {
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Discover Folkestone</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              A vibrant coastal town where history meets creativity, offering the perfect blend of archaeological heritage, 
-              artistic culture, and seaside charm for your field school experience.
-            </p>
+      <div className="relative h-[300px] md:h-[400px]">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Banner.webp?updatedAt=1759389970326"
+          alt="Folkestone panoramic view"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 flex items-center">
+          <div className="container">
+            <div className="max-w-2xl">
+              <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-white">Discover Folkestone</h1>
+              <p className="mt-4 text-lg text-white/90">
+                A vibrant coastal town where history meets creativity, offering the perfect blend of archaeological heritage,
+                artistic culture, and seaside charm for your field school experience.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -36,9 +44,9 @@ export default function FolkestonePage() {
                   quarter, excellent restaurants, and easy access to the stunning Kent Downs.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  For archaeology students, Folkestone offers the perfect base: rich in history from Roman times 
-                  to the present, with the East Wear Bay site just a short walk from the town centre. The town's 
-                  transformation into a cultural hub means you'll find plenty to explore during your downtime.
+                  For archaeology students, Folkestone offers the perfect base: rich in history from prehistory to
+                  the present, with the site at East Wear Bay just a short walk from the town centre. The town's
+                  status as a cultural hub means you'll find plenty to explore during your downtime.
                 </p>
                 <p className="text-muted-foreground">
                   Whether you're interested in the town's maritime heritage, contemporary art scene, or simply 
@@ -47,7 +55,7 @@ export default function FolkestonePage() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Welcome%20to%20Folkestone.webp?updatedAt=1759389970405"
                   alt="Folkestone harbour and seafront view"
                   fill
                   className="object-cover"
@@ -91,7 +99,7 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Hotels%20&%20B&Bs.webp?updatedAt=1759389959356"
                     alt="Modern hotel room with sea view"
                     fill
                     className="object-cover"
@@ -100,8 +108,8 @@ export default function FolkestonePage() {
                 <div className="p-6">
                   <h3 className="font-semibold mb-2">Hotels & B&Bs</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    From boutique hotels in the Creative Quarter to traditional B&Bs with sea views, 
-                    Folkestone offers accommodation for every budget. Popular areas include the Leas 
+                    From boutique hotels in the Creative Quarter to traditional B&Bs with sea views,
+                    Folkestone offers accommodation for every budget. Popular areas include the Leas
                     promenade and the Old High Street.
                   </p>
                   <p className="text-sm font-medium">Budget: £40-80/night</p>
@@ -111,7 +119,7 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Student%20&%20Budget.webp?updatedAt=1759389970581"
                     alt="Student accommodation common area"
                     fill
                     className="object-cover"
@@ -120,9 +128,7 @@ export default function FolkestonePage() {
                 <div className="p-6">
                   <h3 className="font-semibold mb-2">Student & Budget Options</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Field school participants often share apartments or stay in local hostels. The YHA 
-                    hostel offers affordable rooms, while private rentals can be found through local 
-                    letting agencies.
+                    Field school participants often share apartments. We can help you find suitable local rentals.
                   </p>
                   <p className="text-sm font-medium">Hostels: £20-35/night</p>
                   <p className="text-sm font-medium">Shared apartments: £300-500/week</p>
@@ -135,65 +141,107 @@ export default function FolkestonePage() {
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6">What to See & Do</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Camera className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Creative%20Quarter.webp?updatedAt=1759389959085"
+                    alt="Creative Quarter"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Creative Quarter</h3>
-                <p className="text-sm text-muted-foreground">
-                  Home to artists' studios, independent galleries, vintage shops, and the famous 
-                  Folkestone Artworks - an outdoor exhibition of contemporary art throughout the town.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Creative Quarter</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Home to artists' studios, independent galleries, vintage shops, and the famous
+                    Folkestone Artworks - an outdoor exhibition of contemporary art throughout the town.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <MapPin className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/The%20Leas.webp?updatedAt=1759390556879"
+                    alt="The Leas"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">The Leas & Coastal Park</h3>
-                <p className="text-sm text-muted-foreground">
-                  Victorian promenade with stunning Channel views, ornamental gardens, and the historic 
-                  Leas Lift - a water-powered funicular railway connecting the clifftop to the beach.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">The Leas</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Victorian promenade with stunning Channel views, ornamental gardens, and the historic
+                    Leas Lift - a water-powered funicular railway connecting the clifftop to the beach.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Users className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Folkestone%20Museum.webp?updatedAt=1759389957901"
+                    alt="Folkestone Museum"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Folkestone Museum</h3>
-                <p className="text-sm text-muted-foreground">
-                  Discover the town's history from prehistoric times through Roman occupation to the 
-                  present day. Special exhibitions often feature finds from local archaeological sites.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Folkestone Museum</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Discover the town's history from prehistoric times through Roman occupation to the
+                    present day. Special exhibitions often feature finds from local archaeological sites.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Coffee className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Harbour%20Arm.webp?updatedAt=1759389958260"
+                    alt="Harbour Arm"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Harbour Arm</h3>
-                <p className="text-sm text-muted-foreground">
-                  Renovated pier with food stalls, bars, and live music. Perfect for sunset drinks 
-                  after a day on site. Home to the Lighthouse Champagne Bar and seasonal events.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Harbour Arm</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Renovated pier with food stalls, bars, and live music. Perfect for sunset drinks
+                    after a day on site. Home to the Lighthouse Champagne Bar and seasonal events.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Utensils className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Food%20Scene.webp?updatedAt=1759389958872"
+                    alt="Food Scene"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Food Scene</h3>
-                <p className="text-sm text-muted-foreground">
-                  From Michelin-recommended restaurants to traditional fish and chips, Folkestone's 
-                  food scene punches above its weight. Don't miss Rocksalt or The Smokehouse.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Food Scene</h3>
+                  <p className="text-sm text-muted-foreground">
+                    From Michelin-recommended restaurants to traditional fish and chips, Folkestone's
+                    food scene punches above its weight. Don't miss Rocksalt or The Smokehouse.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border bg-card p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Music className="h-5 w-5" />
+              <div className="rounded-lg border bg-card overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Discover%20Folkestone/Quarterhouse.webp?updatedAt=1759389960179"
+                    alt="Quarterhouse"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Quarterhouse</h3>
-                <p className="text-sm text-muted-foreground">
-                  Cultural venue hosting theatre, music, comedy, and film. Regular exhibitions and 
-                  community events make it the heart of Folkestone's creative scene.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Quarterhouse</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Cultural venue hosting theatre, music, comedy, and film. Regular exhibitions and
+                    community events make it the heart of Folkestone's creative scene.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -216,11 +264,10 @@ export default function FolkestonePage() {
               <div className="rounded-lg border bg-muted/50 p-6">
                 <h3 className="font-semibold mb-4">Getting Around</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• <strong>On Foot:</strong> Town centre is compact and walkable</li>
-                  <li>• <strong>Local Buses:</strong> Regular services to all areas</li>
+                  <li>• <strong>On Foot:</strong> The town centre is compact and walkable, but fairly steep. The walk from the central bus station to site is roughly 30-40min.</li>
+                  <li>• <strong>Local Buses:</strong> Regular services to most areas, but bear in mind that the closest stop to the site will still involve walking up a bit of a hill.</li>
+                  <li>• <strong>Bike Hire:</strong> available from Renhams Cycle Centre in town.</li>
                   <li>• <strong>Taxis:</strong> Available at station and town centre</li>
-                  <li>• <strong>Bike Hire:</strong> Available from Cycle Shepway</li>
-                  <li>• <strong>To Site:</strong> 20-minute walk or short bus ride</li>
                   <li>• <strong>Parking:</strong> Pay & display throughout town</li>
                 </ul>
               </div>
@@ -232,7 +279,7 @@ export default function FolkestonePage() {
             <div className="text-center">
               <h2 className="text-2xl font-bold mb-4">Ready to Join Us?</h2>
               <p className="mb-6 max-w-2xl mx-auto">
-                Experience hands-on archaeology in a vibrant coastal town. Our field school combines 
+                Experience hands-on archaeology in a vibrant coastal town. Our field school combines
                 professional training with the opportunity to explore one of Kent's most creative communities.
               </p>
               <Link
@@ -243,6 +290,11 @@ export default function FolkestonePage() {
               </Link>
             </div>
           </section>
+
+          {/* Image Credits */}
+          <div className="mt-12 text-center text-sm text-muted-foreground">
+            <p>Images © Mark Houharane.</p>
+          </div>
         </div>
       </div>
     </>

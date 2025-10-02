@@ -620,27 +620,6 @@ export default async function Home() {
                 Field School 2026
               </Link>
             </div>
-
-            <div className="mt-16 grid grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={100} suffix="%" />
-                </div>
-                <p className="mt-1 text-sm text-bronze-200">Training Provided</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={0} prefix="£" />
-                </div>
-                <p className="mt-1 text-sm text-bronze-200">Cost to Volunteer</p>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-bronze-300">
-                  <AnimatedCounter end={18} suffix="+" />
-                </div>
-                <p className="mt-1 text-sm text-bronze-200">All Ages Welcome</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

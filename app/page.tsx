@@ -144,35 +144,6 @@ export default async function Home() {
 
       <SectionDivider variant="wave" />
 
-      {/* National Lottery Heritage Fund Section */}
-      <section className="bg-white py-12 md:py-16" aria-labelledby="funder-heading">
-        <div className="container">
-          <div className="mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-[200px_1fr] items-center">
-              <div className="flex justify-center md:justify-start">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/National_Lottery_Circle.webp?updatedAt=1759393562842&tr=w-400,h-400"
-                  alt="National Lottery Heritage Fund logo"
-                  width={200}
-                  height={200}
-                  className="w-[200px] h-[200px]"
-                />
-              </div>
-              <div>
-                <h2 id="funder-heading" className="text-2xl font-bold text-stone-900 mb-4">
-                  Supported by The National Lottery Heritage Fund
-                </h2>
-                <p className="text-stone-700 leading-relaxed">
-                  The National Lottery Heritage Fund is the largest funder for the UK's heritage. Using money raised by National Lottery players we support projects that connect people and communities to heritage. Our vision is for heritage to be valued, cared for and sustained for everyone, now and in the future. From historic buildings, our industrial legacy and the natural environment, to collections, traditions, stories and more. Heritage can be anything from the past that people value and want to pass on to future generations. We believe in the power of heritage to ignite the imagination, offer joy and inspiration, and to build pride in place and connection to the past.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="wave" />
-
       {/* About Section - Enhanced */}
       <section className="bg-gradient-to-br from-sand-50 to-white py-20 md:py-32" aria-labelledby="about-heading">
         <div className="container">
@@ -751,6 +722,35 @@ export default async function Home() {
                 <h3 className="text-xl font-bold text-bronze-700">Community Engagement</h3>
                 <p className="mt-3 text-stone-600 leading-relaxed">
                   Stay informed about our outreach programs and how you can get involved with preserving local heritage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="wave" />
+
+      {/* National Lottery Heritage Fund Section */}
+      <section className="bg-white py-12 md:py-16" aria-labelledby="funder-heading">
+        <div className="container">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[200px_1fr] items-center">
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/National_Lottery_Circle.webp?updatedAt=1759393562842&tr=w-400,h-400"
+                  alt="National Lottery Heritage Fund logo"
+                  width={200}
+                  height={200}
+                  className="w-[200px] h-[200px]"
+                />
+              </div>
+              <div>
+                <h2 id="funder-heading" className="text-2xl font-bold text-stone-900 mb-4">
+                  Supported by The National Lottery Heritage Fund
+                </h2>
+                <p className="text-stone-700 leading-relaxed">
+                  The National Lottery Heritage Fund is the largest funder for the UK's heritage. Using money raised by National Lottery players we support projects that connect people and communities to heritage. Our vision is for heritage to be valued, cared for and sustained for everyone, now and in the future. From historic buildings, our industrial legacy and the natural environment, to collections, traditions, stories and more. Heritage can be anything from the past that people value and want to pass on to future generations. We believe in the power of heritage to ignite the imagination, offer joy and inspiration, and to build pride in place and connection to the past.
                 </p>
               </div>
             </div>

@@ -111,7 +111,7 @@ export default async function Home() {
             </div>
 
             {/* Quick Stats */}
-            <div className="mt-16 grid grid-cols-2 gap-8 text-center">
+            <div className="mt-16 grid grid-cols-3 gap-8 text-center">
               <div className="animate-fade-up" style={{animationDelay: '0.2s'}}>
                 <div className="text-3xl font-bold text-bronze-300">
                   <AnimatedCounter end={12000} suffix="+" />
@@ -119,6 +119,12 @@ export default async function Home() {
                 <p className="mt-1 text-sm text-gray-300">years of history</p>
               </div>
               <div className="animate-fade-up" style={{animationDelay: '0.4s'}}>
+                <div className="text-3xl font-bold text-bronze-300">
+                  <AnimatedCounter end={5000} suffix="+" />
+                </div>
+                <p className="mt-1 text-sm text-gray-300">Artefacts Preserved</p>
+              </div>
+              <div className="animate-fade-up" style={{animationDelay: '0.6s'}}>
                 <div className="text-3xl font-bold text-bronze-300">
                   <AnimatedCounter end={500} suffix="+" />
                 </div>

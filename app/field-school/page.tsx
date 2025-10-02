@@ -147,6 +147,18 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
+          {/* Image 1 */}
+          <div className="mb-12">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%207.webp?updatedAt=1759391502324"
+                alt="Field school students excavating at East Wear Bay"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           {/* Pricing and Accommodation */}
           <div className="mb-12 rounded-lg border bg-card p-6 shadow-sm md:p-8">
             <h2 className="text-2xl font-bold">Pricing and Accommodation</h2>
@@ -271,6 +283,18 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
+          {/* Image 2 */}
+          <div className="mb-12">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%201.webp?updatedAt=1759391502366"
+                alt="Field school team working together at the site"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           {/* What You'll Learn */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">What You'll Learn</h2>
@@ -361,6 +385,18 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
+          {/* Image 3 */}
+          <div className="mb-12">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%2011.webp?updatedAt=1759391502385"
+                alt="Field school recording and documentation work"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           {/* Why Join Our Field School */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">Why Join Our Field School</h2>
@@ -416,6 +452,18 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
+          {/* Image 4 */}
+          <div className="mb-12">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%203.webp?updatedAt=1759391502439"
+                alt="Field school finds processing and analysis"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           {/* Participant Testimonials */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">Participant Testimonials</h2>
@@ -451,54 +499,15 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
-          {/* Field School Gallery */}
+          {/* Image 5 */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold">Field School in Action</h2>
-            <p className="mt-2 text-muted-foreground">
-              See what a typical field school experience looks like at East Wear Bay
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%207.webp?updatedAt=1759391502324"
-                  alt="Field school students excavating"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%2011.webp?updatedAt=1759391502385"
-                  alt="Field school recording work"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%203.webp?updatedAt=1759391502439"
-                  alt="Field school finds processing"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%205.webp?updatedAt=1759391502287"
-                  alt="Field school site work"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-64 rounded-lg overflow-hidden sm:col-span-2 lg:col-span-1">
-                <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%201.webp?updatedAt=1759391502366"
-                  alt="Field school team working together"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%205.webp?updatedAt=1759391502287"
+                alt="Field school hands-on site work"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 

@@ -155,7 +155,7 @@ export default async function Home() {
                   alt="National Lottery Heritage Fund logo"
                   width={200}
                   height={200}
-                  className="w-full max-w-[200px] h-auto"
+                  className="w-[200px] h-[200px]"
                 />
               </div>
               <div>

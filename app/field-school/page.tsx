@@ -238,7 +238,7 @@ export default async function FieldSchoolPage() {
               </div>
 
               <div className="rounded-lg border bg-card p-6">
-                <h3 className="text-lg font-semibold">Adalina Teoaca MSc MA PCIfA</h3>
+                <h3 className="text-lg font-semibold">Adelina Teoaca MSc MA PCIfA</h3>
                 <p className="text-sm font-medium text-muted-foreground">CAT Finds and Archives Manager</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Adelina is a specialist in bioarchaeology, an advocate for science in archaeology and an experienced post-excavation manager.
@@ -262,7 +262,7 @@ export default async function FieldSchoolPage() {
               </div>
 
               <div className="rounded-lg border bg-card p-6">
-                <h3 className="text-lg font-semibold">Enid Allison PhD MCIfA</h3>
+                <h3 className="text-lg font-semibold">Dr Enid Allison PhD MCIfA</h3>
                 <p className="text-sm font-medium text-muted-foreground">Environmental Manager and Specialist</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Enid oversees environmental sampling, processing and post-excavation work for CAT and carries out analysis of insect remains from sites throughout Britain and Ireland.
@@ -383,9 +383,9 @@ export default async function FieldSchoolPage() {
                   <Award className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium">Academic Credit</h3>
+                  <h3 className="text-lg font-medium">Skills Passport</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    University students can earn academic credit through our partnerships with UK and international institutions.
+                    Start collating experience for your BAJR skills passport by creating a portfolio of evidence.
                   </p>
                 </div>
               </div>
@@ -451,6 +451,57 @@ export default async function FieldSchoolPage() {
             </div>
           </div>
 
+          {/* Field School Gallery */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold">Field School in Action</h2>
+            <p className="mt-2 text-muted-foreground">
+              See what a typical field school experience looks like at East Wear Bay
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%207.webp?updatedAt=1759391502324"
+                  alt="Field school students excavating"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%2011.webp?updatedAt=1759391502385"
+                  alt="Field school recording work"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%203.webp?updatedAt=1759391502439"
+                  alt="Field school finds processing"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%205.webp?updatedAt=1759391502287"
+                  alt="Field school site work"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden sm:col-span-2 lg:col-span-1">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolImage%201.webp?updatedAt=1759391502366"
+                  alt="Field school team working together"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* What to See/Do in Folkestone */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold">What to See & Do in Folkestone</h2>
@@ -462,7 +513,7 @@ export default async function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolCreative%20Quarter%20and%20Harbour.webp?updatedAt=1759391382330"
                     alt="Folkestone Creative Quarter with art installations and cafes"
                     fill
                     className="object-cover"
@@ -471,7 +522,7 @@ export default async function FieldSchoolPage() {
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">Creative Quarter & Harbour</h3>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Explore Folkestone's transformation from traditional port to cultural hub. The Creative Quarter 
+                    Explore Folkestone's transformation from traditional port to cultural hub. The Creative Quarter
                     features artist studios, independent shops, and the famous Harbour Arm with its lighthouse bar.
                   </p>
                   <ul className="mt-4 text-sm text-muted-foreground space-y-1">
@@ -487,7 +538,7 @@ export default async function FieldSchoolPage() {
               <div className="rounded-lg border bg-card overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg"
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Field%20School/Field_SchoolHeritage%20and%20Nature.webp?updatedAt=1759391394575"
                     alt="The Leas promenade with Victorian gardens and sea views"
                     fill
                     className="object-cover"
@@ -496,7 +547,7 @@ export default async function FieldSchoolPage() {
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">Victorian Heritage & Nature</h3>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Discover Folkestone's Victorian elegance along the famous Leas promenade, with its ornamental 
+                    Discover Folkestone's Victorian elegance along the famous Leas promenade, with its ornamental
                     gardens, cliff railway, and stunning views across the English Channel to France.
                   </p>
                   <ul className="mt-4 text-sm text-muted-foreground space-y-1">

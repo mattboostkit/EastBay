@@ -148,14 +148,14 @@ export default async function Home() {
       <section className="bg-white py-12 md:py-16" aria-labelledby="funder-heading">
         <div className="container">
           <div className="mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-[400px_1fr] items-center">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[200px_1fr] items-center">
               <div className="flex justify-center md:justify-start">
                 <Image
-                  src="https://cdn.sanity.io/images/ce9tlzu0/production/6e30b07278abe58330563f8aee944d10bf489df8-400x200.png?w=400&h=200&fit=max"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/National_Lottery_Circle.webp?updatedAt=1759393562842"
                   alt="National Lottery Heritage Fund logo"
-                  width={400}
+                  width={200}
                   height={200}
-                  className="w-full max-w-[400px] h-auto"
+                  className="w-full max-w-[200px] h-auto"
                 />
               </div>
               <div>

@@ -145,24 +145,24 @@ export default async function Home() {
       <SectionDivider variant="wave" />
 
       {/* National Lottery Heritage Fund Section */}
-      <section className="bg-white py-16 md:py-24" aria-labelledby="funder-heading">
+      <section className="bg-white py-12 md:py-16" aria-labelledby="funder-heading">
         <div className="container">
           <div className="mx-auto max-w-5xl">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-[250px_1fr] items-center">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[140px_1fr] items-center">
               <div className="flex justify-center md:justify-start">
                 <Image
                   src="https://cdn.sanity.io/images/ce9tlzu0/production/6e30b07278abe58330563f8aee944d10bf489df8-400x200.png"
                   alt="National Lottery Heritage Fund logo"
                   width={400}
                   height={200}
-                  className="w-full max-w-[250px] h-auto"
+                  className="w-full max-w-[140px] h-auto opacity-90"
                 />
               </div>
               <div>
-                <h2 id="funder-heading" className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 id="funder-heading" className="text-xl font-bold text-stone-900 mb-3">
                   Supported by The National Lottery Heritage Fund
                 </h2>
-                <p className="text-stone-700 leading-relaxed">
+                <p className="text-sm text-stone-700 leading-relaxed">
                   The National Lottery Heritage Fund is the largest funder for the UK's heritage. Using money raised by National Lottery players we support projects that connect people and communities to heritage. Our vision is for heritage to be valued, cared for and sustained for everyone, now and in the future. From historic buildings, our industrial legacy and the natural environment, to collections, traditions, stories and more. Heritage can be anything from the past that people value and want to pass on to future generations. We believe in the power of heritage to ignite the imagination, offer joy and inspiration, and to build pride in place and connection to the past.
                 </p>
               </div>

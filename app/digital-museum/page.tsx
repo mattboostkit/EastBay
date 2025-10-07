@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description: 'Explore 3D digital models of artefacts discovered at the East Wear Bay Roman Villa, preserving these finds through digital technology before coastal erosion claims the site.',
 };
 
-// Revalidate page every hour
-export const revalidate = 3600;
+// Revalidate page every 60 seconds
+export const revalidate = 60;
 
 export default async function DigitalMuseumPage({
   searchParams,

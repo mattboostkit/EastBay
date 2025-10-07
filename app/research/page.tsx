@@ -421,9 +421,16 @@ export default function ResearchPage() {
                 </div>
                 
                 <div className="flex items-center justify-end gap-2 md:w-1/4">
-                  <span className="text-sm text-muted-foreground italic">
-                    Historical publication
-                  </span>
+                  <a
+                    href="https://www.amazon.co.uk/Folkestone-Excavation-Speculations-Historical-Sketches/dp/B0018Y0MNC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                    aria-label="Buy on Amazon"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Buy on Amazon
+                  </a>
                 </div>
               </div>
             </div>

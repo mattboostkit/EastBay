@@ -66,7 +66,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
+            value: 'camera=(), microphone=(), geolocation=(), accelerometer=(self "https://sketchfab.com"), gyroscope=(self "https://sketchfab.com"), magnetometer=(self "https://sketchfab.com")',
           },
         ],
       },

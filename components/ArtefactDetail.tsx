@@ -83,9 +83,8 @@ export default function ArtefactDetail({ artefact }: ArtefactProps) {
               src={artefact.modelUrl}
               title={artefact.title}
               frameBorder="0"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"
+              allow="autoplay; fullscreen; xr-spatial-tracking; gyroscope; accelerometer; magnetometer"
+              allowFullScreen
               className="w-full h-full"
             />
           </div>

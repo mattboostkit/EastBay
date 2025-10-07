@@ -85,7 +85,8 @@ export function ModelViewer({
             autospin: autoSpin,
             transparent,
           }) : 'about:blank'}
-          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allow="autoplay; fullscreen; xr-spatial-tracking; gyroscope; accelerometer; magnetometer"
+          allowFullScreen
           className="absolute top-0 left-0 h-full w-full rounded-lg"
           loading="lazy"
         ></iframe>

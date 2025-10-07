@@ -107,19 +107,16 @@ export default function Navbar({ siteSettings }: NavbarProps) {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
 
-            {/* Site Logo and Title */}
-            <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay - Home">
+            {/* Site Logo */}
+            <Link href="/" className="flex items-center" aria-label="East Wear Bay - Home">
               <Image
                 src="/EWB_Logo.svg"
                 alt="East Wear Bay Logo"
-                width={60}
+                width={200}
                 height={60}
                 className="h-16 w-auto"
                 priority
               />
-              <span className="hidden sm:inline-block text-xl font-semibold !text-black dark:!text-white">
-                East Wear Bay
-              </span>
             </Link>
           </div>
 

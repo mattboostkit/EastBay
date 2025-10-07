@@ -94,7 +94,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-20 items-center justify-between py-2">
           <div className="flex items-center gap-2">
             {/* Mobile Menu Toggle */}
             <button
@@ -110,10 +110,10 @@ export default function Navbar({ siteSettings }: NavbarProps) {
             {/* Site Logo and Title */}
             <Link href="/" className="flex items-center gap-3" aria-label="East Wear Bay - Home">
               <Image
-                src="/Hare_Logo.png"
-                alt="East Wear Bay Hare Logo"
-                width={80}
-                height={80}
+                src="/EWB_Logo.svg"
+                alt="East Wear Bay Logo"
+                width={60}
+                height={60}
                 className="h-16 w-auto"
                 priority
               />
@@ -197,7 +197,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
       {isMenuOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 top-16 z-40 border-t border-border bg-card md:hidden"
+          className="fixed inset-0 top-20 z-40 border-t border-border bg-card md:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
@@ -225,7 +225,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
       {isSearchOpen && (
         <div
           id="search-panel"
-          className="fixed inset-x-0 top-16 z-40 border-b border-border bg-card p-4 shadow-lg md:p-6"
+          className="fixed inset-x-0 top-20 z-40 border-b border-border bg-card p-4 shadow-lg md:p-6"
           role="dialog"
           aria-modal="true"
           aria-label="Site search"

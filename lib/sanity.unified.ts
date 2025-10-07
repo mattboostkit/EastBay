@@ -169,7 +169,42 @@ export async function fetchUpcomingEvents() {
 
 // Research publication utility functions
 export async function fetchAllResearchPublications() {
-  return client.fetch(`*[_type == "researchPublication"] | order(publishDate desc)`);
+  return client.fetch(`*[_type == "researchPublication"] | order(publicationDate desc) {
+    _id,
+    title,
+    slug,
+    authors[]-> {
+      name,
+      role
+    },
+    externalAuthors,
+    publicationType,
+    category,
+    featured,
+    coverImage,
+    isbn,
+    abstract,
+    journal,
+    volume,
+    issue,
+    pages,
+    publisher,
+    publicationDate,
+    doi,
+    url,
+    pdfFile {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      }
+    },
+    pdfUrl,
+    keywords,
+    citation,
+    openAccess
+  }`);
 }
 
 // Education resource utility functions

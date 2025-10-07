@@ -127,6 +127,30 @@ export default {
       type: 'string',
     },
     {
+      name: 'siteCode',
+      title: 'Site Code',
+      type: 'string',
+      description: 'e.g., "EWB/FS/15"',
+    },
+    {
+      name: 'sfNumber',
+      title: 'SF Number',
+      type: 'string',
+      description: 'Small Finds number',
+    },
+    {
+      name: 'contextNo',
+      title: 'Context Number',
+      type: 'string',
+    },
+    {
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'e.g., "Worked", "Spindle whorl", "Arrowhead"',
+    },
+    {
       name: 'conservation',
       title: 'Conservation Status',
       type: 'string',

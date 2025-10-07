@@ -1,11 +1,17 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Users, Heart, HandHelpingIcon, Building, Mail, Info } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { client, urlForImage } from '@/lib/sanity.client'
+import { partnersQuery } from '@/lib/queries/partners'
 
 export const metadata = {
   title: 'About | East Wear Bay Project',
   description: 'Learn about the East Wear Bay Archaeological Project, our team, community initiatives, and how to get involved.',
 }
+
+// Revalidate page every 60 seconds for faster updates
+export const revalidate = 60
 
 const aboutItems = [
   {
@@ -31,7 +37,7 @@ const aboutItems = [
   },
   {
     title: 'Partners',
-    description: 'Meet our project partners, collaborating institutions, and organizations supporting archaeological research at East Wear Bay.',
+    description: 'Meet our project partners, collaborating institutions, and organisations supporting archaeological research at East Wear Bay.',
     href: '/partners',
     icon: HandHelpingIcon,
     color: 'text-purple-500',
@@ -45,7 +51,15 @@ const aboutItems = [
   },
 ]
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  // Fetch partners from Sanity
+  const partners = await client.fetch(partnersQuery)
+
+  // Filter for Principal Funders
+  const funders = partners.filter((p: any) =>
+    p.partnershipType === 'Principal Funder'
+  )
+
   return (
     <div className="container py-8 md:py-12">
       <div className="mb-8 text-center">
@@ -141,6 +155,53 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+      {/* Our Funders Section */}
+      {funders.length > 0 && (
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Our Funders</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {funders.slice(0, 11).map((funder: any) => (
+              <div key={funder._id} className="flex flex-col">
+                <div className="mb-4 bg-white border rounded-lg p-6 h-32 flex items-center justify-center">
+                  {funder.logo ? (
+                    funder.website ? (
+                      <a
+                        href={funder.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <Image
+                          src={urlForImage(funder.logo)?.url() || ''}
+                          alt={funder.logo.alt || funder.name}
+                          width={200}
+                          height={80}
+                          className="max-h-20 w-auto object-contain"
+                        />
+                      </a>
+                    ) : (
+                      <Image
+                        src={urlForImage(funder.logo)?.url() || ''}
+                        alt={funder.logo.alt || funder.name}
+                        width={200}
+                        height={80}
+                        className="max-h-20 w-auto object-contain"
+                      />
+                    )
+                  ) : (
+                    <span className="text-sm text-muted-foreground font-medium">{funder.name}</span>
+                  )}
+                </div>
+                <h3 className="font-semibold text-base mb-2">{funder.name}</h3>
+                {funder.description && (
+                  <p className="text-sm text-muted-foreground leading-relaxed">{funder.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

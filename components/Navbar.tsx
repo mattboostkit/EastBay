@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Search, SunMoon } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -94,7 +93,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-20 items-center justify-between py-2">
+        <div className="container flex h-24 items-center justify-between py-4 md:h-28 md:py-6">
           <div className="flex items-center gap-2">
             {/* Mobile Menu Toggle */}
             <button
@@ -109,13 +108,11 @@ export default function Navbar({ siteSettings }: NavbarProps) {
 
             {/* Site Logo */}
             <Link href="/" className="flex items-center" aria-label="East Wear Bay - Home">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/EWB_Logo.svg"
                 alt="East Wear Bay Logo"
-                width={200}
-                height={60}
-                className="h-16 w-auto"
-                priority
+                className="h-16 w-auto sm:h-20 md:h-24 logo-invert"
               />
             </Link>
           </div>
@@ -194,7 +191,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
       {isMenuOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 top-20 z-40 border-t border-border bg-card md:hidden"
+          className="fixed inset-0 top-24 z-40 border-t border-border bg-card md:hidden md:top-28"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
@@ -222,7 +219,7 @@ export default function Navbar({ siteSettings }: NavbarProps) {
       {isSearchOpen && (
         <div
           id="search-panel"
-          className="fixed inset-x-0 top-20 z-40 border-b border-border bg-card p-4 shadow-lg md:p-6"
+          className="fixed inset-x-0 top-24 z-40 border-b border-border bg-card p-4 shadow-lg md:top-28 md:p-6"
           role="dialog"
           aria-modal="true"
           aria-label="Site search"

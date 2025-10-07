@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { urlForImage } from '@/lib/sanity.client'
 
@@ -15,14 +14,12 @@ export default function Footer({ siteSettings }: FooterProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/Hare_Logo.png"
-                alt="East Wear Bay Hare Logo"
-                width={80}
-                height={80}
-                className="h-16 w-auto"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/EWB_Logo.svg"
+                alt="East Wear Bay Logo"
+                className="h-16 w-auto sm:h-20 md:h-24 logo-invert"
               />
-              <h3 className="text-xl font-semibold !text-black dark:!text-white">East Wear Bay</h3>
             </div>
             <p className="text-muted-foreground">
               Preserving the Folkestone Roman Villa through community archaeology, digital technology, and education.

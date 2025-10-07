@@ -79,15 +79,16 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
             onChange={(e) => handlePeriodChange(e.target.value)}
           >
             <option value="">All Periods</option>
-            <option value="Prehistoric">Prehistoric</option>
+            <option value="Palaeolithic">Palaeolithic</option>
+            <option value="Mesolithic">Mesolithic</option>
+            <option value="Neolithic">Neolithic</option>
             <option value="Bronze Age">Bronze Age</option>
             <option value="Iron Age">Iron Age</option>
             <option value="Roman">Roman</option>
-            <option value="1st Century CE">1st Century CE</option>
-            <option value="2nd Century CE">2nd Century CE</option>
-            <option value="3rd Century CE">3rd Century CE</option>
-            <option value="Multi-period">Multi-period</option>
-            <option value="Archaeological Specimen">Archaeological Specimen</option>
+            <option value="Anglo-Saxon">Anglo-Saxon</option>
+            <option value="Medieval">Medieval</option>
+            <option value="Post-Medieval">Post-Medieval</option>
+            <option value="Modern">Modern</option>
           </select>
         </div>
 
@@ -112,9 +113,24 @@ export default function ArtefactSearch({ periods, categories }: ArtefactSearchPr
             onChange={(e) => handleCategoryChange(e.target.value)}
           >
             <option value="">All Categories</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>{category}</option>
-            ))}
+            <option value="Personal adornment">Personal adornment</option>
+            <option value="Toilet/surgical/pharmaceutical">Toilet/surgical/pharmaceutical</option>
+            <option value="Textile working">Textile working</option>
+            <option value="Household utensils/furniture">Household utensils/furniture</option>
+            <option value="Recreational">Recreational</option>
+            <option value="Weighing and measuring">Weighing and measuring</option>
+            <option value="Written communications">Written communications</option>
+            <option value="Transport">Transport</option>
+            <option value="Buildings and services">Buildings and services</option>
+            <option value="Tools">Tools</option>
+            <option value="Fasteners and fittings">Fasteners and fittings</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Military equipment">Military equipment</option>
+            <option value="Religious beliefs">Religious beliefs</option>
+            <option value="Metal working">Metal working</option>
+            <option value="Antler/horn/bone working">Antler/horn/bone working</option>
+            <option value="Pottery vessel manufacture">Pottery vessel manufacture</option>
+            <option value="Unknown">Unknown</option>
           </select>
         </div>
         

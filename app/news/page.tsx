@@ -269,27 +269,6 @@ export default async function NewsPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA with Brand Colors */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 py-16">
-        <div className="container">
-          <div className="mx-auto max-w-2xl text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Stay Connected</h2>
-            <p className="text-lg mb-6 text-white/90">
-              Subscribe to our newsletter for weekly updates on discoveries, events, and research findings
-            </p>
-            <div className="flex gap-2 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-white/95 text-foreground"
-              />
-              <Button className="bg-secondary hover:bg-secondary/90 text-white">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

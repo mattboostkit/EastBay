@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { 
   fetchAllArtefacts, 
@@ -84,16 +85,27 @@ export default async function DigitalMuseumPage({
   
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Digital Museum</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Explore 3D models and photographs of artefacts discovered at East Wear Bay, digitally preserved as part of our race against coastal erosion.
-            </p>
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Digital%20Museum/Digital_Museum_Banner.webp?updatedAt=1759861001813"
+          alt="Digital Museum - East Wear Bay artefacts"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">Digital Museum</h1>
+              <p className="mt-4 text-lg text-white/90 md:text-xl">
+                Explore 3D models and photographs of artefacts discovered at East Wear Bay, digitally preserved as part of our race against coastal erosion.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       
       <div className="container py-12">
         {/* Search and Filter */}
@@ -190,6 +202,18 @@ export default async function DigitalMuseumPage({
             </nav>
           </div>
         )}
+
+        {/* Acknowledgements Section */}
+        <section className="mt-16 border-t pt-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-muted-foreground">
+              Canterbury Archaeological Trust would like to extend its warmest thanks to the following volunteers and CAT staff who have worked hard to develop and deliver this fantastic resource:
+            </p>
+            <p className="mt-4 text-sm font-medium">
+              Illia Shabalkin, Mary Fenske, Alicia Allan Padilla, Eleni Padilla, Heather Miller, Frances Morgan, Heather Hanson, Sawney Hewitt.
+            </p>
+          </div>
+        </section>
       </div>
     </>
   );

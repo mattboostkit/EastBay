@@ -122,6 +122,11 @@
   @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }
 
+/* Logo inversion for dark mode */
+.dark .logo-invert {
+  filter: invert(1);
+}
+
 /* Style for Sketchfab iframes */
 .sketchfab-embed-wrapper {
   @apply w-full h-full relative rounded-lg overflow-hidden;

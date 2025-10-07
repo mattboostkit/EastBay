@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Download, Lock, LockOpen, FileText, Calendar, Users, BookOpen } from 'lucide-react'
 import { fetchAllResearchPublications } from '@/lib/sanity.unified'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { PageHero } from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Research, Reports and Publications | East Wear Bay Archaeological Project',
@@ -44,12 +44,28 @@ export default async function PublicationsPage() {
 
   return (
     <>
-      <PageHero
-        title="Research, Reports and Publications"
-        description="Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain."
-        icon={BookOpen}
-        variant="gradient"
-      />
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Research/Research_Banner.webp?updatedAt=1759861559853"
+          alt="Research, Reports and Publications - East Wear Bay"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container text-center text-white">
+            <BookOpen className="mx-auto h-16 w-16 mb-6" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Research, Reports and Publications
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+              Scholarly articles and research papers from the East Wear Bay Archaeological Project, advancing our understanding of Roman Britain.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className="container py-12">
 

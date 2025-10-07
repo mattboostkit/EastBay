@@ -28,6 +28,7 @@ export default {
       name: 'images',
       title: 'Images',
       type: 'array',
+      description: 'The first image will be the main image by default. You can mark a different image as the main image if needed.',
       of: [
         {
           type: 'image',
@@ -51,7 +52,7 @@ export default {
               name: 'isMainImage',
               title: 'Main Image',
               type: 'boolean',
-              description: 'Set as the main image for this artefact',
+              description: 'Check this to override and make this image the main image',
               initialValue: false,
             },
           ],

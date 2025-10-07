@@ -14,11 +14,27 @@ export const metadata: Metadata = {
 export default async function PublicationsPage() {
   const publications = await fetchAllResearchPublications()
 
-  const formatAuthors = (authors: string[]) => {
-    if (!authors || authors.length === 0) return ''
-    if (authors.length === 1) return authors[0]
-    if (authors.length === 2) return authors.join(' and ')
-    return authors.slice(0, -1).join(', ') + ' and ' + authors[authors.length - 1]
+  const formatAuthors = (publication: any) => {
+    const authorNames: string[] = []
+
+    // Add team member authors
+    if (publication.authors && Array.isArray(publication.authors)) {
+      publication.authors.forEach((author: any) => {
+        if (author?.name) {
+          authorNames.push(author.name)
+        }
+      })
+    }
+
+    // Add external authors
+    if (publication.externalAuthors && Array.isArray(publication.externalAuthors)) {
+      authorNames.push(...publication.externalAuthors)
+    }
+
+    if (authorNames.length === 0) return 'Author not specified'
+    if (authorNames.length === 1) return authorNames[0]
+    if (authorNames.length === 2) return authorNames.join(' and ')
+    return authorNames.slice(0, -1).join(', ') + ' and ' + authorNames[authorNames.length - 1]
   }
 
   const formatDate = (dateString: string) => {
@@ -53,7 +69,7 @@ export default async function PublicationsPage() {
                           {publication.title}
                         </CardTitle>
                         <CardDescription className="mt-2">
-                          {formatAuthors(publication.authors)}
+                          {formatAuthors(publication)}
                         </CardDescription>
                       </div>
                       {publication.featured && (

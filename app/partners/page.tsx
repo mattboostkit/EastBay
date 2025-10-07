@@ -177,8 +177,8 @@ export default async function PartnersPage() {
             <div className="rounded-lg border bg-muted/50 p-8">
               <h2 className="text-2xl font-bold text-center mb-4">Become a Partner</h2>
               <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-                We welcome partnerships with organizations that share our commitment to archaeological preservation, 
-                education, and community engagement. Whether through funding, expertise, or resources, 
+                We welcome partnerships with organisations that share our commitment to archaeological preservation,
+                education, and community engagement. Whether through funding, expertise, or resources,
                 your support can make a real difference.
               </p>
               <div className="mt-6 text-center">

@@ -11,16 +11,27 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      <div className="bg-muted py-12 md:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Research, Reports and Publications</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Academic studies, scientific analysis, and publications documenting the Roman villa at East Wear Bay and its significance.
-            </p>
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Research/Research_Banner.webp?updatedAt=1759861559853"
+          alt="Research, Reports and Publications - East Wear Bay"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">Research, Reports and Publications</h1>
+              <p className="mt-4 text-lg text-white/90 md:text-xl">
+                Academic studies, scientific analysis, and publications documenting the Roman villa at East Wear Bay and its significance.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       
       <div className="container py-12">
         {/* Search and Filter */}

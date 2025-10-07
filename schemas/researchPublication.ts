@@ -47,10 +47,48 @@ export default {
           { title: 'Book', value: 'book' },
           { title: 'Book Chapter', value: 'book-chapter' },
           { title: 'Conference Paper', value: 'conference-paper' },
+          { title: 'Interim Report', value: 'interim-report' },
+          { title: 'Management Plan', value: 'management-plan' },
+          { title: 'Research Paper', value: 'research-paper' },
           { title: 'Report', value: 'report' },
           { title: 'Thesis', value: 'thesis' },
         ],
       },
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Featured Publication', value: 'featured' },
+          { title: 'Grey Literature Reports', value: 'grey-literature' },
+          { title: 'Publications', value: 'publications' },
+        ],
+      },
+      description: 'Determines which section this appears in on the research page',
+    },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Display as the main featured publication',
+      initialValue: false,
+    },
+    {
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      description: 'Cover image or thumbnail for the publication',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'isbn',
+      title: 'ISBN',
+      type: 'string',
+      description: 'For books',
     },
     {
       name: 'abstract',
@@ -101,10 +139,19 @@ export default {
       description: 'Link to the publication',
     },
     {
+      name: 'pdfFile',
+      title: 'PDF File',
+      type: 'file',
+      description: 'Upload the PDF file here',
+      options: {
+        accept: '.pdf',
+      },
+    },
+    {
       name: 'pdfUrl',
-      title: 'PDF URL',
+      title: 'External PDF URL',
       type: 'url',
-      description: 'Link to download the PDF',
+      description: 'Or provide an external link to the PDF (if not uploading directly)',
     },
     {
       name: 'keywords',

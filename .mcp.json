@@ -1,18 +1,47 @@
 {
   "mcpServers": {
-    "sanity": {
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "npx.cmd",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ],
+      "env": {}
+    },
+    "context7": {
       "type": "stdio",
       "command": "cmd",
       "args": [
         "/c",
         "npx",
         "-y",
-        "@sanity/mcp-server@latest"
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-07a53930-f1eb-47c3-9663-db7175baa596"
+      ],
+      "env": {}
+    },
+    "bright-data": {
+      "type": "stdio",
+      "command": "npx.cmd",
+      "args": [
+        "@brightdata/mcp"
+      ],
+      "env": {
+        "API_TOKEN": "06d5905c03bc20b51e9928cb82911b1ffb55d444d42df7b15cf850d96dd1c099"
+      }
+    },
+    "sanity": {
+      "type": "stdio",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@sanity/mcp-server"
       ],
       "env": {
         "SANITY_PROJECT_ID": "ce9tlzu0",
         "SANITY_DATASET": "production",
-        "SANITY_API_TOKEN": "sk0pb5l38Q4wEJXNlduoGyHC5VqlUfcHRavFewNw2B3tltbXOKDQ94tHikppD3mMPA2cj6lVfj3N00PO6hglXf8cJal7H2mI4mMavSYed7FfnmrXi9AjjgNm1ard2UdDqol4nKkNr91wMF4hoDR0XpgIuXG3jx1Cdmf35GAyTF1Wy2N7dyR9",
+        "SANITY_API_TOKEN": "skRHOBtj53HncZvr9maXTJVoNrSDqRVN92UUcsSIiX1P2Fh0FJU0mVf1GlHt5LBupIMRApZkrmhLUZcVMLLmR6VkbLnrGq0NjqAStwfkH0LrH2M35mZWbi1Kr5ioHZznoua67VeVN4Cq4E74a3VP2ODtck8b0BGEp08Ntk6qc1pO5nQEwew3",
         "MCP_USER_ROLE": "developer"
       }
     }

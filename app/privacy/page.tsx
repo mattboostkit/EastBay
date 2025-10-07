@@ -76,7 +76,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold">Data Sharing and Disclosure</h2>
             <p>We do not sell, trade, or rent your personal information. We may share your information:</p>
             <ul>
-              <li>With partner organizations involved in our archaeological work (with your consent)</li>
+              <li>With partner organisations involved in our archaeological work (with your consent)</li>
               <li>With service providers who assist in operating our website and programs</li>
               <li>To comply with legal obligations or protect our rights</li>
               <li>In connection with educational or research publications (anonymized)</li>
@@ -86,8 +86,8 @@ export default function PrivacyPage() {
           <section className="mt-8">
             <h2 className="text-2xl font-semibold">Data Security</h2>
             <p>
-              We implement appropriate technical and organizational measures to protect your personal 
-              information against unauthorized access, alteration, disclosure, or destruction. However, 
+              We implement appropriate technical and organisational measures to protect your personal
+              information against unauthorized access, alteration, disclosure, or destruction. However,
               no method of transmission over the internet is 100% secure.
             </p>
           </section>

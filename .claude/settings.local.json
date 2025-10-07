@@ -70,13 +70,19 @@
       "mcp__sanity__update_document",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_network_requests",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm run sanity:deploy:*)",
+      "Bash(npm run:*)",
+      "Read(//tmp/chrome-devtools-mcp-K6ZO1P/**)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "sanity"
+    "sanity",
+    "chrome-devtools",
+    "context7",
+    "bright-data"
   ]
 }

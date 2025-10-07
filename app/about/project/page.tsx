@@ -92,7 +92,7 @@ export default function AboutPage() {
           <section className="mb-16">
             <h2 className="text-2xl font-bold">Our Beneficiaries</h2>
             <p className="mt-3 text-muted-foreground">
-              We are proud to have worked with numerous schools, community groups, and organizations across Kent.
+              We are proud to have worked with numerous schools, community groups, and organisations across Kent.
             </p>
             <div className="mt-6 space-y-8">
               <div>

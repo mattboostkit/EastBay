@@ -299,10 +299,10 @@ export default async function PublicationsPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg">Quern Production at Folkestone, South-East Kent: An Interim Note</CardTitle>
-                  <CardDescription>P. T. Keller (1989)</CardDescription>
+                  <CardDescription>P. T Keller, 2011</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-2">Britannia, Volume 20, November 1989, pp. 193-200</p>
+                  <p className="text-sm text-muted-foreground mb-2">Britannia, Volume 20, November 1989, pp. 193 - 200</p>
                   <a
                     href="https://doi.org/10.2307/526162"
                     className="inline-flex items-center text-sm text-primary hover:underline"

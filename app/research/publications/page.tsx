@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: 'Academic publications, research papers, and scholarly articles about the Folkestone Roman Villa and East Wear Bay archaeological excavations.',
 }
 
+// Revalidate every 60 seconds to ensure fresh data
+export const revalidate = 60
+
 export default async function PublicationsPage() {
   const publications = await fetchAllResearchPublications()
 

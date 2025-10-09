@@ -11,7 +11,8 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
+  // Disable CDN to ensure fresh data from Sanity
+  useCdn: false,
   // Token only needed for authenticated requests (e.g., preview mode)
   token: process.env.SANITY_API_TOKEN,
 });

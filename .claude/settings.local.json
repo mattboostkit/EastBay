@@ -73,7 +73,13 @@
       "Bash(npm run build:*)",
       "Bash(npm run sanity:deploy:*)",
       "Bash(npm run:*)",
-      "Read(//tmp/chrome-devtools-mcp-K6ZO1P/**)"
+      "Read(//tmp/chrome-devtools-mcp-K6ZO1P/**)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(pnpm outdated:*)",
+      "Bash(pnpm update:*)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

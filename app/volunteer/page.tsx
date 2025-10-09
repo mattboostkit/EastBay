@@ -14,7 +14,7 @@ export default function VolunteerPage() {
       {/* Hero Section with Image */}
       <section className="relative h-[75vh] min-h-[600px] overflow-hidden">
         <Image
-          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Home-Success.jpg?updatedAt=1755600476499"
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Banner.webp?updatedAt=1760024242920"
           alt="Volunteers excavating at East Wear Bay"
           fill
           priority
@@ -58,9 +58,18 @@ export default function VolunteerPage() {
             <div className="grid gap-6 md:grid-cols-2">
               {/* Excavation Volunteers */}
               <div className="rounded-lg border bg-card p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Users className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Excavation Volunteers</h3>
+                <div className="mb-4">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Excavation%20Volunteer.webp?updatedAt=1760024242730"
+                    alt="Excavation volunteer at work"
+                    width={600}
+                    height={400}
+                    className="rounded-lg object-cover w-full h-48 mb-4"
+                  />
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="h-6 w-6 text-primary" />
+                    <h3 className="text-xl font-semibold">Excavation Volunteers</h3>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
                   Join our field team in uncovering the past. Work alongside professional archaeologists and students to excavate, record, and preserve archaeological features. Learn excavation techniques, stratigraphic recording, and the use of archaeological tools. Perfect for those who enjoy outdoor work and hands-on learning.
@@ -68,7 +77,7 @@ export default function VolunteerPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span>May to October (weather dependent)</span>
+                    <span>Seasonal</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <MapPin className="h-4 w-4 text-muted-foreground" />
@@ -79,9 +88,18 @@ export default function VolunteerPage() {
 
               {/* Finds Processing Volunteers */}
               <div className="rounded-lg border bg-card p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Award className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Finds Processing Volunteers</h3>
+                <div className="mb-4">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Finds%20Processing%20Volunteer.webp?updatedAt=1760024243314"
+                    alt="Finds processing volunteer at work"
+                    width={600}
+                    height={400}
+                    className="rounded-lg object-cover w-full h-48 mb-4"
+                  />
+                  <div className="flex items-center gap-3 mb-4">
+                    <Award className="h-6 w-6 text-primary" />
+                    <h3 className="text-xl font-semibold">Finds Processing Volunteers</h3>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
                   Help process and catalogue archaeological finds in our dedicated facilities. Activities include washing, marking, sorting, and cataloguing artefacts. Learn about different pottery types, building materials, and small finds. Work in a comfortable indoor environment with flexible hours year-round.
@@ -100,9 +118,18 @@ export default function VolunteerPage() {
 
               {/* Community Outreach Volunteers */}
               <div className="rounded-lg border bg-card p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Heart className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Community Outreach Volunteers</h3>
+                <div className="mb-4">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Community_Outreach.webp?updatedAt=1760024372869"
+                    alt="Community outreach volunteer at work"
+                    width={600}
+                    height={400}
+                    className="rounded-lg object-cover w-full h-48 mb-4"
+                  />
+                  <div className="flex items-center gap-3 mb-4">
+                    <Heart className="h-6 w-6 text-primary" />
+                    <h3 className="text-xl font-semibold">Community Outreach Volunteers</h3>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
                   Share our discoveries with the public through events, school visits, and open days. Help run educational activities, guide site tours, and engage visitors with hands-on demonstrations. Perfect for those with strong communication skills and enthusiasm for sharing knowledge.
@@ -121,12 +148,21 @@ export default function VolunteerPage() {
 
               {/* Digital Documentation Volunteers */}
               <div className="rounded-lg border bg-card p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Star className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Digital Documentation Volunteers</h3>
+                <div className="mb-4">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Digital%20Documentation%20Volunteer.webp?updatedAt=1760024243972"
+                    alt="Digital documentation volunteer at work"
+                    width={600}
+                    height={400}
+                    className="rounded-lg object-cover w-full h-48 mb-4"
+                  />
+                  <div className="flex items-center gap-3 mb-4">
+                    <Star className="h-6 w-6 text-primary" />
+                    <h3 className="text-xl font-semibold">Digital Documentation Volunteers</h3>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Support our digital archive through photography, database entry, and digital drawing. Help create 3D models, manage our online collections, and digitise paper records. Training provided in archaeological photography and digital recording techniques.
+                  Support our digital archive through photography and database entry. Help create 3D models, manage our online collections, and digitise paper records. Training provided in archaeological photography and digital recording techniques.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
@@ -135,7 +171,7 @@ export default function VolunteerPage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <MapPin className="h-4 w-4 text-muted-foreground" />
-                    <span>CAT offices or remote</span>
+                    <span>CAT offices, Canterbury</span>
                   </div>
                 </div>
               </div>
@@ -510,7 +546,7 @@ export default function VolunteerPage() {
 
           {/* Equipment & Preparation */}
           <section className="mb-16">
-            <h2 className="mb-8 text-2xl font-bold">Equipment & Preparation</h2>
+            <h2 className="mb-8 text-2xl font-bold">Equipment and Preparation for Excavation Volunteers</h2>
 
             <div className="grid gap-8 lg:grid-cols-2">
               {/* What to Bring */}

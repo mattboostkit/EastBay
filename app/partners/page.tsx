@@ -24,9 +24,9 @@ export default async function PartnersPage() {
     p.partnershipType === 'Principal Funder'
   )
 
-  // Lead Partners - exactly matching "Lead Partner"
+  // Lead Partners - exactly matching "Lead Partner", excluding Creative Folkestone
   const leadPartners = partners.filter((p: any) =>
-    p.partnershipType === 'Lead Partner'
+    p.partnershipType === 'Lead Partner' && p._id !== '5c7b9d50-38f6-44c3-bb07-d0f4d9e0fc42'
   )
 
   return (
@@ -57,7 +57,7 @@ export default async function PartnersPage() {
             </div>
           </div>
 
-          {/* Principal Funders Section - with logos and descriptions */}
+          {/* Principal Funders Section - with logos only */}
           {funders.length > 0 && (
             <div className="mb-16">
               <h2 className="text-3xl font-bold mb-8 text-center">Principal Funders</h2>
@@ -95,9 +95,6 @@ export default async function PartnersPage() {
                       )}
                     </div>
                     <h3 className="font-semibold text-base mb-2">{funder.name}</h3>
-                    {funder.description && (
-                      <p className="text-sm text-muted-foreground leading-relaxed">{funder.description}</p>
-                    )}
                   </div>
                 ))}
               </div>

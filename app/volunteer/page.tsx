@@ -305,8 +305,8 @@ export default function VolunteerPage() {
                   </button>
                   <p className="text-sm text-muted-foreground">
                     Or email us at{' '}
-                    <a href="mailto:get-involved@canterburytrust.co.uk" className="text-primary hover:underline">
-                      get-involved@canterburytrust.co.uk
+                    <a href="mailto:get_involved@canterburytrust.ac.uk" className="text-primary hover:underline">
+                      get_involved@canterburytrust.ac.uk
                     </a>
                   </p>
                 </div>

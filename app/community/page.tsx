@@ -343,7 +343,7 @@ export default function CommunityPage() {
                     href="/partners"
                     className="inline-flex items-center text-sm font-medium text-primary"
                   >
-                    Learn more
+                    Sponsor Us
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -371,7 +371,7 @@ export default function CommunityPage() {
                     href="/partners"
                     className="inline-flex items-center text-sm font-medium text-primary"
                   >
-                    Learn more
+                    Sponsor Us
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -399,7 +399,7 @@ export default function CommunityPage() {
                     href="/partners"
                     className="inline-flex items-center text-sm font-medium text-primary"
                   >
-                    Learn more
+                    Sponsor Us
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -437,18 +437,8 @@ export default function CommunityPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-bronze-800 group-hover:text-bronze-900 transition-colors">Co-Curated Exhibition</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  During September and October of 2024, we hosted an exhibition in Folkestone called 'A reflection of the self: the art and archaeology of East Wear Bay'. The exhibition aimed to explore how the past is reflected in the present and how we can interpret archaeology in ways that help us to understand the human experience throughout time. Local artists contributed work that was displayed alongside archaeological artefacts to enable storytelling and self-reflection. Recreated photographs of the 1924 excavations were just some of the artworks on display, and these can be explored below.
+                  During September and October of 2024, we hosted an exhibition in Folkestone called 'A reflection of the self: the art and archaeology of East Wear Bay'. The exhibition aimed to explore how the past is reflected in the present and how we can interpret archaeology in ways that help us to understand the human experience throughout time. Local artists contributed work that was displayed alongside archaeological artefacts to enable storytelling and self-reflection. Recreated photographs of the 1924 excavations were just some of the artworks on display.
                 </p>
-
-                <div className="mt-4">
-                  <Link
-                    href="/gallery"
-                    className="inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View gallery
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

@@ -120,7 +120,7 @@ export default function VolunteerPage() {
               <div className="rounded-lg border bg-card p-6">
                 <div className="mb-4">
                   <Image
-                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Community_Outreach.webp?updatedAt=1760024372869"
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Volunteer/Community_Outreach.webp?updatedAt=1760025037266&tr=w-1050%2Ch-732%2Cfo-custom%2Ccm-extract"
                     alt="Community outreach volunteer at work"
                     width={600}
                     height={400}

@@ -142,11 +142,11 @@ export default async function PublicationsPage() {
 
                     {/* Actions */}
                     <div className="flex items-center gap-4">
-                      {publication.pdfUrl ? (
-                        <a 
-                          href={publication.pdfUrl}
+                      {(publication.pdfFile?.asset?.url || publication.pdfUrl) ? (
+                        <a
+                          href={publication.pdfFile?.asset?.url || publication.pdfUrl}
                           className="inline-flex items-center text-sm text-primary hover:underline"
-                          target="-blank"
+                          target="_blank"
                           rel="noopener noreferrer"
                         >
                           <Download className="mr-1 h-4 w-4" />

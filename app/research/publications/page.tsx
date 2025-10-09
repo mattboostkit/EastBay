@@ -194,13 +194,24 @@ export default async function PublicationsPage() {
                 <p className="text-sm text-muted-foreground mb-2">ISBN: 9781870545273</p>
                 <p className="text-sm text-muted-foreground mb-2">Price: £14.99</p>
                 <p className="text-sm text-muted-foreground mb-4">Available directly from Canterbury Archaeological Trust. Please contact us to request a printed copy.</p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center text-sm text-primary hover:underline"
-                >
-                  Contact us to order
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
+                <div className="flex items-center gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                  >
+                    Contact us to order
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                  <a
+                    href="https://www.amazon.co.uk/Folkestone-1500-Ian-Coulson/dp/1870545273"
+                    className="inline-flex items-center text-sm text-primary hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Buy now on Amazon
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
               </CardContent>
             </Card>
           </div>

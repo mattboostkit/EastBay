@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PageHero } from '@/components/PageHero'
 import { BookOpen, Download, Users, Heart, ArrowRight } from 'lucide-react'
 import { fetchAllSensoryStories } from '@/lib/sanity.unified'
@@ -16,11 +17,28 @@ export default async function SensoryStoriesPage() {
   const sensoryStories = await fetchAllSensoryStories()
   return (
     <>
-      <PageHero
-        title="Sensory Stories"
-        description="Making archaeology accessible through multisensory storytelling experiences"
-        icon={BookOpen}
-      />
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] overflow-hidden">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Sensory%20Story/Sensory%20Story%20Banner.webp?updatedAt=1760085986542"
+          alt="Sensory Stories - East Wear Bay"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container text-center text-white">
+            <BookOpen className="mx-auto h-16 w-16 mb-6" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Sensory Stories
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+              Making archaeology accessible through multisensory storytelling experiences
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className="container py-12">
         <div className="mx-auto max-w-4xl">
@@ -43,45 +61,73 @@ export default async function SensoryStoriesPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Who Are These Resources For?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-lg border p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Users className="h-5 w-5" />
+              <div className="rounded-lg border overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Sensory%20Story/Special%20educational%20needs.webp?updatedAt=1760085986037"
+                    alt="Special Educational Needs"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Special Educational Needs</h3>
-                <p className="text-sm text-muted-foreground">
-                  Perfect for schools and centres working with children and adults with profound,
-                  complex and multiple learning disabilities.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Special Educational Needs</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Perfect for schools and centres working with children and adults with profound,
+                    complex and multiple learning disabilities.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Heart className="h-5 w-5" />
+              <div className="rounded-lg border overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Sensory%20Story/Dementia%20care%20settings.webp?updatedAt=1760085985894"
+                    alt="Dementia Care Settings"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Dementia Care Settings</h3>
-                <p className="text-sm text-muted-foreground">
-                  Designed to stimulate memories and encourage engagement for people living with
-                  dementia in care homes and day centres.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Dementia Care Settings</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Designed to stimulate memories and encourage engagement for people living with
+                    dementia in care homes and day centres.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <BookOpen className="h-5 w-5" />
+              <div className="rounded-lg border overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Sensory%20Story/Early%20years%20education.webp?updatedAt=1760085986074"
+                    alt="Early Years Education"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Early Years Education</h3>
-                <p className="text-sm text-muted-foreground">
-                  Engaging resources for nurseries and primary schools to introduce young children
-                  to archaeology and local history.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Early Years Education</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Engaging resources for nurseries and primary schools to introduce young children
+                    to archaeology and local history.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-lg border p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Users className="h-5 w-5" />
+              <div className="rounded-lg border overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Sensory%20Story/Autism%20support%20groups.webp?updatedAt=1760085985368"
+                    alt="Autism Support Groups"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold mb-2">Autism Support Groups</h3>
-                <p className="text-sm text-muted-foreground">
-                  Structured, predictable stories that provide a calming way to explore archaeology
-                  for people on the autism spectrum.
-                </p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">Autism Support Groups</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Structured, predictable stories that provide a calming way to explore archaeology
+                    for people on the autism spectrum.
+                  </p>
+                </div>
               </div>
             </div>
           </section>

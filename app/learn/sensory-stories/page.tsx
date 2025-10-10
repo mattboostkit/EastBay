@@ -81,41 +81,6 @@ export default function SensoryStoriesPage() {
             </div>
           </section>
 
-          {/* What's Included */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">What's Included in Our Sensory Stories?</h2>
-            <div className="space-y-4">
-              <div className="rounded-lg border-l-4 border-primary bg-muted/50 p-6">
-                <h3 className="font-semibold mb-2">The Story Book</h3>
-                <p className="text-muted-foreground">
-                  A beautifully illustrated story that takes readers on a journey through the
-                  archaeological discoveries at East Wear Bay, written in simple, accessible language.
-                </p>
-              </div>
-              <div className="rounded-lg border-l-4 border-primary bg-muted/50 p-6">
-                <h3 className="font-semibold mb-2">Sensory Activities Guide</h3>
-                <p className="text-muted-foreground">
-                  Step-by-step instructions for creating multisensory experiences to accompany the
-                  story, including suggestions for objects to touch, sounds to make, and activities to try.
-                </p>
-              </div>
-              <div className="rounded-lg border-l-4 border-primary bg-muted/50 p-6">
-                <h3 className="font-semibold mb-2">Visual Resources</h3>
-                <p className="text-muted-foreground">
-                  High-quality images and symbols that can be printed and used alongside the story
-                  to support understanding and engagement.
-                </p>
-              </div>
-              <div className="rounded-lg border-l-4 border-primary bg-muted/50 p-6">
-                <h3 className="font-semibold mb-2">Facilitator Notes</h3>
-                <p className="text-muted-foreground">
-                  Guidance for parents, carers, teachers and support workers on how to use the
-                  resources effectively with different groups.
-                </p>
-              </div>
-            </div>
-          </section>
-
           {/* Download Section */}
           <section className="mb-12">
             <div className="rounded-xl bg-gradient-to-br from-bronze-50 to-sand-50 border-2 border-bronze-200 p-8 text-center">

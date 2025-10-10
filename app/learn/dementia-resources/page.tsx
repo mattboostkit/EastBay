@@ -25,7 +25,7 @@ export default async function DementiaResourcesPage() {
         description="Creating meaningful connections to local heritage through accessible archaeology sessions designed for people living with dementia."
         icon={Heart}
         variant="image"
-        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/DementiaCommunity_EWB.webp?updatedAt=1758123737298"
+        backgroundImage="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Banner.webp?updatedAt=1760086932607"
       />
 
       <div className="container py-12">
@@ -46,11 +46,16 @@ export default async function DementiaResourcesPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-8">What We Offer</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Sensory%20exploration.webp?updatedAt=1760086931867"
+                  alt="Sensory exploration with archaeological artefacts"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <Brain className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Sensory Exploration</CardTitle>
               </CardHeader>
               <CardContent>
@@ -61,11 +66,16 @@ export default async function DementiaResourcesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Creative%20activities.webp?updatedAt=1760086933245"
+                  alt="Creative activities with pottery"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <Palette className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Creative Activities</CardTitle>
               </CardHeader>
               <CardContent>
@@ -76,11 +86,16 @@ export default async function DementiaResourcesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Story%20telling.webp?updatedAt=1760086932422"
+                  alt="Storytelling session with artefacts"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <Music className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Storytelling Sessions</CardTitle>
               </CardHeader>
               <CardContent>
@@ -91,11 +106,16 @@ export default async function DementiaResourcesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Informal%20sessions.webp?updatedAt=1760086933066"
+                  alt="Informal session with participants"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <Coffee className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Informal Sessions</CardTitle>
               </CardHeader>
               <CardContent>
@@ -106,11 +126,16 @@ export default async function DementiaResourcesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Outreach%20visits.webp?updatedAt=1760087078089"
+                  alt="Outreach visit to care home"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <Home className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Outreach Visits</CardTitle>
               </CardHeader>
               <CardContent>
@@ -121,11 +146,16 @@ export default async function DementiaResourcesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-bronze-200 hover:shadow-lg transition-shadow">
+            <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Resource%20packs.webp?updatedAt=1760086932531"
+                  alt="Resource packs and materials"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bronze-100 mb-4">
-                  <BookOpen className="h-6 w-6 text-bronze-600" />
-                </div>
                 <CardTitle>Resource Packs</CardTitle>
               </CardHeader>
               <CardContent>

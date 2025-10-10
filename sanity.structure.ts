@@ -177,6 +177,9 @@ export const structure = (S: StructureBuilder) =>
                 .title('Educational Resources')
                 .child(S.documentTypeList('educationResource').title('Educational Resources')),
               S.listItem()
+                .title('Sensory Stories')
+                .child(S.documentTypeList('sensoryStory').title('Sensory Stories')),
+              S.listItem()
                 .title('Research Publications')
                 .child(S.documentTypeList('researchPublication').title('Research Publications')),
             ])
@@ -230,6 +233,6 @@ export const structure = (S: StructureBuilder) =>
       
       // Show the rest of the document types
       ...S.documentTypeListItems().filter(
-        listItem => !['siteSettings', 'homepageSection', 'artefact', 'post', 'event', 'educationResource', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'partner', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
+        listItem => !['siteSettings', 'homepageSection', 'artefact', 'post', 'event', 'educationResource', 'sensoryStory', 'researchPublication', 'teamMember', 'testimonial', 'sponsor', 'partner', 'video', 'timelineEntry', 'page'].includes(listItem.getId() as string)
       ),
     ]);

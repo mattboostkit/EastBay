@@ -103,6 +103,20 @@ export default function SensoryStoriesPage() {
                   be notified when they're ready.
                 </p>
               </div>
+              <div className="mt-8 pt-8 border-t border-bronze-200">
+                <p className="text-muted-foreground mb-4">
+                  We have specially made sensory story packs that are free to borrow from CAT. The packs contain everything you need to tell the story and a fully illustrated story book.
+                </p>
+                <a
+                  href="https://www.canterburytrust.co.uk/general-7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary/90 transition-colors"
+                >
+                  Order here
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </section>
 

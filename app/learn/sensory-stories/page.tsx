@@ -81,10 +81,39 @@ export default function SensoryStoriesPage() {
             </div>
           </section>
 
+          {/* How to Use */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">How to Use Sensory Stories</h2>
+            <div className="prose prose-stone max-w-none">
+              <ol className="space-y-3">
+                <li>
+                  <strong>Prepare your space:</strong> Create a calm, comfortable environment with
+                  minimal distractions. Gather any sensory objects you'll be using.
+                </li>
+                <li>
+                  <strong>Read at the right pace:</strong> Take your time with each page, allowing
+                  participants to fully experience each sensory element.
+                </li>
+                <li>
+                  <strong>Encourage participation:</strong> Invite touch, movement, and vocalisation
+                  where appropriate, but never force engagement.
+                </li>
+                <li>
+                  <strong>Adapt as needed:</strong> Feel free to simplify or expand the story based
+                  on your group's needs and responses.
+                </li>
+                <li>
+                  <strong>Repeat and revisit:</strong> Familiarity builds comfort and engagement -
+                  don't be afraid to use the story multiple times.
+                </li>
+              </ol>
+            </div>
+          </section>
+
           {/* Download Section */}
           <section className="mb-12">
             <div className="rounded-xl bg-gradient-to-br from-bronze-50 to-sand-50 border-2 border-bronze-200 p-8 text-center">
-              <h2 className="text-2xl font-bold mb-4">Download Our Free Resources</h2>
+              <h2 className="text-2xl font-bold mb-4">Access Our Free Resources</h2>
               <p className="text-muted-foreground mb-6">
                 All our sensory story resources are available to download free of charge.
                 We believe everyone should have access to their local heritage.
@@ -117,35 +146,6 @@ export default function SensoryStoriesPage() {
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
-            </div>
-          </section>
-
-          {/* How to Use */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">How to Use Sensory Stories</h2>
-            <div className="prose prose-stone max-w-none">
-              <ol className="space-y-3">
-                <li>
-                  <strong>Prepare your space:</strong> Create a calm, comfortable environment with
-                  minimal distractions. Gather any sensory objects you'll be using.
-                </li>
-                <li>
-                  <strong>Read at the right pace:</strong> Take your time with each page, allowing
-                  participants to fully experience each sensory element.
-                </li>
-                <li>
-                  <strong>Encourage participation:</strong> Invite touch, movement, and vocalisation
-                  where appropriate, but never force engagement.
-                </li>
-                <li>
-                  <strong>Adapt as needed:</strong> Feel free to simplify or expand the story based
-                  on your group's needs and responses.
-                </li>
-                <li>
-                  <strong>Repeat and revisit:</strong> Familiarity builds comfort and engagement -
-                  don't be afraid to use the story multiple times.
-                </li>
-              </ol>
             </div>
           </section>
 

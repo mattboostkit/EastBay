@@ -132,73 +132,6 @@ export default function DementiaResourcesPage() {
           </div>
         </section>
 
-        {/* How Sessions Work */}
-        <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl font-bold mb-6">How Our Sessions Work</h2>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-700 font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Welcome & Introduction</h3>
-                    <p className="text-muted-foreground">
-                      A gentle start with refreshments and informal chat, allowing participants to settle in comfortably.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-700 font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Object Handling</h3>
-                    <p className="text-muted-foreground">
-                      Exploring real artefacts and replica objects through touch, encouraging sensory engagement and discussion.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-700 font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Creative Activity</h3>
-                    <p className="text-muted-foreground">
-                      Simple, enjoyable craft activities inspired by archaeological finds, adapted to different abilities.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-700 font-bold">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Sharing Stories</h3>
-                    <p className="text-muted-foreground">
-                      Encouraging participants to share their own memories and stories, creating connections between past and present.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image
-                src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Community/DementiaCommunity_EWB.webp?updatedAt=1758123737298"
-                alt="Dementia friendly session in progress"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Benefits */}
         <section className="mb-16 bg-sand-50 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Benefits of Archaeological Engagement</h2>
@@ -208,7 +141,7 @@ export default function DementiaResourcesPage() {
               <div>
                 <h3 className="font-semibold mb-1">Stimulates Memories</h3>
                 <p className="text-sm text-muted-foreground">
-                  Objects and activities can trigger long-term memories and encourage reminiscence.
+                  Objects and activities can trigger long-term memories and encourage conversation.
                 </p>
               </div>
             </div>

@@ -124,7 +124,7 @@ export default function DementiaResourcesPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Downloadable resources for families and carers, including activity ideas,
+                  Downloadable resources and loan boxes for families and carers, including activity ideas,
                   conversation prompts, and sensory story materials.
                 </p>
               </CardContent>

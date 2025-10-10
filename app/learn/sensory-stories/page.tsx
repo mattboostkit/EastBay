@@ -2,13 +2,18 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHero } from '@/components/PageHero'
 import { BookOpen, Download, Users, Heart, ArrowRight } from 'lucide-react'
+import { fetchAllSensoryStories } from '@/lib/sanity.unified'
 
 export const metadata: Metadata = {
   title: 'Sensory Stories | East Wear Bay Archaeological Project',
   description: 'Download our sensory story resources designed to make archaeology accessible for people with profound learning disabilities, autism, and dementia.',
 }
 
-export default function SensoryStoriesPage() {
+// Revalidate every 60 seconds to ensure fresh data
+export const revalidate = 60
+
+export default async function SensoryStoriesPage() {
+  const sensoryStories = await fetchAllSensoryStories()
   return (
     <>
       <PageHero
@@ -118,20 +123,26 @@ export default function SensoryStoriesPage() {
                 All our sensory story resources are available to download free of charge.
                 We believe everyone should have access to their local heritage.
               </p>
-              <div className="space-y-4">
-                <button
-                  disabled
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white opacity-50 cursor-not-allowed"
-                >
-                  <Download className="h-5 w-5" />
-                  Sensory Story Book (Coming Soon)
-                </button>
+              {sensoryStories && sensoryStories.length > 0 ? (
+                <div className="space-y-4">
+                  {sensoryStories.map((story: any) => (
+                    <a
+                      key={story._id}
+                      href={story.pdfFile?.asset?.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary/90 transition-colors"
+                    >
+                      <Download className="h-5 w-5" />
+                      {story.title}
+                    </a>
+                  ))}
+                </div>
+              ) : (
                 <p className="text-sm text-muted-foreground">
-                  Our sensory story resources are currently being finalised and will be available
-                  for download soon. Please check back or <Link href="/contact" className="text-primary hover:underline">contact us</Link> to
-                  be notified when they're ready.
+                  Sensory stories will be available for download soon.
                 </p>
-              </div>
+              )}
               <div className="mt-8 pt-8 border-t border-bronze-200">
                 <p className="text-muted-foreground mb-4">
                   We have specially made sensory story packs that are free to borrow from CAT. The packs contain everything you need to tell the story and a fully illustrated story book.

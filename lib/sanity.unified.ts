@@ -256,3 +256,42 @@ export async function fetchAllVideos() {
 export async function fetchVideosByCategory(category: string) {
   return client.fetch(`*[_type == "video" && $category in categories] | order(_createdAt desc)`, { category });
 }
+
+// Sensory story utility functions
+export async function fetchAllSensoryStories() {
+  return client.fetch(`*[_type == "sensoryStory"] | order(order asc, _createdAt desc) {
+    _id,
+    title,
+    description,
+    pdfFile {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      }
+    },
+    coverImage,
+    featured,
+    order
+  }`);
+}
+
+export async function fetchFeaturedSensoryStories() {
+  return client.fetch(`*[_type == "sensoryStory" && featured == true] | order(order asc, _createdAt desc) {
+    _id,
+    title,
+    description,
+    pdfFile {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      }
+    },
+    coverImage,
+    featured,
+    order
+  }`);
+}

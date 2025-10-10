@@ -5,13 +5,19 @@ import { ArrowRight, Download, Heart, Users, Brain, Sparkles, BookOpen, Home, Co
 import { PageHero } from '@/components/PageHero'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { fetchDementiaResourceByType } from '@/lib/sanity.unified'
 
 export const metadata: Metadata = {
   title: 'Dementia Friendly Sessions | East Wear Bay Archaeological Project',
   description: 'Accessible archaeology sessions designed for people with dementia, using sensory engagement and hands-on activities to connect with local heritage.',
 }
 
-export default function DementiaResourcesPage() {
+// Revalidate every 60 seconds to ensure fresh data
+export const revalidate = 60
+
+export default async function DementiaResourcesPage() {
+  const activityGuide = await fetchDementiaResourceByType('activity-guide')
+  const objectHandlingGuide = await fetchDementiaResourceByType('object-handling-guide')
   return (
     <>
       <PageHero
@@ -213,10 +219,22 @@ export default function DementiaResourcesPage() {
                 <p className="text-sm text-muted-foreground mb-4">
                   A collection of simple, engaging activities using everyday objects to explore history and archaeology together.
                 </p>
-                <Button className="w-full" variant="outline">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download PDF Guide
-                </Button>
+                {activityGuide && activityGuide.pdfFile?.asset?.url ? (
+                  <a
+                    href={activityGuide.pdfFile.asset.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF Guide
+                  </a>
+                ) : (
+                  <Button className="w-full" variant="outline" disabled>
+                    <Download className="h-4 w-4 mr-2" />
+                    Coming Soon
+                  </Button>
+                )}
               </CardContent>
             </Card>
 
@@ -229,30 +247,28 @@ export default function DementiaResourcesPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Conversation starters linked to archaeological themes, designed to prompt memories and encourage storytelling.
+                  You can download conversation starters linked to archaeological themes, designed to prompt memories and encourage storytelling, from our 'conversation' folder on the shared drive.
                 </p>
-                <Button className="w-full" variant="outline">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Prompt Cards
-                </Button>
               </CardContent>
             </Card>
 
             <Card className="border-bronze-200">
               <CardHeader>
-                <CardTitle>Sensory Story: Roman Villa</CardTitle>
+                <CardTitle>Loan Boxes</CardTitle>
                 <CardDescription>
-                  An immersive story experience about life in Roman times
+                  We have sensory loan boxes available free to borrow
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  A multi-sensory story with suggestions for props and activities to bring the Roman Villa to life.
+                  We have specially made sensory story packs that are free to borrow from CAT. The packs contain everything you need to tell the story and a fully illustrated story book.
                 </p>
-                <Button className="w-full" variant="outline">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Story Pack
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full" variant="outline">
+                    <Heart className="h-4 w-4 mr-2" />
+                    Get in Touch
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -267,10 +283,22 @@ export default function DementiaResourcesPage() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Guidance on using household objects and photographs to create meaningful sensory experiences.
                 </p>
-                <Button className="w-full" variant="outline">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Guide
-                </Button>
+                {objectHandlingGuide && objectHandlingGuide.pdfFile?.asset?.url ? (
+                  <a
+                    href={objectHandlingGuide.pdfFile.asset.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download Guide
+                  </a>
+                ) : (
+                  <Button className="w-full" variant="outline" disabled>
+                    <Download className="h-4 w-4 mr-2" />
+                    Coming Soon
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -282,59 +310,47 @@ export default function DementiaResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
               <p className="italic text-muted-foreground mb-4">
-                "The session was wonderful. My mother, who rarely engages with activities anymore,
-                spent a full hour handling the pottery pieces and telling us stories about her childhood.
-                It was magical to see her so animated."
+                "We attended a session with our dad and it was great to see his face light up when he picked up a piece of pottery."
+              </p>
+              <footer className="text-sm font-semibold">— Family carer</footer>
+            </blockquote>
+
+            <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
+              <p className="italic text-muted-foreground mb-4">
+                "Everyone loved the session and we had lots of lovely comments about how well it was presented. Thank you so much."
+              </p>
+              <footer className="text-sm font-semibold">— Day centre manager</footer>
+            </blockquote>
+
+            <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
+              <p className="italic text-muted-foreground mb-4">
+                "The session was wonderful. My mother, who rarely engages with activities anymore, spent a full hour handling the pottery pieces and telling us stories about her childhood. It was magical to see her so animated."
               </p>
               <footer className="text-sm font-semibold">— Family member</footer>
             </blockquote>
 
             <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
               <p className="italic text-muted-foreground mb-4">
-                "The CAT team are so patient and understanding. They create a warm, welcoming atmosphere
-                where our residents feel valued and heard. The archaeological activities always generate
-                lots of conversation and smiles."
+                "The CAT team are so patient and understanding. They create a warm, welcoming atmosphere where our residents feel valued and heard. The archaeological activities always generate lots of conversation and smiles."
               </p>
               <footer className="text-sm font-semibold">— Care home activity coordinator</footer>
-            </blockquote>
-
-            <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
-              <p className="italic text-muted-foreground mb-4">
-                "These sessions give participants a real sense of purpose. They're not just passive recipients
-                - they're actively contributing their knowledge and memories to our understanding of local history."
-              </p>
-              <footer className="text-sm font-semibold">— Session facilitator</footer>
-            </blockquote>
-
-            <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
-              <p className="italic text-muted-foreground mb-4">
-                "The combination of tactile objects and creative activities works so well. Even those who
-                struggle with verbal communication can participate fully through touch and making."
-              </p>
-              <footer className="text-sm font-semibold">— Dementia support worker</footer>
             </blockquote>
           </div>
         </section>
 
-        {/* Book a Session */}
+        {/* Get in Touch */}
         <section className="bg-gradient-to-br from-bronze-700 to-bronze-900 rounded-xl p-8 text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">Book a Session for Your Group</h2>
+          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-bronze-100">
             We deliver sessions to care homes, day centres, and community groups across Kent.
             All sessions are free and adapted to meet your group's specific needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-white text-bronze-800 hover:bg-bronze-50">
-                <Heart className="h-5 w-5 mr-2" />
-                Enquire About Sessions
-              </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="border-bronze-300 text-bronze-100 hover:bg-bronze-800/20">
-              <Download className="h-5 w-5 mr-2" />
-              Download Information Pack
+          <Link href="/contact">
+            <Button size="lg" className="bg-white text-bronze-800 hover:bg-bronze-50">
+              <Heart className="h-5 w-5 mr-2" />
+              Contact Us
             </Button>
-          </div>
+          </Link>
         </section>
       </div>
     </>

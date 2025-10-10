@@ -295,3 +295,40 @@ export async function fetchFeaturedSensoryStories() {
     order
   }`);
 }
+
+// Dementia resource utility functions
+export async function fetchAllDementiaResources() {
+  return client.fetch(`*[_type == "dementiaResource"] | order(order asc, _createdAt desc) {
+    _id,
+    title,
+    resourceType,
+    description,
+    pdfFile {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      }
+    },
+    order
+  }`);
+}
+
+export async function fetchDementiaResourceByType(resourceType: string) {
+  return client.fetch(`*[_type == "dementiaResource" && resourceType == $resourceType][0] {
+    _id,
+    title,
+    resourceType,
+    description,
+    pdfFile {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      }
+    },
+    order
+  }`, { resourceType });
+}

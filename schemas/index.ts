@@ -15,6 +15,7 @@ import siteSettings from './siteSettings';
 import fieldSchoolSession from './fieldSchoolSession';
 import volunteerOpportunity from './volunteerOpportunity';
 import sensoryStory from './sensoryStory';
+import dementiaResource from './dementiaResource';
 
 // Import your schema types here
 export const schemaTypes = [
@@ -35,5 +36,6 @@ export const schemaTypes = [
   fieldSchoolSession,
   volunteerOpportunity,
   sensoryStory,
+  dementiaResource,
   // Add your schemas here
 ];

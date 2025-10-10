@@ -17,6 +17,8 @@ const navigationGroups = [
     items: [
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
+      { title: 'Events', href: '/events' },
+      { title: 'Gallery', href: '/gallery' },
       { title: 'News', href: '/news' },
       { title: 'Project Timeline', href: '/timeline' },
     ]
@@ -26,6 +28,8 @@ const navigationGroups = [
     href: "/learn",
     items: [
       { title: 'Education Resources', href: '/education' },
+      { title: 'Dementia Resources', href: '/learn/dementia-resources' },
+      { title: 'Sensory Stories', href: '/learn/sensory-stories' },
       { title: 'Research, Reports and Publications', href: '/research/publications' },
     ]
   },
@@ -34,6 +38,7 @@ const navigationGroups = [
     href: "/about",
     items: [
       { title: 'About the Project', href: '/about/project' },
+      { title: 'Our Team', href: '/team' },
       { title: 'Community & Outreach', href: '/community' },
       { title: 'Volunteer', href: '/volunteer' },
       { title: 'Partners', href: '/partners' },

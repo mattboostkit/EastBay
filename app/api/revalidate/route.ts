@@ -12,37 +12,71 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Invalid secret' }, { status: 401 })
     }
 
-    // Get the type from the request body
+    // Get the type and slug from the request body
     const body = await request.json()
-    const { _type } = body
+    const { _type, slug } = body
+
+    console.log(`[Revalidate] Received webhook for ${_type}${slug ? ` (${slug})` : ''}`)
 
     // Revalidate based on the type of content that was updated
     switch (_type) {
       case 'partner':
+      case 'sponsor':
         revalidatePath('/partners')
         revalidatePath('/') // Homepage might show partners
+        console.log('[Revalidate] Cleared: /partners, /')
         break
       case 'artefact':
         revalidatePath('/digital-museum')
-        revalidatePath('/digital-museum/[slug]', 'page')
         revalidatePath('/') // Homepage shows featured artefacts
+        revalidatePath('/search') // Search page
+        // If we have a slug, revalidate the specific page
+        if (slug) {
+          revalidatePath(`/digital-museum/${slug}`)
+          console.log(`[Revalidate] Cleared: /digital-museum/${slug}`)
+        }
+        console.log('[Revalidate] Cleared: /digital-museum, /, /search')
         break
       case 'newsPost':
         revalidatePath('/news')
-        revalidatePath('/news/[slug]', 'page')
+        if (slug) {
+          revalidatePath(`/news/${slug}`)
+          console.log(`[Revalidate] Cleared: /news/${slug}`)
+        }
+        console.log('[Revalidate] Cleared: /news')
         break
       case 'teamMember':
         revalidatePath('/team')
+        revalidatePath('/about')
+        console.log('[Revalidate] Cleared: /team, /about')
+        break
+      case 'event':
+        revalidatePath('/events')
+        revalidatePath('/')
+        console.log('[Revalidate] Cleared: /events, /')
+        break
+      case 'publication':
+        revalidatePath('/research/publications')
+        revalidatePath('/research')
+        console.log('[Revalidate] Cleared: /research/publications, /research')
+        break
+      case 'siteSettings':
+        // Site settings affect all pages
+        revalidatePath('/', 'layout')
+        console.log('[Revalidate] Cleared: All pages (layout change)')
         break
       default:
         // Revalidate all pages as a fallback
         revalidatePath('/', 'layout')
+        console.log('[Revalidate] Cleared: All pages (unknown type)')
     }
 
     return NextResponse.json({
       revalidated: true,
       type: _type,
-      message: `Successfully revalidated ${_type || 'all'} pages`
+      slug: slug || null,
+      message: `Successfully revalidated ${_type}${slug ? ` (${slug})` : ''} pages`,
+      timestamp: new Date().toISOString()
     })
   } catch (err) {
     console.error('Error revalidating:', err)

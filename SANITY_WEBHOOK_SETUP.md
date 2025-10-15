@@ -1,11 +1,16 @@
 # Sanity Webhook Setup for Real-Time Updates
 
-This guide explains how to configure Sanity to automatically update the live website when students add or modify artefacts.
+⚠️ **This guide is deprecated. Please use the new comprehensive guides:**
+
+- **For non-technical users**: See `QUICK_START_WEBHOOKS.md` (5-minute setup)
+- **For detailed instructions**: See `INSTANT_UPDATES_SETUP.md` (complete guide with troubleshooting)
+
+---
 
 ## How It Works
 
-1. **ISR (Incremental Static Regeneration)**: The website automatically checks for updates every 60 seconds
-2. **On-Demand Revalidation**: Sanity webhooks can trigger immediate updates when content changes
+1. **ISR (Incremental Static Regeneration)**: The website checks for updates every 60 seconds
+2. **On-Demand Revalidation**: Sanity webhooks trigger immediate updates (1-3 seconds) when content changes
 
 ## Setting Up the Webhook
 

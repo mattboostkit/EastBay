@@ -109,7 +109,7 @@ export default async function DementiaResourcesPage() {
             <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
               <div className="relative h-48 w-full">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Informal%20sessions.webp?updatedAt=1760086933066"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Outreach%20visits.webp?updatedAt=1760087078089&tr=w-748%2Ch-655%2Cfo-custom%2Ccm-extract"
                   alt="Informal session with participants"
                   fill
                   className="object-cover"
@@ -129,7 +129,7 @@ export default async function DementiaResourcesPage() {
             <Card className="border-bronze-200 hover:shadow-lg transition-shadow overflow-hidden">
               <div className="relative h-48 w-full">
                 <Image
-                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Outreach%20visits.webp?updatedAt=1760087078089"
+                  src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Dementia%20Friendly/Outreach%20visits.webp?updatedAt=1760087078089&tr=w-748%2Ch-655%2Cfo-custom%2Ccm-extract"
                   alt="Outreach visit to care home"
                   fill
                   className="object-cover"
@@ -340,30 +340,23 @@ export default async function DementiaResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
               <p className="italic text-muted-foreground mb-4">
-                "We attended a session with our dad and it was great to see his face light up when he picked up a piece of pottery."
+                "Being able to look at and hold thousands of years old pottery, listen to the information given and be able to share stories of their own relevant interests."
               </p>
-              <footer className="text-sm font-semibold">— Family carer</footer>
+              <footer className="text-sm font-semibold">— Care home staff member</footer>
             </blockquote>
 
             <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
               <p className="italic text-muted-foreground mb-4">
-                "Everyone loved the session and we had lots of lovely comments about how well it was presented. Thank you so much."
+                "Taking really tactile objects for [people with dementia] to hold is a really positive thing and they really enjoy it."
               </p>
-              <footer className="text-sm font-semibold">— Day centre manager</footer>
+              <footer className="text-sm font-semibold">— CAT Engagement Team member</footer>
             </blockquote>
 
             <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
               <p className="italic text-muted-foreground mb-4">
-                "The session was wonderful. My mother, who rarely engages with activities anymore, spent a full hour handling the pottery pieces and telling us stories about her childhood. It was magical to see her so animated."
+                "That anyone whether they are young/old; (living with) dementia; have learning difficulties or…disabilities such as limited vision, restricted mobility or dexterity can learn about and enjoy history/ archaeology."
               </p>
-              <footer className="text-sm font-semibold">— Family member</footer>
-            </blockquote>
-
-            <blockquote className="rounded-lg border border-bronze-200 bg-card p-6">
-              <p className="italic text-muted-foreground mb-4">
-                "The CAT team are so patient and understanding. They create a warm, welcoming atmosphere where our residents feel valued and heard. The archaeological activities always generate lots of conversation and smiles."
-              </p>
-              <footer className="text-sm font-semibold">— Care home activity coordinator</footer>
+              <footer className="text-sm font-semibold">— Lighthouse Dementia Café Coordinator</footer>
             </blockquote>
           </div>
         </section>

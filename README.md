@@ -53,7 +53,7 @@ pnpm start
 /schemas          # Sanity schema definitions
 /lib              # Utilities and Sanity client
 /public           # Static assets
-/documentation    # Project documentation
+/docs             # Project documentation (organized by purpose)
 /scripts          # Utility scripts (e.g., data seeding)
 ```
 
@@ -64,23 +64,44 @@ pnpm start
 - **Timeline**: Historical progression of the archaeological site
 - **Research Hub**: Academic publications and research resources
 - **Community Engagement**: Events, news, and volunteer programs
+- **Instant Updates**: Sanity webhooks for real-time content updates (1-3 seconds)
 
 ## Documentation
 
-See the `/documentation` directory for detailed guides:
-- `CLAUDE.md` - AI assistant guidance and codebase overview
-- `DEPLOYMENT-CHECKLIST.md` - Production deployment steps
-- `MEDIA-GUIDE.md` - Image and 3D model integration
-- `SEO-ACCESSIBILITY-UPDATES.md` - SEO and accessibility features
-- `UPDATE_SANITY_GUIDE.md` - Sanity CMS configuration
+See the `/docs` directory for comprehensive guides:
+
+### Setup & Configuration (`/docs/setup`)
+- **[INSTANT_UPDATES_SETUP.md](./docs/setup/INSTANT_UPDATES_SETUP.md)** - Complete webhook setup for instant content updates
+- **[QUICK_START_WEBHOOKS.md](./docs/setup/QUICK_START_WEBHOOKS.md)** - 5-minute quick start for non-technical users
+- **[DEPLOYMENT-CHECKLIST.md](./docs/setup/DEPLOYMENT-CHECKLIST.md)** - Production deployment steps
+- **[MEDIA-GUIDE.md](./docs/setup/MEDIA-GUIDE.md)** - Image and 3D model integration
+- **[SEO-ACCESSIBILITY-UPDATES.md](./docs/setup/SEO-ACCESSIBILITY-UPDATES.md)** - SEO and accessibility features
+- **[UPDATE_SANITY_GUIDE.md](./docs/setup/UPDATE_SANITY_GUIDE.md)** - Sanity CMS configuration
+
+### Launch & Content (`/docs/launch`)
+- **[CONTENT_GUIDE.md](./docs/launch/CONTENT_GUIDE.md)** - Content creation standards and templates
+
+### AI Assistant Guidance
+- **[CLAUDE.md](./CLAUDE.md)** - Complete codebase overview and best practices for AI assistants
 
 ## Environment Variables
 
+See `.env.example` for all required environment variables:
+
 ```env
+# Sanity CMS
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_TOKEN=your_api_token
+
+# Instant Updates (see docs/setup/QUICK_START_WEBHOOKS.md)
+REVALIDATION_SECRET=your_secure_random_secret
+
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://eastwearbay.org
 ```
+
+For webhook setup to enable instant content updates, see the [Quick Start Guide](./docs/setup/QUICK_START_WEBHOOKS.md).
 
 ## Contributing
 

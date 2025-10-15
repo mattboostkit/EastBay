@@ -79,16 +79,18 @@
       "Bash(taskkill:*)",
       "Bash(pnpm outdated:*)",
       "Bash(pnpm update:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "sanity",
     "chrome-devtools",
     "context7",
-    "bright-data"
+    "bright-data",
+    "sanity"
   ]
 }

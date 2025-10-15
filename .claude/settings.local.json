@@ -81,7 +81,8 @@
       "Bash(pnpm update:*)",
       "Bash(git log:*)",
       "Bash(npm outdated:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(pnpm build:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

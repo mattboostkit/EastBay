@@ -17,6 +17,7 @@ const navigationGroups = [
     items: [
       { title: 'Digital Museum', href: '/digital-museum' },
       { title: 'Field School', href: '/field-school' },
+      { title: 'Discover Folkestone', href: '/folkestone' },
       { title: 'Events', href: '/events' },
       { title: 'Gallery', href: '/gallery' },
       { title: 'News', href: '/news' },

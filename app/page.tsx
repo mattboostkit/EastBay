@@ -416,7 +416,7 @@ export default async function Home() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="card-archaeological hover-lift group flex flex-col p-6">
+            <Link href="/community" className="card-archaeological hover-lift group flex flex-col p-6 transition-all">
               {communitySection?.items && communitySection.items[0]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -426,7 +426,7 @@ export default async function Home() {
                       ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[0].image.alt || "Children participating in the Digital Time Capsule programme"}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               )}
@@ -434,12 +434,13 @@ export default async function Home() {
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 A youth engagement programme that allows local school children to consider the importance of objects and identity and to create digital records of objects they think are important to the modern world for future preservation.
               </p>
-              <div className="mt-6 text-bronze-600 font-semibold">
-                Coming Soon
+              <div className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold group-hover:text-bronze-700">
+                Learn More
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
-            </div>
+            </Link>
 
-            <div className="card-archaeological hover-lift group flex flex-col p-6">
+            <Link href="/learn/dementia-resources" className="card-archaeological hover-lift group flex flex-col p-6 transition-all">
               {communitySection?.items && communitySection.items[1]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -449,7 +450,7 @@ export default async function Home() {
                       ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[1].image.alt || "Elderly participants handling archaeological objects"}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               )}
@@ -457,12 +458,13 @@ export default async function Home() {
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
                 Our dementia-friendly sessions explore archaeology through sensory engagement with artefacts and by undertaking craft activities to help stimulate conversation and the exchange of stories.
               </p>
-              <div className="mt-6 text-bronze-600 font-semibold">
-                Coming Soon
+              <div className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold group-hover:text-bronze-700">
+                Explore Resources
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
-            </div>
+            </Link>
 
-            <div className="card-archaeological hover-lift group flex flex-col p-6">
+            <Link href="/folkestone" className="card-archaeological hover-lift group flex flex-col p-6 transition-all">
               {communitySection?.items && communitySection.items[2]?.image && (
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
@@ -472,18 +474,19 @@ export default async function Home() {
                       ?.url() || 'https://cdn.sanity.io/images/ce9tlzu0/production/deb19698014c3332dc3ce9aeb12228d7f8a2b5f8-2016x1512.jpg'}
                     alt={communitySection.items[2].image.alt || "Community members recording oral histories"}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               )}
               <h3 className="mt-4 text-2xl font-bold text-bronze-700 group-hover:text-bronze-800 transition-colors">Folkestone Stories</h3>
               <p className="mt-3 flex-grow text-stone-600 leading-relaxed">
-                An oral history project collecting local memories and stories about East Wear Bay, creating a social history archive alongside the archaeological record.
+                Discover Folkestone - a vibrant coastal town with rich history, creative culture, and stunning natural beauty. Your perfect base for archaeological exploration.
               </p>
-              <div className="mt-6 text-bronze-600 font-semibold">
-                Coming Soon
+              <div className="mt-6 inline-flex items-center gap-2 text-bronze-600 font-semibold group-hover:text-bronze-700">
+                Discover Folkestone
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

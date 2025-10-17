@@ -16,6 +16,7 @@ export default {
       options: {
         list: [
           { title: 'Activity Guide', value: 'activity-guide' },
+          { title: 'Conversation Prompts', value: 'conversation-prompts' },
           { title: 'Object Handling Guide', value: 'object-handling-guide' },
         ],
       },

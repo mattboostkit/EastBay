@@ -17,6 +17,7 @@ export const revalidate = 60
 
 export default async function DementiaResourcesPage() {
   const activityGuide = await fetchDementiaResourceByType('activity-guide')
+  const conversationPrompts = await fetchDementiaResourceByType('conversation-prompts')
   const objectHandlingGuide = await fetchDementiaResourceByType('object-handling-guide')
   return (
     <>
@@ -277,8 +278,24 @@ export default async function DementiaResourcesPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  You can download conversation starters linked to archaeological themes, designed to prompt memories and encourage storytelling, from our 'conversation' folder on the shared drive.
+                  Conversation starters linked to archaeological and historical themes, designed to prompt memories and encourage storytelling.
                 </p>
+                {conversationPrompts && conversationPrompts.pdfFile?.asset?.url ? (
+                  <a
+                    href={conversationPrompts.pdfFile.asset.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download Prompt Cards
+                  </a>
+                ) : (
+                  <Button className="w-full" variant="outline" disabled>
+                    <Download className="h-4 w-4 mr-2" />
+                    Coming Soon
+                  </Button>
+                )}
               </CardContent>
             </Card>
 
@@ -286,12 +303,12 @@ export default async function DementiaResourcesPage() {
               <CardHeader>
                 <CardTitle>Loan Boxes</CardTitle>
                 <CardDescription>
-                  We have sensory loan boxes available free to borrow
+                  Objects you can use to explore the past
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  We have specially made sensory story packs that are free to borrow from CAT. The packs contain everything you need to tell the story and a fully illustrated story book.
+                  Borrow one of our dementia friendly loan boxes to help explore the past. The boxes contain items such as jigsaw puzzles, postcards and archaeological finds.
                 </p>
                 <Link href="/contact">
                   <Button className="w-full" variant="outline">

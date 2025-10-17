@@ -212,6 +212,14 @@ function ImageGallery({ images }: { images: any[] }) {
 
 // Lightbox Modal Component (needs to be client component)
 function LightboxModal({ images }: { images: any[] }) {
+  // Pre-process images with URLs
+  const processedImages = images.map((img) => ({
+    url: urlForImage(img).width(1920).height(1080).fit('max').url(),
+    alt: img.alt || img.title || '',
+    title: img.title || '',
+    caption: img.caption || '',
+  }))
+
   return (
     <>
       <script
@@ -220,6 +228,7 @@ function LightboxModal({ images }: { images: any[] }) {
             (function() {
               let currentIndex = 0;
               let isOpen = false;
+              const images = ${JSON.stringify(processedImages)};
 
               window.addEventListener('openLightbox', (e) => {
                 currentIndex = e.detail.index;
@@ -235,15 +244,6 @@ function LightboxModal({ images }: { images: any[] }) {
                 const counter = document.getElementById('lightbox-counter');
 
                 if (modal && img) {
-                  const images = ${JSON.stringify(
-                    images.map((img) => ({
-                      url: urlForImage(img).width(1920).height(1080).fit('max').url(),
-                      alt: img.alt || img.title || '',
-                      title: img.title || '',
-                      caption: img.caption || '',
-                    }))
-                  )};
-
                   modal.classList.remove('hidden');
                   document.body.style.overflow = 'hidden';
 
@@ -276,13 +276,11 @@ function LightboxModal({ images }: { images: any[] }) {
               };
 
               window.nextImage = function() {
-                const images = ${JSON.stringify(images)};
                 currentIndex = (currentIndex + 1) % images.length;
                 showLightbox();
               };
 
               window.prevImage = function() {
-                const images = ${JSON.stringify(images)};
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 showLightbox();
               };

@@ -1,12 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { client } from '@/lib/sanity.client'
 import { urlForImage } from '@/lib/sanity.unified'
 import Image from 'next/image'
 
-// Revalidate this page every 60 seconds
 export const revalidate = 60
 
 interface PageProps {
@@ -26,9 +25,7 @@ async function getResource(slug: string) {
     mainImage,
     "gallery": gallery[0...12] {
       asset,
-      alt,
-      caption,
-      title
+      alt
     },
     content,
     keyStages,
@@ -64,10 +61,6 @@ export default async function ResourcePage({ params }: PageProps) {
   }
 
   const isGallery = resource.resourceType === 'gallery'
-  const hasGallery = resource.gallery && resource.gallery.length > 0
-
-  // Gallery is already limited to first 12 images in the query
-  const galleryImages = hasGallery ? resource.gallery : []
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,10 +87,36 @@ export default async function ResourcePage({ params }: PageProps) {
             )}
           </div>
 
-          {/* Gallery for gallery-type resources */}
-          {isGallery && hasGallery && (
+          {/* Simple Gallery */}
+          {isGallery && resource.gallery && resource.gallery.length > 0 && (
             <div className="mb-12">
-              <ImageGallery images={galleryImages} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {resource.gallery.map((image: any, index: number) => {
+                  if (!image?.asset) return null
+
+                  try {
+                    const imageUrl = urlForImage(image)?.width(600).height(600).fit('crop').url()
+                    if (!imageUrl) return null
+
+                    return (
+                      <div
+                        key={index}
+                        className="relative aspect-square overflow-hidden rounded-lg border bg-muted"
+                      >
+                        <Image
+                          src={imageUrl}
+                          alt={image.alt || `Gallery image ${index + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )
+                  } catch (error) {
+                    console.error('Error rendering image:', error)
+                    return null
+                  }
+                })}
+              </div>
             </div>
           )}
 
@@ -117,7 +136,6 @@ export default async function ResourcePage({ params }: PageProps) {
           {/* Content */}
           {resource.content && resource.content.length > 0 && (
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              {/* Render portable text content here if needed */}
               <p className="text-muted-foreground">Content rendering coming soon...</p>
             </div>
           )}
@@ -169,214 +187,5 @@ export default async function ResourcePage({ params }: PageProps) {
         </div>
       </div>
     </div>
-  )
-}
-
-// Image Gallery Component with Navigation
-function ImageGallery({ images }: { images: any[] }) {
-  // Filter and validate images before rendering
-  const validImages = images.filter((img) => img && img.asset)
-
-  if (validImages.length === 0) {
-    return null
-  }
-
-  return (
-    <div className="space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {validImages.map((image, index) => {
-          const imageBuilder = urlForImage(image)
-          if (!imageBuilder) return null
-
-          const imageUrl = imageBuilder.width(600).height(600).fit('crop').url()
-
-          return (
-            <button
-              key={index}
-              className="group relative aspect-square overflow-hidden rounded-lg border bg-muted hover:border-primary transition-colors"
-              onClick={() => {
-                // Open lightbox modal (we'll add this functionality)
-                const event = new CustomEvent('openLightbox', { detail: { index } })
-                window.dispatchEvent(event)
-              }}
-            >
-              <Image
-                src={imageUrl}
-                alt={image.alt || image.title || `Gallery image ${index + 1}`}
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
-              />
-              {(image.title || image.caption) && (
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  {image.title && (
-                    <h3 className="text-sm font-semibold text-white">{image.title}</h3>
-                  )}
-                  {image.caption && (
-                    <p className="text-xs text-white/90 mt-1">{image.caption}</p>
-                  )}
-                </div>
-              )}
-            </button>
-          )
-        })}
-      </div>
-
-      {/* Lightbox Modal - Client Component */}
-      <LightboxModal images={validImages} />
-    </div>
-  )
-}
-
-// Lightbox Modal Component (needs to be client component)
-function LightboxModal({ images }: { images: any[] }) {
-  // Pre-process images with URLs - filter out any invalid images
-  const processedImages = images
-    .filter((img) => img && img.asset)
-    .map((img) => {
-      try {
-        const imageBuilder = urlForImage(img)
-        if (!imageBuilder) return null
-
-        const url = imageBuilder.width(1920).height(1080).fit('max').url()
-        if (!url) return null
-
-        return {
-          url,
-          alt: img.alt || img.title || '',
-          title: img.title || '',
-          caption: img.caption || '',
-        }
-      } catch (error) {
-        console.error('Error processing image for lightbox:', error)
-        return null
-      }
-    })
-    .filter((img) => img !== null)
-
-  // Don't render lightbox if no valid images
-  if (processedImages.length === 0) {
-    return null
-  }
-
-  return (
-    <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              let currentIndex = 0;
-              let isOpen = false;
-              const images = ${JSON.stringify(processedImages)};
-
-              window.addEventListener('openLightbox', (e) => {
-                currentIndex = e.detail.index;
-                isOpen = true;
-                showLightbox();
-              });
-
-              function showLightbox() {
-                const modal = document.getElementById('lightbox-modal');
-                const img = document.getElementById('lightbox-image');
-                const title = document.getElementById('lightbox-title');
-                const caption = document.getElementById('lightbox-caption');
-                const counter = document.getElementById('lightbox-counter');
-
-                if (modal && img) {
-                  modal.classList.remove('hidden');
-                  document.body.style.overflow = 'hidden';
-
-                  img.src = images[currentIndex].url;
-                  img.alt = images[currentIndex].alt;
-
-                  if (title) {
-                    title.textContent = images[currentIndex].title;
-                    title.style.display = images[currentIndex].title ? 'block' : 'none';
-                  }
-
-                  if (caption) {
-                    caption.textContent = images[currentIndex].caption;
-                    caption.style.display = images[currentIndex].caption ? 'block' : 'none';
-                  }
-
-                  if (counter) {
-                    counter.textContent = (currentIndex + 1) + ' / ' + images.length;
-                  }
-                }
-              }
-
-              window.closeLightbox = function() {
-                const modal = document.getElementById('lightbox-modal');
-                if (modal) {
-                  modal.classList.add('hidden');
-                  document.body.style.overflow = '';
-                  isOpen = false;
-                }
-              };
-
-              window.nextImage = function() {
-                currentIndex = (currentIndex + 1) % images.length;
-                showLightbox();
-              };
-
-              window.prevImage = function() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showLightbox();
-              };
-
-              document.addEventListener('keydown', (e) => {
-                if (!isOpen) return;
-                if (e.key === 'Escape') window.closeLightbox();
-                if (e.key === 'ArrowRight') window.nextImage();
-                if (e.key === 'ArrowLeft') window.prevImage();
-              });
-            })();
-          `,
-        }}
-      />
-
-      <div id="lightbox-modal" className="hidden fixed inset-0 z-50 bg-black/95">
-        <button
-          onClick={() => (window as any).closeLightbox()}
-          className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-          aria-label="Close"
-        >
-          <X className="h-6 w-6 text-white" />
-        </button>
-
-        <button
-          onClick={() => (window as any).prevImage()}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="h-8 w-8 text-white" />
-        </button>
-
-        <button
-          onClick={() => (window as any).nextImage()}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-          aria-label="Next image"
-        >
-          <ChevronRight className="h-8 w-8 text-white" />
-        </button>
-
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm z-10">
-          <span id="lightbox-counter"></span>
-        </div>
-
-        <div className="flex items-center justify-center h-full p-4">
-          <div className="max-w-7xl w-full">
-            <img
-              id="lightbox-image"
-              className="w-full h-auto max-h-[80vh] object-contain"
-              alt=""
-            />
-            <div className="mt-4 text-center text-white">
-              <h3 id="lightbox-title" className="text-lg font-semibold"></h3>
-              <p id="lightbox-caption" className="text-sm text-white/80 mt-1"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
   )
 }

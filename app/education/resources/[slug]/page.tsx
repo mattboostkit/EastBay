@@ -66,6 +66,9 @@ export default async function ResourcePage({ params }: PageProps) {
   const isGallery = resource.resourceType === 'gallery'
   const hasGallery = resource.gallery && resource.gallery.length > 0
 
+  // Reverse gallery so newest images (added last in Sanity) appear first
+  const galleryImages = hasGallery ? [...resource.gallery].reverse() : []
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -94,7 +97,7 @@ export default async function ResourcePage({ params }: PageProps) {
           {/* Gallery for gallery-type resources */}
           {isGallery && hasGallery && (
             <div className="mb-12">
-              <ImageGallery images={resource.gallery} />
+              <ImageGallery images={galleryImages} />
             </div>
           )}
 

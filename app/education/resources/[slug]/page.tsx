@@ -175,41 +175,55 @@ export default async function ResourcePage({ params }: PageProps) {
 
 // Image Gallery Component with Navigation
 function ImageGallery({ images }: { images: any[] }) {
+  // Filter and validate images before rendering
+  const validImages = images.filter((img) => img && img.asset)
+
+  if (validImages.length === 0) {
+    return null
+  }
+
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {images.map((image, index) => (
-          <button
-            key={index}
-            className="group relative aspect-square overflow-hidden rounded-lg border bg-muted hover:border-primary transition-colors"
-            onClick={() => {
-              // Open lightbox modal (we'll add this functionality)
-              const event = new CustomEvent('openLightbox', { detail: { index } })
-              window.dispatchEvent(event)
-            }}
-          >
-            <Image
-              src={urlForImage(image).width(600).height(600).fit('crop').url()}
-              alt={image.alt || image.title || `Gallery image ${index + 1}`}
-              fill
-              className="object-cover transition-transform group-hover:scale-105"
-            />
-            {(image.title || image.caption) && (
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                {image.title && (
-                  <h3 className="text-sm font-semibold text-white">{image.title}</h3>
-                )}
-                {image.caption && (
-                  <p className="text-xs text-white/90 mt-1">{image.caption}</p>
-                )}
-              </div>
-            )}
-          </button>
-        ))}
+        {validImages.map((image, index) => {
+          const imageBuilder = urlForImage(image)
+          if (!imageBuilder) return null
+
+          const imageUrl = imageBuilder.width(600).height(600).fit('crop').url()
+
+          return (
+            <button
+              key={index}
+              className="group relative aspect-square overflow-hidden rounded-lg border bg-muted hover:border-primary transition-colors"
+              onClick={() => {
+                // Open lightbox modal (we'll add this functionality)
+                const event = new CustomEvent('openLightbox', { detail: { index } })
+                window.dispatchEvent(event)
+              }}
+            >
+              <Image
+                src={imageUrl}
+                alt={image.alt || image.title || `Gallery image ${index + 1}`}
+                fill
+                className="object-cover transition-transform group-hover:scale-105"
+              />
+              {(image.title || image.caption) && (
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  {image.title && (
+                    <h3 className="text-sm font-semibold text-white">{image.title}</h3>
+                  )}
+                  {image.caption && (
+                    <p className="text-xs text-white/90 mt-1">{image.caption}</p>
+                  )}
+                </div>
+              )}
+            </button>
+          )
+        })}
       </div>
 
       {/* Lightbox Modal - Client Component */}
-      <LightboxModal images={images} />
+      <LightboxModal images={validImages} />
     </div>
   )
 }
@@ -220,17 +234,30 @@ function LightboxModal({ images }: { images: any[] }) {
   const processedImages = images
     .filter((img) => img && img.asset)
     .map((img) => {
-      const imageBuilder = urlForImage(img)
-      if (!imageBuilder) return null
+      try {
+        const imageBuilder = urlForImage(img)
+        if (!imageBuilder) return null
 
-      return {
-        url: imageBuilder.width(1920).height(1080).fit('max').url(),
-        alt: img.alt || img.title || '',
-        title: img.title || '',
-        caption: img.caption || '',
+        const url = imageBuilder.width(1920).height(1080).fit('max').url()
+        if (!url) return null
+
+        return {
+          url,
+          alt: img.alt || img.title || '',
+          title: img.title || '',
+          caption: img.caption || '',
+        }
+      } catch (error) {
+        console.error('Error processing image for lightbox:', error)
+        return null
       }
     })
     .filter((img) => img !== null)
+
+  // Don't render lightbox if no valid images
+  if (processedImages.length === 0) {
+    return null
+  }
 
   return (
     <>

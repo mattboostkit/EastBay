@@ -80,18 +80,20 @@
       "Bash(pnpm outdated:*)",
       "Bash(pnpm update:*)",
       "Bash(git log:*)",
-      "Bash(npm outdated:*)",
-      "Bash(npm install:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build)",
+      "Bash(timeout 30 pnpm:*)",
+      "Bash(exit 0)",
+      "Bash(pnpm dev)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
+    "sanity",
     "chrome-devtools",
     "context7",
-    "bright-data",
-    "sanity"
+    "bright-data"
   ]
 }

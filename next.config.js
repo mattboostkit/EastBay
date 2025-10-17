@@ -117,11 +117,11 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb'
     },
-    // Turbopack configuration
-    turbo: {
-      resolveAlias: {
-        // Add any alias configurations here if needed
-      },
+  },
+  // Turbopack configuration
+  turbopack: {
+    resolveAlias: {
+      // Add any alias configurations here if needed
     },
   },
   // Only apply webpack config when not using Turbopack

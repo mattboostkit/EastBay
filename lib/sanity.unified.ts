@@ -210,7 +210,73 @@ export async function fetchAllResearchPublications() {
 
 // Education resource utility functions
 export async function fetchAllEducationResources() {
-  return client.fetch(`*[_type == "educationResource"] | order(_createdAt desc)`);
+  return client.fetch(`*[_type == "educationResource"] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    description,
+    category,
+    mainImage,
+    resourceType,
+    keyStages,
+    subjects,
+    duration,
+    comingSoon,
+    externalLink,
+    resourceFiles[] {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      },
+      title,
+      description
+    },
+    gallery[] {
+      asset,
+      alt,
+      caption,
+      title
+    },
+    content,
+    videoUrl
+  }`);
+}
+
+export async function fetchEducationResourcesByCategory(category: string) {
+  return client.fetch(`*[_type == "educationResource" && category == $category] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    description,
+    category,
+    mainImage,
+    resourceType,
+    keyStages,
+    subjects,
+    duration,
+    comingSoon,
+    externalLink,
+    resourceFiles[] {
+      asset-> {
+        _id,
+        url,
+        originalFilename,
+        size
+      },
+      title,
+      description
+    },
+    gallery[] {
+      asset,
+      alt,
+      caption,
+      title
+    },
+    content,
+    videoUrl
+  }`, { category });
 }
 
 // Homepage section utility functions

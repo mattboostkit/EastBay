@@ -29,10 +29,11 @@ export default {
     },
     {
       name: 'pdfFile',
-      title: 'PDF File',
+      title: 'Resource File',
       type: 'file',
+      description: 'Upload PDF, Word document (.docx), or PowerPoint (.pptx)',
       options: {
-        accept: '.pdf',
+        accept: '.pdf,.docx,.pptx',
       },
       validation: (Rule: any) => Rule.required(),
     },

@@ -32,8 +32,8 @@ For each of the 7 lesson plans, create a **single zip file** containing all the 
 
 ### 2. Access Sanity Studio
 
-1. Go to your Sanity Studio: `https://eastwearbay.sanity.studio/`
-2. Or run locally: `cd sanity-studio && pnpm dev`
+1. Go to your Sanity Studio: `https://www.eastwearbay.org/studio`
+2. Or run locally: `pnpm dev` then visit `http://localhost:3000/studio`
 3. Log in with your Sanity account
 
 ### 3. Create a New Education Resource

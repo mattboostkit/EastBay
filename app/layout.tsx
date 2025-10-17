@@ -74,10 +74,12 @@ export default async function RootLayout({
 }) {
   // Fetch site settings
   const siteSettings = await client.fetch(siteSettingsQuery);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eastwearbaypt.org';
+
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <CanonicalLink />
+        <CanonicalLink baseUrl={baseUrl} />
         <OrganizationStructuredData />
         <GoogleAnalytics />
         <link rel="manifest" href="/site.webmanifest" />

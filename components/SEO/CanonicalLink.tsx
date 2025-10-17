@@ -7,23 +7,21 @@ import { useMemo } from 'react';
  * Component to add canonical link to pages
  * Ensures that duplicate URLs are correctly identified and the main URL is designated as canonical
  */
-export function CanonicalLink() {
+export function CanonicalLink({ baseUrl }: { baseUrl: string }) {
   const pathname = usePathname();
-  
-  // Create canonical URL based on environment and current path
+
+  // Create canonical URL based on base URL and current path
   const canonicalUrl = useMemo(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://archaeoproject.org';
-    
     // Remove trailing slashes except for homepage
     const path = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-    
+
     return `${baseUrl}${path}`;
-  }, [pathname]);
+  }, [pathname, baseUrl]);
 
   return (
-    <link 
-      rel="canonical" 
-      href={canonicalUrl} 
+    <link
+      rel="canonical"
+      href={canonicalUrl}
       key="canonical"
     />
   );

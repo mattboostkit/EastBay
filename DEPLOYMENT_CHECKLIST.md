@@ -5,12 +5,15 @@
 **ANY TIME** you modify files in the `schemas/` directory, you **MUST** immediately deploy to Sanity:
 
 ```bash
-npx sanity schema extract
-npx sanity schema deploy
-npx sanity deploy
+pnpm run sanity:deploy
 ```
 
-**IMPORTANT:** `npx sanity deploy` deploys the full studio UI to https://eastwearbay.sanity.studio/ with the updated schema embedded. This is required for the changes to appear in the hosted studio interface.
+This single command runs all three required steps:
+1. `npx sanity schema extract` - Extracts schema from your code
+2. `npx sanity schema deploy` - Deploys schema to Sanity backend API
+3. `npx sanity deploy` - Deploys full studio UI to https://eastwearbay.sanity.studio/
+
+**IMPORTANT:** Step 3 (`npx sanity deploy`) is CRITICAL. It deploys the full studio UI with the updated schema embedded. Without this step, the hosted studio interface will show OLD fields.
 
 ### Files that require schema deployment:
 - `schemas/*.ts` (ANY file in the schemas directory)
@@ -26,12 +29,15 @@ npx sanity deploy
 ## Workflow for Schema Changes
 
 1. **Edit schema file** (e.g., `schemas/educationResource.ts`)
-2. **IMMEDIATELY run**:
+2. **IMMEDIATELY run the deployment script**:
    ```bash
-   npx sanity schema extract
-   npx sanity schema deploy
-   npx sanity deploy
+   pnpm run sanity:deploy
    ```
+   This single command does ALL three required steps:
+   - Extracts the schema
+   - Deploys schema to backend API
+   - Deploys full studio UI to https://eastwearbay.sanity.studio/
+
 3. **Verify in Sanity Studio** at https://eastwearbay.sanity.studio/ or https://manage.sanity.io/
 4. **Then commit to Git**:
    ```bash
@@ -43,6 +49,10 @@ npx sanity deploy
 ## Quick Commands
 
 ```bash
+# EASIEST: Use the npm script (does everything in one command)
+pnpm run sanity:deploy
+
+# OR run commands individually:
 # Full schema update workflow (REQUIRED for hosted studio)
 npx sanity schema extract && npx sanity schema deploy && npx sanity deploy
 
@@ -50,7 +60,7 @@ npx sanity schema extract && npx sanity schema deploy && npx sanity deploy
 npx sanity schema list
 
 # Validate schema without deploying
-npx sanity schema validate
+pnpm run sanity:validate
 
 # Deploy studio only (after schema already deployed)
 npx sanity deploy

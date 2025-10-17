@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "tsx scripts/seed-sanity-data.ts",
-    "init-settings": "tsx scripts/initSiteSettings.ts"
+    "init-settings": "tsx scripts/initSiteSettings.ts",
+    "sanity:deploy": "npx sanity schema extract && npx sanity schema deploy && npx sanity deploy",
+    "sanity:validate": "npx sanity schema validate"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

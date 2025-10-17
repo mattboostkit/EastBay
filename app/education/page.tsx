@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: 'Engaging learning resources bringing 12,000 years of human history to life through the archaeology of East Wear Bay.',
 }
 
+// Revalidate this page every 60 seconds
+export const revalidate = 60
+
 // Helper to get file URL from Sanity
 function getFileUrl(file: any): string | null {
   if (!file?.asset?.url) return null

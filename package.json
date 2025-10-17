@@ -10,7 +10,8 @@
     "seed": "tsx scripts/seed-sanity-data.ts",
     "init-settings": "tsx scripts/initSiteSettings.ts",
     "sanity:deploy": "npx sanity schema extract && npx sanity schema deploy && npx sanity deploy",
-    "sanity:validate": "npx sanity schema validate"
+    "sanity:validate": "npx sanity schema validate",
+    "convert-pdfs": "node scripts/convert-pdfs-to-images.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -77,8 +78,11 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "autoprefixer": "10.4.21",
+    "canvas": "^3.2.0",
     "eslint": "9.37.0",
     "eslint-config-next": "15.5.6",
+    "pdf-lib": "^1.17.1",
+    "pdf-to-img": "^5.0.0",
     "postcss": "8.5.6",
     "tailwindcss": "3.4.1",
     "typescript": "5.4.5"

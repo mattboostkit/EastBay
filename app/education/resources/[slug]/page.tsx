@@ -24,7 +24,7 @@ async function getResource(slug: string) {
     category,
     resourceType,
     mainImage,
-    gallery[] {
+    "gallery": gallery[0...12] {
       asset,
       alt,
       caption,
@@ -66,9 +66,8 @@ export default async function ResourcePage({ params }: PageProps) {
   const isGallery = resource.resourceType === 'gallery'
   const hasGallery = resource.gallery && resource.gallery.length > 0
 
-  // Reverse gallery so newest images (added last in Sanity) appear first
-  // Limit to 12 images for performance
-  const galleryImages = hasGallery ? [...resource.gallery].reverse().slice(0, 12) : []
+  // Gallery is already limited to first 12 images in the query
+  const galleryImages = hasGallery ? resource.gallery : []
 
   return (
     <div className="min-h-screen bg-background">

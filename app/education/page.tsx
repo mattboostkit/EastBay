@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, FileText, Users, Clock, Download, BookOpen, Activity, GraduationCap, Map, Sparkles, Package, Library, Heart } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -230,6 +231,17 @@ export default async function EducationPage() {
       <div className="container py-12">
         {/* Featured Learning Programmes Section */}
         <section id="programs" className="mb-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_01.webp?updatedAt=1760719280900"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Featured Learning Programmes</h2>
             <p className="mt-3 text-lg text-muted-foreground">
@@ -281,6 +293,17 @@ export default async function EducationPage() {
 
         {/* Learning Pathways */}
         <section id="pathways" className="mb-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_06.webp?updatedAt=1760719278990"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Learning Pathways</h2>
             <p className="mt-3 text-muted-foreground">
@@ -327,6 +350,17 @@ export default async function EducationPage() {
 
         {/* Downloadable Lesson Plans */}
         <section id="resources" className="mb-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_12.webp?updatedAt=1760719280519"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Downloadable Lesson Plans</h2>
             <p className="mt-3 text-muted-foreground">
@@ -431,6 +465,17 @@ export default async function EducationPage() {
 
         {/* Other Learning Resources */}
         <section className="mb-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_07.webp?updatedAt=1760719278602"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Other Learning Resources</h2>
             <p className="mt-3 text-muted-foreground">
@@ -588,6 +633,17 @@ export default async function EducationPage() {
 
         {/* Digital Time Capsule Section */}
         <section id="digital-time-capsule" className="mt-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_05.webp?updatedAt=1760719281127"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Digital Time Capsule</h2>
             <p className="mt-3 text-lg text-muted-foreground">
@@ -651,6 +707,17 @@ export default async function EducationPage() {
 
         {/* Sensory Story Section */}
         <section id="sensory-story" className="mt-16">
+          {/* Decorative Image */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Artwork/EWB_Artwork_03.webp?updatedAt=1760719278859"
+              alt="East Wear Bay Artwork"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold md:text-4xl">Sensory Stories</h2>
             <p className="mt-3 text-lg text-muted-foreground">
@@ -756,7 +823,7 @@ export default async function EducationPage() {
           <div className="rounded-lg border bg-muted/50 p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Make an Enquiry</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              To arrange a school visit or educational workshop, please contact our Education Officer who will be happy to discuss your requirements and availability.
+              To learn more about available resources, workshops, lesson plans, or how to get started, feel free to drop us an email. We're here to support educators with ideas, materials, and guidance tailored to your needs.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
@@ -766,15 +833,6 @@ export default async function EducationPage() {
                 Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <a
-                href="https://www.canterburytrust.co.uk/copy-of-cat-box-loans-collection-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-              >
-                Loan a CAT Box
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
             </div>
           </div>
         </section>

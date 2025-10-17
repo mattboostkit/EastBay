@@ -3,10 +3,17 @@ import Link from 'next/link'
 import { ArrowRight, FileText, Users, Clock, Download, BookOpen, Activity, GraduationCap, Map, Sparkles, Package, Library, Heart } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { fetchEducationResourcesByCategory, urlForImage } from '@/lib/sanity.unified'
 
 export const metadata: Metadata = {
   title: 'Education Resources | East Wear Bay Archaeological Project',
   description: 'Engaging learning resources bringing 12,000 years of human history to life through the archaeology of East Wear Bay.',
+}
+
+// Helper to get file URL from Sanity
+function getFileUrl(file: any): string | null {
+  if (!file?.asset?.url) return null
+  return file.asset.url
 }
 
 // Featured learning programmes
@@ -70,89 +77,21 @@ const featuredPrograms = [
   }
 ]
 
-// Downloadable lesson plans
-const lessonPlans = [
-  {
-    title: 'Iron Age Pottery',
-    description: 'Examine Iron Age pottery and how it was made with this interactive East Wear Bay themed session.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['History', 'Art and Design'],
-    icon: FileText,
-    slug: 'ia-pottery'
-  },
-  {
-    title: 'Roman Mosaics',
-    description: 'Take a look at Roman mosaics and how they were made with this interactive East Wear Bay themed session.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['History', 'Art and Design'],
-    icon: FileText,
-    slug: 'roman-mosaics'
-  },
-  {
-    title: 'Ancient Flour Making',
-    description: 'Learn how hard people in the past had to work to get their daily bread and find out how making flour relates to the different things that archaeologists have found at East Wear Bay.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['History'],
-    icon: FileText,
-    slug: 'ancient-flour-making'
-  },
-  {
-    title: 'Change in the 20th Century',
-    description: 'Explore how Folkestone and East Wear Bay played a part in local, national and international events during the 20th century.',
-    keyStages: ['KS1', 'KS2', 'KS3'],
-    subjects: ['History'],
-    icon: FileText,
-    slug: '20th-century'
-  },
-  {
-    title: 'Digital Time Capsule',
-    description: 'Consider the importance that objects have in our everyday lives and the role that objects played in the past. Create a contribution to our digital time capsule so that your objects are preserved for future generations to explore.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['History'],
-    icon: Package,
-    slug: 'digital-time-capsule'
-  },
-  {
-    title: 'Archaeology Time Machine',
-    description: 'Learn about the different layers of time that archaeologists dig through to discover objects from the past.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['History'],
-    icon: Clock,
-    slug: 'stratigraphy-time-machine'
-  },
-  {
-    title: 'Careers in Archaeology',
-    description: 'Find out more about the work that archaeologists do and the type of career paths you can follow in archaeology.',
-    keyStages: ['KS1', 'KS2'],
-    subjects: ['Careers'],
-    icon: Users,
-    slug: 'careers-in-archaeology'
+// Icon mapping helper for resource types
+function getResourceIcon(resourceType: string | undefined) {
+  const iconMap: Record<string, any> = {
+    'lesson-plan': FileText,
+    'activity': Activity,
+    'video': Sparkles,
+    'guide': BookOpen,
+    'worksheet': FileText,
+    'presentation': FileText,
+    'sensory-story': Heart,
+    'workshop-guide': Users,
+    'gallery': Package,
   }
-]
-
-// Other learning resources
-const otherResources = [
-  {
-    title: 'Dementia Friendly Workshops',
-    description: 'Explore some ideas for running your own archaeology themed dementia friendly workshops or find out how to make use of CAT\'s dementia friendly resources for care homes and community groups.',
-    icon: Heart,
-    comingSoon: true
-  },
-  {
-    title: 'Sensory Stories',
-    description: 'Download a copy of our sensory storybook \'Going on an excavation\' here or follow the link below to order one of our free sensory story packs.',
-    icon: BookOpen,
-    externalLink: 'https://www.canterburytrust.co.uk/copy-of-cat-box-loans-collection-1',
-    slug: 'sensory-story'
-  },
-  {
-    title: 'Digital Time Capsule Gallery',
-    description: 'Explore our gallery of digital time capsule entries and please get in touch with your own.',
-    icon: Package,
-    slug: 'capsule-entries',
-    isGallery: true
-  }
-]
+  return iconMap[resourceType || 'lesson-plan'] || FileText
+}
 
 // Learning pathways for different age groups
 const learningPathways = [
@@ -213,7 +152,13 @@ const learningPathways = [
   }
 ]
 
-export default function EducationPage() {
+export default async function EducationPage() {
+  // Fetch lesson plans from Sanity
+  const lessonPlans = await fetchEducationResourcesByCategory('lesson-plans')
+
+  // Fetch other resources from Sanity
+  const otherResourcesFromSanity = await fetchEducationResourcesByCategory('other-resources')
+
   return (
     <>
       {/* Enhanced Hero Section with Gradient Background */}
@@ -387,46 +332,97 @@ export default function EducationPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {lessonPlans.map((resource) => {
-              const Icon = resource.icon
+            {lessonPlans && lessonPlans.length > 0 ? (
+              lessonPlans.map((resource) => {
+                const Icon = getResourceIcon(resource.resourceType)
+                const hasFiles = resource.resourceFiles && resource.resourceFiles.length > 0
+                const fileUrl = hasFiles ? getFileUrl(resource.resourceFiles[0]) : null
+                const fileName = hasFiles ? resource.resourceFiles[0].asset?.originalFilename : null
 
-              return (
-                <Card key={resource.slug} className="flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="inline-flex rounded-lg bg-blue-500 p-3 text-white">
-                        <Icon className="h-5 w-5" />
+                return (
+                  <Card key={resource.slug.current} className="flex flex-col">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="inline-flex rounded-lg bg-blue-500 p-3 text-white">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        {resource.comingSoon && (
+                          <Badge variant="secondary" className="text-xs">
+                            Coming Soon
+                          </Badge>
+                        )}
                       </div>
-                    </div>
-                    <CardTitle className="line-clamp-2">{resource.title}</CardTitle>
-                    <CardDescription className="line-clamp-3">
-                      {resource.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {resource.keyStages.map((ks) => (
-                        <Badge key={ks} variant="secondary" className="text-xs">
-                          {ks}
-                        </Badge>
-                      ))}
-                      {resource.subjects.map((subject) => (
-                        <Badge key={subject} variant="outline" className="text-xs">
-                          {subject}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Link
-                      href={`/education/resources/${resource.slug}`}
-                      className="inline-flex items-center text-sm text-primary hover:underline"
-                    >
-                      View Resources
-                      <ArrowRight className="ml-1 h-3 w-3" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
-            })}
+                      <CardTitle className="line-clamp-2">{resource.title}</CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        {resource.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.keyStages?.map((ks: string) => (
+                          <Badge key={ks} variant="secondary" className="text-xs">
+                            {ks.toUpperCase()}
+                          </Badge>
+                        ))}
+                        {resource.subjects?.map((subject: string) => (
+                          <Badge key={subject} variant="outline" className="text-xs">
+                            {subject}
+                          </Badge>
+                        ))}
+                      </div>
+                      {resource.duration && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                          <Clock className="h-4 w-4" />
+                          <span>{resource.duration}</span>
+                        </div>
+                      )}
+                      <div className="mt-auto">
+                        {resource.comingSoon ? (
+                          <button
+                            disabled
+                            className="inline-flex items-center text-sm text-muted-foreground cursor-not-allowed"
+                          >
+                            Coming Soon
+                          </button>
+                        ) : fileUrl ? (
+                          <a
+                            href={fileUrl}
+                            download={fileName || 'lesson-plan.zip'}
+                            className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                          >
+                            <Download className="h-4 w-4" />
+                            Download Resources
+                          </a>
+                        ) : resource.externalLink ? (
+                          <a
+                            href={resource.externalLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-sm text-primary hover:underline"
+                          >
+                            View External Resource
+                            <ArrowRight className="ml-1 h-3 w-3" />
+                          </a>
+                        ) : (
+                          <Link
+                            href={`/education/resources/${resource.slug.current}`}
+                            className="inline-flex items-center text-sm text-primary hover:underline"
+                          >
+                            View Resources
+                            <ArrowRight className="ml-1 h-3 w-3" />
+                          </Link>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })
+            ) : (
+              <div className="col-span-full text-center py-12 text-muted-foreground">
+                <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>No lesson plans available yet. Check back soon!</p>
+              </div>
+            )}
           </div>
         </section>
 
@@ -440,80 +436,98 @@ export default function EducationPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {otherResources.map((resource, index) => {
-              const Icon = resource.icon
-              const isExternal = resource.externalLink
-              const isComingSoon = resource.comingSoon
-              const isGallery = resource.isGallery
+            {otherResourcesFromSanity && otherResourcesFromSanity.length > 0 ? (
+              otherResourcesFromSanity.map((resource) => {
+                const Icon = getResourceIcon(resource.resourceType)
+                const hasFiles = resource.resourceFiles && resource.resourceFiles.length > 0
+                const fileUrl = hasFiles ? getFileUrl(resource.resourceFiles[0]) : null
+                const fileName = hasFiles ? resource.resourceFiles[0].asset?.originalFilename : null
+                const isGallery = resource.resourceType === 'gallery'
 
-              return (
-                <Card key={index} className="flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="inline-flex rounded-lg bg-primary p-3 text-white">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      {isComingSoon && (
-                        <Badge variant="secondary" className="text-xs">
-                          Coming Soon
-                        </Badge>
-                      )}
-                    </div>
-                    <CardTitle className="line-clamp-2">{resource.title}</CardTitle>
-                    <CardDescription className="line-clamp-3">
-                      {resource.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    {isComingSoon ? (
-                      <button
-                        disabled
-                        className="inline-flex items-center text-sm text-muted-foreground cursor-not-allowed"
-                      >
-                        Coming Soon
-                      </button>
-                    ) : isExternal ? (
-                      <div className="flex flex-col gap-2">
-                        <a
-                          href={isExternal}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-sm text-primary hover:underline"
-                        >
-                          Order CAT Box
-                          <ArrowRight className="ml-1 h-3 w-3" />
-                        </a>
-                        {resource.slug && (
-                          <Link
-                            href={`/education/resources/${resource.slug}`}
-                            className="inline-flex items-center text-sm text-primary hover:underline"
-                          >
-                            <Download className="mr-1 h-3 w-3" />
-                            Download Storybook
-                          </Link>
+                return (
+                  <Card key={resource._id} className="flex flex-col">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="inline-flex rounded-lg bg-primary p-3 text-white">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        {resource.comingSoon && (
+                          <Badge variant="secondary" className="text-xs">
+                            Coming Soon
+                          </Badge>
                         )}
                       </div>
-                    ) : isGallery ? (
-                      <Link
-                        href={`/education/resources/${resource.slug}`}
-                        className="inline-flex items-center text-sm text-primary hover:underline"
-                      >
-                        View Gallery
-                        <ArrowRight className="ml-1 h-3 w-3" />
-                      </Link>
-                    ) : (
-                      <Link
-                        href={`/education/resources/${resource.slug}`}
-                        className="inline-flex items-center text-sm text-primary hover:underline"
-                      >
-                        View Resource
-                        <ArrowRight className="ml-1 h-3 w-3" />
-                      </Link>
-                    )}
-                  </CardContent>
-                </Card>
-              )
-            })}
+                      <CardTitle className="line-clamp-2">{resource.title}</CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        {resource.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      {resource.comingSoon ? (
+                        <button
+                          disabled
+                          className="inline-flex items-center text-sm text-muted-foreground cursor-not-allowed"
+                        >
+                          Coming Soon
+                        </button>
+                      ) : resource.externalLink ? (
+                        <div className="flex flex-col gap-2">
+                          <a
+                            href={resource.externalLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-sm text-primary hover:underline"
+                          >
+                            View External Resource
+                            <ArrowRight className="ml-1 h-3 w-3" />
+                          </a>
+                          {fileUrl && (
+                            <a
+                              href={fileUrl}
+                              download={fileName}
+                              className="inline-flex items-center text-sm text-primary hover:underline"
+                            >
+                              <Download className="mr-1 h-3 w-3" />
+                              Download Resource
+                            </a>
+                          )}
+                        </div>
+                      ) : fileUrl ? (
+                        <a
+                          href={fileUrl}
+                          download={fileName}
+                          className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                        >
+                          <Download className="h-4 w-4" />
+                          Download Resource
+                        </a>
+                      ) : isGallery ? (
+                        <Link
+                          href={`/education/resources/${resource.slug.current}`}
+                          className="inline-flex items-center text-sm text-primary hover:underline"
+                        >
+                          View Gallery
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </Link>
+                      ) : (
+                        <Link
+                          href={`/education/resources/${resource.slug.current}`}
+                          className="inline-flex items-center text-sm text-primary hover:underline"
+                        >
+                          View Resource
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </Link>
+                      )}
+                    </CardContent>
+                  </Card>
+                )
+              })
+            ) : (
+              <div className="col-span-full text-center py-12 text-muted-foreground">
+                <BookOpen className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>Additional resources coming soon!</p>
+              </div>
+            )}
           </div>
         </section>
 

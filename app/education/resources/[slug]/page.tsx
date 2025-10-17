@@ -215,13 +215,21 @@ function ImageGallery({ images }: { images: any[] }) {
 
 // Lightbox Modal Component (needs to be client component)
 function LightboxModal({ images }: { images: any[] }) {
-  // Pre-process images with URLs
-  const processedImages = images.map((img) => ({
-    url: urlForImage(img).width(1920).height(1080).fit('max').url(),
-    alt: img.alt || img.title || '',
-    title: img.title || '',
-    caption: img.caption || '',
-  }))
+  // Pre-process images with URLs - filter out any invalid images
+  const processedImages = images
+    .filter((img) => img && img.asset)
+    .map((img) => {
+      const imageBuilder = urlForImage(img)
+      if (!imageBuilder) return null
+
+      return {
+        url: imageBuilder.width(1920).height(1080).fit('max').url(),
+        alt: img.alt || img.title || '',
+        title: img.title || '',
+        caption: img.caption || '',
+      }
+    })
+    .filter((img) => img !== null)
 
   return (
     <>

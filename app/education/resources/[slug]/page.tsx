@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { client } from '@/lib/sanity.client'
 import { urlForImage } from '@/lib/sanity.unified'
 import Image from 'next/image'
+import { SimpleLightbox } from '@/components/SimpleLightbox'
 
 export const revalidate = 60
 
@@ -62,6 +63,30 @@ export default async function ResourcePage({ params }: PageProps) {
 
   const isGallery = resource.resourceType === 'gallery'
 
+  // Prepare lightbox images
+  const lightboxImages = isGallery && resource.gallery
+    ? resource.gallery
+        .filter((image: any) => image?.asset)
+        .map((image: any, index: number) => {
+          try {
+            const thumbnailUrl = urlForImage(image)?.width(600).height(600).fit('crop').url()
+            const fullUrl = urlForImage(image)?.width(1920).height(1920).fit('max').url()
+
+            if (!thumbnailUrl || !fullUrl) return null
+
+            return {
+              url: fullUrl,
+              thumbnailUrl,
+              alt: image.alt || `Gallery image ${index + 1}`
+            }
+          } catch (error) {
+            console.error('Error preparing image:', error)
+            return null
+          }
+        })
+        .filter((img: any) => img !== null)
+    : []
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -87,36 +112,10 @@ export default async function ResourcePage({ params }: PageProps) {
             )}
           </div>
 
-          {/* Simple Gallery */}
-          {isGallery && resource.gallery && resource.gallery.length > 0 && (
+          {/* Gallery with Lightbox */}
+          {isGallery && lightboxImages.length > 0 && (
             <div className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {resource.gallery.map((image: any, index: number) => {
-                  if (!image?.asset) return null
-
-                  try {
-                    const imageUrl = urlForImage(image)?.width(600).height(600).fit('crop').url()
-                    if (!imageUrl) return null
-
-                    return (
-                      <div
-                        key={index}
-                        className="relative aspect-square overflow-hidden rounded-lg border bg-muted"
-                      >
-                        <Image
-                          src={imageUrl}
-                          alt={image.alt || `Gallery image ${index + 1}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )
-                  } catch (error) {
-                    console.error('Error rendering image:', error)
-                    return null
-                  }
-                })}
-              </div>
+              <SimpleLightbox images={lightboxImages} />
             </div>
           )}
 

@@ -7,13 +7,13 @@ import { structure } from './sanity.structure';
 const config = defineConfig({
   projectId: 'ce9tlzu0',
   dataset: 'production',
-  title: 'EastBay Archaeological Society',
+  title: 'East Wear Bay Archaeological Project',
   apiVersion: '2023-12-18',
-  basePath: '/admin',
+  basePath: '/studio',
   plugins: [
     structureTool({
       structure
-    }), 
+    }),
     visionTool()
   ],
   schema: {

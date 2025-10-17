@@ -5,5 +5,8 @@ export default defineCliConfig({
     projectId: 'ce9tlzu0',
     dataset: 'production'
   },
-  studioHost: 'eastwearbay'
+  studioHost: 'eastwearbay',
+  deployment: {
+    appId: 'rvx4b81nq2uiw7jtuscy7dpf',
+  },
 })

@@ -7,7 +7,10 @@
 ```bash
 npx sanity schema extract
 npx sanity schema deploy
+npx sanity deploy
 ```
+
+**IMPORTANT:** `npx sanity deploy` deploys the full studio UI to https://eastwearbay.sanity.studio/ with the updated schema embedded. This is required for the changes to appear in the hosted studio interface.
 
 ### Files that require schema deployment:
 - `schemas/*.ts` (ANY file in the schemas directory)
@@ -27,8 +30,9 @@ npx sanity schema deploy
    ```bash
    npx sanity schema extract
    npx sanity schema deploy
+   npx sanity deploy
    ```
-3. **Verify in Sanity Studio** at https://manage.sanity.io/
+3. **Verify in Sanity Studio** at https://eastwearbay.sanity.studio/ or https://manage.sanity.io/
 4. **Then commit to Git**:
    ```bash
    git add .
@@ -39,14 +43,17 @@ npx sanity schema deploy
 ## Quick Commands
 
 ```bash
-# Full schema update workflow
-npx sanity schema extract && npx sanity schema deploy
+# Full schema update workflow (REQUIRED for hosted studio)
+npx sanity schema extract && npx sanity schema deploy && npx sanity deploy
 
 # Check deployed schemas
 npx sanity schema list
 
 # Validate schema without deploying
 npx sanity schema validate
+
+# Deploy studio only (after schema already deployed)
+npx sanity deploy
 ```
 
 ## Common Schema Changes

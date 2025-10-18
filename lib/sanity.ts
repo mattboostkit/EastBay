@@ -1,18 +1,10 @@
 import { createClient } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 
-// Default fallback values for local development
-const defaultConfig = {
-  projectId: 'development',
-  dataset: 'development',
-  apiVersion: '2023-08-01',
-  useCdn: false
-};
-
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || defaultConfig.projectId,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || defaultConfig.dataset,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || defaultConfig.apiVersion,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'ce9tlzu0',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: '2023-12-18',
   useCdn: process.env.NODE_ENV === 'production',
 });
 

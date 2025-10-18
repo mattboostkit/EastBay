@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CalendarDays, Clock, ArrowLeft, User } from 'lucide-react'
-import { client } from '@/lib/sanity.client'
-import { urlFor } from '@/lib/sanity'
+import { client, urlFor } from '@/lib/sanity.client'
 import { PortableText } from '@portabletext/react'
 
 interface Props {

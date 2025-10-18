@@ -19,7 +19,6 @@ const navigationGroups = [
       { title: 'Field School', href: '/field-school' },
       { title: 'Discover Folkestone', href: '/folkestone' },
       { title: 'Events', href: '/events' },
-      { title: 'Gallery', href: '/gallery' },
       { title: 'News', href: '/news' },
       { title: 'Project Timeline', href: '/timeline' },
     ]

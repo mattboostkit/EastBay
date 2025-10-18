@@ -14,31 +14,70 @@ const timelineData = [
     period: 'Upper Palaeolithic',
     title: 'Earliest Human Presence',
     description: 'The earliest evidence that humans were present on the cliffs above East Wear Bay dates back to the Upper Palaeolithic period.',
-    details: 'A flint blade discovered at the end of the 2016 excavation season provides the first evidence of human activity at East Wear Bay during the late Ice Age.',
+    details: 'A flint blade discovered at the end of the 2016 excavation season provides some of the earliest evidence of human activity at East Wear Bay.',
     findings: ['Flint blade tool'],
-    significance: 'Represents one of the earliest signs of human activity on the Kent coast.',
+    significance: 'Provides evidence for early human activity on the Kent coast.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Paleo%20Flint%20Blade%20Tool.webp?updatedAt=1760784931461',
     color: 'bg-gray-500',
   },
   {
+    id: 'mesolithic',
+    year: 'c. 8,300–3,500 BCE',
+    period: 'Mesolithic',
+    title: 'Mesolithic Activity',
+    description: 'Flint microliths and blades have been recovered from the site, which show that people were hunting and fishing in the area.',
+    details: 'Flint microliths and blades have been recovered from the site, which show that people were hunting and fishing in the area.',
+    findings: ['Flint tools'],
+    significance: 'Evidence shows how people used the natural resources in Folkestone during the Mesolithic period.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Mesolithic%20Flint%20Tools.webp?updatedAt=1760784932046',
+    color: 'bg-stone-500',
+  },
+  {
+    id: 'neolithic',
+    year: 'c. 3,500-2,150 BCE',
+    period: 'Neolithic',
+    title: 'Neolithic Activity',
+    description: 'Neolithic pottery sherds and flint tools found at East Wear Bay suggest that there was a settlement in the immediate area. This settlement is yet to be found by archaeologists.',
+    details: 'Neolithic pottery sherds and flint tools found at East Wear Bay suggest that there was a settlement in the immediate area. This settlement is yet to be found by archaeologists.',
+    findings: ['Flint tools', 'Pottery fragments'],
+    significance: 'Neolithic people settled the land in Folkestone and were living not far from the site at East Wear Bay.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Neolithic%20Flint%20Tools.webp?updatedAt=1760785332099',
+    color: 'bg-yellow-700',
+  },
+  {
     id: 'bronze-age',
-    year: 'c. 1500-800 BCE',
-    period: 'Late Bronze Age',
-    title: 'Bronze Age Settlement',
-    description: 'Evidence of Bronze Age occupation discovered beneath later Iron Age and Roman layers.',
-    details: 'Multiple phases of occupation were discovered during the 2015-2017 field school, with Bronze Age features found at the deepest levels.',
+    year: 'c. 2,150-800 BCE',
+    period: 'Bronze Age',
+    title: 'Bronze Age Activity',
+    description: 'Possible evidence of Bronze Age settlement and finds related to activity during this period.',
+    details: 'The Bronze Age is represented at the site by metalwork and pottery. Several undated post-holes may be evidence of Bronze Age structures, although further analysis needs to be done to confirm this.',
     findings: ['Pottery fragments', 'Post holes suggesting structures'],
-    significance: 'Shows continuous occupation of this strategic coastal location for over 3,000 years.',
+    significance: 'Evidence may suggest that there was continuous occupation of this important coastal location for over 2,500 years.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Bronze%20Age%20Pottery.webp?updatedAt=1760784933164',
     color: 'bg-amber-600',
+  },
+  {
+    id: 'early-iron-age',
+    year: 'c. 800-150 BCE',
+    period: 'Early to Mid-Iron Age',
+    title: 'Iron Age Settlement',
+    description: 'Continued occupation at East Wear Bay as it grows into a major coastal trading settlement.',
+    details: 'Occupation appears to have continued at East Wear Bay throughout the early and middle Iron Age. Our recent excavations have established that from the 2nd century BC the site flourished as a major coastal trading and production settlement.',
+    findings: ['Evidence for roundhouse and granary structures', 'Pottery', 'Metalwork'],
+    significance: 'Occupation evidence shows a growing settlement whose coastal location became increasingly important over time.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Iron%20Age%20Reconstruction.webp?updatedAt=1760784931627',
+    color: 'bg-orange-500',
   },
   {
     id: 'iron-age',
     year: 'c. 150 BCE - 43 CE',
     period: 'Late Iron Age',
-    title: 'Quern Stone Production Centre',
-    description: 'The site became a major centre for quern stone production and international trade.',
-    details: 'During the Late Iron Age, East Wear Bay served as the focus of a quern-stone production industry and probably functioned as a port of trade with the developing Roman Empire. The querns were made from local greensand stone brought up from the cliffs and beaches around Folkestone.',
-    findings: ['Quern stone production area', 'Iron Age coins from Gaul and Britain', 'Evidence of roundhouses', 'International trade goods'],
+    title: 'Quernstone Production Centre',
+    description: 'The site became a major centre for quernstone production and international trade.',
+    details: 'During the Late Iron Age, East Wear Bay served as the focus for large-scale quernstone production and also functioned as a port of trade with continental Europe and the developing Roman Empire. The quernstones were made from the local Greensand, which was brought up from the cliffs and beaches around Folkestone.',
+    findings: ['Quernstone production area', 'Iron Age coins from Gaul and Britain', 'Evidence of roundhouses', 'International trade goods'],
     significance: 'Demonstrates extensive trading connections across the Channel before the Roman conquest.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/quernstone.webp?updatedAt=1760785552851',
     color: 'bg-orange-600',
   },
   {
@@ -302,7 +341,18 @@ export default function TimelinePage() {
                       {expandedPeriod === entry.id && (
                         <div className="mt-6 pt-6 border-t">
                           <p className="text-muted-foreground mb-4">{entry.details}</p>
-                          
+
+                          {entry.image && (
+                            <div className="mb-6 relative h-64 md:h-80 rounded-lg overflow-hidden">
+                              <Image
+                                src={entry.image}
+                                alt={entry.title}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                          )}
+
                           {entry.findings.length > 0 && (
                             <div className="mb-4">
                               <h4 className="font-semibold mb-2">Key Discoveries:</h4>
@@ -313,9 +363,9 @@ export default function TimelinePage() {
                               </ul>
                             </div>
                           )}
-                          
+
                           <div className="p-4 bg-accent rounded-lg">
-                            <h4 className="font-semibold mb-1">Historical Significance:</h4>
+                            <h4 className="font-semibold mb-1">Archaeological Significance:</h4>
                             <p className="text-sm text-muted-foreground">{entry.significance}</p>
                           </div>
                         </div>

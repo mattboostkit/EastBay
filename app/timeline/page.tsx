@@ -217,6 +217,18 @@ export default function TimelinePage() {
 
   return (
     <>
+      {/* Banner Image */}
+      <div className="relative h-[300px] md:h-[400px] w-full">
+        <Image
+          src="https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Banner.webp?updatedAt=1760784932191"
+          alt="East Wear Bay Archaeological Timeline"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+      </div>
+
       <div className="bg-gradient-to-b from-primary/10 to-background py-12 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center">
@@ -224,7 +236,7 @@ export default function TimelinePage() {
               Archaeological Timeline
             </h1>
             <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-              Journey through 12,000 years of human history at East Wear Bay, from Ice Age hunters to modern archaeological discoveries.
+              Journey through 12,000 years of human history at East Wear Bay.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
               <div className="flex items-center gap-2">

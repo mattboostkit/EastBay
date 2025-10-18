@@ -93,24 +93,26 @@ const timelineData = [
   },
   {
     id: 'roman-villa',
-    year: 'c. 70-400 CE',
+    year: '43-410 CE',
     period: 'Roman Period',
-    title: 'Folkestone Roman Villa',
-    description: 'A major villa complex was established, surrounded by ditched fields and enclosures.',
-    details: 'After the Roman Conquest, a substantial villa complex was built on the site. The villa featured multiple rooms, mosaic floors, painted walls, and a bath house. It was surrounded by a system of ditched fields and enclosures that replaced earlier Iron Age features.',
-    findings: ['Mosaic floors', 'Painted wall plaster', 'Bath house complex', 'Hypocaust heating system', 'Coins and jewelry'],
-    significance: 'One of the most significant Roman villa sites on the Kent coast.',
+    title: 'Roman Period Occupation',
+    description: 'From around 75 CE, a major villa complex was established at East Wear Bay.',
+    details: 'This first villa was demolished in the late first or early second century and a bigger structure was built with deeper foundations. Roof tiles stamped by the \'Classis Britannica\' (the Roman fleet in British waters), suggests a link to this unit. The villa was abandoned in the late third century and was reoccupied in the fourth century when it may have been semi-derelict. The villa is finally abandoned by the early fifth century.',
+    findings: ['Mosaic flooring', 'Painted wall plaster', 'Bathhouse complex', 'Hypocaust heating system'],
+    significance: 'Folkestone Roman Villa is one of few 1st century villas in Britain and may have been connected to the Roman fleet.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Villa%20Reconstruction.webp?updatedAt=1760784932140',
     color: 'bg-purple-600',
   },
   {
     id: 'post-roman',
-    year: 'c. 400-1900 CE',
+    year: 'c. 410-1900 CE',
     period: 'Post-Roman to Victorian',
     title: 'Site Abandonment',
     description: 'The villa was abandoned and gradually buried by soil and vegetation.',
-    details: 'After the end of Roman rule, the villa fell into ruin and was gradually covered by centuries of soil accumulation.',
-    findings: ['Medieval pottery sherds (scattered)', 'Victorian artifacts near surface'],
-    significance: 'The site remained undisturbed for over 1,400 years.',
+    details: 'By the early 5th century, the villa was abandoned and was gradually forgotten. Although no evidence of occupation during the early Anglo-Saxon period has been found at East Wear Bay. By the mid-seventh century a monastic site had been established by St Eanswythe on Folkestone\'s west cliff, forming the focus for the later town. Excavations have recovered pottery and a coin of Alfred the Great dating to the ninth century AD, implying some people had re-occupied the site at this time.',
+    findings: ['Coin of Alfred the Great'],
+    significance: 'The focal area for settlement in Folkestone shifted after the Roman era.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Alfred%20Coin.webp?updatedAt=1760784931693',
     color: 'bg-gray-600',
   },
   {
@@ -122,6 +124,7 @@ const timelineData = [
     details: 'Local residents noticed Roman building materials eroding from the cliff face above East Wear Bay, sparking archaeological interest.',
     findings: ['Building stones', 'Roof tiles', 'Pottery fragments'],
     significance: 'Began the modern archaeological investigation of the site.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Roof%20tile.webp?updatedAt=1760784931504',
     color: 'bg-blue-600',
   },
   {
@@ -130,9 +133,10 @@ const timelineData = [
     period: 'Winbolt Excavations',
     title: 'First Major Excavation',
     description: 'S.E. Winbolt excavated the site on behalf of Folkestone Town Council.',
-    details: 'Sussex archaeologist S.E. Winbolt led extensive excavations that exposed the foundations of a large Roman villa complex. The site became a major tourist attraction with one of the first aerial photographs of an archaeological site taken here.',
-    findings: ['Complete villa ground plan', 'Multiple mosaic floors', 'Bath house', 'Hypocaust system'],
-    significance: 'Made East Wear Bay one of Britain\'s most important publicly accessible Roman sites.',
+    details: 'SE Winbolt excavated the site with his daughter Rosalind.',
+    findings: ['Villa ground plan established', 'Mosaic flooring', 'Bathhouse'],
+    significance: 'Important finds and evidence were uncovered that helped create a better understanding of the Roman world.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Winbolt.webp?updatedAt=1760784932445',
     color: 'bg-indigo-600',
   },
   {
@@ -144,6 +148,7 @@ const timelineData = [
     details: 'The uncovered Roman villa was visited by thousands of holidaymakers. A tea room and toilet facilities were built to serve visitors. Many postcards and photographs from this period survive.',
     findings: ['Tea room foundations (rediscovered 2015)', 'Period photographs', 'Tourist postcards'],
     significance: 'Demonstrated early public engagement with archaeology.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Aerial%20Photo.webp?updatedAt=1760784932094',
     color: 'bg-green-600',
   },
   {
@@ -153,8 +158,9 @@ const timelineData = [
     title: 'Military Occupation',
     description: 'The site was occupied by the army who dug defensive positions.',
     details: 'The army dug slit trenches and weapon pits across the site, causing some damage to the archaeology. The site formed part of the coastal defenses against potential invasion.',
-    findings: ['Slit trenches', 'Weapon pits', 'Military artifacts'],
+    findings: ['Defensive trenches', 'Tank tracks'],
     significance: 'Added a layer of 20th-century military history to the site.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/WWII.webp?updatedAt=1760784932146',
     color: 'bg-gray-700',
   },
   {
@@ -166,6 +172,7 @@ const timelineData = [
     details: 'With tourists heading to sunnier climates and maintenance costs rising, Folkestone Council made the decision to cover the exposed ruins with soil for their protection.',
     findings: ['Site plans', 'Final condition photographs'],
     significance: 'Preserved the archaeology but removed it from public view.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Villa%20rebury.webp?updatedAt=1760784931827',
     color: 'bg-gray-600',
   },
   {
@@ -175,63 +182,57 @@ const timelineData = [
     title: 'Erosion Assessment',
     description: 'Kent Archaeological Rescue Unit investigated coastal erosion impact.',
     details: 'KARU excavated part of the villa to assess erosion since 1924. They found that up to 10 metres had been lost to the sea and discovered intact Iron Age features beneath the villa.',
-    findings: ['Iron Age ditches', 'Chalk floor surfaces', 'Classis Britannica tiles'],
+    findings: ['Intact Iron Age features', 'Impact of coastal erosion', 'Re-excavation of bathhouse structure'],
     significance: 'Revealed the urgent threat of coastal erosion to the site.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/KARU.webp?updatedAt=1760784932772',
     color: 'bg-red-700',
   },
   {
     id: 'town-unearthed',
     year: '2010-2013',
-    period: 'A Town Unearthed',
-    title: 'Community Archaeology Project',
-    description: 'Heritage Lottery funded project engaging the local community.',
-    details: 'This project re-opened the northern part of the villa and revealed unexpectedly complex Iron Age structures beneath. Featured on BBC\'s "Digging for Britain" and won Current Archaeology\'s "Rescue Dig of the Year".',
-    findings: ['Iron Age structures', 'Quern stones', 'Coins and jewelry', 'New villa rooms'],
-    significance: 'Demonstrated the value of community archaeology and revealed the site\'s Iron Age importance.',
+    period: 'Canterbury Archaeology Trust',
+    title: 'A Town Unearthed',
+    description: 'National Lottery Heritage Fund project engaging the local community.',
+    details: 'This project involved re-excavating the northern part of the villa to reveal complex and well-preserved Iron Age deposits beneath the Roman period remains. Featured on BBC\'s \'Digging for Britain\' and won Current Archaeology\'s \'Rescue Dig of the Year\'.',
+    findings: ['Iron Age deposits', 'Classis Britannica stamped roof tiles', 'Intact chalk floor surfaces'],
+    significance: 'Evidence for economic and social changes during the Iron Age to Roman period transition in Britain.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Classis%20Britannica.webp?updatedAt=1760784932596',
     color: 'bg-teal-600',
   },
   {
     id: 'field-school',
     year: '2015-2017',
-    period: 'Field School',
+    period: 'CAT Field School',
     title: 'International Training Excavation',
     description: 'Three seasons of excavation training for students and volunteers.',
-    details: 'The East Wear Bay Archaeological Field School investigated land north of the villa, establishing the extent of Iron Age features. An extensive quern stone production area was discovered.',
-    findings: ['Quern production site', 'Multiple occupation phases', 'Bronze Age to Roman artifacts'],
+    details: 'The East Wear Bay Archaeological Field School investigated land north of the villa, establishing the extent of Iron Age features. An extensive quernstone production area was discovered.',
+    findings: ['LIA quernstone production area', 'Multiple occupation phases', 'Late Bronze Age to Roman period evidence'],
     significance: 'Provided professional archaeological training while making significant discoveries.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Field%20School.webp?updatedAt=1760784937272',
     color: 'bg-blue-700',
   },
   {
     id: 'mosaic2022',
     year: '2022',
-    period: 'Recent Work',
+    period: 'CAT Project',
     title: 'Mosaic Re-excavation',
     description: 'Community excavation focused on villa Room 40\'s mosaic floor.',
-    details: 'Local volunteers and University of Kent students re-excavated Room 40 to assess the mosaic\'s condition. The floor was found to be better preserved than expected.',
+    details: 'Local volunteers and University of Kent students re-excavated Room 40 of the villa to assess the condition of the mosaic floor. It was found to be better preserved than expected. Trenching to the north-west revealed undisturbed Roman period deposits.',
     findings: ['Preserved mosaic sections', 'Stamped tile', '4th century coin', 'Painted wall plaster'],
     significance: 'Demonstrated ongoing preservation potential despite erosion threats.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Mosaic%20recording.webp?updatedAt=1760784932206',
     color: 'bg-purple-700',
-  },
-  {
-    id: 'copt-point',
-    year: '2022',
-    period: 'Copt Point',
-    title: 'Mystery Mound Investigation',
-    description: 'Exploratory trenching on a circular mound at Copt Point.',
-    details: 'A circular mound enclosing a WWII bunker was investigated. The mound appears to predate the bunker and may be a prehistoric or Roman burial mound.',
-    findings: ['Circular earthwork', 'WWII bunker', 'Stratified deposits'],
-    significance: 'Potential discovery of a previously unknown burial mound.',
-    color: 'bg-amber-700',
   },
   {
     id: 'current',
     year: '2023-2025',
-    period: 'Current Phase',
-    title: 'Major Excavation Programme',
+    period: 'CAT Project',
+    title: 'Facing the Cliff: The Race to Record the Archaeology of East Wear Bay',
     description: 'National Lottery Heritage Fund supported excavations.',
-    details: 'The Trust is conducting major excavations focused on areas most at risk from coastal erosion. The 2025 Field School (July 7-18) successfully trained 24 participants and uncovered new sections of the villa.',
-    findings: ['3 new villa rooms', '200+ pottery fragments', '15 coins', 'Mosaic floor sections'],
-    significance: 'Racing against coastal erosion to record the site before it\'s lost.',
+    details: 'With funding provided by the National Lottery Heritage Fund and <a href="/partners" class="text-primary hover:underline">other funding partners</a>, CAT has undertaken excavations that have focused on areas most at risk of coastal erosion. Run as a community excavation and field school, the project has engaged with many people in the local area.',
+    findings: ['Evidence for Iron Age roundhouses', 'Better understanding of villa construction phases', 'Early imported pottery'],
+    significance: 'Intact Iron Age and Roman period deposits are still to be recorded before the site is lost.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/Facing%20the%20Cliff.webp?updatedAt=1760784932093',
     color: 'bg-green-700',
   },
   {
@@ -240,9 +241,10 @@ const timelineData = [
     period: 'Future Plans',
     title: 'Continued Research & Conservation',
     description: 'Ongoing excavations and digital preservation efforts.',
-    details: 'Plans include further excavations of areas at risk, comprehensive digital documentation, and expanded community engagement programs. The 2026 Field School is planned for July.',
-    findings: ['To be discovered'],
-    significance: 'Ensuring the site\'s heritage is preserved for future generations.',
+    details: 'Plans include further excavations of areas at risk, comprehensive digital documentation. Publication of results and expanded community engagement programmes to build on previous success. We are currently looking for <a href="/partners" class="text-primary hover:underline">funders to help us continue this important project</a>.',
+    findings: [],
+    significance: 'Ensuring that the site is digitally preserved, published and shared for future generations to enjoy.',
+    image: 'https://ik.imagekit.io/boostkit/East%20Wear%20Bay/Timeline/EWB.webp?updatedAt=1760784932100',
     color: 'bg-indigo-700',
   },
 ]
@@ -340,7 +342,10 @@ export default function TimelinePage() {
                       {/* Expanded content */}
                       {expandedPeriod === entry.id && (
                         <div className="mt-6 pt-6 border-t">
-                          <p className="text-muted-foreground mb-4">{entry.details}</p>
+                          <p
+                            className="text-muted-foreground mb-4"
+                            dangerouslySetInnerHTML={{ __html: entry.details }}
+                          />
 
                           {entry.image && (
                             <div className="mb-6 relative h-64 md:h-80 rounded-lg overflow-hidden">
@@ -353,7 +358,7 @@ export default function TimelinePage() {
                             </div>
                           )}
 
-                          {entry.findings.length > 0 && (
+                          {entry.findings && entry.findings.length > 0 && (
                             <div className="mb-4">
                               <h4 className="font-semibold mb-2">Key Discoveries:</h4>
                               <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">

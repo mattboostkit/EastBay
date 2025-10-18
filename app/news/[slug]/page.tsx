@@ -78,7 +78,7 @@ const components = {
       return (
         <div className="my-8">
           <Image
-            src={urlFor(value).width(800).url()}
+            src={urlFor(value).width(800).url() || ''}
             alt={value.alt || ''}
             width={800}
             height={450}
@@ -203,12 +203,13 @@ export default async function BlogPostPage({ params }: Props) {
       {post.mainImage && (
         <div className="container py-8">
           <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video rounded-lg overflow-hidden">
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
               <Image
-                src={urlFor(post.mainImage).width(1200).url()}
+                src={urlFor(post.mainImage).width(1200).url() || ''}
                 alt={post.mainImage.alt || post.title}
                 fill
                 className="object-cover"
+                priority
               />
             </div>
           </div>
@@ -240,9 +241,9 @@ export default async function BlogPostPage({ params }: Props) {
                   >
                     <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow">
                       {relatedPost.mainImage && (
-                        <div className="relative aspect-video">
+                        <div className="relative aspect-video bg-muted">
                           <Image
-                            src={urlFor(relatedPost.mainImage).width(400).url()}
+                            src={urlFor(relatedPost.mainImage).width(400).url() || ''}
                             alt={relatedPost.title}
                             fill
                             className="object-cover"

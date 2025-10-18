@@ -9,6 +9,7 @@ import { GoogleAnalytics } from '@/components/SEO/GoogleAnalytics';
 import { OrganizationStructuredData } from '@/components/SEO/StructuredData';
 import { client } from '@/lib/sanity.client';
 import { siteSettingsQuery } from '@/lib/queries/siteSettings';
+import { Toaster } from 'sonner';
 
 // Initialize the Geist fonts
 const geistSans = GeistSans;
@@ -99,6 +100,7 @@ export default async function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer siteSettings={siteSettings} />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

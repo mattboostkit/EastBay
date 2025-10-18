@@ -110,52 +110,51 @@ export default async function NewsPage() {
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredNews.map((item: any) => (
-              <Card key={item._id} className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50">
-                {item.mainImage && (
-                  <div className="aspect-video overflow-hidden bg-muted">
-                    <Image
-                      src={urlFor(item.mainImage).width(600).height(400).url()}
-                      alt={item.title}
-                      width={600}
-                      height={400}
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <CalendarDays className="h-4 w-4" />
-                    {new Date(item.publishedAt).toLocaleDateString('en-GB', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}
-                    {item.category && (
-                      <>
-                        <span>•</span>
-                        <Badge variant="secondary" className="bg-secondary/10 text-secondary">
-                          {item.category}
-                        </Badge>
-                      </>
-                    )}
-                  </div>
-                  <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </CardTitle>
-                  <CardDescription className="line-clamp-3 mt-2">
-                    {item.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link 
-                    href={`/news/${item.slug.current}`}
-                    className="inline-flex items-center text-primary font-medium hover:gap-2 transition-all"
-                  >
-                    Read More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link key={item._id} href={`/news/${item.slug.current}`} className="block">
+                <Card className="group overflow-hidden hover:shadow-lg transition-all border-2 hover:border-primary/50 h-full cursor-pointer">
+                  {item.mainImage && (
+                    <div className="aspect-video overflow-hidden bg-muted">
+                      <Image
+                        src={urlFor(item.mainImage).width(600).height(400).url() || ''}
+                        alt={item.title}
+                        width={600}
+                        height={400}
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <CalendarDays className="h-4 w-4" />
+                      {new Date(item.publishedAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}
+                      {item.category && (
+                        <>
+                          <span>•</span>
+                          <Badge variant="secondary" className="bg-secondary/10 text-secondary">
+                            {item.category}
+                          </Badge>
+                        </>
+                      )}
+                    </div>
+                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-3 mt-2">
+                      {item.excerpt}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -181,56 +180,56 @@ export default async function NewsPage() {
             
             <TabsContent value="all" className="space-y-6">
               {recentNews.map((item: any) => (
-                <Card key={item._id} className="hover:shadow-md transition-all border-l-4 border-l-primary">
-                  <div className="flex gap-6 p-6">
-                    {item.mainImage && (
-                      <div className="hidden md:block w-48 h-32 rounded-lg overflow-hidden bg-muted flex-shrink-0">
-                        <Image
-                          src={urlFor(item.mainImage).width(200).height(130).url()}
-                          alt={item.title}
-                          width={200}
-                          height={130}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                    )}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Badge variant="outline" className="text-xs">
-                          {new Date(item.publishedAt).toLocaleDateString()}
-                        </Badge>
-                        {item.category && (
-                          <Badge className="bg-secondary/10 text-secondary text-xs">
-                            {item.category}
-                          </Badge>
-                        )}
-                        {item.author && (
-                          <span className="text-sm text-muted-foreground">
-                            by {item.author.name}
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors">
-                        <Link href={`/news/${item.slug.current}`}>
-                          {item.title}
-                        </Link>
-                      </h3>
-                      <p className="text-muted-foreground line-clamp-2 mb-3">
-                        {item.excerpt}
-                      </p>
-                      {item.tags && item.tags.length > 0 && (
-                        <div className="flex gap-2 flex-wrap">
-                          {item.tags.map((tag: string) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              <Tag className="h-3 w-3 mr-1" />
-                              {tag}
-                            </Badge>
-                          ))}
+                <Link key={item._id} href={`/news/${item.slug.current}`} className="block">
+                  <Card className="hover:shadow-md transition-all border-l-4 border-l-primary cursor-pointer group">
+                    <div className="flex gap-6 p-6">
+                      {item.mainImage && (
+                        <div className="hidden md:block w-48 h-32 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                          <Image
+                            src={urlFor(item.mainImage).width(200).height(130).url() || ''}
+                            alt={item.title}
+                            width={200}
+                            height={130}
+                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                          />
                         </div>
                       )}
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <Badge variant="outline" className="text-xs">
+                            {new Date(item.publishedAt).toLocaleDateString()}
+                          </Badge>
+                          {item.category && (
+                            <Badge className="bg-secondary/10 text-secondary text-xs">
+                              {item.category}
+                            </Badge>
+                          )}
+                          {item.author && (
+                            <span className="text-sm text-muted-foreground">
+                              by {item.author.name}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground line-clamp-2 mb-3">
+                          {item.excerpt}
+                        </p>
+                        {item.tags && item.tags.length > 0 && (
+                          <div className="flex gap-2 flex-wrap">
+                            {item.tags.map((tag: string) => (
+                              <Badge key={tag} variant="secondary" className="text-xs">
+                                <Tag className="h-3 w-3 mr-1" />
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </TabsContent>
             

@@ -633,7 +633,7 @@ export default function CommunityPage() {
                 </Link>
 
                 <Link
-                  href="/support"
+                  href="/partners"
                   className="rounded-lg border-2 border-bronze-300 bg-transparent px-6 py-3 font-medium text-bronze-100 transition-all hover:bg-bronze-800/20 hover:border-bronze-200"
                 >
                   Support the Project

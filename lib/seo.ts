@@ -249,9 +249,8 @@ export function generateOrganizationStructuredData() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+44-1234-567890',
       contactType: 'customer service',
-      email: 'info@eastwearbay.org',
+      email: 'get_involved@canterburytrust.ac.uk',
     },
   };
 }

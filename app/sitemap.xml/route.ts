@@ -9,15 +9,26 @@ export async function GET() {
   
   // Static pages
   const staticPages = [
-    { url: '/', lastModified: new Date().toISOString() },
-    { url: '/contact', lastModified: new Date().toISOString() },
-    { url: '/team', lastModified: new Date().toISOString() },
-    { url: '/artefacts', lastModified: new Date().toISOString() },
-    { url: '/research', lastModified: new Date().toISOString() },
-    { url: '/events', lastModified: new Date().toISOString() },
-    { url: '/education', lastModified: new Date().toISOString() },
-    { url: '/timeline', lastModified: new Date().toISOString() },
-    { url: '/news', lastModified: new Date().toISOString() },
+    { url: '/', lastModified: new Date().toISOString(), priority: '1.0' },
+    { url: '/explore', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/digital-museum', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/field-school', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/folkestone', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/events', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/news', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/timeline', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/learn', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/education', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/learn/dementia-resources', lastModified: new Date().toISOString(), priority: '0.7' },
+    { url: '/learn/sensory-stories', lastModified: new Date().toISOString(), priority: '0.7' },
+    { url: '/research/publications', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/about', lastModified: new Date().toISOString(), priority: '0.9' },
+    { url: '/about/project', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/team', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/community', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/volunteer', lastModified: new Date().toISOString(), priority: '0.8' },
+    { url: '/partners', lastModified: new Date().toISOString(), priority: '0.7' },
+    { url: '/contact', lastModified: new Date().toISOString(), priority: '0.7' },
   ];
 
   // Fetch dynamic pages from Sanity
@@ -63,18 +74,22 @@ export async function GET() {
         ...artefacts.map((item: any) => ({
           url: `/artefacts/${item.slug}`,
           lastModified: item._updatedAt,
+          priority: '0.7',
         })),
         ...posts.map((item: any) => ({
           url: `/news/${item.slug}`,
           lastModified: item._updatedAt,
+          priority: '0.6',
         })),
         ...events.map((item: any) => ({
           url: `/events/${item.slug}`,
           lastModified: item._updatedAt,
+          priority: '0.6',
         })),
         ...teamMembers.map((item: any) => ({
           url: `/team/${item.slug}`,
           lastModified: item._updatedAt,
+          priority: '0.5',
         })),
       ];
     }
@@ -91,12 +106,12 @@ export async function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${allPages
     .map(
-      (page) => `
+      (page: any) => `
     <url>
       <loc>${baseUrl}${page.url}</loc>
       <lastmod>${page.lastModified}</lastmod>
       <changefreq>${page.url === '/' ? 'daily' : 'weekly'}</changefreq>
-      <priority>${page.url === '/' ? '1.0' : '0.8'}</priority>
+      <priority>${page.priority || '0.5'}</priority>
     </url>
   `
     )

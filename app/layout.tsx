@@ -80,6 +80,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
+        <meta name="google-site-verification" content="3thB2eGeDoAFhyYPKRLEmi6XcrxKWYE-teovGD43m-M" />
         <CanonicalLink baseUrl={baseUrl} />
         <OrganizationStructuredData />
         <GoogleAnalytics />

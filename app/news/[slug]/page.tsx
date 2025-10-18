@@ -41,6 +41,10 @@ async function getPost(slug: string) {
   return client.fetch(query, { slug })
 }
 
+// Revalidate this page every time it's requested to show latest content
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug)
 
@@ -54,18 +58,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | East Wear Bay Archaeological Project`,
     description: post.excerpt || 'Read the latest updates from the East Wear Bay Archaeological Project',
   }
-}
-
-export async function generateStaticParams() {
-  const query = `*[_type == "post"] {
-    slug
-  }`
-
-  const posts = await client.fetch(query)
-
-  return posts.map((post: any) => ({
-    slug: post.slug.current,
-  }))
 }
 
 const components = {

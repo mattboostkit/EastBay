@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: 'Latest news, discoveries, and updates from the East Wear Bay Archaeological Project. Stay informed about our excavations, research, and community events.',
 }
 
+// Revalidate this page every time it's requested to show latest posts
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 async function getNews() {
   const query = `*[_type == "post"] | order(publishedAt desc, _createdAt desc) {
     _id,

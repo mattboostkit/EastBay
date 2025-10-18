@@ -17,41 +17,35 @@ export async function POST(request: Request) {
     }
     
     // Send to FormSpark
-    const FORMSPARK_ACTION_URL = process.env.FORMSPARK_NEWSLETTER_FORM_ID
-      ? `https://submit-form.com/${process.env.FORMSPARK_NEWSLETTER_FORM_ID}`
-      : null;
+    const FORMSPARK_ACTION_URL = 'https://submit-form.com/0XfXnkFvJ';
 
-    if (FORMSPARK_ACTION_URL) {
-      try {
-        const response = await fetch(FORMSPARK_ACTION_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
+    try {
+      const response = await fetch(FORMSPARK_ACTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          signup_date: new Date().toISOString(),
+          signup_source: 'website',
+          _email: {
+            subject: 'New Newsletter Signup',
+            from: email,
           },
-          body: JSON.stringify({
-            email,
-            signup_date: new Date().toISOString(),
-            signup_source: 'website',
-            _email: {
-              subject: 'New Newsletter Signup',
-              from: email,
-            },
-          }),
-        });
+        }),
+      });
 
-        if (!response.ok) {
-          throw new Error('FormSpark submission failed');
-        }
-      } catch (error) {
-        // Log error in development only
-        if (process.env.NODE_ENV === 'development') {
-          console.error('FormSpark error:', error);
-        }
+      if (!response.ok) {
+        throw new Error('FormSpark submission failed');
       }
-    } else if (process.env.NODE_ENV === 'development') {
-      // Only log in development when no FormSpark ID is configured
-      console.log('Newsletter signup (dev):', email, new Date().toISOString());
+    } catch (error) {
+      // Log error in development only
+      if (process.env.NODE_ENV === 'development') {
+        console.error('FormSpark error:', error);
+      }
+      throw error;
     }
     
     return NextResponse.json({ 

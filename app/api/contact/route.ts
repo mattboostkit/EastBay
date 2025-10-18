@@ -14,39 +14,36 @@ export async function POST(request: Request) {
     }
     
     // Send to FormSpark
-    const FORMSPARK_ACTION_URL = process.env.FORMSPARK_CONTACT_FORM_ID
-      ? `https://submit-form.com/${process.env.FORMSPARK_CONTACT_FORM_ID}`
-      : null;
+    const FORMSPARK_ACTION_URL = 'https://submit-form.com/RGBfUXLrp';
 
-    if (FORMSPARK_ACTION_URL) {
-      try {
-        const response = await fetch(FORMSPARK_ACTION_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
+    try {
+      const response = await fetch(FORMSPARK_ACTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+          _email: {
+            subject: `New Contact Form Submission: ${subject}`,
+            from: email,
           },
-          body: JSON.stringify({
-            name,
-            email,
-            subject,
-            message,
-            _email: {
-              subject: `New Contact Form Submission: ${subject}`,
-              from: email,
-            },
-          }),
-        });
+        }),
+      });
 
-        if (!response.ok) {
-          throw new Error('FormSpark submission failed');
-        }
-      } catch (error) {
-        // Log error but don't fail the request
-        if (process.env.NODE_ENV === 'development') {
-          console.error('FormSpark error:', error);
-        }
+      if (!response.ok) {
+        throw new Error('FormSpark submission failed');
       }
+    } catch (error) {
+      // Log error but don't fail the request
+      if (process.env.NODE_ENV === 'development') {
+        console.error('FormSpark error:', error);
+      }
+      throw error;
     }
     
     return NextResponse.json({ 

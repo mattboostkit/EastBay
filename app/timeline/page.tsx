@@ -1,9 +1,5 @@
-'use client'
-
-import { useState } from 'react'
-import { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowRight, Calendar, MapPin, Users, ChevronDown, ChevronUp } from 'lucide-react'
+import { Calendar, MapPin, Users } from 'lucide-react'
 import Link from 'next/link'
 
 // Comprehensive timeline data from Canterbury Trust research
@@ -250,12 +246,6 @@ const timelineData = [
 ]
 
 export default function TimelinePage() {
-  const [expandedPeriod, setExpandedPeriod] = useState<string | null>('current')
-
-  const togglePeriod = (id: string) => {
-    setExpandedPeriod(expandedPeriod === id ? null : id)
-  }
-
   return (
     <>
       {/* Banner Image */}
@@ -302,81 +292,65 @@ export default function TimelinePage() {
           {/* Visual timeline bar */}
           <div className="relative mb-12">
             <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-300 via-primary/50 to-primary"></div>
-            
+
             {timelineData.map((entry, index) => (
               <div key={entry.id} className="relative mb-8">
                 {/* Timeline dot */}
                 <div className={`absolute left-5 w-7 h-7 rounded-full border-4 border-background ${entry.color} z-10`}></div>
-                
+
                 {/* Content card */}
                 <div className="ml-20">
-                  <button
-                    onClick={() => togglePeriod(entry.id)}
-                    className="w-full text-left group"
-                  >
-                    <div className={`rounded-lg border bg-card p-6 transition-all hover:shadow-md ${
-                      expandedPeriod === entry.id ? 'ring-2 ring-primary' : ''
-                    }`}>
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex flex-wrap items-center gap-3 mb-2">
-                            <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white ${entry.color}`}>
-                              {entry.year}
-                            </span>
-                            <span className="text-sm font-medium text-muted-foreground">
-                              {entry.period}
-                            </span>
-                          </div>
-                          <h3 className="text-xl font-bold mb-2">{entry.title}</h3>
-                          <p className="text-muted-foreground">{entry.description}</p>
+                  <div className="rounded-lg border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white ${entry.color}`}>
+                            {entry.year}
+                          </span>
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {entry.period}
+                          </span>
                         </div>
-                        <div className="ml-4 flex-shrink-0">
-                          {expandedPeriod === entry.id ? (
-                            <ChevronUp className="h-5 w-5 text-muted-foreground" />
-                          ) : (
-                            <ChevronDown className="h-5 w-5 text-muted-foreground" />
-                          )}
-                        </div>
+                        <h3 className="text-xl font-bold mb-2">{entry.title}</h3>
+                        <p className="text-muted-foreground">{entry.description}</p>
                       </div>
-                      
-                      {/* Expanded content */}
-                      {expandedPeriod === entry.id && (
-                        <div className="mt-6 pt-6 border-t">
-                          <p
-                            className="text-muted-foreground mb-4"
-                            dangerouslySetInnerHTML={{ __html: entry.details }}
+                    </div>
+
+                    {/* Content - always visible */}
+                    <div className="mt-6 pt-6 border-t">
+                      <p
+                        className="text-muted-foreground mb-4"
+                        dangerouslySetInnerHTML={{ __html: entry.details }}
+                      />
+
+                      {entry.image && (
+                        <div className="mb-6 relative h-64 md:h-80 rounded-lg overflow-hidden">
+                          <Image
+                            src={entry.image}
+                            alt={entry.title}
+                            fill
+                            className="object-cover"
                           />
-
-                          {entry.image && (
-                            <div className="mb-6 relative h-64 md:h-80 rounded-lg overflow-hidden">
-                              <Image
-                                src={entry.image}
-                                alt={entry.title}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                          )}
-
-                          {entry.findings && entry.findings.length > 0 && (
-                            <div className="mb-4">
-                              <h4 className="font-semibold mb-2">Key Discoveries:</h4>
-                              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                                {entry.findings.map((finding, i) => (
-                                  <li key={i}>{finding}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-
-                          <div className="p-4 bg-accent rounded-lg">
-                            <h4 className="font-semibold mb-1">Archaeological Significance:</h4>
-                            <p className="text-sm text-muted-foreground">{entry.significance}</p>
-                          </div>
                         </div>
                       )}
+
+                      {entry.findings && entry.findings.length > 0 && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold mb-2">Key Discoveries:</h4>
+                          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                            {entry.findings.map((finding, i) => (
+                              <li key={i}>{finding}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      <div className="p-4 bg-accent rounded-lg">
+                        <h4 className="font-semibold mb-1">Archaeological Significance:</h4>
+                        <p className="text-sm text-muted-foreground">{entry.significance}</p>
+                      </div>
                     </div>
-                  </button>
+                  </div>
                 </div>
               </div>
             ))}
